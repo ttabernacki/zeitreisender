@@ -1,0 +1,99 @@
+---
+tag: 1
+reihenfolge: 4
+szene: abend
+titel: Bei Alheit
+ort: Alheits Haus
+neu: Suppe, putzen, sauber
+---
+
+== start
+Es ist Abend. Das Haus von Alheit ist klein und alt. Es steht direkt an der Elbe. Im Fenster ist Licht.
+Du rufst: „Hallo?“ Eine alte Frau öffnet die Tür. Sie hat einen Hund. Der Hund ist auch alt.
+Alheit: Moin. Wer bist du denn?
+* Greta schickt mich. -> greta {alheit +1}
+* Hast du ein Zimmer frei? -> zimmer
+
+== greta
+Alheit: Ah, Greta! Dann komm rein, komm rein. Es ist kalt.
+-> drinnen
+
+== zimmer
+Alheit: Ein Zimmer? Vielleicht. Wer schickt dich?
+* Greta. Von der Bäckerei. -> greta {alheit +1}
+* Niemand. Ich bin einfach hier. -> niemand
+
+== niemand
+Alheit: Einfach hier. Hm. Das sagen viele. Na gut, komm rein. Es ist kalt.
+-> drinnen
+
+== drinnen
+Drinnen ist ein Feuer. Über dem Feuer steht ein Topf mit Suppe. Es riecht sehr gut.
+Alheit: Setz dich. Hier, eine Suppe. Du siehst müde aus.
+notiz: Setz dich!
+Du isst die Suppe. Sie ist heiß und gut. Der Hund legt seinen Kopf auf deinen Fuß.
+Alheit: Das Zimmer kostet einen Pfennig für die Nacht. Oder du hilfst mir morgen früh im Haus. Wasser holen, die Küche putzen.
+* (geld >= 1) Hier ist ein Pfennig. -> bezahlen {geld -1}
+* Ich helfe dir morgen gern. -> helfen {alheit +1, flag hilft_alheit}
+* Ich verstehe das nicht. -> erklaeren
+
+== erklaeren
+Alheit spricht jetzt langsam. Sie zeigt mit der Hand.
+Alheit: Das Zimmer. Für eine Nacht. Ein Pfennig. Oder: Morgen. Du. Hilfst. Mir.
+Sie zeigt auf den Eimer und auf die Küche.
+Alheit: Wasser holen. Küche putzen. Verstehst du?
+notiz: Verstehst du? – Ja, jetzt verstehe ich.
+* Ah! Ja, jetzt verstehe ich. Ich helfe dir gern. -> helfen {alheit +1, flag hilft_alheit}
+* (geld >= 1) Ah! Hier ist ein Pfennig. -> bezahlen {geld -1}
+
+== bezahlen
+Alheit: Danke. Das Zimmer ist oben. Das Bett ist klein, aber sauber.
+-> uhr
+
+== helfen
+Alheit: Gut. Dann bis morgen früh. Nicht zu spät! Das Zimmer ist oben. Das Bett ist klein, aber sauber.
+-> uhr
+
+== uhr
+Deine Uhr macht wieder „Piep“. Der Hund sieht dich an. Alheit sieht deinen Arm an.
+Alheit: Was ist das?
+* Meine Uhr. Sie ist kaputt. -> kaputt
+* Das ist nichts. -> nichts
+
+== nichts
+Alheit: Nichts? Hm. Mein Hund findet das sehr interessant.
+-> kaputt
+
+== kaputt
+Du zeigst ihr die Uhr. Alheit sieht sie lange an. Sie sagt nichts. Dann sagt sie leise:
+Alheit: So eine Uhr habe ich noch nie gesehen. Woher kommst du wirklich?
+* Aus der Zukunft. -> zukunft {alheit +1}
+* Von weit her. -> weit
+
+== zukunft
+Alheit lacht nicht.
+Alheit: Aus der Zukunft. Gut. Dann musst du auch wieder zurück, oder?
+-> rat
+
+== weit
+Alheit: Von weit her. Ja. Das sehe ich.
+Sie lacht nicht.
+-> rat
+
+== rat
+Alheit: Hör mir gut zu. Hier in Hamburg bekommst du Hilfe nicht mit Geld. Du bekommst Hilfe mit Freunden. Erst die Freunde, dann die Hilfe. Verstehst du?
+notiz: Erst die Freunde, dann die Hilfe.
+* Ja. Ich verstehe. -> gute_nacht
+* Nein. Kannst du das noch einmal sagen? -> nochmal
+
+== nochmal
+Alheit: Natürlich. Also: Du brauchst Hilfe für deine Uhr. Leute helfen dir, wenn sie dich kennen. Wenn sie dich mögen. Also: Lern die Leute kennen. Jonte, Greta, Hinnerk…
+notiz: Kannst du das noch einmal sagen?
+-> gute_nacht
+
+== gute_nacht
+Alheit: Und jetzt: ab ins Bett. Gute Nacht!
+Du gehst nach oben. Das Bett ist wirklich klein. Aber du schläfst sofort ein.
+Du träumst von Säcken. Von sehr vielen Säcken.
+notiz: Gute Nacht!
+-> ENDE

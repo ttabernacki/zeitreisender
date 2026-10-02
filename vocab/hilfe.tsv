@@ -1,0 +1,5 @@
+wort	hilfe
+# German-only word help for list words (lemma as in vocab/lemmas.tsv).
+# Without an entry the runner shows the base form, list level and count.
+# Help texts are vocab-checked on the day the word unlocks.
+putzen	Sauber machen. Mit Wasser und mit der Hand.

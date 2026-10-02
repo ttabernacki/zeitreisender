@@ -17,6 +17,8 @@ Hering	szene	2	Heringe,Heringen	Ein kleiner Fisch aus dem Meer. Man isst ihn mit
 Eimer	szene	1	Eimern	Man trägt Wasser im Eimer. Er ist rund und oben offen.
 Hafenmeister	szene	1	Hafenmeisters	Der Chef am Hafen. Er sagt, welches Schiff wo liegt.
 Zukunft	szene	1		Die Zeit nach heute. Morgen, nächstes Jahr, in 600 Jahren …
+Franzbrötchen	szene	1	Franzbrötchens	Ein süßes Brötchen aus Hamburg. Mit Zimt. Sehr gut zum Kaffee.
+Zimt	szene	1		Er ist braun und kommt von weit her. Süß und teuer.
 # --- Slang
 Digga	slang	1	Diggas	So sagen junge Leute in Hamburg zu einem Freund. Wie „mein Freund“, aber lustiger.
 krass	slang	1	krasse,krassen,krasser,krasses	Sehr stark, sehr besonders. „Das ist krass!“ = Das ist ja wirklich stark!
@@ -27,6 +29,10 @@ hm	interjektion	1	Hm	Man denkt nach: „Hm …“
 äh	interjektion	1	Äh	Man weiß nicht weiter: „Äh …“
 piep	interjektion	1	Piep	So macht ein kleiner Vogel. Oder deine Uhr.
 oh	interjektion	1	Oh	„Oh!“ = Das habe ich nicht gedacht!
+uff	interjektion	1	Uff	Etwas ist sehr schwer: „Uff!“
+au	interjektion	1	Au,Aua,aua	Etwas tut weh: „Au!“
+ah	interjektion	1	Ah	„Ah!“ = Jetzt verstehe ich!
+ach	interjektion	1	Ach	„Ach, nichts.“ = Es ist nicht wichtig.
 # --- Namen
 Hinnerk	name	1		Der Hafenmeister. Laut, aber nicht böse.
 Jonte	name	1		Ein junger Mann. Er arbeitet am Hafen.
@@ -34,5 +40,7 @@ Greta	name	1		Sie hat die Bäckerei am Markt.
 Alheit	name	1		Eine alte Frau. Sie hat ein Haus mit Zimmern für Gäste.
 Hamburg	name	1	Hamburger	Die Stadt an der Elbe.
 Dänemark	name	1		Ein Land im Norden.
+Lüneburg	name	1		Eine Stadt im Süden von Hamburg. Dort gibt es viel Salz.
+Franz	name	1		Ein Name für einen Mann.
 Elbe	name	1		Der große Fluss in Hamburg.
 Wulf	name	2		Er kauft und verkauft Waren. Er hat viel Geld und wenig Zeit.

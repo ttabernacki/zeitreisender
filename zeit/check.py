@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
 
-from .lexicon import ROOT, Lexicon, Resolution
+from .lexicon import PARTICLES, ROOT, Lexicon, Resolution
 from .scenes import Scene, SceneError, load_scenes, validate_links
 
 CONTENT = ROOT / "content"
@@ -48,13 +48,16 @@ class Tok:
     res: Resolution
     lineno: int
     grammar: list = field(default_factory=list)
+    idx: int = 0             # character offset in the analyzed text
+    particle_idx: int = -1   # offset of a detached separable particle ("an" in "kam ... an")
 
 
 def analyze_text(text: str, lex: Lexicon, day: int, lineno: int = 0) -> list[Tok]:
     doc = nlp()(text)
     particles = {}                       # verb token index -> particle
     for t in doc:
-        if t.tag_ == "PTKVZ" and t.head.i != t.i and t.head.pos_ in ("VERB", "AUX"):
+        if (t.tag_ == "PTKVZ" and t.head.i != t.i and t.head.pos_ in ("VERB", "AUX")
+                and t.text.lower() in PARTICLES):
             particles[t.head.i] = t
     out = []
     for t in doc:
@@ -88,7 +91,7 @@ def analyze_text(text: str, lex: Lexicon, day: int, lineno: int = 0) -> list[Tok
             g.append("praeteritum")
         if t.tag_ in ("PRELS", "PRELAT"):
             g.append("relativsatz")
-        out.append(Tok(t.text, res, lineno, g))
+        out.append(Tok(t.text, res, lineno, g, t.idx, particles[t.i].idx if t.i in particles else -1))
     return out
 
 

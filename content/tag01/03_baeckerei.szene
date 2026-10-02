@@ -1,0 +1,91 @@
+---
+tag: 1
+reihenfolge: 3
+szene: baeckerei
+titel: Bei Greta
+ort: Markt
+neu: frisch, warm, süß
+---
+
+== start
+Der Markt ist voll. Leute, Hunde, Katzen, Kinder. Alle sprechen laut. Und dann riechst du es: Brot! Frisches Brot!
+Die Bäckerei ist klein. Vor der Tür steht eine Frau mit roten Haaren. Sie lacht viel.
+Greta: Moin, moin! Du bist neu hier, oder? Ich bin Greta. Was möchtest du?
+notiz: Was möchtest du?
+* Einen Kaffee, bitte. -> kaffee
+* Was kostet das Brot? -> preis
+
+== kaffee
+Greta: Einen… was?
+* Kaffee. Schwarz. Heiß. -> kaffee2
+* Ach, nichts. Was kostet das Brot? -> preis
+
+== kaffee2
+Greta: Schwarz und heiß? Hm. Das ist nicht gut, oder? Möchtest du vielleicht lieber ein Bier?
+* Am Mittag? Nein, danke. -> preis
+* Ja, gern! -> bier
+
+== bier
+Greta: Ich habe kein Bier. Ich habe Brot. Das hier ist eine Bäckerei.
+Sie lacht.
+-> preis
+
+== preis
+Greta: Das Brot kostet zwei Pfennig. Der Kuchen kostet drei Pfennig. Der Kuchen ist süß. Sehr, sehr gut!
+notiz: Was kostet das Brot? – Das Brot kostet zwei Pfennig.
+* (geld >= 2) Ein Brot, bitte. -> brot {geld -2, item Brot}
+* (geld >= 3) Einen Kuchen, bitte. -> kuchen {geld -3, item Kuchen}
+* (geld >= 4) Ein Brot und einen Kuchen, bitte. -> beides
+* Hast du auch ein Franzbrötchen? -> franz
+
+== franz
+Greta: Ein… Franz-Brötchen? Wer ist Franz?
+* Das ist ein Brötchen mit Zimt. Aus Hamburg. -> franz2
+* Vergiss es. -> preis
+
+== franz2
+Greta: Mit Zimt? Zimt ist sehr teuer. Den haben nur sehr reiche Leute. Aber eine gute Idee! Brot mit Zimt…
+Greta denkt nach. Dann lacht sie.
+Greta: Komm in ein paar Wochen wieder. Vielleicht habe ich dann ein Brötchen für Franz.
+-> preis {greta +1, flag franzbroetchen}
+
+== beides
+Greta: Brot und Kuchen? Das sind fünf Pfennig. Du hast nur vier, oder?
+* Ja. Leider. -> beides2
+* Dann nur ein Brot, bitte. -> brot {geld -2, item Brot}
+
+== beides2
+Greta sieht dich an. Du bist nass, du bist müde, deine Arme tun weh.
+Greta: Weißt du was? Vier Pfennig. Weil du neu bist. Aber nur heute!
+notiz: Weil du neu bist.
+-> brot_kuchen {geld -4, item Brot, item Kuchen, greta +1}
+
+== brot
+Greta gibt dir ein großes Brot. Es ist noch warm.
+Greta: Guten Appetit!
+-> ende
+
+== kuchen
+Greta gibt dir ein Stück Kuchen. Er ist süß und noch warm.
+Greta: Guten Appetit! Aber nicht alles auf einmal essen.
+-> ende
+
+== brot_kuchen
+Greta gibt dir ein großes Brot und ein Stück Kuchen. Alles ist noch warm.
+Greta: Guten Appetit!
+-> ende
+
+== ende
+Du isst. Es ist das beste Essen in deinem Leben. Vielleicht ist es auch nur der Hunger.
+Greta: Hast du schon ein Zimmer für die Nacht?
+* Nein. Ich habe nichts. -> zimmer
+* Ich schlafe am Hafen. -> hafen
+
+== hafen
+Greta: Am Hafen? Bei dem Wetter? Nein, nein, nein.
+-> zimmer
+
+== zimmer
+Greta: Geh zu Alheit. Sie hat ein Haus an der Elbe. Sie hat oft ein Zimmer frei. Sag ihr: Greta schickt dich.
+notiz: Hast du ein Zimmer frei?
+-> abend

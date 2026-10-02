@@ -351,6 +351,14 @@ class Lexicon:
         status: ok | gesperrt (on the list, tier not yet unlocked)
                 | ausnahme-spaet (declared exception used before its day) | unbekannt
         """
+        if "-" in word.strip("-"):
+            # "Franz-Brötchen": every part must resolve on its own
+            parts = [self.resolve(p, day) for p in word.split("-") if p]
+            bad = [p for p in parts if p.status != "ok"]
+            if bad:
+                return bad[0]
+            # counted as its head (last part): "Franz-Brötchen" -> Brötchen
+            return Resolution("ok", parts[-1].lemma, "compound", tuple(p.lemma for p in parts))
         cands = list(dict.fromkeys(
             [h for h in hints if h in self.entries] + self.lookup(word)
             + [l for h in hints for l in self.lookup(h)]))

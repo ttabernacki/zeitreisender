@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moin, Zeitreisender</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Moin, Zeitreisender</h1>
+  <div class="status">
+    <span id="tag">Tag 1</span>
+    <span id="ort"></span>
+    <span id="geld"></span>
+  </div>
+  <nav>
+    <button data-panel="notizbuch">Notizbuch</button>
+    <button data-panel="woerter">Wörter <span id="wortzahl" class="badge">0</span></button>
+    <button data-panel="menue">Menü</button>
+  </nav>
+</header>
+
+<main id="log" aria-live="polite"></main>
+<section id="antworten" aria-label="Antworten"></section>
+
+<div id="hilfe" class="popup" hidden role="dialog">
+  <div class="popup-kopf"><strong id="hilfe-wort"></strong><button class="zu" aria-label="Schließen">×</button></div>
+  <div id="hilfe-text"></div>
+</div>
+
+<aside id="panel" hidden>
+  <div class="popup-kopf"><strong id="panel-titel"></strong><button class="zu" aria-label="Schließen">×</button></div>
+  <div id="panel-inhalt"></div>
+</aside>
+
+<input type="file" id="datei" accept="application/json" hidden>
+<script src="game_data.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

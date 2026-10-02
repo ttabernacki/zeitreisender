@@ -1,0 +1,94 @@
+---
+tag: 1
+reihenfolge: 2
+szene: am_schiff
+titel: Säcke, Säcke, Säcke
+ort: Hafen
+neu: Pfennig, Digga, krass
+---
+
+== start
+Vor einem großen Schiff liegen viele Säcke. Ein junger Mann sitzt auf einem Sack und isst einen Apfel.
+Hinnerk: Jonte! Pause ist vorbei!
+Jonte: Moin, Chef! Ich esse nur schnell…
+Hinnerk: Das ist Jonte. Er zeigt dir alles. Jonte, das ist… äh…
+Hinnerk sieht dich an.
+* Ich heiße… Moment, das weiß ich noch! -> name
+* Sag einfach „du“. -> du
+
+== name
+Hinnerk: Na, dann nicht. Jonte, das ist „Moment“. Viel Spaß.
+Jonte lacht.
+-> los
+
+== du
+Hinnerk: Gut. Jonte, das ist „Du“.
+Jonte lacht.
+-> los
+
+== los
+Hinnerk geht. Jonte steht auf und gibt dir die Hand.
+Jonte: Moin! Du bist ganz nass, Digga. Bist du ins Wasser gefallen?
+* Ich weiß es nicht. -> nass
+* Ja. Vielleicht. -> nass
+
+== nass
+Jonte: Egal. Die Sonne kommt gleich. Also: Wir tragen die Säcke vom Hafen in das Haus da. Siehst du? Das Haus mit der roten Tür.
+Jonte: Nimm einen Sack!
+notiz: Nimm einen Sack!
+* Du nimmst einen kleinen Sack. -> klein
+* Du nimmst den größten Sack. -> gross
+
+== klein
+Jonte: Gut. Jetzt trag ihn zum Haus. Ich komme mit.
+-> tragen
+
+== gross
+Du nimmst den Sack. Er ist sehr schwer. Du kannst nicht mehr gehen. Du kannst nicht mehr sprechen. Du kannst nur noch „Uff“ sagen.
+Jonte: Krass! Langsam, langsam! Nimm lieber einen kleinen.
+-> tragen {jonte +1}
+
+== tragen
+Ihr tragt die Säcke zum Haus. Einen Sack, noch einen Sack, noch einen Sack. Die Tür ist offen. Drinnen ist es dunkel. Es riecht nach Salz.
+Jonte: Stell den Sack hier hin. Nein, nicht da! Hier, in die Ecke.
+notiz: Stell den Sack hier hin.
+* Du stellst den Sack in die Ecke. -> ecke
+* Du stellst den Sack auf Jontes Fuß. -> fuss
+
+== fuss
+Jonte: Au! Mein Fuß! Die Ecke, Digga, die Ecke! Da ist die Ecke!
+Er zeigt in die Ecke. Du stellst den Sack in die Ecke.
+Jonte: Danke. Mein Fuß sagt auch danke.
+-> ecke
+
+== ecke
+Jonte: Was ist in den Säcken? Salz. Alles Salz. Das Salz kommt aus Lüneburg. Und morgen geht es mit dem Schiff weiter nach Norden.
+Jonte sieht deine Uhr an.
+Jonte: Was ist das an deinem Arm?
+* Eine Uhr. Sie ist kaputt. -> uhr {jonte +1}
+* Nichts. Komm, wir tragen weiter. -> weiter
+
+== uhr
+Jonte: Eine Uhr? So klein? Krass. Wer hat die gemacht?
+* Ich weiß es nicht. -> weiter
+* Ein Mann in der Zukunft. -> zukunft
+
+== zukunft
+Jonte sieht dich lange an. Dann lacht er.
+Jonte: Du bist lustig. Ich mag dich.
+-> weiter {jonte +1}
+
+== weiter
+Ihr tragt und tragt. Am Mittag sind alle Säcke im Haus. Deine Arme tun weh. Dein Rücken tut weh. Alles tut weh.
+Hinnerk kommt.
+Hinnerk: Alle Säcke im Haus? Gut. Hier, für dich.
+Er gibt dir vier Pfennig.
+Hinnerk: Das ist nicht viel. Aber für Brot ist es genug.
+notiz: Das ist nicht viel, aber es ist genug.
+-> ende {geld +4}
+
+== ende
+Jonte: Hast du Hunger? Geh zu Greta. Die Bäckerei am Markt. Ihr Brot ist das beste in Hamburg.
+Jonte: Geh hier geradeaus und dann links. Du kannst es riechen!
+notiz: Geh geradeaus und dann links.
+-> baeckerei
