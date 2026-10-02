@@ -339,7 +339,7 @@ window.GAME = {"order":["ankunft","am_schiff","baeckerei","abend"],"scenes":{"an
       try {
         const st = JSON.parse(r.result);
         if (!gueltig(st)) throw new Error();
-        start(st); speichern(); schliessen();
+        sicherStart(st); speichern(); schliessen();
       } catch (e) { hinweis("Diese Datei ist kein Spielstand."); }
     };
     r.readAsText(file);
@@ -1043,19 +1043,21 @@ Reply with only this JSON:
       input.focus({ preventScroll: true });          // keep the keyboard open
       antworte(t);
     };
-    EINGABE = { form, input, send, grow };
+    EINGABE = { form, input, send, grow, neu: true };
     $("#a-form").append(form);
     return EINGABE;
   }
   function zeigeFormular(w) {
     const E = holeEingabe();
-    const war = E.form.hidden;
+    const war = E.form.hidden || E.neu;
+    E.neu = false;
     E.form.hidden = false;
     E.input.placeholder = w.versuch === 1 ? "Noch einmal – schreib den Satz besser …"
       : w.typ === "frei" ? "Sag etwas zu " + w.wer + " …" : "Antworte auf Deutsch …";
     E.input.readOnly = !!busy;                      // not disabled: that would drop focus and the keyboard
     E.send.textContent = busy ? "…" : "Senden";
     E.send.disabled = !!busy;
+    if (!entwurf && war && w.versuch === 1 && w.pending) entwurf = w.pending.eingabe;   // after a reload
     if (entwurf) { E.input.value = entwurf; entwurf = ""; E.grow(); fokus(E.input); }
     else if (war && FEIN) fokus(E.input);
   }
@@ -1339,8 +1341,23 @@ Reply with only this JSON:
   document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") schliessen(); });
   $("#datei").addEventListener("change", (ev) => { if (ev.target.files[0]) importieren(ev.target.files[0]); ev.target.value = ""; });
 
+  // Never leave a blank screen: if a saved game cannot be shown, keep a copy of it and
+  // start a new game instead.
+  function sicherStart(st) {
+    try { return start(st); } catch (e) {
+      console.error(e);
+      try { localStorage.setItem(KEY + ".kaputt", JSON.stringify(st)); } catch (e2) {}
+      try {
+        S = null; $("#log").textContent = "";
+        start(null);
+        hinweis("Dein alter Spielstand konnte nicht geladen werden. Du fängst neu an.");
+      } catch (e3) {
+        $("#log").textContent = "Das Spiel konnte nicht starten. Lade die Seite neu.";
+      }
+    }
+  }
   function start(st) {
-    S = gueltig(st) ? st : null;
+    S = gueltig(st) ? JSON.parse(JSON.stringify(st)) : null;    // a plain, writable copy
     if (S) {
       S.profil = Object.assign(neuesProfil(), S.profil || {});
       const alt = { "A2.1": "A2", "A2.2": "A2+" };           // older saves used a finer scale
@@ -1353,7 +1370,7 @@ Reply with only this JSON:
 
   async function boot() {
     const lokal = lokalLaden();
-    if (!window.claude || !window.claude.use) return start(lokal);
+    if (!window.claude || !window.claude.use) return sicherStart(lokal);
     $("#log").append(el("p", "Lädt …", "zeile klein"));
     const [sample, db, user] = await Promise.all(["sample", "db", "user"].map((n) => window.claude.use(n).catch(() => null)));
     SAMPLE = sample;
@@ -1364,12 +1381,13 @@ Reply with only this JSON:
         if (uid) {
           DOC = db.doc("data/users/" + uid + "/spielstand");
           const snap = await DOC.get();
-          if (snap.exists) stand = (snap.data() || {}).stand;
+          // Stored documents come back read-only: work on a plain copy.
+          if (snap.exists) { const d = snap.data() || {}; stand = d.stand ? JSON.parse(JSON.stringify(d.stand)) : null; }
         }
       } catch (e) { DOC = null; }
     }
     $("#log").textContent = "";
-    start(gueltig(stand) ? stand : lokal);
+    sicherStart(gueltig(stand) ? stand : lokal);
   }
   initScroll();
   boot();
