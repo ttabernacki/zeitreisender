@@ -104,7 +104,8 @@ main { flex: 1; padding-block: 12px 4px; display: flex; flex-direction: column; 
   position: sticky; bottom: 0; background: var(--bg); padding-block: 10px calc(14px + env(safe-area-inset-bottom, 0px));
   display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line);
 }
-#antworten:empty { display: none; }
+#antworten.leer { display: none; }
+#antworten > div { display: contents; }
 .tippen { display: flex; gap: 8px; }
 .tippen textarea {
   flex: 1; min-width: 0; resize: none; background: var(--card); border: 1px solid var(--line);
@@ -211,7 +212,7 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
 </header>
 
 <main id="log" aria-live="polite"></main>
-<section id="antworten" aria-label="Antworten"></section>
+<section id="antworten" class="leer" aria-label="Antworten"><div id="a-vor"></div><div id="a-form"></div><div id="a-nach"></div></section>
 <div id="hinweis" class="toast" hidden role="status"></div>
 
 <div id="hilfe" class="popup" hidden role="dialog">
@@ -967,7 +968,25 @@ Reply with only this JSON:
     $("#geld").textContent = S.geld + " ₰";
     $("#stufe").textContent = "STUFE " + stufe();
     $("#wortzahl").textContent = Object.keys(S.seen).filter(zaehlbar).length;
-    requestAnimationFrame(() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }));
+    if (angeheftet) { nachUnten(); requestAnimationFrame(nachUnten); }
+  }
+
+  // Follow the end of the story. Pinned while the player is near the bottom; scrolling
+  // up to re-read un-pins until they scroll back down or act (send, tap a choice).
+  let angeheftet = true, skript = 0;
+  const scroller = () => document.scrollingElement || document.documentElement;
+  function nachUnten() { skript = performance.now(); const e = scroller(); e.scrollTop = e.scrollHeight; }
+  function amEnde() { const e = scroller(); return e.scrollHeight - e.scrollTop - e.clientHeight < 140; }
+  function initScroll() {
+    window.addEventListener("scroll", () => { if (performance.now() - skript > 250) angeheftet = amEnde(); }, { passive: true });
+    const nach = () => { if (angeheftet) nachUnten(); };
+    if (window.ResizeObserver) {            // layout changes: new lines, the input growing, the keyboard
+      const ro = new ResizeObserver(nach);
+      ro.observe($("#log")); ro.observe($("#antworten"));
+    }
+    window.addEventListener("resize", nach);
+    if (window.visualViewport) window.visualViewport.addEventListener("resize", nach);
+    for (const ev of ["click", "submit"]) $("#antworten").addEventListener(ev, () => { angeheftet = true; }, true);
   }
 
   function aufgabeChips(w) {
@@ -993,113 +1012,135 @@ Reply with only this JSON:
     const ws = t.trim().split(/\s+/);
     return ws.length >= 4 ? ws.slice(0, 2).join(" ") + " …" : t;
   }
-  function eingabeFormular(w, optionen) {
+
+  // The one input form. It stays in the page across redraws so that focus and the
+  // phone keyboard survive (rebuilding it closed the keyboard and made the page jump).
+  let EINGABE = null;
+  const FEIN = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+  function fokus(inp) {
+    setTimeout(() => { inp.focus({ preventScroll: true }); inp.setSelectionRange(inp.value.length, inp.value.length); }, 0);
+  }
+  function holeEingabe() {
+    if (EINGABE) return EINGABE;
     const form = el("form", null, "tippen");
     const input = el("textarea");
     input.id = "eingabe-text";
     input.rows = 1;
-    input.placeholder = w.versuch === 1 ? "Noch einmal – schreib den Satz besser …"
-      : w.typ === "frei" ? "Sag etwas zu " + w.wer + " …" : "Antworte auf Deutsch …";
     input.setAttribute("aria-label", "Deine Antwort");
-    input.disabled = !!busy;
-    input.value = entwurf; entwurf = "";
+    const send = el("button", "Senden", "senden");
+    send.type = "submit";
+    form.append(input, send);
     const grow = () => { input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 120) + "px"; };
     input.addEventListener("input", grow);
-    input.addEventListener("keydown", (ev) => { if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); form.requestSubmit(); } });
-    const send = el("button", busy ? "…" : "Senden", "senden");
-    send.type = "submit";
-    send.disabled = !!busy;
-    form.append(input, send);
+    input.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter" && !ev.shiftKey && !ev.isComposing) { ev.preventDefault(); form.requestSubmit(); }
+    });
     form.onsubmit = (ev) => {
       ev.preventDefault();
       const t = input.value.trim();
       if (!t || busy) return;
-      input.value = ""; entwurf = "";
+      input.value = ""; grow();
+      input.focus({ preventScroll: true });          // keep the keyboard open
       antworte(t);
     };
-    if (!busy) setTimeout(() => { grow(); input.focus({ preventScroll: true }); input.setSelectionRange(input.value.length, input.value.length); }, 0);
-    return form;
+    EINGABE = { form, input, send, grow };
+    $("#a-form").append(form);
+    return EINGABE;
+  }
+  function zeigeFormular(w) {
+    const E = holeEingabe();
+    const war = E.form.hidden;
+    E.form.hidden = false;
+    E.input.placeholder = w.versuch === 1 ? "Noch einmal – schreib den Satz besser …"
+      : w.typ === "frei" ? "Sag etwas zu " + w.wer + " …" : "Antworte auf Deutsch …";
+    E.input.readOnly = !!busy;                      // not disabled: that would drop focus and the keyboard
+    E.send.textContent = busy ? "…" : "Senden";
+    E.send.disabled = !!busy;
+    if (entwurf) { E.input.value = entwurf; entwurf = ""; E.grow(); fokus(E.input); }
+    else if (war && FEIN) fokus(E.input);
   }
 
   function zeichneEingabe() {
     const box = $("#antworten");
-    const alt = $("#eingabe-text");
-    if (alt && !entwurf) entwurf = alt.value;
-    box.textContent = "";
+    const vor = [], nach = [];
+    let formular = false;
     const w = S.warten;
-    if (!w) return;
-    if (w.typ === "tagende") {
+    box.classList.toggle("leer", !w);
+    if (w && w.typ === "tagende") {
       const b = el("button", w.naechste ? "Weiter zu Tag " + G.scenes[w.naechste].tag : "Fortsetzung folgt …", "weiter");
       if (w.naechste) b.onclick = () => { S.warten = null; S.log = []; gehe(w.naechste + ".start"); };
       else b.disabled = true;
-      box.append(b);
-      return;
-    }
-    if (w.typ === "tagebuch") return zeichneTagebuch(box, w);
-    const tippen = !!SAMPLE;
-    if (w.typ === "frei" && !tippen) {
+      nach.push(b);
+    } else if (w && w.typ === "tagebuch") {
+      nach.push(zeichneTagebuch(w));
+    } else if (w && w.typ === "frei" && !SAMPLE) {
       const b = el("button", "Weiter", "weiter");
       b.onclick = () => freiEnde(false);
-      box.append(b);
-      return;
-    }
-    if (w.typ === "frei" && (w.braucht.length || w.form.length)) box.append(aufgabeChips(w));
-    if (w.versuch === 1) {
-      const row = el("div", null, "leiste repar");
-      row.append(el("span", "Versuch es noch einmal.", "klein"));
-      const l = el("button", "Lösung zeigen", "chip");
-      l.disabled = !!busy;
-      l.onclick = loesungZeigen;
-      row.append(l);
-      box.append(row);
-    }
-    if (tippen) box.append(eingabeFormular(w));
-    if (w.typ === "frei") {
-      const row = el("div", null, "leiste");
-      row.append(el("span", (w.braucht.length || w.form.length ? "Aufgabe" : "Freies Gespräch") + " · " + w.n + "/" + w.max, "klein"));
-      const end = el("button", w.braucht.length || w.form.length ? "Aufgabe beenden" : "Gespräch beenden", "chip");
-      end.disabled = !!busy;
-      end.onclick = () => freiEnde(aufgabeFertig(w) && (w.braucht.length > 0 || w.form.length > 0));
-      row.append(end);
-      box.append(row);
-      return;
-    }
-    if (tippen && w.versuch !== 1) {
-      const row = el("div", null, "leiste");
-      const t = el("button", vorschlaegeOffen ? "Hilfe ausblenden" : "Hilfe: Satzanfänge", "chip");
-      t.disabled = !!busy;
-      t.onclick = () => { vorschlaegeOffen = !vorschlaegeOffen; zeichneEingabe(); };
-      row.append(t);
-      if (vorschlaegeOffen) {
-        const g = el("button", vollOffen ? "Nur Anfänge" : "Ganze Sätze zeigen", "chip");
-        g.disabled = !!busy;
-        g.onclick = () => { vollOffen = !vollOffen; zeichneEingabe(); };
-        row.append(g);
+      nach.push(b);
+    } else if (w) {
+      const tippen = !!SAMPLE;
+      formular = tippen;
+      if (w.typ === "frei" && (w.braucht.length || w.form.length)) vor.push(aufgabeChips(w));
+      if (w.versuch === 1) {
+        const row = el("div", null, "leiste repar");
+        row.append(el("span", "Versuch es noch einmal.", "klein"));
+        const l = el("button", "Lösung zeigen", "chip");
+        l.disabled = !!busy;
+        l.onclick = loesungZeigen;
+        row.append(l);
+        vor.push(row);
       }
-      box.append(row);
+      if (w.typ === "frei") {
+        const row = el("div", null, "leiste");
+        row.append(el("span", (w.braucht.length || w.form.length ? "Aufgabe" : "Freies Gespräch") + " · " + w.n + "/" + w.max, "klein"));
+        const end = el("button", w.braucht.length || w.form.length ? "Aufgabe beenden" : "Gespräch beenden", "chip");
+        end.disabled = !!busy;
+        end.onclick = () => freiEnde(aufgabeFertig(w) && (w.braucht.length > 0 || w.form.length > 0));
+        row.append(end);
+        nach.push(row);
+      } else {
+        if (tippen && w.versuch !== 1) {
+          const row = el("div", null, "leiste");
+          const t = el("button", vorschlaegeOffen ? "Hilfe ausblenden" : "Hilfe: Satzanfänge", "chip");
+          t.disabled = !!busy;
+          t.onclick = () => { vorschlaegeOffen = !vorschlaegeOffen; zeichneEingabe(); };
+          row.append(t);
+          if (vorschlaegeOffen) {
+            const g = el("button", vollOffen ? "Nur Anfänge" : "Ganze Sätze zeigen", "chip");
+            g.disabled = !!busy;
+            g.onclick = () => { vollOffen = !vollOffen; zeichneEingabe(); };
+            row.append(g);
+          }
+          nach.push(row);
+        }
+        if (!tippen || (vorschlaegeOffen && w.versuch !== 1)) {
+          const list = el("div", null, "vorschlaege");
+          const gezeigt = new Set();
+          w.optionen.forEach((c, i) => {
+            const voll = !tippen || vollOffen;
+            const t = voll ? text(c.t) : stamm(text(c.t));
+            if (gezeigt.has(t)) return;
+            gezeigt.add(t);
+            const b = el("button", t, "option" + (voll ? "" : " anfang"));
+            b.disabled = !!busy;
+            b.onclick = () => {
+              if (voll) return waehle(i);
+              entwurf = t.replace(/ …$/, "") + " ";
+              zeichneEingabe();
+            };
+            list.append(b);
+          });
+          nach.push(list);
+        }
+      }
     }
-    if (!tippen || (vorschlaegeOffen && w.versuch !== 1)) {
-      const list = el("div", null, "vorschlaege");
-      const gezeigt = new Set();
-      w.optionen.forEach((c, i) => {
-        const voll = !tippen || vollOffen;
-        const t = voll ? text(c.t) : stamm(text(c.t));
-        if (gezeigt.has(t)) return;
-        gezeigt.add(t);
-        const b = el("button", t, "option" + (voll ? "" : " anfang"));
-        b.disabled = !!busy;
-        b.onclick = () => {
-          if (voll) return waehle(i);
-          entwurf = t.replace(/ …$/, "") + " ";
-          zeichneEingabe();
-        };
-        list.append(b);
-      });
-      box.append(list);
-    }
+    $("#a-vor").replaceChildren(...vor);
+    $("#a-nach").replaceChildren(...nach);
+    if (formular) zeigeFormular(w);
+    else if (EINGABE) EINGABE.form.hidden = true;
   }
 
-  function zeichneTagebuch(box, w) {
+  function zeichneTagebuch(w) {
     const card = el("div", null, "tagebuch-form");
     card.append(el("div", "TAGEBUCH · TAG " + w.tag, "label"));
     card.append(el("p", "Schreib 3 bis 5 Sätze über deinen Tag. Was hast du gemacht? Wen hast du getroffen?", "frage"));
@@ -1114,7 +1155,7 @@ Reply with only this JSON:
     input.setAttribute("aria-label", "Dein Tagebuch");
     input.placeholder = "Heute …";
     input.value = entwurf; entwurf = "";
-    input.disabled = !!busy;
+    input.readOnly = !!busy;
     const row = el("div", null, "leiste");
     const ok = el("button", busy ? "…" : "Abschicken", "senden");
     ok.disabled = !!busy;
@@ -1124,8 +1165,8 @@ Reply with only this JSON:
     skip.onclick = tagebuchUeberspringen;
     row.append(skip, ok);
     card.append(input, row);
-    box.append(card);
-    if (!busy) setTimeout(() => input.focus({ preventScroll: true }), 0);
+    if (!busy && FEIN) fokus(input);
+    return card;
   }
 
   function hinweis(t) {
@@ -1330,6 +1371,7 @@ Reply with only this JSON:
     $("#log").textContent = "";
     start(gueltig(stand) ? stand : lokal);
   }
+  initScroll();
   boot();
 })();
 </script>
