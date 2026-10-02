@@ -4,44 +4,44 @@ reihenfolge: 3
 szene: baeckerei
 titel: Bei Greta
 ort: Markt
-neu: Franzbrötchen, Zimt, nachdenken
+neu: Franzbrötchen, Zimt, Alkohol, lecker, nachdenken, genießen
 ---
 
 == start
-Der Markt ist voll. Leute, Hunde, Katzen, Kinder. Alle sprechen laut. Und dann riechst du es: Brot! Frisches Brot!
+Der Markt ist voll: Leute, Hunde, Katzen und Kinder, und alle sprechen laut. Dann riechst du es: frisches Brot!
 Die Bäckerei ist klein. Vor der Tür steht eine Frau mit roten Haaren. Sie lacht viel.
-Greta: Moin, moin! Du bist neu hier, oder? Ich bin Greta. Was möchtest du?
+Greta: Moin, moin! Du bist neu hier, oder? Ich bin Greta. Was möchtest du heute?
 notiz: Was möchtest du?
-* Einen Kaffee, bitte. -> kaffee
-* Was kostet das Brot? -> preis
+* Ich möchte bitte einen Kaffee. -> kaffee
+* Was kostet das Brot bei dir? -> preis
 
 == kaffee
-Greta: Einen… was?
-* Kaffee. Schwarz. Heiß. -> kaffee2
-* Ach, nichts. Was kostet das Brot? -> preis
+Greta: Einen … was?
+* Kaffee. Das ist ein schwarzes, heißes Getränk. -> kaffee2
+* Ach, vergiss es. Was kostet das Brot? -> preis
 
 == kaffee2
-Greta: Schwarz und heiß? Hm. Das ist nicht gut, oder? Möchtest du vielleicht lieber ein Bier?
-* Am Mittag? Nein, danke. -> preis
-* Ja, gern! -> bier
+Greta: Schwarz und heiß? Das ist komisch. Möchtest du lieber ein Bier?
+* Am Mittag? Nein danke, ich trinke keinen Alkohol. -> preis
+* Ja gern, ein Bier ist eine gute Idee! -> bier
 
 == bier
-Greta: Ich habe kein Bier. Ich habe Brot. Das hier ist eine Bäckerei.
+Greta: Ich habe kein Bier, ich habe nur Brot. Das hier ist eine Bäckerei!
 Sie lacht.
 -> preis
 
 == preis
-Greta: Das Brot kostet zwei Pfennig. Der Kuchen kostet drei Pfennig. Der Kuchen ist süß. Sehr, sehr gut!
+Greta: Das Brot kostet zwei Pfennig und der Kuchen drei. Der Kuchen ist süß und sehr lecker.
 notiz: Was kostet das Brot? – Das Brot kostet zwei Pfennig.
-* (!rabatt && geld >= 2) Ein Brot, bitte. -> brot {geld -2, item Brot}
+* (!rabatt && geld >= 2) Ich nehme ein Brot, bitte. -> brot {geld -2, item Brot}
 * (rabatt && geld >= 1) Ein Brot für einen Pfennig, bitte. -> brot {geld -1, item Brot}
-* (geld >= 3) Einen Kuchen, bitte. -> kuchen {geld -3, item Kuchen}
-* (geld >= 4) Ein Brot und einen Kuchen, bitte. -> beides
+* (geld >= 3) Ich möchte ein Stück Kuchen, bitte. -> kuchen {geld -3, item Kuchen}
+* (geld >= 4) Ich nehme ein Brot und ein Stück Kuchen. -> beides
 * (ki && !rabatt) Kannst du mir einen besseren Preis machen? -> feilschen
 * Hast du auch ein Franzbrötchen? -> franz
 
 == feilschen
-Greta: Einen besseren Preis? Für dich? Hm. Dann sag mir: Warum?
+Greta: Einen besseren Preis? Für dich? Hm. Dann sag mir mal: Warum soll ich dir das Brot billiger geben?
 frei: Greta | The player wants a lower price for bread; they have only 4 Pfennig. Greta is generous but wants a real reason (they worked all morning carrying salt sacks, they are new in town, they are hungry, they have no room yet). She teases but is persuaded by a good reason. She never uses modern words. | 4 -> feilschen_ende | ziel: Du hast nur vier Pfennig. Bitte Greta um einen besseren Preis. | braucht: wie viel du bezahlen möchtest; warum du Hilfe brauchst | form: weil | lohn: flag rabatt, greta +1
 
 == feilschen_ende
@@ -50,9 +50,9 @@ frei: Greta | The player wants a lower price for bread; they have only 4 Pfennig
 -> preis
 
 == franz
-Greta: Ein… Franz-Brötchen? Wer ist Franz? Und was ist das?
+Greta: Ein Franz-Brötchen? Wer ist denn Franz? Und was ist das für ein Brötchen?
 (ki) frei: Greta | Greta has never heard of a Franzbrötchen (a sweet, flat, layered roll with cinnamon and sugar from Hamburg). The player explains it. She is curious and asks what is in it, how it tastes, how one makes it. She knows cinnamon only as a very expensive spice. No modern words. | 4 -> franz_ende | ziel: Erkläre Greta, was ein Franzbrötchen ist. | braucht: wie es schmeckt; was im Brötchen ist | lohn: flag franzbroetchen, greta +1
-(!ki) Du sagst: „Das ist ein Brötchen mit Zimt. Aus Hamburg.“
+(!ki) Du sagst: „Das ist ein Brötchen mit Zimt. Es kommt aus Hamburg.“
 (!ki) Greta: Mit Zimt? Zimt ist sehr teuer. Den haben nur sehr reiche Leute.
 (!ki) -> franz2
 
@@ -61,30 +61,30 @@ Greta denkt nach.
 -> franz_ende {greta +1, flag franzbroetchen}
 
 == franz_ende
-(franzbroetchen) Greta: Brot mit Zimt… Das ist eine gute Idee! Komm in ein paar Wochen wieder. Vielleicht habe ich dann ein Brötchen für Franz.
+(franzbroetchen) Greta: Brot mit Zimt … Das ist eine gute Idee! Komm in ein paar Wochen wieder. Vielleicht habe ich dann ein Brötchen für Franz.
 (!franzbroetchen) Greta: Hm. Das ist schwer zu verstehen. Aber ich denke darüber nach.
 -> preis
 
 == beides
-Greta: Brot und Kuchen? Das sind fünf Pfennig. Du hast nur vier, oder?
-* Ja. Leider. -> beides2
-* Dann nur ein Brot, bitte. -> brot {geld -2, item Brot}
+Greta: Brot und Kuchen? Das macht fünf Pfennig, aber du hast nur vier. Oder?
+* Ja, leider. Mehr Geld habe ich heute nicht. -> beides2
+* Dann nehme ich nur das Brot, bitte. -> brot {geld -2, item Brot}
 
 == beides2
-Greta sieht dich an. Du bist nass, du bist müde, deine Arme tun weh.
-Greta: Weißt du was? Vier Pfennig. Weil du neu bist. Aber nur heute!
+Greta sieht dich an. Du bist nass und müde, und deine Arme tun noch weh.
+Greta: Weißt du was? Vier Pfennig für beides, weil du neu bist. Aber nur heute!
 notiz: Weil du neu bist.
 -> brot_kuchen {geld -4, item Brot, item Kuchen, greta +1}
 
 == brot
-Greta gibt dir ein großes Brot. Es ist noch warm.
-(stufe >= 2) Greta: Mein Vater war auch Bäcker. Er hat immer gesagt: Gutes Brot braucht Zeit, und gute Freunde auch.
+Greta gibt dir ein großes Brot. Es ist noch ganz warm.
+(stufe >= 2) Greta: Mein Vater war auch Bäcker. Er hat immer gesagt, dass gutes Brot Zeit braucht, genauso wie gute Freunde.
 Greta: Guten Appetit!
 -> ende
 
 == kuchen
 Greta gibt dir ein Stück Kuchen. Er ist süß und noch warm.
-Greta: Guten Appetit! Aber nicht alles auf einmal essen.
+Greta: Guten Appetit! Aber iss nicht alles auf einmal.
 -> ende
 
 == brot_kuchen
@@ -93,16 +93,16 @@ Greta: Guten Appetit!
 -> ende
 
 == ende
-Du isst. Es ist das beste Essen in deinem Leben. Vielleicht ist es auch nur der Hunger.
+Du isst und genießt jedes Stück. Es ist das beste Essen deines Lebens, oder du hast einfach nur sehr großen Hunger.
 Greta: Und wo schläfst du heute Nacht?
-* Ich habe noch kein Zimmer. -> zimmer
+* Ich habe noch kein Zimmer gefunden. -> zimmer
 * Ich schlafe am Hafen. -> hafen
 
 == hafen
-Greta: Am Hafen? Bei dem Wetter? Nein, nein, nein.
+Greta: Am Hafen? Bei diesem Wetter? Auf keinen Fall!
 -> zimmer
 
 == zimmer
-Greta: Geh zu Alheit. Sie hat ein Haus an der Elbe. Sie hat oft ein Zimmer frei. Sag ihr: Greta schickt dich.
+Greta: Dann geh zu Alheit. Sie hat ein Haus an der Elbe und vermietet oft Zimmer. Sag ihr, dass Greta dich schickt.
 notiz: Hast du ein Zimmer frei?
 -> abend

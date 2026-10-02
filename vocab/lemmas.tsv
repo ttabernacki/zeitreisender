@@ -59,8 +59,6 @@ Alarm	B1	3	NOUN	4.10	Alarme
 Alkohol	B1	2	NOUN	4.65	
 all	A1	1	OTHER	5.20	
 allein	A1	1	OTHER	5.34	
-allem	B1	2	OTHER	5.58	
-aller	B1	2	OTHER	5.30	
 allerdings	B1	2	OTHER	5.51	
 allgemein	B1	2	OTHER	4.75	
 Alltag	B1	2	NOUN	4.50	
@@ -2139,7 +2137,7 @@ Radfahrer	B1	2	NOUN	4.19
 Radfahrerin	B1	3	NOUN	2.93	Radfahrerinnen
 Radio	A2	1	NOUN	4.68	Radios
 Rand	B1	2	NOUN	4.47	Ränder
-Rasen	B1	3	NOUN	4.12	
+Rasen	B1	2	NOUN	4.12	
 rasieren	B1	3	VERB	3.56	rasiert,rasierte
 Rat	B1	2	NOUN	4.74	
 raten	A2	1	VERB	4.29	geraten,riet,rät

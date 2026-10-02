@@ -4,108 +4,108 @@ reihenfolge: 2
 szene: am_schiff
 titel: Säcke, Säcke, Säcke
 ort: Hafen
-neu: Pfennig, Digga, krass, weitertragen
+neu: Pfennig, Digga, krass, Händler, peinlich
 ---
 
 == start
-Vor einem großen Schiff liegen viele Säcke. Ein junger Mann sitzt auf einem Sack und isst einen Apfel.
-Hinnerk: Jonte! Pause ist vorbei!
-Jonte: Moin, Chef! Ich esse nur schnell…
-Hinnerk: Das ist Jonte. Er zeigt dir alles. Jonte, das ist… äh…
-Hinnerk sieht dich an.
-* Ich heiße… Moment, das weiß ich noch! -> name
-* Sag einfach „du“. -> du
+Vor einem großen Schiff liegen Säcke auf dem Boden, ein ganzer Berg. Ein junger Mann sitzt auf einem Sack und isst einen Apfel.
+Hinnerk: Jonte! Die Pause ist vorbei!
+Jonte: Moin, Chef! Ich esse doch nur schnell meinen Apfel …
+Hinnerk: Das ist der Neue. Er hilft heute bei den Säcken, und du zeigst ihm alles. Jonte, das ist … äh …
+Hinnerk sieht dich an und wartet.
+* Ich weiß meinen Namen gerade nicht mehr. Das ist mir sehr peinlich! -> name
+* Sagen Sie einfach „Du“ zu mir. -> du
 
 == name
-Hinnerk: Na, dann nicht. Jonte, das ist „Moment“. Viel Spaß.
+Hinnerk: Na dann nicht. Jonte, das ist „Moment“. Viel Spaß mit ihm!
 Jonte lacht.
 -> los
 
 == du
-Hinnerk: Gut. Jonte, das ist „Du“.
+Hinnerk: Gut. Jonte, das ist „Du“. Viel Spaß mit ihm!
 Jonte lacht.
 -> los
 
 == los
-Hinnerk geht. Jonte steht auf und gibt dir die Hand.
-Jonte: Moin! Du bist ganz nass, Digga. Was ist denn passiert?
-* Ich weiß es nicht. -> nass
-* Ich bin ins Wasser gefallen. Glaube ich. -> nass
+Hinnerk geht zurück zu seinem Büro. Jonte steht auf und gibt dir die Hand.
+Jonte: Moin! Du bist ja total nass, Digga. Was ist denn mit dir passiert?
+* Ich weiß es nicht. Ich bin hier plötzlich wach geworden. -> nass
+* Ich glaube, ich bin ins Wasser gefallen. -> nass
 
 == nass
-Jonte: Egal. Die Sonne kommt gleich. Also: Wir tragen die Säcke vom Hafen in das Haus da. Siehst du? Das Haus mit der roten Tür.
-Jonte: Nimm einen Sack!
+Jonte: Egal, die Sonne kommt gleich, dann wirst du schnell trocken. Wir müssen alle Säcke vom Schiff ins Lager bringen. Siehst du das Haus mit der roten Tür?
+Jonte: Komm, nimm einen Sack!
 notiz: Nimm einen Sack!
-* Du nimmst einen kleinen Sack. -> klein
-* Du nimmst den größten Sack. -> gross
+* Ich nehme einen kleinen Sack. -> klein
+* Ich nehme den größten Sack hier. -> gross
 
 == klein
-Jonte: Gut. Jetzt trag ihn zum Haus. Ich komme mit.
+Jonte: Gut, aber nicht zu langsam! Ich komme mit.
 -> tragen
 
 == gross
-Du nimmst den Sack. Er ist sehr schwer. Du kannst nicht mehr gehen. Du kannst nicht mehr sprechen. Du kannst nur noch „Uff“ sagen.
+Du nimmst den Sack, aber er ist viel schwerer, als du gedacht hast. Du kannst nicht mehr gehen und nicht mehr sprechen, nur noch „Uff“ sagen.
 Jonte: Krass! Langsam, langsam! Nimm lieber einen kleinen.
 -> tragen {jonte +1}
 
 == tragen
-Ihr tragt die Säcke zum Haus. Einen Sack, noch einen Sack, noch einen Sack. Die Tür ist offen. Drinnen ist es dunkel. Es riecht nach Salz.
-Jonte: Stell den Sack hier hin. Nein, nicht da! Hier, in die Ecke.
-notiz: Stell den Sack hier hin.
-* Du stellst den Sack in die Ecke. -> ecke
-* Du stellst den Sack auf Jontes Fuß. -> fuss
+Ihr tragt die Säcke zum Lager. Einen Sack, noch einen Sack, noch einen Sack. Drinnen ist es dunkel und kühl, und es riecht nach Salz.
+Jonte: Wohin mit dem Sack? Nein, nicht dort! Hier in die Ecke, weil der Händler morgen kommt.
+notiz: Stell den Sack in die Ecke!
+* Ich stelle den Sack in die Ecke. -> ecke
+* Ich stelle den Sack auf deinen Fuß. -> fuss
 
 == fuss
 Jonte: Au! Mein Fuß! Die Ecke, Digga, die Ecke! Da ist die Ecke!
-Er zeigt in die Ecke. Du stellst den Sack in die Ecke.
+Er zeigt in die Ecke, und du stellst den Sack in die Ecke.
 Jonte: Danke. Mein Fuß sagt auch danke.
 -> ecke
 
 == ecke
-Jonte: Was ist in den Säcken? Salz. Alles Salz. Das Salz kommt aus Lüneburg. Und morgen geht es mit dem Schiff weiter nach Norden.
-Jonte sieht deine Uhr an.
-Jonte: Was ist das an deinem Arm?
-* Eine Uhr. Sie ist kaputt. -> uhr {jonte +1}
-* Nichts. Komm, wir tragen weiter. -> weiter
+Jonte: Weißt du, was in den Säcken ist? Salz, nur Salz. Es kommt aus Lüneburg, und morgen fährt das Schiff weiter nach Norden.
+Jonte sieht auf deine Uhr.
+Jonte: Was hast du da am Arm?
+* Das ist eine Uhr. Sie ist leider kaputt. -> uhr {jonte +1}
+* Das ist nichts. Komm, wir machen weiter. -> weiter
 
 == uhr
-Jonte: Eine Uhr? So klein? Krass. Wer hat die gemacht?
-* Ich weiß es nicht. -> weiter
-* Ein Mann in der Zukunft. -> zukunft
+Jonte: Eine Uhr? So klein? Krass! Wer hat die denn gemacht?
+* Ich weiß es nicht mehr. -> weiter
+* Ein Mann aus der Zukunft hat sie gebaut. -> zukunft
 
 == zukunft
-Jonte sieht dich lange an. Dann lacht er.
-Jonte: Du bist lustig. Ich mag dich.
+Jonte sieht dich lange an. Dann fängt er an zu lachen.
+Jonte: Du bist wirklich lustig. Ich mag dich schon jetzt.
 -> weiter {jonte +1}
 
 == weiter
-Ihr tragt und tragt. Am Mittag sind alle Säcke im Haus. Deine Arme tun weh. Dein Rücken tut weh. Alles tut weh.
-Hinnerk kommt.
-Hinnerk: Alle Säcke im Haus? Gut. Hier, für dich.
+Ihr arbeitet und arbeitet. Am Mittag sind alle Säcke im Lager. Deine Arme tun weh, dein Rücken tut weh, und eigentlich tut alles weh.
+Hinnerk kommt zu euch.
+Hinnerk: Sind alle Säcke da? Gut. Hier ist dein Lohn.
 Er gibt dir vier Pfennig.
-Hinnerk: Das ist nicht viel. Aber für Brot ist es genug.
+Hinnerk: Das ist nicht viel. Aber für ein Brot ist es genug.
 notiz: Das ist nicht viel, aber es ist genug.
 -> ende {geld +4}
 
 == ende
-Jonte: Hast du Hunger? Geh zu Greta. Die Bäckerei am Markt. Ihr Brot ist das beste in Hamburg.
-Jonte: Geh hier geradeaus und dann links. Du kannst es riechen!
-notiz: Geh geradeaus und dann links.
+Jonte: Hast du Hunger? Dann geh zu Greta in die Bäckerei am Markt. Sie macht das beste Brot in ganz Hamburg.
+Jonte: Du gehst hier geradeaus und dann nach links. Du kannst es schon von weitem riechen!
+notiz: Geh geradeaus und dann nach links.
 -> weg
 
 == weg
-Du stehst am Hafen. Vor dir ist die Straße. Wo geht es zu Greta?
+Du stehst am Hafen, und vor dir liegt die Straße zum Markt. Wohin gehst du?
 * Ich gehe geradeaus und dann links. -> baeckerei
-* Ich gehe links und dann geradeaus. -> falsch1
-* Ich gehe geradeaus und dann rechts. -> falsch2
+* Ich gehe erst links und dann geradeaus. -> falsch1
+* Ich gehe erst geradeaus und dann rechts. -> falsch2
 
 == falsch1
-Du gehst links und dann geradeaus. Es riecht stark nach Fisch. Vor dir steht ein Mann mit einem sehr großen Fisch. Der Fisch sieht dich an. Du siehst den Fisch an.
-Von weit her ruft Jonte: „Nein! Zuerst geradeaus! Dann links!“
+Du gehst nach links und dann geradeaus. Es riecht immer stärker nach Fisch, und plötzlich stehst du vor einem Mann mit einem sehr großen Fisch. Der Fisch sieht dich an, und du siehst den Fisch an.
+Von weitem ruft Jonte: „Nein! Zuerst geradeaus, dann links!“
 notiz: Zuerst geradeaus, dann links.
 -> weg
 
 == falsch2
-Du gehst geradeaus und dann rechts. Hier ist eine Tür. Eine sehr kleine Tür. Du machst sie auf. Drinnen ist ein Hund. Er sieht dich an. Er hat sehr große Zähne.
-Von weit her ruft Jonte: „Nicht rechts! Links, Digga, links!“
+Du gehst geradeaus und dann nach rechts. Dort ist eine kleine Tür. Du machst sie auf, und drinnen sitzt ein Hund mit sehr großen Zähnen. Er sieht dich an, und du gehst lieber schnell weg.
+Von weitem ruft Jonte: „Nicht rechts! Links, Digga, links!“
 -> weg

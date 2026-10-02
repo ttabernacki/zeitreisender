@@ -4,101 +4,100 @@ reihenfolge: 4
 szene: abend
 titel: Bei Alheit
 ort: Alheits Haus
+neu: sondern, damit, funktionieren
 tagebuch: perfekt
 ---
 
 == start
-Es ist Abend. Das Haus von Alheit ist klein und alt. Es steht direkt an der Elbe. Im Fenster ist Licht.
-Du rufst: „Hallo?“ Eine alte Frau öffnet die Tür. Sie hat einen Hund. Der Hund ist auch alt.
+Es ist schon Abend, als du Alheits Haus erreichst. Es ist klein und alt und steht direkt an der Elbe. Im Fenster ist ein warmes Licht.
+Du rufst: „Hallo? Ist jemand da?“ Eine alte Frau öffnet die Tür, und neben ihr steht ein alter Hund.
 Alheit: Moin. Wer bist du denn?
-* Greta schickt mich. -> greta {alheit +1}
-* Hast du ein Zimmer frei? -> zimmer
+* Greta hat mich geschickt. -> greta {alheit +1}
+* Haben Sie vielleicht ein Zimmer frei? -> zimmer
 
 == greta
-Alheit: Ah, Greta! Dann komm rein, komm rein. Es ist kalt.
+Alheit: Ah, Greta schickt dich! Dann komm ins Haus, draußen ist es kalt.
 -> drinnen
 
 == zimmer
-Alheit: Ein Zimmer? Vielleicht. Wer schickt dich?
-* Greta. Von der Bäckerei. -> greta {alheit +1}
-* Niemand. Ich bin einfach hier. -> niemand
+Alheit: Ein Zimmer? Vielleicht. Wer schickt dich denn?
+* Greta aus der Bäckerei hat mich geschickt. -> greta {alheit +1}
+* Niemand. Ich bin einfach so hier. -> niemand
 
 == niemand
-Alheit: Einfach hier. Hm. Das sagen viele. Na gut, komm rein. Es ist kalt.
+Alheit: Einfach so. Hm. Na gut, komm ins Haus, es ist kalt.
 -> drinnen
 
 == drinnen
-Drinnen ist ein Feuer. Über dem Feuer steht ein Topf mit Suppe. Es riecht sehr gut.
-Alheit: Setz dich. Hier, eine Suppe. Du siehst müde aus.
+Drinnen ist es schön warm. Über dem Feuer steht ein Topf mit Suppe, und es riecht wunderbar.
+Alheit: Setz dich. Du siehst müde aus. Hier, iss eine Suppe.
 notiz: Setz dich!
-Du isst die Suppe. Sie ist heiß und gut. Der Hund legt seinen Kopf auf deinen Fuß.
-Alheit: Das Zimmer kostet einen Pfennig für die Nacht. Oder du hilfst mir morgen früh im Haus. Wasser holen, die Küche putzen.
-* (geld >= 1) Hier ist ein Pfennig. -> bezahlen {geld -1}
-* Ich helfe dir morgen gern. -> helfen {alheit +1, flag hilft_alheit}
-* Ich verstehe das nicht. -> erklaeren
+Du isst die Suppe. Sie ist heiß und schmeckt gut, und der Hund legt seinen Kopf auf deinen Fuß.
+Alheit: Das Zimmer kostet einen Pfennig pro Nacht. Oder du hilfst mir morgen früh im Haus: Wasser holen und die Küche putzen.
+* (geld >= 1) Hier ist ein Pfennig. Danke für das Zimmer! -> bezahlen {geld -1}
+* Ich helfe dir morgen gern, weil ich nicht viel Geld habe. -> helfen {alheit +1, flag hilft_alheit}
+* Entschuldigung, das habe ich nicht verstanden. -> erklaeren
 
 == erklaeren
-Alheit spricht jetzt langsam. Sie zeigt mit der Hand.
-Alheit: Das Zimmer. Für eine Nacht. Ein Pfennig. Oder: Morgen. Du. Hilfst. Mir.
-Sie zeigt auf den Eimer und auf die Küche.
-Alheit: Wasser holen. Küche putzen. Verstehst du?
+Alheit spricht jetzt langsamer und zeigt mit den Händen.
+Alheit: Das Zimmer: eine Nacht, ein Pfennig. Oder: Morgen hilfst du mir. Wasser holen, Küche putzen. Verstehst du?
 notiz: Verstehst du? – Ja, jetzt verstehe ich.
-* Ah! Ja, jetzt verstehe ich. Ich helfe dir gern. -> helfen {alheit +1, flag hilft_alheit}
-* (geld >= 1) Ah! Hier ist ein Pfennig. -> bezahlen {geld -1}
+* Ah, jetzt verstehe ich! Ich helfe dir gern. -> helfen {alheit +1, flag hilft_alheit}
+* (geld >= 1) Ah! Dann bezahle ich lieber mit einem Pfennig. -> bezahlen {geld -1}
 
 == bezahlen
-Alheit: Danke. Das Zimmer ist oben. Das Bett ist klein, aber sauber.
+Alheit: Danke. Das Zimmer ist oben, das Bett ist klein, aber sauber.
 -> uhr
 
 == helfen
-Alheit: Gut. Dann bis morgen früh. Nicht zu spät! Das Zimmer ist oben. Das Bett ist klein, aber sauber.
+Alheit: Gut. Dann sehen wir uns morgen früh, aber komm nicht zu spät! Das Zimmer ist oben, das Bett ist klein, aber sauber.
 -> uhr
 
 == uhr
-Deine Uhr macht wieder „Piep“. Der Hund sieht dich an. Alheit sieht deinen Arm an.
+Deine Uhr macht wieder „Piep“. Der Hund sieht dich an, und Alheit sieht auf deinen Arm.
 Alheit: Was ist das?
-* Meine Uhr. Sie ist kaputt. -> kaputt
+* Das ist meine Uhr. Sie ist kaputt. -> kaputt
 * Das ist nichts. -> nichts
 
 == nichts
-Alheit: Nichts? Hm. Mein Hund findet das sehr interessant.
+Alheit: Nichts? Hm. Mein Hund findet deine Uhr aber sehr interessant.
 -> kaputt
 
 == kaputt
-Du zeigst ihr die Uhr. Alheit sieht sie lange an. Sie sagt nichts. Dann sagt sie leise:
+Du zeigst ihr die Uhr. Alheit sieht sie lange an und sagt nichts. Dann fragt sie leise:
 Alheit: So eine Uhr habe ich noch nie gesehen. Woher kommst du wirklich?
-* Aus der Zukunft. -> zukunft {alheit +1}
-* Von weit her. -> weit
+* Ich komme aus der Zukunft. -> zukunft {alheit +1}
+* Von sehr weit weg, glaube ich. -> weit
 
 == zukunft
 Alheit lacht nicht.
-Alheit: Aus der Zukunft. Gut. Dann musst du auch wieder zurück, oder?
+Alheit: Aus der Zukunft. Gut. Dann willst du sicher wieder zurück, oder?
 -> rat
 
 == weit
-Alheit: Von weit her. Ja. Das sehe ich.
+Alheit: Von weit weg. Ja, das sehe ich.
 Sie lacht nicht.
 -> rat
 
 == rat
-Alheit: Hör mir gut zu. Hier in Hamburg bekommst du Hilfe nicht mit Geld. Du bekommst Hilfe mit Freunden. Erst die Freunde, dann die Hilfe. Verstehst du?
+Alheit: Hör gut zu. In Hamburg bekommst du Hilfe nicht mit Geld, sondern mit Freunden. Erst die Freunde, dann die Hilfe. Verstehst du das?
 notiz: Erst die Freunde, dann die Hilfe.
-* Ja. Ich verstehe. -> plaudern
-* Nein. Kannst du das noch einmal sagen? -> nochmal
+* Ja, ich verstehe. Ich muss also neue Freunde finden. -> plaudern
+* Nein, kannst du das bitte noch einmal sagen? -> nochmal
 
 == nochmal
-Alheit: Natürlich. Also: Du brauchst Hilfe für deine Uhr. Leute helfen dir, wenn sie dich kennen. Wenn sie dich mögen. Also: Lern die Leute kennen. Jonte, Greta, Hinnerk…
+Alheit: Natürlich. Du brauchst Hilfe, damit deine Uhr wieder funktioniert. Die Leute helfen dir nur, wenn sie dich kennen und mögen. Also lern Jonte, Greta und Hinnerk gut kennen.
 notiz: Kannst du das noch einmal sagen?
 -> plaudern
 
 == plaudern
-Das Feuer ist warm. Der Hund schläft schon.
+Das Feuer ist warm, und der Hund schläft schon.
 Alheit: Na, erzähl mal. Wie war dein erster Tag in Hamburg?
 frei: Alheit | By the fire. Alheit asks about the player's first day (the harbor, Hinnerk, Jonte, the salt sacks, Greta and the bread). She asks questions that need the Perfekt (what did you do, who did you meet, what did you eat) and is gently curious about the watch without pushing. | 5 -> gute_nacht | ziel: Erzähl Alheit von deinem ersten Tag. | braucht: wo du heute warst; wen du getroffen hast; was du gegessen hast | form: perfekt
 
 == gute_nacht
-Alheit: Und jetzt: ab ins Bett. Gute Nacht!
-Du gehst nach oben. Das Bett ist wirklich klein. Aber du schläfst sofort ein.
-Du träumst von Säcken. Von sehr vielen Säcken.
+Alheit: Und jetzt geh ins Bett. Gute Nacht!
+Du gehst nach oben. Das Bett ist wirklich klein, aber du schläfst sofort ein.
+Du träumst von Säcken, von sehr vielen Säcken.
 notiz: Gute Nacht!
 -> ENDE

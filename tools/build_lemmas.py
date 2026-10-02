@@ -33,7 +33,7 @@ JUNK = {"alphabetischer", "wortschatz", "wortliste"}
 FIXES = {"sicherkälten": "sich erkälten", "erkältetsich": "erkältet sich"}
 # Fragments of labels/abbreviations, not words.
 FORM_STOP = {"sich", "es", "an", "vor", "am", "als", "zusammen", "Modalverb", "lassen"}
-STOP = {"A", "CH", "D", "pl", "Pl", "Sg", "en", "un", "o", "ca", "usw", "etc", "bzw", "Ergeschoß"}
+STOP = {"aller", "allem", "A", "CH", "D", "pl", "Pl", "Sg", "en", "un", "o", "ca", "usw", "etc", "bzw", "Ergeschoß"}
 
 WORD = re.compile(r"^[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß\-]*$")
 

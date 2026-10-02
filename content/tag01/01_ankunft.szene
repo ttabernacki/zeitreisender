@@ -4,76 +4,74 @@ reihenfolge: 1
 szene: ankunft
 titel: Moin!
 ort: Hafen
-neu: Hafen, Moin, Sack
+neu: Hafen, Moin, Sack, Eimer, Hafenmeister, Boden, Zukunft, Kraft, Lager, Lohn, seltsam, Reisender
 ---
 
 == start
-Wasser. Kaltes Wasser. Überall.
-Du öffnest die Augen. Du liegst auf dem Rücken. Über dir ist der Himmel. Grau.
-Ein Mann steht neben dir. Er ist groß und hat lange, graue Haare. In der Hand hat er einen Eimer.
-Hinnerk: Moin!
+Plötzlich trifft dich kaltes Wasser im Gesicht. Du hustest und machst die Augen auf. Du liegst auf dem Rücken, und über dir ist ein grauer Himmel.
+Neben dir steht ein großer Mann mit langen, grauen Haaren. In der Hand hat er einen leeren Eimer, und er sieht nicht besonders freundlich aus.
+Hinnerk: Moin! Na also, du lebst ja noch. Ich habe schon gedacht, dass du nie wieder wach wirst.
 notiz: Moin!
-* Moin? -> moin
-* Wo bin ich? -> wo
+* Moin? Wo bin ich hier? -> wo
+* Moin. Warum haben Sie mich nass gemacht? -> warum
 
-== moin
-Hinnerk: Ja, Moin! Na also. Du kannst ja sprechen.
+== warum
+Hinnerk: Weil du auf dem Boden gelegen hast und nicht wach geworden bist. Das Wasser war die schnellste Hilfe.
 -> wo
 
 == wo
-Hinnerk: Du bist in Hamburg. Am Hafen. Und du liegst mitten im Weg.
-Hinter dem Mann siehst du Schiffe. Viele Schiffe. Alte Schiffe. Männer tragen Säcke vom Schiff. Es riecht nach Fisch.
-Du siehst auf deine Uhr. Sie ist an deinem Arm. Die Uhr ist kaputt. Das Glas ist kaputt, und sie macht komische Sachen: „Piep. Piep. Piep.“
+Hinnerk: Du bist in Hamburg, am Hafen. Und du liegst im Weg, weil hier jeden Morgen die Schiffe ankommen.
+Hinter dem Mann siehst du alte Schiffe. Männer tragen schwere Säcke vom Schiff, und es riecht stark nach Fisch.
+Du siehst auf deine Uhr. Das Glas ist kaputt, und sie macht seltsame Sachen: „Piep. Piep. Piep.“
 Hinnerk: Was ist das denn? Ein Vogel?
-* Das ist meine Uhr. -> uhr
-* Das ist nichts. -> nichts
+* Das ist meine Uhr. Sie ist leider kaputt. -> uhr
+* Das ist nichts. Sie macht das oft. -> nichts
 
 == uhr
-Hinnerk: Eine Uhr? An deinem Arm? So klein?
+Hinnerk: Eine Uhr? An deinem Arm? Und so klein? Das glaube ich nicht.
 Er lacht laut.
 Hinnerk: Und mein Hund kann fliegen.
 -> wer
 
 == nichts
-Hinnerk: Nichts. Aha. Nichts macht „Piep“.
+Hinnerk: Nichts macht „Piep“, mein Freund. Aber gut, das ist mir egal.
 Er sieht dich lange an.
 -> wer
 
 == wer
-Hinnerk: Ich bin Hinnerk. Ich bin hier der Hafenmeister. Das heißt: Hier am Hafen sage ich, was passiert.
-(stufe >= 2) Hinnerk: Früher war es hier ruhig. Heute kommen jeden Tag mehr Schiffe, und alle wollen die Ersten sein.
-Hinnerk: Und wer bist du?
-* Ich weiß es nicht genau. -> weiss_nicht {hinnerk +1}
-* Ich bin ein Reisender. Aus der Zukunft. -> zukunft
+Hinnerk: Ich bin Hinnerk, der Hafenmeister. Das heißt, dass hier am Hafen niemand etwas ohne mich macht.
+(stufe >= 2) Hinnerk: Früher war es hier viel ruhiger, aber seit einem Jahr kommen jeden Tag mehr Schiffe, und alle wollen die Ersten sein.
+Hinnerk: Und wer bist du? Woher kommst du?
+* Ich weiß es nicht genau. Ich glaube, dass ich lange geschlafen habe. -> weiss_nicht {hinnerk +1}
+* Ich bin ein Reisender. Ich komme aus der Zukunft. -> zukunft
 
 == zukunft
-Hinnerk: Aus der… was?
-Er stellt den Eimer hin.
-Hinnerk: Junge, Junge. Du hast zu viel Wasser im Kopf. Oder zu viel Bier.
+Hinnerk: Aus der … was? Junge, du hast zu viel Wasser im Kopf. Oder zu viel Bier getrunken.
+Er stellt den Eimer auf den Boden.
 -> arbeit
 
 == weiss_nicht
-Hinnerk: Du weißt es nicht. Hm. Das passiert hier oft. Die Leute kommen vom Schiff und wissen nichts mehr. Kein Problem.
+Hinnerk: Du weißt es nicht? Hm. Das passiert hier oft. Leute kommen vom Schiff und haben alles vergessen. Das ist kein Problem.
 -> arbeit
 
 == arbeit
-Hinnerk: Was hast du bei dir? Geld?
-Du suchst in deinen Taschen. In deiner Jacke. Nichts. Kein Geld. Kein Handy. Nur die kaputte Uhr.
-* Nein. Ich habe kein Geld. -> kein_geld
-* Ich… äh… Moment… -> kein_geld
+Hinnerk: Also gut. Was hast du bei dir? Geld? Papiere? Etwas zu essen?
+Du suchst in deinen Taschen und in deiner Jacke. Aber du findest nichts: kein Geld, kein Handy, nur die kaputte Uhr.
+* Nein, ich habe nichts bei mir. Nur diese Uhr. -> kein_geld
+* Ich habe mein Geld verloren, glaube ich … -> kein_geld
 
 == kein_geld
-Hinnerk: Das habe ich mir gedacht. Also: Ohne Geld kein Essen. Ohne Essen keine Arbeit. Ohne Arbeit kein Geld. Hm.
-Hinnerk: Aber ich habe Arbeit. Du trägst Säcke vom Schiff. Ich bezahle dich. Heute Abend. Gut?
-* Gut. Ich mache das. -> ja {hinnerk +1}
-* Säcke tragen? Ich? -> ich
+Hinnerk: Das habe ich mir gedacht. Ohne Geld kannst du nichts essen, und ohne Essen hast du keine Kraft. Aber ich habe Arbeit für dich!
+Hinnerk: Du trägst heute Säcke mit Salz vom Schiff ins Lager. Wenn du fertig bist, bekommst du deinen Lohn. Einverstanden?
+* Einverstanden. Ich mache das gern, weil ich Hunger habe. -> ja {hinnerk +1}
+* Säcke tragen? Ich? Ich habe noch nie so schwer gearbeitet! -> ich
 
 == ich
-Hinnerk: Ja, du. Liegt hier noch ein anderer im Weg?
+Hinnerk: Du, genau du. Liegt hier noch jemand anders im Weg?
 -> ja
 
 == ja
-Hinnerk: Gut. Steh auf! Komm mit!
-Du stehst auf. Deine Kleidung ist nass. Deine Schuhe auch. Hinnerk geht schnell. Du gehst hinter ihm.
-notiz: Steh auf! Komm mit!
+Hinnerk: Gut. Dann steh auf und komm mit!
+Du stehst langsam auf. Deine Kleidung ist nass, und deine Schuhe sind es auch. Hinnerk geht schnell, und du musst dich beeilen, weil du ihn sonst verlierst.
+notiz: Steh auf und komm mit!
 -> am_schiff
