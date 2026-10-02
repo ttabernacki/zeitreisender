@@ -6,10 +6,13 @@ A text-only German learning game based on comprehensible input. A time traveler 
 
 **Artifact (recommended):** https://claude.ai/artifact/9YyZSyrqPbdtb2VrRgdLzy. It's private, so only you can open it. This version has:
 
-- **Typed answers.** Claude works out which story branch you meant, so you can say it your own way, and *Vorschläge zeigen* reveals the hand-written options.
-- **Corrections.** The character repeats your sentence correctly in the scene (a recast), and *✎ Korrektur* shows the corrected sentence plus a short German explanation. Nothing you type is restricted by tier: advanced or modern German is never marked wrong for being advanced.
+- **Typed answers.** Claude works out which story branch you meant, so you can say it your own way. *Hilfe: Satzanfänge* shows only the first words of the written options (they land in the input box for you to finish); *Ganze Sätze zeigen* reveals the full options.
+- **Say more, get more.** Each answer is rated for effort. A one-word answer gets an open follow-up question from the character, and only fuller answers earn trust (♥). Clicking a ready-made sentence earns none.
+- **Repair first.** When you make a real mistake the character answers "Hm? Wie bitte?", the wrong spot is marked and you get a short hint (no answer). You get one try to fix it; *Lösung zeigen* gives up. After that the correction is shown (✎ Korrektur) and the character repeats the correct form. Nothing you type is ever blocked for being advanced.
+- **Tasks with required grammar.** `frei:` scenes can set a goal, a checklist of things you must say, and constructions you must use correctly (Perfekt, weil-Satz, Konjunktiv II, …). Day 1: haggle with Greta (weil), explain a Franzbrötchen, tell Alheit about your day (Perfekt). Finishing pays out (price, friendship).
+- **Daily diary.** At the end of each day you write 3–5 sentences, using the day's constructions. It's corrected, the corrected version is kept in *Notizbuch → Tagebuch*, and new words used correctly earn a few ₰.
+- **Mistake log.** *Notizbuch → Meine Fehler* counts mistakes per category (haben/sein, Partizip, Dativ, Wortstellung, …) with the last outcomes as ✗✓. Recurring ones are fed back into the characters' prompts so you get natural reasons to use those forms again; the words you look up are reused in later replies.
 - **Adaptive level.** Each answer gets a CEFR estimate and a list of structures you used correctly. Once you show the level, harder hand-written lines (`(stufe >= 2)`) unlock before their scheduled day, and AI-written lines follow your level.
-- **Free conversation.** Scenes can include free talk (`frei:` lines) with a character, at your level.
 - **AI word help.** Tap any word and choose *Erklären* for a simple German explanation.
 - **Account save.** Your game is saved to your account (private per-user `db` storage). Claude usage runs on your own Claude plan. *Menü* switches the corrections between fast and thorough.
 

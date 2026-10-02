@@ -33,21 +33,37 @@ Sie lacht.
 == preis
 Greta: Das Brot kostet zwei Pfennig. Der Kuchen kostet drei Pfennig. Der Kuchen ist süß. Sehr, sehr gut!
 notiz: Was kostet das Brot? – Das Brot kostet zwei Pfennig.
-* (geld >= 2) Ein Brot, bitte. -> brot {geld -2, item Brot}
+* (!rabatt && geld >= 2) Ein Brot, bitte. -> brot {geld -2, item Brot}
+* (rabatt && geld >= 1) Ein Brot für einen Pfennig, bitte. -> brot {geld -1, item Brot}
 * (geld >= 3) Einen Kuchen, bitte. -> kuchen {geld -3, item Kuchen}
 * (geld >= 4) Ein Brot und einen Kuchen, bitte. -> beides
+* (ki && !rabatt) Kannst du mir einen besseren Preis machen? -> feilschen
 * Hast du auch ein Franzbrötchen? -> franz
 
+== feilschen
+Greta: Einen besseren Preis? Für dich? Hm. Dann sag mir: Warum?
+frei: Greta | The player wants a lower price for bread; they have only 4 Pfennig. Greta is generous but wants a real reason (they worked all morning carrying salt sacks, they are new in town, they are hungry, they have no room yet). She teases but is persuaded by a good reason. She never uses modern words. | 4 -> feilschen_ende | ziel: Du hast nur vier Pfennig. Bitte Greta um einen besseren Preis. | braucht: wie viel du bezahlen möchtest; warum du Hilfe brauchst | form: weil | lohn: flag rabatt, greta +1
+
+== feilschen_ende
+(rabatt) Greta: Na gut! Heute kostet das Brot nur einen Pfennig. Aber nur für dich!
+(!rabatt) Greta: Hm. Nein, tut mir leid. Das Brot kostet zwei Pfennig.
+-> preis
+
 == franz
-Greta: Ein… Franz-Brötchen? Wer ist Franz?
-* Das ist ein Brötchen mit Zimt. Aus Hamburg. -> franz2
-* Vergiss es. -> preis
+Greta: Ein… Franz-Brötchen? Wer ist Franz? Und was ist das?
+(ki) frei: Greta | Greta has never heard of a Franzbrötchen (a sweet, flat, layered roll with cinnamon and sugar from Hamburg). The player explains it. She is curious and asks what is in it, how it tastes, how one makes it. She knows cinnamon only as a very expensive spice. No modern words. | 4 -> franz_ende | ziel: Erkläre Greta, was ein Franzbrötchen ist. | braucht: wie es schmeckt; was im Brötchen ist | lohn: flag franzbroetchen, greta +1
+(!ki) Du sagst: „Das ist ein Brötchen mit Zimt. Aus Hamburg.“
+(!ki) Greta: Mit Zimt? Zimt ist sehr teuer. Den haben nur sehr reiche Leute.
+(!ki) -> franz2
 
 == franz2
-Greta: Mit Zimt? Zimt ist sehr teuer. Den haben nur sehr reiche Leute. Aber eine gute Idee! Brot mit Zimt…
-Greta denkt nach. Dann lacht sie.
-Greta: Komm in ein paar Wochen wieder. Vielleicht habe ich dann ein Brötchen für Franz.
--> preis {greta +1, flag franzbroetchen}
+Greta denkt nach.
+-> franz_ende {greta +1, flag franzbroetchen}
+
+== franz_ende
+(franzbroetchen) Greta: Brot mit Zimt… Das ist eine gute Idee! Komm in ein paar Wochen wieder. Vielleicht habe ich dann ein Brötchen für Franz.
+(!franzbroetchen) Greta: Hm. Das ist schwer zu verstehen. Aber ich denke darüber nach.
+-> preis
 
 == beides
 Greta: Brot und Kuchen? Das sind fünf Pfennig. Du hast nur vier, oder?
@@ -78,8 +94,8 @@ Greta: Guten Appetit!
 
 == ende
 Du isst. Es ist das beste Essen in deinem Leben. Vielleicht ist es auch nur der Hunger.
-Greta: Hast du schon ein Zimmer für die Nacht?
-* Nein. Ich habe nichts. -> zimmer
+Greta: Und wo schläfst du heute Nacht?
+* Ich habe noch kein Zimmer. -> zimmer
 * Ich schlafe am Hafen. -> hafen
 
 == hafen

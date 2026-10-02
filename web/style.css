@@ -150,3 +150,45 @@ main { flex: 1; padding-block: 12px 4px; display: flex; flex-direction: column; 
   nav { margin-left: 0; }
   .woerter { columns: 1; }
 }
+
+/* ---- tasks, repair, diary, mistake log ---- */
+.aufgabe {
+  border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 6px;
+  padding: 10px 14px; background: var(--card); max-width: 64ch; display: grid; gap: 6px;
+}
+.aufgabe .ziel { margin: 0; font-weight: 600; }
+.aufgabe .braucht { margin: 0; padding-left: 20px; color: var(--muted); }
+.aufgabe .braucht li::marker { content: "○  "; }
+.benutze { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.chips-zeile { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-stat {
+  font: 500 12px/1.2 var(--mono); border: 1px solid var(--line); border-radius: 999px;
+  padding: 4px 9px; color: var(--muted); background: var(--bg);
+}
+.chip-stat.form { border-style: dashed; }
+.chip-stat.ok { color: var(--ok); border-color: var(--ok); }
+.status { display: grid; gap: 4px; }
+.chip.an { border-color: var(--player); color: var(--player); }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: inherit; border-radius: 3px; padding: 0 2px; }
+.hinweis-zeile { font-family: var(--mono); }
+.option.anfang { font-style: italic; }
+.leiste.repar { padding: 4px 0; }
+.tagebuch-form, .tagebuch-eintrag {
+  border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; background: var(--card);
+  display: grid; gap: 8px;
+}
+.tagebuch-eintrag { max-width: 64ch; }
+.tagebuch-form .frage { margin: 0; }
+.tagebuch-form textarea {
+  width: 100%; resize: vertical; background: var(--bg); border: 1px solid var(--line);
+  border-radius: 8px; padding: 9px 12px; font-size: 17px; line-height: 1.5;
+}
+.tagebuch-form .leiste { justify-content: flex-end; }
+.roh, .besser { margin: 0; white-space: pre-wrap; }
+.roh { color: var(--player); }
+.besser { font-weight: 600; }
+.lob { margin: 0; font-style: italic; }
+.fehler-zeile { padding: 6px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.fehler-zeile .strip { font: 13px/1 var(--mono); letter-spacing: .15em; color: var(--muted); }
+.fehler-zeile s { color: var(--accent); }

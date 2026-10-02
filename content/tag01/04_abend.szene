@@ -5,6 +5,7 @@ szene: abend
 titel: Bei Alheit
 ort: Alheits Haus
 neu: Suppe, putzen, sauber
+tagebuch: perfekt
 ---
 
 == start
@@ -94,7 +95,7 @@ notiz: Kannst du das noch einmal sagen?
 == plaudern
 Das Feuer ist warm. Der Hund schläft schon.
 Alheit: Na, erzähl mal. Wie war dein erster Tag in Hamburg?
-frei: Alheit | Am Feuer. Alheit fragt nach deinem ersten Tag: der Hafen, Hinnerk, Jonte, die Säcke, Greta und das Brot. Sie fragt auch ein bisschen nach der Uhr, aber sie drängt nicht. | 5 -> gute_nacht
+frei: Alheit | By the fire. Alheit asks about the player's first day (the harbor, Hinnerk, Jonte, the salt sacks, Greta and the bread). She asks questions that need the Perfekt (what did you do, who did you meet, what did you eat) and is gently curious about the watch without pushing. | 5 -> gute_nacht | ziel: Erzähl Alheit von deinem ersten Tag. | braucht: wo du heute warst; wen du getroffen hast; was du gegessen hast | form: perfekt
 
 == gute_nacht
 Alheit: Und jetzt: ab ins Bett. Gute Nacht!

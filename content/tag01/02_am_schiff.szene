@@ -28,9 +28,9 @@ Jonte lacht.
 
 == los
 Hinnerk geht. Jonte steht auf und gibt dir die Hand.
-Jonte: Moin! Du bist ganz nass, Digga. Bist du ins Wasser gefallen?
+Jonte: Moin! Du bist ganz nass, Digga. Was ist denn passiert?
 * Ich weiß es nicht. -> nass
-* Ja. Vielleicht. -> nass
+* Ich bin ins Wasser gefallen. Glaube ich. -> nass
 
 == nass
 Jonte: Egal. Die Sonne kommt gleich. Also: Wir tragen die Säcke vom Hafen in das Haus da. Siehst du? Das Haus mit der roten Tür.
@@ -91,4 +91,21 @@ notiz: Das ist nicht viel, aber es ist genug.
 Jonte: Hast du Hunger? Geh zu Greta. Die Bäckerei am Markt. Ihr Brot ist das beste in Hamburg.
 Jonte: Geh hier geradeaus und dann links. Du kannst es riechen!
 notiz: Geh geradeaus und dann links.
--> baeckerei
+-> weg
+
+== weg
+Du stehst am Hafen. Vor dir ist die Straße. Wo geht es zu Greta?
+* Ich gehe geradeaus und dann links. -> baeckerei
+* Ich gehe links und dann geradeaus. -> falsch1
+* Ich gehe geradeaus und dann rechts. -> falsch2
+
+== falsch1
+Du gehst links und dann geradeaus. Es riecht stark nach Fisch. Vor dir steht ein Mann mit einem sehr großen Fisch. Der Fisch sieht dich an. Du siehst den Fisch an.
+Von weit her ruft Jonte: „Nein! Zuerst geradeaus! Dann links!“
+notiz: Zuerst geradeaus, dann links.
+-> weg
+
+== falsch2
+Du gehst geradeaus und dann rechts. Hier ist eine Tür. Eine sehr kleine Tür. Du machst sie auf. Drinnen ist ein Hund. Er sieht dich an. Er hat sehr große Zähne.
+Von weit her ruft Jonte: „Nicht rechts! Links, Digga, links!“
+-> weg

@@ -22,9 +22,18 @@ Line types inside a node:
     * text -> node {fx}      reply choice; optional (condition) and {effects}
     -> node                  jump (also: -> ENDE ends the scene)
     notiz: text              add a phrase to the player's notebook
-    frei: Name | Thema | 6 -> node
-                             free conversation with a character (AI-driven in
-                             the artifact), up to 6 player turns, then -> node
+    frei: Name | Thema | 6 -> node | ziel: ... | braucht: a; b | form: perfekt, weil | lohn: greta +1
+                             free conversation / task with a character
+                             (AI-driven in the artifact), up to 6 player turns,
+                             then -> node. Thema is a note to the AI (not
+                             shown). The optional parts make it a task:
+                               ziel:    German goal shown to the player (checked)
+                               braucht: things the player must tell/ask,
+                                        separated by ";" (German, shown as a
+                                        checklist and checked)
+                               form:    grammar constructions the player must
+                                        use correctly (see FORMEN)
+                               lohn:    effects applied when everything is done
     // comment               ignored
     anything else            narration
 
@@ -32,6 +41,13 @@ Narration, dialogue and notiz lines may start with a condition, like
 choices: "(stufe >= 2) Hinnerk: ..." shows the line only when the player's
 demonstrated level has reached tier 2. Such lines are checked against that
 tier's vocabulary and are not counted as new words of the day.
+
+Conditions may combine with "&&": "(rabatt && geld >= 1)". "(ki)" is true only
+where the AI features are available, "(!ki)" only without them: use it to give
+the plain local version a fallback for a task.
+
+Scene metadata may also carry  tagebuch: perfekt, weil  on the last scene of a
+day: the diary prompt at the end of that day asks for those constructions.
 
 Effects: "geld +2", "bodo -1", "item Salz", "flag tuer_offen".
 Targets may name another scene: "-> markt" or "-> markt.start".
@@ -47,7 +63,13 @@ CHOICE = re.compile(r"^\*\s*(?:\((?P<cond>[^)]*)\)\s*)?(?P<text>.*?)\s*->\s*(?P<
 JUMP = re.compile(r"^->\s*(?P<target>[\w.]+)\s*(?:\{(?P<fx>[^}]*)\})?\s*$")
 NODE = re.compile(r"^==\s*(\w+)\s*$")
 COND = re.compile(r"^\((?P<cond>[^)]*)\)\s*(?P<rest>.*)$")
-FREI = re.compile(r"^frei:\s*(?P<who>[^|]+?)\s*\|\s*(?P<thema>[^|]+?)\s*\|\s*(?P<n>\d+)\s*->\s*(?P<target>[\w.]+)\s*$")
+FREI = re.compile(r"^frei:\s*(?P<who>[^|]+?)\s*\|\s*(?P<thema>[^|]+?)\s*\|\s*(?P<n>\d+)\s*->\s*(?P<target>[\w.]+)\s*(?P<opts>(?:\|.*)?)$")
+
+# Grammar constructions a task or the diary may require. The AI reports the
+# same keys when it lists what the player used correctly.
+FORMEN = ("perfekt", "praeteritum", "modalverb", "imperativ", "nebensatz", "weil", "dass", "wenn",
+          "reflexiv", "vergleich", "konjunktiv2", "relativsatz", "passiv", "zu_infinitiv",
+          "negation", "dativ", "akkusativ", "praeposition")
 
 
 @dataclass
@@ -59,6 +81,7 @@ class Line:
     cond: str = ""
     effects: list = field(default_factory=list)
     lineno: int = 0
+    meta: dict = field(default_factory=dict)     # frei: max, ziel, braucht, form, lohn
 
 
 @dataclass
@@ -79,11 +102,20 @@ class Scene:
     def declared_new(self) -> list[str]:
         return [w.strip() for w in self.meta.get("neu", "").split(",") if w.strip()]
 
+    @property
+    def tagebuch_formen(self) -> list[str]:
+        return [w.strip() for w in self.meta.get("tagebuch", "").split(",") if w.strip()]
+
     def texts(self):
         """Yield (lineno, text, cond) for every piece of German the player reads."""
         for lines in self.nodes.values():
             for ln in lines:
-                if ln.text and ln.kind != "frei":
+                if ln.kind == "frei":
+                    if ln.meta.get("ziel"):
+                        yield ln.lineno, ln.meta["ziel"], ln.cond
+                    for item in ln.meta.get("braucht", []):
+                        yield ln.lineno, item, ln.cond
+                elif ln.text:
                     yield ln.lineno, ln.text, ln.cond
 
 
@@ -100,6 +132,30 @@ def parse_effects(fx: str | None) -> list:
 
 class SceneError(Exception):
     pass
+
+
+def parse_frei_opts(opts: str, where: str) -> dict:
+    meta = {"ziel": "", "braucht": [], "form": [], "lohn": []}
+    for part in opts.split("|"):
+        part = part.strip()
+        if not part:
+            continue
+        key, _, val = part.partition(":")
+        key, val = key.strip().lower(), val.strip()
+        if key == "ziel":
+            meta["ziel"] = val
+        elif key == "braucht":
+            meta["braucht"] = [x.strip() for x in val.split(";") if x.strip()]
+        elif key == "form":
+            meta["form"] = [x.strip() for x in val.split(",") if x.strip()]
+            bad = [f for f in meta["form"] if f not in FORMEN]
+            if bad:
+                raise SceneError(f"{where}: unbekannte Form {bad} (erlaubt: {', '.join(FORMEN)})")
+        elif key == "lohn":
+            meta["lohn"] = parse_effects(val)
+        else:
+            raise SceneError(f"{where}: unbekannte Option '{key}' bei frei:")
+    return meta
 
 
 def parse_scene(path: Path) -> Scene:
@@ -133,7 +189,7 @@ def parse_scene(path: Path) -> Scene:
             cond, s = mc["cond"].strip(), mc["rest"].strip()
         if m := FREI.match(s):
             ln = Line("frei", m["thema"], speaker=m["who"], target=m["target"],
-                      effects=[["max", m["n"]]])
+                      meta={"max": int(m["n"]), **parse_frei_opts(m["opts"], f"{path}:{lineno}")})
         elif m := CHOICE.match(s):
             ln = Line("choice", m["text"], target=m["target"], cond=(m["cond"] or "").strip(),
                       effects=parse_effects(m["fx"]))
@@ -151,6 +207,9 @@ def parse_scene(path: Path) -> Scene:
         nodes[cur].append(ln)
     if "start" not in nodes:
         raise SceneError(f"{path}: kein Knoten '== start'")
+    bad = [f for f in [w.strip() for w in meta.get("tagebuch", "").split(",") if w.strip()] if f not in FORMEN]
+    if bad:
+        raise SceneError(f"{path}: unbekannte Tagebuch-Form {bad}")
     return Scene(path, meta, nodes)
 
 
