@@ -40,7 +40,9 @@ Er sieht dich lange an.
 -> wer
 
 == wer
-Hinnerk: Ich bin Hinnerk. Ich bin hier der Hafenmeister. Das heißt: Hier am Hafen sage ich, was passiert. Und wer bist du?
+Hinnerk: Ich bin Hinnerk. Ich bin hier der Hafenmeister. Das heißt: Hier am Hafen sage ich, was passiert.
+(stufe >= 2) Hinnerk: Früher war es hier ruhig. Heute kommen jeden Tag mehr Schiffe, und alle wollen die Ersten sein.
+Hinnerk: Und wer bist du?
 * Ich weiß es nicht genau. -> weiss_nicht {hinnerk +1}
 * Ich bin ein Reisender. Aus der Zukunft. -> zukunft
 

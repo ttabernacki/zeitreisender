@@ -1,2 +1,843 @@
+<title>Moin, Zeitreisender</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=UnifrakturMaguntia&display=swap">
+<style>
+/* Layout: one reading column, like a conversation log on the harbor; a
+   sticky header whose status strip is the traveler's broken digital watch. */
+:root {
+  --bg: #eef1f2;          /* North Sea haze */
+  --card: #ffffff;
+  --ink: #1d2a33;
+  --muted: #5f6d75;
+  --line: #d3dade;
+  --accent: #b8232a;      /* Hamburg red */
+  --player: #23646d;      /* harbor water */
+  --player-soft: #dcebec;
+  --hl: #f3e3b3;          /* tapped word */
+  --ok: #2f7a45;
+  --lcd-bg: #1e292e;
+  --lcd-ink: #b9d6c1;
+  --display: "UnifrakturMaguntia", "Old English Text MT", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11181c; --card: #19232a; --ink: #e4eaec; --muted: #9aa8ae; --line: #2c393f;
+    --accent: #ef6a6f; --player: #7cc3cb; --player-soft: #1d3438; --hl: #4d4220; --ok: #6cc28a;
+    --lcd-bg: #0b1114; --lcd-ink: #a6d4b4; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11181c; --card: #19232a; --ink: #e4eaec; --muted: #9aa8ae; --line: #2c393f;
+  --accent: #ef6a6f; --player: #7cc3cb; --player-soft: #1d3438; --hl: #4d4220; --ok: #6cc28a;
+  --lcd-bg: #0b1114; --lcd-ink: #a6d4b4; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 18px/1.65 var(--body);
+  display: flex; flex-direction: column; min-height: 100vh;
+}
+button, textarea { font: inherit; color: var(--ink); }
+button:focus-visible, textarea:focus-visible { outline: 2px solid var(--player); outline-offset: 2px; }
+
+header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  padding: 10px 16px 8px; display: grid; gap: 6px;
+}
+.kopf { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; max-width: 760px; width: 100%; margin: 0 auto; }
+h1 { font: 400 28px/1.1 var(--display); margin: 0; letter-spacing: .01em; color: var(--accent); }
+nav { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+nav button, .chip {
+  font: 500 13px/1 var(--mono); letter-spacing: .03em; background: transparent;
+  border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; cursor: pointer;
+}
+nav button:hover, .chip:hover { border-color: var(--player); }
+.badge { font-variant-numeric: tabular-nums; color: var(--player); margin-left: 2px; }
+.uhr {
+  max-width: 760px; width: 100%; margin: 0 auto;
+  font: 500 13px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  background: var(--lcd-bg); color: var(--lcd-ink); border-radius: 6px; padding: 7px 10px;
+  display: flex; flex-wrap: wrap; gap: 4px 8px; text-shadow: 0 0 6px color-mix(in srgb, var(--lcd-ink) 35%, transparent);
+}
+.uhr .sep { opacity: .45; }
+
+main, #antworten { width: 100%; max-width: 760px; margin: 0 auto; padding-inline: 16px; }
+main { flex: 1; padding-block: 12px 4px; display: flex; flex-direction: column; gap: 12px; }
+.szene-titel {
+  font: 400 24px/1.2 var(--display); color: var(--accent); margin: 18px 0 0;
+  text-wrap: balance;
+}
+.zeile { margin: 0; max-width: 64ch; }
+.dialog .sprecher {
+  font: 600 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+  margin-right: 4px;
+}
+.ki .sprecher::after { content: " ·"; color: var(--muted); }
+.notiz-hinweis { font: 13px/1.5 var(--mono); color: var(--muted); }
+.notiz-hinweis::before { content: "✎ "; }
+.du { align-self: flex-end; max-width: min(52ch, 88%); display: grid; justify-items: end; gap: 4px; }
+.du-text {
+  margin: 0; background: var(--player-soft); color: var(--player);
+  padding: 8px 12px; border-radius: 12px 12px 3px 12px;
+}
+.denkt { font-family: var(--mono); animation: puls 1.4s ease-in-out infinite; }
+@keyframes puls { 50% { opacity: .4; } }
+@media (prefers-reduced-motion: reduce) { .denkt { animation: none; } }
+.korrektur { display: grid; justify-items: end; gap: 6px; font-size: 15px; }
+.korrektur .ok { font: 12px/1 var(--mono); color: var(--ok); }
+.korr-detail {
+  background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px 12px; text-align: left; display: grid; gap: 6px; max-width: 100%;
+}
+.korr-detail .besser { font-weight: 600; }
+.korr-detail s { color: var(--accent); }
+.w { cursor: pointer; border-radius: 3px; }
+.w:hover, .w.aktiv { background: var(--hl); }
+.w.neu { text-decoration: underline dotted var(--muted); text-underline-offset: 4px; }
+
+#antworten {
+  position: sticky; bottom: 0; background: var(--bg); padding-block: 10px calc(14px + env(safe-area-inset-bottom, 0px));
+  display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line);
+}
+#antworten:empty { display: none; }
+.tippen { display: flex; gap: 8px; }
+.tippen textarea {
+  flex: 1; min-width: 0; resize: none; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 12px; font-size: 17px; line-height: 1.4;
+}
+.senden, .option, .weiter, .menue > button {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; cursor: pointer;
+}
+.senden { background: var(--player); color: var(--bg); border-color: var(--player); font-weight: 600; }
+.senden:disabled { opacity: .6; cursor: wait; }
+.leiste { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.vorschlaege { display: flex; flex-direction: column; gap: 6px; }
+.option { text-align: left; font-size: 17px; }
+.option:hover, .menue > button:hover { border-color: var(--player); }
+.weiter { text-align: center; background: var(--player-soft); color: var(--player); font-weight: 600; }
+.gefahr { border-color: var(--accent) !important; color: var(--accent); }
+
+.popup, #panel {
+  position: fixed; z-index: 10; background: var(--bg); border: 1px solid var(--line);
+  border-radius: 10px; box-shadow: 0 8px 28px rgba(0, 0, 0, .18); padding: 12px 14px;
+}
+.popup { max-width: min(360px, calc(100vw - 32px)); font-size: 16px; display: grid; gap: 4px; }
+#hilfe-text { display: grid; gap: 6px; justify-items: start; }
+#panel { right: 16px; top: 120px; width: min(440px, calc(100vw - 32px)); max-height: 70vh; overflow: auto; }
+.popup-kopf { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.popup-kopf strong { font: 400 22px/1.2 var(--display); color: var(--accent); }
+.zu { border: none; background: none; font-size: 22px; line-height: 1; padding: 0 4px; cursor: pointer; }
+.klein { color: var(--muted); font-size: 14px; }
+.label { font: 600 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+#panel ul { padding-left: 18px; margin: 6px 0; }
+#panel li { margin-bottom: 4px; }
+.woerter { columns: 2; column-gap: 20px; list-style: none; padding: 0 !important; }
+.woerter li { break-inside: avoid; }
+.eigene { margin: 4px 0; color: var(--player); }
+.menue, .profil { display: flex; flex-direction: column; gap: 8px; }
+.profil { gap: 4px; }
+.toast {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+  background: var(--lcd-bg); color: var(--lcd-ink); font: 13px/1.4 var(--mono); padding: 8px 12px; border-radius: 8px;
+  max-width: calc(100vw - 32px); z-index: 20;
+}
+
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  h1 { font-size: 24px; }
+  nav { margin-left: 0; }
+  .woerter { columns: 1; }
+}
+</style>
+<header>
+  <div class="kopf">
+    <h1>Moin, Zeitreisender</h1>
+    <nav>
+      <button data-panel="notizbuch">Notizbuch</button>
+      <button data-panel="woerter">Wörter <span id="wortzahl" class="badge">0</span></button>
+      <button data-panel="menue">Menü</button>
+    </nav>
+  </div>
+  <div class="uhr" aria-label="Status">
+    <span id="tag">TAG 01</span><span class="sep">│</span><span id="ort"></span><span class="sep">│</span><span id="geld">0 ₰</span><span class="sep">│</span><span id="stufe">STUFE 1</span>
+  </div>
+</header>
+
+<main id="log" aria-live="polite"></main>
+<section id="antworten" aria-label="Antworten"></section>
+<div id="hinweis" class="toast" hidden role="status"></div>
+
+<div id="hilfe" class="popup" hidden role="dialog">
+  <div class="popup-kopf"><strong id="hilfe-wort"></strong><button class="zu" aria-label="Schließen">×</button></div>
+  <div id="hilfe-text"></div>
+</div>
+
+<aside id="panel" hidden>
+  <div class="popup-kopf"><strong id="panel-titel"></strong><button class="zu" aria-label="Schließen">×</button></div>
+  <div id="panel-inhalt"></div>
+</aside>
+
+<input type="file" id="datei" accept="application/json" hidden>
+<script>
 // generated by tools/build_game.py, do not edit
 window.GAME = {"order":["ankunft","am_schiff","baeckerei","abend"],"scenes":{"ankunft":{"tag":1,"titel":"Moin!","ort":"Hafen","nodes":{"start":[{"k":"narration","t":[["Wasser","Wasser"],". ",["Kaltes","kalt"]," ",["Wasser","Wasser"],". ",["Überall","überall"],"."]},{"k":"narration","t":[["Du","du"]," ",["öffnest","öffnen"]," ",["die","der"]," ",["Augen","Auge"],". ",["Du","du"]," ",["liegst","liegen"]," ",["auf","auf"]," ",["dem","der"]," ",["Rücken","Rücken"],". ",["Über","über"]," ",["dir","dir"]," ",["ist","sein"]," ",["der","der"]," ",["Himmel","Himmel"],". ",["Grau","grau"],"."]},{"k":"narration","t":[["Ein","ein"]," ",["Mann","Mann"]," ",["steht","stehen"]," ",["neben","neben"]," ",["dir","dir"],". ",["Er","er"]," ",["ist","sein"]," ",["groß","groß"]," ",["und","und"]," ",["hat","haben"]," ",["lange","lange"],", ",["graue","grau"]," ",["Haare","Haar"],". ",["In","in"]," ",["der","der"]," ",["Hand","Hand"]," ",["hat","haben"]," ",["er","er"]," ",["einen","ein"]," ",["Eimer","Eimer"],"."]},{"k":"dialogue","t":[["Moin","Moin"],"!"],"s":"Hinnerk"},{"k":"notiz","t":[["Moin","Moin"],"!"]},{"k":"choice","t":[["Moin","Moin"],"?"],"to":"moin"},{"k":"choice","t":[["Wo","wo"]," ",["bin","sein"]," ",["ich","ich"],"?"],"to":"wo"}],"moin":[{"k":"dialogue","t":[["Ja","ja"],", ",["Moin","Moin"],"! ",["Na","na"]," ",["also","also"],". ",["Du","du"]," ",["kannst","können"]," ",["ja","ja"]," ",["sprechen","sprechen"],"."],"s":"Hinnerk"},{"k":"jump","to":"wo"}],"wo":[{"k":"dialogue","t":[["Du","du"]," ",["bist","sein"]," ",["in","in"]," ",["Hamburg","Hamburg"],". ",["Am","an"]," ",["Hafen","Hafen"],". ",["Und","und"]," ",["du","du"]," ",["liegst","liegen"]," ",["mitten","Mitte"]," ",["im","in"]," ",["Weg","Weg"],"."],"s":"Hinnerk"},{"k":"narration","t":[["Hinter","hinter"]," ",["dem","der"]," ",["Mann","Mann"]," ",["siehst","sehen"]," ",["du","du"]," ",["Schiffe","Schiff"],". ",["Viele","viel"]," ",["Schiffe","Schiff"],". ",["Alte","alt"]," ",["Schiffe","Schiff"],". ",["Männer","Mann"]," ",["tragen","tragen"]," ",["Säcke","Sack"]," ",["vom","von"]," ",["Schiff","Schiff"],". ",["Es","es"]," ",["riecht","riechen"]," ",["nach","nach"]," ",["Fisch","Fisch"],"."]},{"k":"narration","t":[["Du","du"]," ",["siehst","sehen"]," ",["auf","auf"]," ",["deine","dein"]," ",["Uhr","Uhr"],". ",["Sie","sie"]," ",["ist","sein"]," ",["an","an"]," ",["deinem","dein"]," ",["Arm","Arm"],". ",["Die","der"]," ",["Uhr","Uhr"]," ",["ist","sein"]," ",["kaputt","kaputt"],". ",["Das","der"]," ",["Glas","Glas"]," ",["ist","sein"]," ",["kaputt","kaputt"],", ",["und","und"]," ",["sie","sie"]," ",["macht","machen"]," ",["komische","komisch"]," ",["Sachen","Sache"],": „",["Piep","piep"],". ",["Piep","piep"],". ",["Piep","piep"],".“"]},{"k":"dialogue","t":[["Was","was"]," ",["ist","sein"]," ",["das","der"]," ",["denn","denn"],"? ",["Ein","ein"]," ",["Vogel","Vogel"],"?"],"s":"Hinnerk"},{"k":"choice","t":[["Das","der"]," ",["ist","sein"]," ",["meine","mein"]," ",["Uhr","Uhr"],"."],"to":"uhr"},{"k":"choice","t":[["Das","der"]," ",["ist","sein"]," ",["nichts","nichts"],"."],"to":"nichts"}],"uhr":[{"k":"dialogue","t":[["Eine","ein"]," ",["Uhr","Uhr"],"? ",["An","an"]," ",["deinem","dein"]," ",["Arm","Arm"],"? ",["So","so"]," ",["klein","klein"],"?"],"s":"Hinnerk"},{"k":"narration","t":[["Er","er"]," ",["lacht","lachen"]," ",["laut","laut"],"."]},{"k":"dialogue","t":[["Und","und"]," ",["mein","mein"]," ",["Hund","Hund"]," ",["kann","können"]," ",["fliegen","fliegen"],"."],"s":"Hinnerk"},{"k":"jump","to":"wer"}],"nichts":[{"k":"dialogue","t":[["Nichts","nichts"],". ",["Aha","aha"],". ",["Nichts","nichts"]," ",["macht","machen"]," „",["Piep","piep"],"“."],"s":"Hinnerk"},{"k":"narration","t":[["Er","er"]," ",["sieht","ansehen"]," ",["dich","dich"]," ",["lange","lange"]," ",["an","an"],"."]},{"k":"jump","to":"wer"}],"wer":[{"k":"dialogue","t":[["Ich","ich"]," ",["bin","sein"]," ",["Hinnerk","Hinnerk"],". ",["Ich","ich"]," ",["bin","sein"]," ",["hier","hier"]," ",["der","der"]," ",["Hafenmeister","Hafenmeister"],". ",["Das","der"]," ",["heißt","heißen"],": ",["Hier","hier"]," ",["am","an"]," ",["Hafen","Hafen"]," ",["sage","sagen"]," ",["ich","ich"],", ",["was","was"]," ",["passiert","passieren"],"."],"s":"Hinnerk"},{"k":"dialogue","t":[["Früher","früh"]," ",["war","sein"]," ",["es","es"]," ",["hier","hier"]," ",["ruhig","ruhig"],". ",["Heute","heute"]," ",["kommen","kommen"]," ",["jeden","jeder"]," ",["Tag","Tag"]," ",["mehr","mehr"]," ",["Schiffe","Schiff"],", ",["und","und"]," ",["alle","all"]," ",["wollen","wollen"]," ",["die","der"]," ",["Ersten","Ersten"]," ",["sein","sein"],"."],"s":"Hinnerk","if":"stufe >= 2"},{"k":"dialogue","t":[["Und","und"]," ",["wer","wer"]," ",["bist","sein"]," ",["du","du"],"?"],"s":"Hinnerk"},{"k":"choice","t":[["Ich","ich"]," ",["weiß","wissen"]," ",["es","es"]," ",["nicht","nicht"]," ",["genau","genau"],"."],"to":"weiss_nicht","fx":[["hinnerk","+1"]]},{"k":"choice","t":[["Ich","ich"]," ",["bin","sein"]," ",["ein","ein"]," ",["Reisender","Reisender"],". ",["Aus","aus"]," ",["der","der"]," ",["Zukunft","Zukunft"],"."],"to":"zukunft"}],"zukunft":[{"k":"dialogue","t":[["Aus","aus"]," ",["der","der"],"… ",["was","wer"],"?"],"s":"Hinnerk"},{"k":"narration","t":[["Er","er"]," ",["stellt","hinstellen"]," ",["den","der"]," ",["Eimer","Eimer"]," ",["hin","hin"],"."]},{"k":"dialogue","t":[["Junge","Junge"],", ",["Junge","Junge"],". ",["Du","du"]," ",["hast","haben"]," ",["zu","zu"]," ",["viel","viel"]," ",["Wasser","Wasser"]," ",["im","in"]," ",["Kopf","Kopf"],". ",["Oder","oder"]," ",["zu","zu"]," ",["viel","viel"]," ",["Bier","Bier"],"."],"s":"Hinnerk"},{"k":"jump","to":"arbeit"}],"weiss_nicht":[{"k":"dialogue","t":[["Du","du"]," ",["weißt","wissen"]," ",["es","es"]," ",["nicht","nicht"],". ",["Hm","hm"],". ",["Das","der"]," ",["passiert","passieren"]," ",["hier","hier"]," ",["oft","oft"],". ",["Die","der"]," ",["Leute","Leute"]," ",["kommen","kommen"]," ",["vom","von"]," ",["Schiff","Schiff"]," ",["und","und"]," ",["wissen","wissen"]," ",["nichts","nichts"]," ",["mehr","mehr"],". ",["Kein","kein"]," ",["Problem","Problem"],"."],"s":"Hinnerk"},{"k":"jump","to":"arbeit"}],"arbeit":[{"k":"dialogue","t":[["Hast","haben"]," ",["du","du"]," ",["Geld","Geld"],"?"],"s":"Hinnerk"},{"k":"narration","t":[["Du","du"]," ",["suchst","suchen"]," ",["in","in"]," ",["deinen","dein"]," ",["Taschen","Tasche"],". ",["In","in"]," ",["deiner","dein"]," ",["Jacke","Jacke"],". ",["Nichts","nichts"],". ",["Kein","kein"]," ",["Geld","Geld"],". ",["Kein","kein"]," ",["Handy","Handy"],". ",["Nur","nur"]," ",["die","der"]," ",["kaputte","kaputt"]," ",["Uhr","Uhr"],"."]},{"k":"choice","t":[["Nein","nein"],". ",["Ich","ich"]," ",["habe","haben"]," ",["kein","kein"]," ",["Geld","Geld"],"."],"to":"kein_geld"},{"k":"choice","t":[["Ich","ich"],"… ",["äh","äh"],"… ",["Moment","Moment"],"…"],"to":"kein_geld"}],"kein_geld":[{"k":"dialogue","t":[["Das","der"]," ",["habe","haben"]," ",["ich","ich"]," ",["mir","sich"]," ",["gedacht","denken"],". ",["Also","also"],": ",["Ohne","ohne"]," ",["Geld","Geld"]," ",["kein","kein"]," ",["Essen","Essen"],". ",["Ohne","ohne"]," ",["Essen","Essen"]," ",["keine","kein"]," ",["Arbeit","Arbeit"],". ",["Ohne","ohne"]," ",["Arbeit","Arbeit"]," ",["kein","kein"]," ",["Geld","Geld"],". ",["Hm","hm"],"."],"s":"Hinnerk"},{"k":"dialogue","t":[["Aber","aber"]," ",["ich","ich"]," ",["habe","haben"]," ",["Arbeit","Arbeit"],". ",["Du","du"]," ",["trägst","tragen"]," ",["Säcke","Sack"]," ",["vom","von"]," ",["Schiff","Schiff"],". ",["Ich","ich"]," ",["bezahle","bezahlen"]," ",["dich","dich"],". ",["Heute","heute"]," ",["Abend","Abend"],". ",["Gut","gut"],"?"],"s":"Hinnerk"},{"k":"choice","t":[["Gut","gut"],". ",["Ich","ich"]," ",["mache","machen"]," ",["das","der"],"."],"to":"ja","fx":[["hinnerk","+1"]]},{"k":"choice","t":[["Säcke","Sack"]," ",["tragen","tragen"],"? ",["Ich","ich"],"?"],"to":"ich"}],"ich":[{"k":"dialogue","t":[["Ja","ja"],", ",["du","du"],". ",["Liegt","liegen"]," ",["hier","hier"]," ",["noch","noch"]," ",["ein","ein"]," ",["anderer","ander"]," ",["im","in"]," ",["Weg","Weg"],"?"],"s":"Hinnerk"},{"k":"jump","to":"ja"}],"ja":[{"k":"dialogue","t":[["Gut","gut"],". ",["Steh","stehen"]," ",["auf","auf"],"! ",["Komm","kommen"]," ",["mit","mit"],"!"],"s":"Hinnerk"},{"k":"narration","t":[["Du","du"]," ",["stehst","stehen"]," ",["auf","auf"],". ",["Deine","dein"]," ",["Kleidung","Kleidung"]," ",["ist","sein"]," ",["nass","nass"],". ",["Deine","dein"]," ",["Schuhe","Schuh"]," ",["auch","auch"],". ",["Hinnerk","Hinnerk"]," ",["geht","gehen"]," ",["schnell","schnell"],". ",["Du","du"]," ",["gehst","gehen"]," ",["hinter","hinter"]," ",["ihm","ihm"],"."]},{"k":"notiz","t":[["Steh","stehen"]," ",["auf","auf"],"! ",["Komm","kommen"]," ",["mit","mit"],"!"]},{"k":"jump","to":"am_schiff"}]},"neu":["kalt","überall","Rücken","Himmel","neben","Eimer","Moin","Hafen","Weg","hinter","Schiff","tragen","Sack","komisch","Sache","Vogel","ansehen","Hafenmeister","passieren","genau","Reisender","Zukunft","hinstellen","denken","nass"]},"am_schiff":{"tag":1,"titel":"Säcke, Säcke, Säcke","ort":"Hafen","nodes":{"start":[{"k":"narration","t":[["Vor","vor"]," ",["einem","ein"]," ",["großen","groß"]," ",["Schiff","Schiff"]," ",["liegen","liegen"]," ",["viele","viel"]," ",["Säcke","Sack"],". ",["Ein","ein"]," ",["junger","jung"]," ",["Mann","Mann"]," ",["sitzt","sitzen"]," ",["auf","auf"]," ",["einem","ein"]," ",["Sack","Sack"]," ",["und","und"]," ",["isst","essen"]," ",["einen","ein"]," ",["Apfel","Apfel"],"."]},{"k":"dialogue","t":[["Jonte","Jonte"],"! ",["Pause","Pause"]," ",["ist","sein"]," ",["vorbei","vorbei"],"!"],"s":"Hinnerk"},{"k":"dialogue","t":[["Moin","Moin"],", ",["Chef","Chef"],"! ",["Ich","ich"]," ",["esse","essen"]," ",["nur","nur"]," ",["schnell","schnell"],"…"],"s":"Jonte"},{"k":"dialogue","t":[["Das","der"]," ",["ist","sein"]," ",["Jonte","Jonte"],". ",["Er","er"]," ",["zeigt","zeigen"]," ",["dir","dir"]," ",["alles","all"],". ",["Jonte","Jonte"],", ",["das","der"]," ",["ist","sein"],"… ",["äh","äh"],"…"],"s":"Hinnerk"},{"k":"narration","t":[["Hinnerk","Hinnerk"]," ",["sieht","ansehen"]," ",["dich","dich"]," ",["an","an"],"."]},{"k":"choice","t":[["Ich","ich"]," ",["heiße","heißen"],"… ",["Moment","Moment"],", ",["das","der"]," ",["weiß","wissen"]," ",["ich","ich"]," ",["noch","noch"],"!"],"to":"name"},{"k":"choice","t":[["Sag","sagen"]," ",["einfach","einfach"]," „",["du","du"],"“."],"to":"du"}],"name":[{"k":"dialogue","t":[["Na","na"],", ",["dann","dann"]," ",["nicht","nicht"],". ",["Jonte","Jonte"],", ",["das","der"]," ",["ist","sein"]," „",["Moment","Moment"],"“. ",["Viel","viel"]," ",["Spaß","Spaß"],"."],"s":"Hinnerk"},{"k":"narration","t":[["Jonte","Jonte"]," ",["lacht","lachen"],"."]},{"k":"jump","to":"los"}],"du":[{"k":"dialogue","t":[["Gut","gut"],". ",["Jonte","Jonte"],", ",["das","der"]," ",["ist","sein"]," „",["Du","du"],"“."],"s":"Hinnerk"},{"k":"narration","t":[["Jonte","Jonte"]," ",["lacht","lachen"],"."]},{"k":"jump","to":"los"}],"los":[{"k":"narration","t":[["Hinnerk","Hinnerk"]," ",["geht","gehen"],". ",["Jonte","Jonte"]," ",["steht","aufstehen"]," ",["auf","auf"]," ",["und","und"]," ",["gibt","geben"]," ",["dir","dir"]," ",["die","der"]," ",["Hand","Hand"],"."]},{"k":"dialogue","t":[["Moin","Moin"],"! ",["Du","du"]," ",["bist","sein"]," ",["ganz","ganz"]," ",["nass","nass"],", ",["Digga","Digga"],". ",["Bist","sein"]," ",["du","du"]," ",["ins","in"]," ",["Wasser","Wasser"]," ",["gefallen","fallen"],"?"],"s":"Jonte"},{"k":"choice","t":[["Ich","ich"]," ",["weiß","wissen"]," ",["es","es"]," ",["nicht","nicht"],"."],"to":"nass"},{"k":"choice","t":[["Ja","ja"],". ",["Vielleicht","vielleicht"],"."],"to":"nass"}],"nass":[{"k":"dialogue","t":[["Egal","egal"],". ",["Die","der"]," ",["Sonne","Sonne"]," ",["kommt","kommen"]," ",["gleich","gleich"],". ",["Also","also"],": ",["Wir","wir"]," ",["tragen","tragen"]," ",["die","der"]," ",["Säcke","Sack"]," ",["vom","von"]," ",["Hafen","Hafen"]," ",["in","in"]," ",["das","der"]," ",["Haus","Haus"]," ",["da","da"],". ",["Siehst","sehen"]," ",["du","du"],"? ",["Das","der"]," ",["Haus","Haus"]," ",["mit","mit"]," ",["der","der"]," ",["roten","rot"]," ",["Tür","Tür"],"."],"s":"Jonte"},{"k":"dialogue","t":[["Nimm","nehmen"]," ",["einen","ein"]," ",["Sack","Sack"],"!"],"s":"Jonte"},{"k":"notiz","t":[["Nimm","nehmen"]," ",["einen","ein"]," ",["Sack","Sack"],"!"]},{"k":"choice","t":[["Du","du"]," ",["nimmst","nehmen"]," ",["einen","ein"]," ",["kleinen","klein"]," ",["Sack","Sack"],"."],"to":"klein"},{"k":"choice","t":[["Du","du"]," ",["nimmst","nehmen"]," ",["den","der"]," ",["größten","groß"]," ",["Sack","Sack"],"."],"to":"gross"}],"klein":[{"k":"dialogue","t":[["Gut","gut"],". ",["Jetzt","jetzt"]," ",["trag","tragen"]," ",["ihn","ihn"]," ",["zum","zu"]," ",["Haus","Haus"],". ",["Ich","ich"]," ",["komme","mitkommen"]," ",["mit","mit"],"."],"s":"Jonte"},{"k":"jump","to":"tragen"}],"gross":[{"k":"narration","t":[["Du","du"]," ",["nimmst","nehmen"]," ",["den","der"]," ",["Sack","Sack"],". ",["Er","er"]," ",["ist","sein"]," ",["sehr","sehr"]," ",["schwer","schwer"],". ",["Du","du"]," ",["kannst","können"]," ",["nicht","nicht"]," ",["mehr","mehr"]," ",["gehen","gehen"],". ",["Du","du"]," ",["kannst","können"]," ",["nicht","nicht"]," ",["mehr","mehr"]," ",["sprechen","sprechen"],". ",["Du","du"]," ",["kannst","können"]," ",["nur","nur"]," ",["noch","noch"]," „",["Uff","uff"],"“ ",["sagen","sagen"],"."]},{"k":"dialogue","t":[["Krass","krass"],"! ",["Langsam","langsam"],", ",["langsam","langsam"],"! ",["Nimm","nehmen"]," ",["lieber","lieber"]," ",["einen","ein"]," ",["kleinen","klein"],"."],"s":"Jonte"},{"k":"jump","to":"tragen","fx":[["jonte","+1"]]}],"tragen":[{"k":"narration","t":[["Ihr","ihr"]," ",["tragt","tragen"]," ",["die","der"]," ",["Säcke","Sack"]," ",["zum","zu"]," ",["Haus","Haus"],". ",["Einen","ein"]," ",["Sack","Sack"],", ",["noch","noch"]," ",["einen","ein"]," ",["Sack","Sack"],", ",["noch","noch"]," ",["einen","ein"]," ",["Sack","Sack"],". ",["Die","der"]," ",["Tür","Tür"]," ",["ist","sein"]," ",["offen","offen"],". ",["Drinnen","drinnen"]," ",["ist","sein"]," ",["es","es"]," ",["dunkel","dunkel"],". ",["Es","es"]," ",["riecht","riechen"]," ",["nach","nach"]," ",["Salz","Salz"],"."]},{"k":"dialogue","t":[["Stell","stellen"]," ",["den","der"]," ",["Sack","Sack"]," ",["hier","hier"]," ",["hin","hin"],". ",["Nein","nein"],", ",["nicht","nicht"]," ",["da","da"],"! ",["Hier","hier"],", ",["in","in"]," ",["die","der"]," ",["Ecke","Ecke"],"."],"s":"Jonte"},{"k":"notiz","t":[["Stell","stellen"]," ",["den","der"]," ",["Sack","Sack"]," ",["hier","hier"]," ",["hin","hin"],"."]},{"k":"choice","t":[["Du","du"]," ",["stellst","stellen"]," ",["den","der"]," ",["Sack","Sack"]," ",["in","in"]," ",["die","der"]," ",["Ecke","Ecke"],"."],"to":"ecke"},{"k":"choice","t":[["Du","du"]," ",["stellst","stellen"]," ",["den","der"]," ",["Sack","Sack"]," ",["auf","auf"]," ",["Jontes","Jonte"]," ",["Fuß","Fuß"],"."],"to":"fuss"}],"fuss":[{"k":"dialogue","t":[["Au","au"],"! ",["Mein","mein"]," ",["Fuß","Fuß"],"! ",["Die","der"]," ",["Ecke","Ecke"],", ",["Digga","Digga"],", ",["die","der"]," ",["Ecke","Ecke"],"! ",["Da","da"]," ",["ist","sein"]," ",["die","der"]," ",["Ecke","Ecke"],"!"],"s":"Jonte"},{"k":"narration","t":[["Er","er"]," ",["zeigt","zeigen"]," ",["in","in"]," ",["die","der"]," ",["Ecke","Ecke"],". ",["Du","du"]," ",["stellst","stellen"]," ",["den","der"]," ",["Sack","Sack"]," ",["in","in"]," ",["die","der"]," ",["Ecke","Ecke"],"."]},{"k":"dialogue","t":[["Danke","danke"],". ",["Mein","mein"]," ",["Fuß","Fuß"]," ",["sagt","sagen"]," ",["auch","auch"]," ",["danke","danke"],"."],"s":"Jonte"},{"k":"jump","to":"ecke"}],"ecke":[{"k":"dialogue","t":[["Was","was"]," ",["ist","sein"]," ",["in","in"]," ",["den","der"]," ",["Säcken","Sack"],"? ",["Salz","Salz"],". ",["Alles","all"]," ",["Salz","Salz"],". ",["Das","der"]," ",["Salz","Salz"]," ",["kommt","kommen"]," ",["aus","aus"]," ",["Lüneburg","Lüneburg"],". ",["Und","und"]," ",["morgen","morgen"]," ",["geht","gehen"]," ",["es","es"]," ",["mit","mit"]," ",["dem","der"]," ",["Schiff","Schiff"]," ",["weiter","weiter"]," ",["nach","nach"]," ",["Norden","Norden"],"."],"s":"Jonte"},{"k":"narration","t":[["Jonte","Jonte"]," ",["sieht","ansehen"]," ",["deine","dein"]," ",["Uhr","Uhr"]," ",["an","an"],"."]},{"k":"dialogue","t":[["Was","was"]," ",["ist","sein"]," ",["das","der"]," ",["an","an"]," ",["deinem","dein"]," ",["Arm","Arm"],"?"],"s":"Jonte"},{"k":"choice","t":[["Eine","ein"]," ",["Uhr","Uhr"],". ",["Sie","sie"]," ",["ist","sein"]," ",["kaputt","kaputt"],"."],"to":"uhr","fx":[["jonte","+1"]]},{"k":"choice","t":[["Nichts","nichts"],". ",["Komm","kommen"],", ",["wir","wir"]," ",["tragen","weitertragen"]," ",["weiter","weiter"],"."],"to":"weiter"}],"uhr":[{"k":"dialogue","t":[["Eine","ein"]," ",["Uhr","Uhr"],"? ",["So","so"]," ",["klein","klein"],"? ",["Krass","krass"],". ",["Wer","wer"]," ",["hat","haben"]," ",["die","der"]," ",["gemacht","machen"],"?"],"s":"Jonte"},{"k":"choice","t":[["Ich","ich"]," ",["weiß","wissen"]," ",["es","es"]," ",["nicht","nicht"],"."],"to":"weiter"},{"k":"choice","t":[["Ein","ein"]," ",["Mann","Mann"]," ",["in","in"]," ",["der","der"]," ",["Zukunft","Zukunft"],"."],"to":"zukunft"}],"zukunft":[{"k":"narration","t":[["Jonte","Jonte"]," ",["sieht","ansehen"]," ",["dich","dich"]," ",["lange","lange"]," ",["an","an"],". ",["Dann","dann"]," ",["lacht","lachen"]," ",["er","er"],"."]},{"k":"dialogue","t":[["Du","du"]," ",["bist","sein"]," ",["lustig","lustig"],". ",["Ich","ich"]," ",["mag","mögen"]," ",["dich","dich"],"."],"s":"Jonte"},{"k":"jump","to":"weiter","fx":[["jonte","+1"]]}],"weiter":[{"k":"narration","t":[["Ihr","ihr"]," ",["tragt","tragen"]," ",["und","und"]," ",["tragt","tragen"],". ",["Am","an"]," ",["Mittag","Mittag"]," ",["sind","sein"]," ",["alle","all"]," ",["Säcke","Sack"]," ",["im","in"]," ",["Haus","Haus"],". ",["Deine","dein"]," ",["Arme","Arm"]," ",["tun","tun"]," ",["weh","weh"],". ",["Dein","dein"]," ",["Rücken","Rücken"]," ",["tut","tun"]," ",["weh","weh"],". ",["Alles","all"]," ",["tut","tun"]," ",["weh","weh"],"."]},{"k":"narration","t":[["Hinnerk","Hinnerk"]," ",["kommt","kommen"],"."]},{"k":"dialogue","t":[["Alle","all"]," ",["Säcke","Sack"]," ",["im","in"]," ",["Haus","Haus"],"? ",["Gut","gut"],". ",["Hier","hier"],", ",["für","für"]," ",["dich","dich"],"."],"s":"Hinnerk"},{"k":"narration","t":[["Er","er"]," ",["gibt","geben"]," ",["dir","dir"]," ",["vier","vier"]," ",["Pfennig","Pfennig"],"."]},{"k":"dialogue","t":[["Das","der"]," ",["ist","sein"]," ",["nicht","nicht"]," ",["viel","viel"],". ",["Aber","aber"]," ",["für","für"]," ",["Brot","Brot"]," ",["ist","sein"]," ",["es","es"]," ",["genug","genug"],"."],"s":"Hinnerk"},{"k":"notiz","t":[["Das","der"]," ",["ist","sein"]," ",["nicht","nicht"]," ",["viel","viel"],", ",["aber","aber"]," ",["es","es"]," ",["ist","sein"]," ",["genug","genug"],"."]},{"k":"jump","to":"ende","fx":[["geld","+4"]]}],"ende":[{"k":"dialogue","t":[["Hast","haben"]," ",["du","du"]," ",["Hunger","Hunger"],"? ",["Geh","gehen"]," ",["zu","zu"]," ",["Greta","Greta"],". ",["Die","der"]," ",["Bäckerei","Bäckerei"]," ",["am","an"]," ",["Markt","Markt"],". ",["Ihr","ihr"]," ",["Brot","Brot"]," ",["ist","sein"]," ",["das","der"]," ",["beste","gut"]," ",["in","in"]," ",["Hamburg","Hamburg"],"."],"s":"Jonte"},{"k":"dialogue","t":[["Geh","gehen"]," ",["hier","hier"]," ",["geradeaus","geradeaus"]," ",["und","und"]," ",["dann","dann"]," ",["links","links"],". ",["Du","du"]," ",["kannst","können"]," ",["es","es"]," ",["riechen","riechen"],"!"],"s":"Jonte"},{"k":"notiz","t":[["Geh","gehen"]," ",["geradeaus","geradeaus"]," ",["und","und"]," ",["dann","dann"]," ",["links","links"],"."]},{"k":"jump","to":"baeckerei"}]},"neu":["vorbei","zeigen","Spaß","ganz","Digga","fallen","egal","Tür","krass","offen","drinnen","dunkel","Norden","weitertragen","Pfennig","genug","Markt"]},"baeckerei":{"tag":1,"titel":"Bei Greta","ort":"Markt","nodes":{"start":[{"k":"narration","t":[["Der","der"]," ",["Markt","Markt"]," ",["ist","sein"]," ",["voll","voll"],". ",["Leute","Leute"],", ",["Hunde","Hund"],", ",["Katzen","Katze"],", ",["Kinder","Kind"],". ",["Alle","all"]," ",["sprechen","sprechen"]," ",["laut","laut"],". ",["Und","und"]," ",["dann","dann"]," ",["riechst","riechen"]," ",["du","du"]," ",["es","es"],": ",["Brot","Brot"],"! ",["Frisches","frisch"]," ",["Brot","Brot"],"!"]},{"k":"narration","t":[["Die","der"]," ",["Bäckerei","Bäckerei"]," ",["ist","sein"]," ",["klein","klein"],". ",["Vor","vor"]," ",["der","der"]," ",["Tür","Tür"]," ",["steht","stehen"]," ",["eine","ein"]," ",["Frau","Frau"]," ",["mit","mit"]," ",["roten","rot"]," ",["Haaren","Haar"],". ",["Sie","sie"]," ",["lacht","lachen"]," ",["viel","viel"],"."]},{"k":"dialogue","t":[["Moin","Moin"],", ",["moin","Moin"],"! ",["Du","du"]," ",["bist","sein"]," ",["neu","neu"]," ",["hier","hier"],", ",["oder","oder"],"? ",["Ich","ich"]," ",["bin","sein"]," ",["Greta","Greta"],". ",["Was","was"]," ",["möchtest","möchten"]," ",["du","du"],"?"],"s":"Greta"},{"k":"notiz","t":[["Was","was"]," ",["möchtest","möchten"]," ",["du","du"],"?"]},{"k":"choice","t":[["Einen","ein"]," ",["Kaffee","Kaffee"],", ",["bitte","bitte"],"."],"to":"kaffee"},{"k":"choice","t":[["Was","was"]," ",["kostet","kosten"]," ",["das","der"]," ",["Brot","Brot"],"?"],"to":"preis"}],"kaffee":[{"k":"dialogue","t":[["Einen","ein"],"… ",["was","wer"],"?"],"s":"Greta"},{"k":"choice","t":[["Kaffee","Kaffee"],". ",["Schwarz","schwarz"],". ",["Heiß","heiß"],"."],"to":"kaffee2"},{"k":"choice","t":[["Ach","ach"],", ",["nichts","nichts"],". ",["Was","was"]," ",["kostet","kosten"]," ",["das","der"]," ",["Brot","Brot"],"?"],"to":"preis"}],"kaffee2":[{"k":"dialogue","t":[["Schwarz","schwarz"]," ",["und","und"]," ",["heiß","heiß"],"? ",["Hm","hm"],". ",["Das","der"]," ",["ist","sein"]," ",["nicht","nicht"]," ",["gut","gut"],", ",["oder","oder"],"? ",["Möchtest","möchten"]," ",["du","du"]," ",["vielleicht","vielleicht"]," ",["lieber","lieber"]," ",["ein","ein"]," ",["Bier","Bier"],"?"],"s":"Greta"},{"k":"choice","t":[["Am","an"]," ",["Mittag","Mittag"],"? ",["Nein","nein"],", ",["danke","danke"],"."],"to":"preis"},{"k":"choice","t":[["Ja","ja"],", ",["gern","gern"],"!"],"to":"bier"}],"bier":[{"k":"dialogue","t":[["Ich","ich"]," ",["habe","haben"]," ",["kein","kein"]," ",["Bier","Bier"],". ",["Ich","ich"]," ",["habe","haben"]," ",["Brot","Brot"],". ",["Das","der"]," ",["hier","hier"]," ",["ist","sein"]," ",["eine","ein"]," ",["Bäckerei","Bäckerei"],"."],"s":"Greta"},{"k":"narration","t":[["Sie","sie"]," ",["lacht","lachen"],"."]},{"k":"jump","to":"preis"}],"preis":[{"k":"dialogue","t":[["Das","der"]," ",["Brot","Brot"]," ",["kostet","kosten"]," ",["zwei","zwei"]," ",["Pfennig","Pfennig"],". ",["Der","der"]," ",["Kuchen","Kuchen"]," ",["kostet","kosten"]," ",["drei","drei"]," ",["Pfennig","Pfennig"],". ",["Der","der"]," ",["Kuchen","Kuchen"]," ",["ist","sein"]," ",["süß","süß"],". ",["Sehr","sehr"],", ",["sehr","sehr"]," ",["gut","gut"],"!"],"s":"Greta"},{"k":"notiz","t":[["Was","was"]," ",["kostet","kosten"]," ",["das","der"]," ",["Brot","Brot"],"? – ",["Das","der"]," ",["Brot","Brot"]," ",["kostet","kosten"]," ",["zwei","zwei"]," ",["Pfennig","Pfennig"],"."]},{"k":"choice","t":[["Ein","ein"]," ",["Brot","Brot"],", ",["bitte","bitte"],"."],"to":"brot","if":"geld >= 2","fx":[["geld","-2"],["item","Brot"]]},{"k":"choice","t":[["Einen","ein"]," ",["Kuchen","Kuchen"],", ",["bitte","bitte"],"."],"to":"kuchen","if":"geld >= 3","fx":[["geld","-3"],["item","Kuchen"]]},{"k":"choice","t":[["Ein","ein"]," ",["Brot","Brot"]," ",["und","und"]," ",["einen","ein"]," ",["Kuchen","Kuchen"],", ",["bitte","bitte"],"."],"to":"beides","if":"geld >= 4"},{"k":"choice","t":[["Hast","haben"]," ",["du","du"]," ",["auch","auch"]," ",["ein","ein"]," ",["Franzbrötchen","Franzbrötchen"],"?"],"to":"franz"}],"franz":[{"k":"dialogue","t":[["Ein","ein"],"… ",["Franz-Brötchen","Brötchen"],"? ",["Wer","wer"]," ",["ist","sein"]," ",["Franz","Franz"],"?"],"s":"Greta"},{"k":"choice","t":[["Das","der"]," ",["ist","sein"]," ",["ein","ein"]," ",["Brötchen","Brötchen"]," ",["mit","mit"]," ",["Zimt","Zimt"],". ",["Aus","aus"]," ",["Hamburg","Hamburg"],"."],"to":"franz2"},{"k":"choice","t":[["Vergiss","vergessen"]," ",["es","es"],"."],"to":"preis"}],"franz2":[{"k":"dialogue","t":[["Mit","mit"]," ",["Zimt","Zimt"],"? ",["Zimt","Zimt"]," ",["ist","sein"]," ",["sehr","sehr"]," ",["teuer","teuer"],". ",["Den","der"]," ",["haben","haben"]," ",["nur","nur"]," ",["sehr","sehr"]," ",["reiche","reich"]," ",["Leute","Leute"],". ",["Aber","aber"]," ",["eine","ein"]," ",["gute","gut"]," ",["Idee","Idee"],"! ",["Brot","Brot"]," ",["mit","mit"]," ",["Zimt","Zimt"],"…"],"s":"Greta"},{"k":"narration","t":[["Greta","Greta"]," ",["denkt","nachdenken"]," ",["nach","nach"],". ",["Dann","dann"]," ",["lacht","lachen"]," ",["sie","sie"],"."]},{"k":"dialogue","t":[["Komm","kommen"]," ",["in","in"]," ",["ein","ein"]," ",["paar","paar"]," ",["Wochen","Woche"]," ",["wieder","wieder"],". ",["Vielleicht","vielleicht"]," ",["habe","haben"]," ",["ich","ich"]," ",["dann","dann"]," ",["ein","ein"]," ",["Brötchen","Brötchen"]," ",["für","für"]," ",["Franz","Franz"],"."],"s":"Greta"},{"k":"jump","to":"preis","fx":[["greta","+1"],["flag","franzbroetchen"]]}],"beides":[{"k":"dialogue","t":[["Brot","Brot"]," ",["und","und"]," ",["Kuchen","Kuchen"],"? ",["Das","der"]," ",["sind","sein"]," ",["fünf","fünf"]," ",["Pfennig","Pfennig"],". ",["Du","du"]," ",["hast","haben"]," ",["nur","nur"]," ",["vier","vier"],", ",["oder","oder"],"?"],"s":"Greta"},{"k":"choice","t":[["Ja","ja"],". ",["Leider","leider"],"."],"to":"beides2"},{"k":"choice","t":[["Dann","dann"]," ",["nur","nur"]," ",["ein","ein"]," ",["Brot","Brot"],", ",["bitte","bitte"],"."],"to":"brot","fx":[["geld","-2"],["item","Brot"]]}],"beides2":[{"k":"narration","t":[["Greta","Greta"]," ",["sieht","ansehen"]," ",["dich","dich"]," ",["an","an"],". ",["Du","du"]," ",["bist","sein"]," ",["nass","nass"],", ",["du","du"]," ",["bist","sein"]," ",["müde","müde"],", ",["deine","dein"]," ",["Arme","Arm"]," ",["tun","tun"]," ",["weh","weh"],"."]},{"k":"dialogue","t":[["Weißt","wissen"]," ",["du","du"]," ",["was","was"],"? ",["Vier","vier"]," ",["Pfennig","Pfennig"],". ",["Weil","weil"]," ",["du","du"]," ",["neu","neu"]," ",["bist","sein"],". ",["Aber","aber"]," ",["nur","nur"]," ",["heute","heute"],"!"],"s":"Greta"},{"k":"notiz","t":[["Weil","weil"]," ",["du","du"]," ",["neu","neu"]," ",["bist","sein"],"."]},{"k":"jump","to":"brot_kuchen","fx":[["geld","-4"],["item","Brot"],["item","Kuchen"],["greta","+1"]]}],"brot":[{"k":"narration","t":[["Greta","Greta"]," ",["gibt","geben"]," ",["dir","dir"]," ",["ein","ein"]," ",["großes","groß"]," ",["Brot","Brot"],". ",["Es","es"]," ",["ist","sein"]," ",["noch","noch"]," ",["warm","warm"],"."]},{"k":"dialogue","t":[["Mein","mein"]," ",["Vater","Vater"]," ",["war","sein"]," ",["auch","auch"]," ",["Bäcker","Bäcker"],". ",["Er","er"]," ",["hat","haben"]," ",["immer","immer"]," ",["gesagt","sagen"],": ",["Gutes","gut"]," ",["Brot","Brot"]," ",["braucht","brauchen"]," ",["Zeit","Zeit"],", ",["und","und"]," ",["gute","gut"]," ",["Freunde","Freund"]," ",["auch","auch"],"."],"s":"Greta","if":"stufe >= 2"},{"k":"dialogue","t":[["Guten","gut"]," ",["Appetit","Appetit"],"!"],"s":"Greta"},{"k":"jump","to":"ende"}],"kuchen":[{"k":"narration","t":[["Greta","Greta"]," ",["gibt","geben"]," ",["dir","dir"]," ",["ein","ein"]," ",["Stück","Stück"]," ",["Kuchen","Kuchen"],". ",["Er","er"]," ",["ist","sein"]," ",["süß","süß"]," ",["und","und"]," ",["noch","noch"]," ",["warm","warm"],"."]},{"k":"dialogue","t":[["Guten","gut"]," ",["Appetit","Appetit"],"! ",["Aber","aber"]," ",["nicht","nicht"]," ",["alles","all"]," ",["auf","auf"]," ",["einmal","einmal"]," ",["essen","essen"],"."],"s":"Greta"},{"k":"jump","to":"ende"}],"brot_kuchen":[{"k":"narration","t":[["Greta","Greta"]," ",["gibt","geben"]," ",["dir","dir"]," ",["ein","ein"]," ",["großes","groß"]," ",["Brot","Brot"]," ",["und","und"]," ",["ein","ein"]," ",["Stück","Stück"]," ",["Kuchen","Kuchen"],". ",["Alles","all"]," ",["ist","sein"]," ",["noch","noch"]," ",["warm","warm"],"."]},{"k":"dialogue","t":[["Guten","gut"]," ",["Appetit","Appetit"],"!"],"s":"Greta"},{"k":"jump","to":"ende"}],"ende":[{"k":"narration","t":[["Du","du"]," ",["isst","essen"],". ",["Es","es"]," ",["ist","sein"]," ",["das","der"]," ",["beste","gut"]," ",["Essen","Essen"]," ",["in","in"]," ",["deinem","dein"]," ",["Leben","Leben"],". ",["Vielleicht","vielleicht"]," ",["ist","sein"]," ",["es","es"]," ",["auch","auch"]," ",["nur","nur"]," ",["der","der"]," ",["Hunger","Hunger"],"."]},{"k":"dialogue","t":[["Hast","haben"]," ",["du","du"]," ",["schon","schon"]," ",["ein","ein"]," ",["Zimmer","Zimmer"]," ",["für","für"]," ",["die","der"]," ",["Nacht","Nacht"],"?"],"s":"Greta"},{"k":"choice","t":[["Nein","nein"],". ",["Ich","ich"]," ",["habe","haben"]," ",["nichts","nichts"],"."],"to":"zimmer"},{"k":"choice","t":[["Ich","ich"]," ",["schlafe","schlafen"]," ",["am","an"]," ",["Hafen","Hafen"],"."],"to":"hafen"}],"hafen":[{"k":"dialogue","t":[["Am","an"]," ",["Hafen","Hafen"],"? ",["Bei","bei"]," ",["dem","der"]," ",["Wetter","Wetter"],"? ",["Nein","nein"],", ",["nein","nein"],", ",["nein","nein"],"."],"s":"Greta"},{"k":"jump","to":"zimmer"}],"zimmer":[{"k":"dialogue","t":[["Geh","gehen"]," ",["zu","zu"]," ",["Alheit","Alheit"],". ",["Sie","sie"]," ",["hat","haben"]," ",["ein","ein"]," ",["Haus","Haus"]," ",["an","an"]," ",["der","der"]," ",["Elbe","Elbe"],". ",["Sie","sie"]," ",["hat","haben"]," ",["oft","oft"]," ",["ein","ein"]," ",["Zimmer","Zimmer"]," ",["frei","frei"],". ",["Sag","sagen"]," ",["ihr","ihr"],": ",["Greta","Greta"]," ",["schickt","schicken"]," ",["dich","dich"],"."],"s":"Greta"},{"k":"notiz","t":[["Hast","haben"]," ",["du","du"]," ",["ein","ein"]," ",["Zimmer","Zimmer"]," ",["frei","frei"],"?"]},{"k":"jump","to":"abend"}]},"neu":["voll","frisch","heiß","süß","Franzbrötchen","Zimt","vergessen","reich","Idee","nachdenken","paar","wieder","weil","warm","Stück"]},"abend":{"tag":1,"titel":"Bei Alheit","ort":"Alheits Haus","nodes":{"start":[{"k":"narration","t":[["Es","es"]," ",["ist","sein"]," ",["Abend","Abend"],". ",["Das","der"]," ",["Haus","Haus"]," ",["von","von"]," ",["Alheit","Alheit"]," ",["ist","sein"]," ",["klein","klein"]," ",["und","und"]," ",["alt","alt"],". ",["Es","es"]," ",["steht","stehen"]," ",["direkt","direkt"]," ",["an","an"]," ",["der","der"]," ",["Elbe","Elbe"],". ",["Im","in"]," ",["Fenster","Fenster"]," ",["ist","sein"]," ",["Licht","Licht"],"."]},{"k":"narration","t":[["Du","du"]," ",["rufst","rufen"],": „",["Hallo","hallo"],"?“ ",["Eine","ein"]," ",["alte","alt"]," ",["Frau","Frau"]," ",["öffnet","öffnen"]," ",["die","der"]," ",["Tür","Tür"],". ",["Sie","sie"]," ",["hat","haben"]," ",["einen","ein"]," ",["Hund","Hund"],". ",["Der","der"]," ",["Hund","Hund"]," ",["ist","sein"]," ",["auch","auch"]," ",["alt","alt"],"."]},{"k":"dialogue","t":[["Moin","Moin"],". ",["Wer","wer"]," ",["bist","sein"]," ",["du","du"]," ",["denn","denn"],"?"],"s":"Alheit"},{"k":"choice","t":[["Greta","Greta"]," ",["schickt","schicken"]," ",["mich","mich"],"."],"to":"greta","fx":[["alheit","+1"]]},{"k":"choice","t":[["Hast","haben"]," ",["du","du"]," ",["ein","ein"]," ",["Zimmer","Zimmer"]," ",["frei","frei"],"?"],"to":"zimmer"}],"greta":[{"k":"dialogue","t":[["Ah","ah"],", ",["Greta","Greta"],"! ",["Dann","dann"]," ",["komm","kommen"]," ",["rein","rein"],", ",["komm","kommen"]," ",["rein","rein"],". ",["Es","es"]," ",["ist","sein"]," ",["kalt","kalt"],"."],"s":"Alheit"},{"k":"jump","to":"drinnen"}],"zimmer":[{"k":"dialogue","t":[["Ein","ein"]," ",["Zimmer","Zimmer"],"? ",["Vielleicht","vielleicht"],". ",["Wer","wer"]," ",["schickt","schicken"]," ",["dich","dich"],"?"],"s":"Alheit"},{"k":"choice","t":[["Greta","Greta"],". ",["Von","von"]," ",["der","der"]," ",["Bäckerei","Bäckerei"],"."],"to":"greta","fx":[["alheit","+1"]]},{"k":"choice","t":[["Niemand","niemand"],". ",["Ich","ich"]," ",["bin","sein"]," ",["einfach","einfach"]," ",["hier","hier"],"."],"to":"niemand"}],"niemand":[{"k":"dialogue","t":[["Einfach","einfach"]," ",["hier","hier"],". ",["Hm","hm"],". ",["Das","der"]," ",["sagen","sagen"]," ",["viele","viel"],". ",["Na","na"]," ",["gut","gut"],", ",["komm","kommen"]," ",["rein","rein"],". ",["Es","es"]," ",["ist","sein"]," ",["kalt","kalt"],"."],"s":"Alheit"},{"k":"jump","to":"drinnen"}],"drinnen":[{"k":"narration","t":[["Drinnen","drinnen"]," ",["ist","sein"]," ",["ein","ein"]," ",["Feuer","Feuer"],". ",["Über","über"]," ",["dem","der"]," ",["Feuer","Feuer"]," ",["steht","stehen"]," ",["ein","ein"]," ",["Topf","Topf"]," ",["mit","mit"]," ",["Suppe","Suppe"],". ",["Es","es"]," ",["riecht","riechen"]," ",["sehr","sehr"]," ",["gut","gut"],"."]},{"k":"dialogue","t":[["Setz","setzen"]," ",["dich","dich"],". ",["Hier","hier"],", ",["eine","ein"]," ",["Suppe","Suppe"],". ",["Du","du"]," ",["siehst","sehen"]," ",["müde","müde"]," ",["aus","aus"],"."],"s":"Alheit"},{"k":"notiz","t":[["Setz","setzen"]," ",["dich","dich"],"!"]},{"k":"narration","t":[["Du","du"]," ",["isst","essen"]," ",["die","der"]," ",["Suppe","Suppe"],". ",["Sie","sie"]," ",["ist","sein"]," ",["heiß","heiß"]," ",["und","und"]," ",["gut","gut"],". ",["Der","der"]," ",["Hund","Hund"]," ",["legt","legen"]," ",["seinen","sein"]," ",["Kopf","Kopf"]," ",["auf","auf"]," ",["deinen","dein"]," ",["Fuß","Fuß"],"."]},{"k":"dialogue","t":[["Das","der"]," ",["Zimmer","Zimmer"]," ",["kostet","kosten"]," ",["einen","ein"]," ",["Pfennig","Pfennig"]," ",["für","für"]," ",["die","der"]," ",["Nacht","Nacht"],". ",["Oder","oder"]," ",["du","du"]," ",["hilfst","helfen"]," ",["mir","mir"]," ",["morgen","morgen"]," ",["früh","früh"]," ",["im","in"]," ",["Haus","Haus"],". ",["Wasser","Wasser"]," ",["holen","holen"],", ",["die","der"]," ",["Küche","Küche"]," ",["putzen","putzen"],"."],"s":"Alheit"},{"k":"choice","t":[["Hier","hier"]," ",["ist","sein"]," ",["ein","ein"]," ",["Pfennig","Pfennig"],"."],"to":"bezahlen","if":"geld >= 1","fx":[["geld","-1"]]},{"k":"choice","t":[["Ich","ich"]," ",["helfe","helfen"]," ",["dir","dir"]," ",["morgen","morgen"]," ",["gern","gern"],"."],"to":"helfen","fx":[["alheit","+1"],["flag","hilft_alheit"]]},{"k":"choice","t":[["Ich","ich"]," ",["verstehe","verstehen"]," ",["das","der"]," ",["nicht","nicht"],"."],"to":"erklaeren"}],"erklaeren":[{"k":"narration","t":[["Alheit","Alheit"]," ",["spricht","sprechen"]," ",["jetzt","jetzt"]," ",["langsam","langsam"],". ",["Sie","sie"]," ",["zeigt","zeigen"]," ",["mit","mit"]," ",["der","der"]," ",["Hand","Hand"],"."]},{"k":"dialogue","t":[["Das","der"]," ",["Zimmer","Zimmer"],". ",["Für","für"]," ",["eine","ein"]," ",["Nacht","Nacht"],". ",["Ein","ein"]," ",["Pfennig","Pfennig"],". ",["Oder","oder"],": ",["Morgen","Morgen"],". ",["Du","du"],". ",["Hilfst","helfen"],". ",["Mir","mir"],"."],"s":"Alheit"},{"k":"narration","t":[["Sie","sie"]," ",["zeigt","zeigen"]," ",["auf","auf"]," ",["den","der"]," ",["Eimer","Eimer"]," ",["und","und"]," ",["auf","auf"]," ",["die","der"]," ",["Küche","Küche"],"."]},{"k":"dialogue","t":[["Wasser","Wasser"]," ",["holen","holen"],". ",["Küche","Küche"]," ",["putzen","putzen"],". ",["Verstehst","verstehen"]," ",["du","du"],"?"],"s":"Alheit"},{"k":"notiz","t":[["Verstehst","verstehen"]," ",["du","du"],"? – ",["Ja","ja"],", ",["jetzt","jetzt"]," ",["verstehe","verstehen"]," ",["ich","ich"],"."]},{"k":"choice","t":[["Ah","ah"],"! ",["Ja","ja"],", ",["jetzt","jetzt"]," ",["verstehe","verstehen"]," ",["ich","ich"],". ",["Ich","ich"]," ",["helfe","helfen"]," ",["dir","dir"]," ",["gern","gern"],"."],"to":"helfen","fx":[["alheit","+1"],["flag","hilft_alheit"]]},{"k":"choice","t":[["Ah","ah"],"! ",["Hier","hier"]," ",["ist","sein"]," ",["ein","ein"]," ",["Pfennig","Pfennig"],"."],"to":"bezahlen","if":"geld >= 1","fx":[["geld","-1"]]}],"bezahlen":[{"k":"dialogue","t":[["Danke","danke"],". ",["Das","der"]," ",["Zimmer","Zimmer"]," ",["ist","sein"]," ",["oben","oben"],". ",["Das","der"]," ",["Bett","Bett"]," ",["ist","sein"]," ",["klein","klein"],", ",["aber","aber"]," ",["sauber","sauber"],"."],"s":"Alheit"},{"k":"jump","to":"uhr"}],"helfen":[{"k":"dialogue","t":[["Gut","gut"],". ",["Dann","dann"]," ",["bis","bis"]," ",["morgen","morgen"]," ",["früh","früh"],". ",["Nicht","nicht"]," ",["zu","zu"]," ",["spät","spät"],"! ",["Das","der"]," ",["Zimmer","Zimmer"]," ",["ist","sein"]," ",["oben","oben"],". ",["Das","der"]," ",["Bett","Bett"]," ",["ist","sein"]," ",["klein","klein"],", ",["aber","aber"]," ",["sauber","sauber"],"."],"s":"Alheit"},{"k":"jump","to":"uhr"}],"uhr":[{"k":"narration","t":[["Deine","dein"]," ",["Uhr","Uhr"]," ",["macht","machen"]," ",["wieder","wieder"]," „",["Piep","piep"],"“. ",["Der","der"]," ",["Hund","Hund"]," ",["sieht","ansehen"]," ",["dich","dich"]," ",["an","an"],". ",["Alheit","Alheit"]," ",["sieht","ansehen"]," ",["deinen","dein"]," ",["Arm","Arm"]," ",["an","an"],"."]},{"k":"dialogue","t":[["Was","was"]," ",["ist","sein"]," ",["das","der"],"?"],"s":"Alheit"},{"k":"choice","t":[["Meine","mein"]," ",["Uhr","Uhr"],". ",["Sie","sie"]," ",["ist","sein"]," ",["kaputt","kaputt"],"."],"to":"kaputt"},{"k":"choice","t":[["Das","der"]," ",["ist","sein"]," ",["nichts","nichts"],"."],"to":"nichts"}],"nichts":[{"k":"dialogue","t":[["Nichts","nichts"],"? ",["Hm","hm"],". ",["Mein","mein"]," ",["Hund","Hund"]," ",["findet","finden"]," ",["das","der"]," ",["sehr","sehr"]," ",["interessant","interessant"],"."],"s":"Alheit"},{"k":"jump","to":"kaputt"}],"kaputt":[{"k":"narration","t":[["Du","du"]," ",["zeigst","zeigen"]," ",["ihr","ihr"]," ",["die","der"]," ",["Uhr","Uhr"],". ",["Alheit","Alheit"]," ",["sieht","ansehen"]," ",["sie","sie"]," ",["lange","lange"]," ",["an","an"],". ",["Sie","sie"]," ",["sagt","sagen"]," ",["nichts","nichts"],". ",["Dann","dann"]," ",["sagt","sagen"]," ",["sie","sie"]," ",["leise","leise"],":"]},{"k":"dialogue","t":[["So","so"]," ",["eine","ein"]," ",["Uhr","Uhr"]," ",["habe","haben"]," ",["ich","ich"]," ",["noch","noch"]," ",["nie","nie"]," ",["gesehen","sehen"],". ",["Woher","woher"]," ",["kommst","kommen"]," ",["du","du"]," ",["wirklich","wirklich"],"?"],"s":"Alheit"},{"k":"choice","t":[["Aus","aus"]," ",["der","der"]," ",["Zukunft","Zukunft"],"."],"to":"zukunft","fx":[["alheit","+1"]]},{"k":"choice","t":[["Von","von"]," ",["weit","weit"]," ",["her","her"],"."],"to":"weit"}],"zukunft":[{"k":"narration","t":[["Alheit","Alheit"]," ",["lacht","lachen"]," ",["nicht","nicht"],"."]},{"k":"dialogue","t":[["Aus","aus"]," ",["der","der"]," ",["Zukunft","Zukunft"],". ",["Gut","gut"],". ",["Dann","dann"]," ",["musst","müssen"]," ",["du","du"]," ",["auch","auch"]," ",["wieder","wieder"]," ",["zurück","müssen"],", ",["oder","oder"],"?"],"s":"Alheit"},{"k":"jump","to":"rat"}],"weit":[{"k":"dialogue","t":[["Von","von"]," ",["weit","weit"]," ",["her","her"],". ",["Ja","ja"],". ",["Das","der"]," ",["sehe","sehen"]," ",["ich","ich"],"."],"s":"Alheit"},{"k":"narration","t":[["Sie","sie"]," ",["lacht","lachen"]," ",["nicht","nicht"],"."]},{"k":"jump","to":"rat"}],"rat":[{"k":"dialogue","t":[["Hör","hören"]," ",["mir","mir"]," ",["gut","gut"]," ",["zu","hören"],". ",["Hier","hier"]," ",["in","in"]," ",["Hamburg","Hamburg"]," ",["bekommst","bekommen"]," ",["du","du"]," ",["Hilfe","Hilfe"]," ",["nicht","nicht"]," ",["mit","mit"]," ",["Geld","Geld"],". ",["Du","du"]," ",["bekommst","bekommen"]," ",["Hilfe","Hilfe"]," ",["mit","mit"]," ",["Freunden","Freund"],". ",["Erst","erst"]," ",["die","der"]," ",["Freunde","Freund"],", ",["dann","dann"]," ",["die","der"]," ",["Hilfe","Hilfe"],". ",["Verstehst","verstehen"]," ",["du","du"],"?"],"s":"Alheit"},{"k":"notiz","t":[["Erst","erst"]," ",["die","der"]," ",["Freunde","Freund"],", ",["dann","dann"]," ",["die","der"]," ",["Hilfe","Hilfe"],"."]},{"k":"choice","t":[["Ja","ja"],". ",["Ich","ich"]," ",["verstehe","verstehen"],"."],"to":"plaudern"},{"k":"choice","t":[["Nein","nein"],". ",["Kannst","können"]," ",["du","du"]," ",["das","der"]," ",["noch","noch"]," ",["einmal","einmal"]," ",["sagen","sagen"],"?"],"to":"nochmal"}],"nochmal":[{"k":"dialogue","t":[["Natürlich","natürlich"],". ",["Also","also"],": ",["Du","du"]," ",["brauchst","brauchen"]," ",["Hilfe","Hilfe"]," ",["für","für"]," ",["deine","dein"]," ",["Uhr","Uhr"],". ",["Leute","Leute"]," ",["helfen","helfen"]," ",["dir","dir"],", ",["wenn","wenn"]," ",["sie","sie"]," ",["dich","dich"]," ",["kennen","kennen"],". ",["Wenn","wenn"]," ",["sie","sie"]," ",["dich","dich"]," ",["mögen","mögen"],". ",["Also","also"],": ",["Lern","kennenlernen"]," ",["die","der"]," ",["Leute","Leute"]," ",["kennen","kennen"],". ",["Jonte","Jonte"],", ",["Greta","Greta"],", ",["Hinnerk","Hinnerk"],"…"],"s":"Alheit"},{"k":"notiz","t":[["Kannst","können"]," ",["du","du"]," ",["das","der"]," ",["noch","noch"]," ",["einmal","einmal"]," ",["sagen","sagen"],"?"]},{"k":"jump","to":"plaudern"}],"plaudern":[{"k":"narration","t":[["Das","der"]," ",["Feuer","Feuer"]," ",["ist","sein"]," ",["warm","warm"],". ",["Der","der"]," ",["Hund","Hund"]," ",["schläft","schlafen"]," ",["schon","schon"],"."]},{"k":"dialogue","t":[["Na","na"],", ",["erzähl","erzählen"]," ",["mal","mal"],". ",["Wie","wie"]," ",["war","sein"]," ",["dein","dein"]," ",["erster","er"]," ",["Tag","Tag"]," ",["in","in"]," ",["Hamburg","Hamburg"],"?"],"s":"Alheit"},{"k":"frei","s":"Alheit","thema":"Am Feuer. Alheit fragt nach deinem ersten Tag: der Hafen, Hinnerk, Jonte, die Säcke, Greta und das Brot. Sie fragt auch ein bisschen nach der Uhr, aber sie drängt nicht.","to":"gute_nacht","max":5}],"gute_nacht":[{"k":"dialogue","t":[["Und","und"]," ",["jetzt","jetzt"],": ",["ab","ab"]," ",["ins","in"]," ",["Bett","Bett"],". ",["Gute","gut"]," ",["Nacht","Nacht"],"!"],"s":"Alheit"},{"k":"narration","t":[["Du","du"]," ",["gehst","gehen"]," ",["nach","nach"]," ",["oben","oben"],". ",["Das","der"]," ",["Bett","Bett"]," ",["ist","sein"]," ",["wirklich","wirklich"]," ",["klein","klein"],". ",["Aber","aber"]," ",["du","du"]," ",["schläfst","schlafen"]," ",["sofort","sofort"]," ",["ein","ein"],"."]},{"k":"narration","t":[["Du","du"]," ",["träumst","träumen"]," ",["von","von"]," ",["Säcken","Sack"],". ",["Von","von"]," ",["sehr","sehr"]," ",["vielen","viel"]," ",["Säcken","Sack"],"."]},{"k":"notiz","t":[["Gute","gut"]," ",["Nacht","Nacht"],"!"]},{"k":"jump","to":"ENDE"}]},"neu":["direkt","Fenster","rufen","rein","niemand","Topf","Suppe","setzen","früh","putzen","sauber","interessant","wirklich","natürlich","wenn","mal","träumen"]}},"words":{"Abend":{"k":"goethe","lvl":"A1"},"Alheit":{"k":"name","h":"Eine alte Frau. Sie hat ein Haus mit Zimmern für Gäste."},"Apfel":{"k":"goethe","lvl":"A1"},"Appetit":{"k":"goethe","lvl":"A1"},"Arbeit":{"k":"goethe","lvl":"A1"},"Arm":{"k":"goethe","lvl":"A1"},"Auge":{"k":"goethe","lvl":"A1"},"Bett":{"k":"goethe","lvl":"A1"},"Bier":{"k":"goethe","lvl":"A1"},"Brot":{"k":"goethe","lvl":"A1"},"Brötchen":{"k":"goethe","lvl":"A1","teile":["Franz","Brötchen"]},"Bäcker":{"teile":["backen","-er"]},"Bäckerei":{"k":"goethe","lvl":"A1"},"Chef":{"k":"goethe","lvl":"A1"},"Digga":{"k":"slang","h":"So sagen junge Leute in Hamburg zu einem Freund. Wie „mein Freund“, aber lustiger."},"Ecke":{"k":"goethe","lvl":"A1"},"Eimer":{"k":"szene","h":"Man trägt Wasser im Eimer. Er ist rund und oben offen."},"Elbe":{"k":"name","h":"Der große Fluss in Hamburg."},"Ersten":{"teile":["erst","nominalisiert"]},"Essen":{"k":"goethe","lvl":"A1"},"Fenster":{"k":"goethe","lvl":"A2"},"Feuer":{"k":"goethe","lvl":"A1"},"Fisch":{"k":"goethe","lvl":"A1"},"Franz":{"k":"name","h":"Ein Name für einen Mann."},"Franzbrötchen":{"k":"szene","h":"Ein süßes Brötchen aus Hamburg. Mit Zimt. Sehr gut zum Kaffee."},"Frau":{"k":"goethe","lvl":"A1"},"Freund":{"k":"goethe","lvl":"A1"},"Fuß":{"k":"goethe","lvl":"A1"},"Geld":{"k":"goethe","lvl":"A1"},"Glas":{"k":"goethe","lvl":"A1"},"Greta":{"k":"name","h":"Sie hat die Bäckerei am Markt."},"Haar":{"k":"goethe","lvl":"A1"},"Hafen":{"k":"szene","h":"Hier kommen die Schiffe an. Hier holt man Waren vom Schiff."},"Hafenmeister":{"k":"szene","h":"Der Chef am Hafen. Er sagt, welches Schiff wo liegt."},"Hamburg":{"k":"name","h":"Die Stadt an der Elbe."},"Hand":{"k":"goethe","lvl":"A1"},"Handy":{"k":"goethe","lvl":"A1"},"Haus":{"k":"goethe","lvl":"A1"},"Hilfe":{"k":"goethe","lvl":"A1"},"Himmel":{"k":"goethe","lvl":"A2"},"Hinnerk":{"k":"name","h":"Der Hafenmeister. Laut, aber nicht böse."},"Hund":{"k":"goethe","lvl":"A1"},"Hunger":{"k":"goethe","lvl":"A1"},"Idee":{"k":"goethe","lvl":"A2"},"Jacke":{"k":"goethe","lvl":"A1"},"Jonte":{"k":"name","h":"Ein junger Mann. Er arbeitet am Hafen."},"Junge":{"k":"goethe","lvl":"A1"},"Kaffee":{"k":"goethe","lvl":"A1"},"Katze":{"k":"goethe","lvl":"A1"},"Kind":{"k":"goethe","lvl":"A1"},"Kleidung":{"k":"goethe","lvl":"A1"},"Kopf":{"k":"goethe","lvl":"A1"},"Kuchen":{"k":"goethe","lvl":"A1"},"Küche":{"k":"goethe","lvl":"A1"},"Leben":{"k":"goethe","lvl":"A1"},"Leute":{"k":"goethe","lvl":"A1"},"Licht":{"k":"goethe","lvl":"A1"},"Lüneburg":{"k":"name","h":"Eine Stadt im Süden von Hamburg. Dort gibt es viel Salz."},"Mann":{"k":"goethe","lvl":"A1"},"Markt":{"k":"goethe","lvl":"A2"},"Mittag":{"k":"goethe","lvl":"A1"},"Mitte":{"k":"goethe","lvl":"A1"},"Moin":{"k":"szene","h":"So sagt man in Hamburg „Hallo“. Den ganzen Tag, nicht nur am Morgen."},"Moment":{"k":"goethe","lvl":"A1"},"Morgen":{"k":"goethe","lvl":"A1"},"Nacht":{"k":"goethe","lvl":"A1"},"Norden":{"k":"goethe","lvl":"A2"},"Pause":{"k":"goethe","lvl":"A1"},"Pfennig":{"k":"szene","h":"Kleines Geld. Ein Brot kostet zwei Pfennig."},"Problem":{"k":"goethe","lvl":"A1"},"Reisender":{"teile":["reisen","-end"]},"Rücken":{"k":"goethe","lvl":"A2"},"Sache":{"k":"goethe","lvl":"A2"},"Sack":{"k":"szene","h":"Eine sehr große Tasche. Im Sack ist zum Beispiel Salz."},"Salz":{"k":"goethe","lvl":"A1"},"Schiff":{"k":"goethe","lvl":"A2"},"Schuh":{"k":"goethe","lvl":"A1"},"Sonne":{"k":"goethe","lvl":"A1"},"Spaß":{"k":"goethe","lvl":"A2"},"Stück":{"k":"goethe","lvl":"A2"},"Suppe":{"k":"goethe","lvl":"A2"},"Tag":{"k":"goethe","lvl":"A1"},"Tasche":{"k":"goethe","lvl":"A1"},"Topf":{"k":"goethe","lvl":"A2"},"Tür":{"k":"goethe","lvl":"A2"},"Uhr":{"k":"goethe","lvl":"A1"},"Vater":{"k":"goethe","lvl":"A1"},"Vogel":{"k":"goethe","lvl":"A2"},"Wasser":{"k":"goethe","lvl":"A1"},"Weg":{"k":"goethe","lvl":"A2"},"Wetter":{"k":"goethe","lvl":"A1"},"Woche":{"k":"goethe","lvl":"A1"},"Zeit":{"k":"goethe","lvl":"A1"},"Zimmer":{"k":"goethe","lvl":"A1"},"Zimt":{"k":"szene","h":"Er ist braun und kommt von weit her. Süß und teuer."},"Zukunft":{"k":"szene","h":"Die Zeit nach heute. Morgen, nächstes Jahr, in 600 Jahren …"},"ab":{"k":"goethe","lvl":"A1"},"aber":{"k":"goethe","lvl":"A1"},"ach":{"k":"interjektion","h":"„Ach, nichts.“ = Es ist nicht wichtig."},"ah":{"k":"interjektion","h":"„Ah!“ = Jetzt verstehe ich!"},"aha":{"k":"interjektion","h":"„Aha!“ = Jetzt verstehe ich (oder: Ich glaube dir nicht)."},"all":{"k":"goethe","lvl":"A1"},"also":{"k":"goethe","lvl":"A1"},"alt":{"k":"goethe","lvl":"A1"},"an":{"k":"goethe","lvl":"A1"},"ander":{"k":"goethe","lvl":"A1"},"ansehen":{"k":"goethe","lvl":"A2"},"au":{"k":"interjektion","h":"Etwas tut weh: „Au!“"},"auch":{"k":"goethe","lvl":"A1"},"auf":{"k":"goethe","lvl":"A1"},"aufstehen":{"k":"goethe","lvl":"A1"},"aus":{"k":"goethe","lvl":"A1"},"bei":{"k":"goethe","lvl":"A1"},"bekommen":{"k":"goethe","lvl":"A1"},"bezahlen":{"k":"goethe","lvl":"A1"},"bis":{"k":"goethe","lvl":"A1"},"bitte":{"k":"goethe","lvl":"A1"},"brauchen":{"k":"goethe","lvl":"A1"},"da":{"k":"goethe","lvl":"A1"},"danke":{"k":"goethe","lvl":"A1"},"dann":{"k":"goethe","lvl":"A1"},"dein":{"k":"goethe","lvl":"A1"},"denken":{"k":"goethe","lvl":"A2"},"denn":{"k":"goethe","lvl":"A1"},"der":{"k":"goethe","lvl":"A1"},"dich":{"k":"goethe","lvl":"A1"},"dir":{"k":"goethe","lvl":"A1"},"direkt":{"k":"goethe","lvl":"A2"},"drei":{"k":"goethe","lvl":"A1"},"drinnen":{"k":"goethe","lvl":"A2"},"du":{"k":"goethe","lvl":"A1"},"dunkel":{"k":"goethe","lvl":"A2"},"egal":{"k":"goethe","lvl":"A2"},"ein":{"k":"goethe","lvl":"A1"},"einfach":{"k":"goethe","lvl":"A1"},"einmal":{"k":"goethe","lvl":"A1"},"er":{"k":"goethe","lvl":"A1"},"erst":{"k":"goethe","lvl":"A1"},"erzählen":{"k":"goethe","lvl":"A1"},"es":{"k":"goethe","lvl":"A1"},"essen":{"k":"goethe","lvl":"A1"},"fallen":{"k":"goethe","lvl":"A2"},"finden":{"k":"goethe","lvl":"A1"},"fliegen":{"k":"goethe","lvl":"A1"},"frei":{"k":"goethe","lvl":"A1"},"frisch":{"k":"goethe","lvl":"A2"},"früh":{"k":"goethe","lvl":"A2"},"fünf":{"k":"goethe","lvl":"A1"},"für":{"k":"goethe","lvl":"A1"},"ganz":{"k":"goethe","lvl":"A2"},"geben":{"k":"goethe","lvl":"A1"},"gehen":{"k":"goethe","lvl":"A1"},"genau":{"k":"goethe","lvl":"A2"},"genug":{"k":"goethe","lvl":"A2"},"geradeaus":{"k":"goethe","lvl":"A1"},"gern":{"k":"goethe","lvl":"A1"},"gleich":{"k":"goethe","lvl":"A1"},"grau":{"k":"goethe","lvl":"A1"},"groß":{"k":"goethe","lvl":"A1"},"gut":{"k":"goethe","lvl":"A1"},"haben":{"k":"goethe","lvl":"A1"},"hallo":{"k":"goethe","lvl":"A1"},"heiß":{"k":"goethe","lvl":"A2"},"heißen":{"k":"goethe","lvl":"A1"},"helfen":{"k":"goethe","lvl":"A1"},"her":{"k":"goethe","lvl":"A1"},"heute":{"k":"goethe","lvl":"A1"},"hier":{"k":"goethe","lvl":"A1"},"hin":{"k":"goethe","lvl":"A1"},"hinstellen":{"teile":["hin","stellen"]},"hinter":{"k":"goethe","lvl":"A2"},"hm":{"k":"interjektion","h":"Man denkt nach: „Hm …“"},"holen":{"k":"goethe","lvl":"A1"},"hören":{"k":"goethe","lvl":"A1"},"ich":{"k":"goethe","lvl":"A1"},"ihm":{"k":"goethe","lvl":"A1"},"ihn":{"k":"goethe","lvl":"A1"},"ihr":{"k":"goethe","lvl":"A1"},"immer":{"k":"goethe","lvl":"A1"},"in":{"k":"goethe","lvl":"A1"},"interessant":{"k":"goethe","lvl":"A2"},"ja":{"k":"goethe","lvl":"A1"},"jeder":{"k":"goethe","lvl":"A2"},"jetzt":{"k":"goethe","lvl":"A1"},"jung":{"k":"goethe","lvl":"A1"},"kalt":{"k":"goethe","lvl":"A2"},"kaputt":{"k":"goethe","lvl":"A1"},"kein":{"k":"goethe","lvl":"A1"},"kennen":{"k":"goethe","lvl":"A1"},"kennenlernen":{"k":"goethe","lvl":"A1"},"klein":{"k":"goethe","lvl":"A1"},"komisch":{"k":"goethe","lvl":"A2"},"kommen":{"k":"goethe","lvl":"A1"},"kosten":{"k":"goethe","lvl":"A1"},"krass":{"k":"slang","h":"Sehr stark, sehr besonders. „Das ist krass!“ = Das ist ja wirklich stark!"},"können":{"k":"goethe","lvl":"A1"},"lachen":{"k":"goethe","lvl":"A1"},"lange":{"k":"goethe","lvl":"A1"},"langsam":{"k":"goethe","lvl":"A1"},"laut":{"k":"goethe","lvl":"A1"},"legen":{"k":"goethe","lvl":"A1"},"leider":{"k":"goethe","lvl":"A1"},"leise":{"k":"goethe","lvl":"A1"},"lieber":{"k":"goethe","lvl":"A1"},"liegen":{"k":"goethe","lvl":"A1"},"links":{"k":"goethe","lvl":"A1"},"lustig":{"k":"goethe","lvl":"A1"},"machen":{"k":"goethe","lvl":"A1"},"mal":{"k":"goethe","lvl":"A2"},"mehr":{"k":"goethe","lvl":"A1"},"mein":{"k":"goethe","lvl":"A1"},"mich":{"k":"goethe","lvl":"A1"},"mir":{"k":"goethe","lvl":"A1"},"mit":{"k":"goethe","lvl":"A1"},"mitkommen":{"k":"goethe","lvl":"A1"},"morgen":{"k":"goethe","lvl":"A1"},"möchten":{"k":"goethe","lvl":"A1"},"mögen":{"k":"goethe","lvl":"A1"},"müde":{"k":"goethe","lvl":"A1"},"müssen":{"k":"goethe","lvl":"A1"},"na":{"k":"interjektion","h":"„Na also!“ = Siehst du, es geht doch!"},"nach":{"k":"goethe","lvl":"A1"},"nachdenken":{"k":"goethe","lvl":"B1","teile":["nach","denken"]},"nass":{"k":"goethe","lvl":"A2"},"natürlich":{"k":"goethe","lvl":"A2"},"neben":{"k":"goethe","lvl":"A2"},"nehmen":{"k":"goethe","lvl":"A1"},"nein":{"k":"goethe","lvl":"A1"},"neu":{"k":"goethe","lvl":"A1"},"nicht":{"k":"goethe","lvl":"A1"},"nichts":{"k":"goethe","lvl":"A1"},"nie":{"k":"goethe","lvl":"A1"},"niemand":{"k":"goethe","lvl":"A2"},"noch":{"k":"goethe","lvl":"A1"},"nur":{"k":"goethe","lvl":"A1"},"oben":{"k":"goethe","lvl":"A1"},"oder":{"k":"goethe","lvl":"A1"},"offen":{"k":"goethe","lvl":"A2"},"oft":{"k":"goethe","lvl":"A1"},"ohne":{"k":"goethe","lvl":"A1"},"paar":{"k":"goethe","lvl":"A2"},"passieren":{"k":"goethe","lvl":"A2"},"piep":{"k":"interjektion","h":"So macht ein kleiner Vogel. Oder deine Uhr."},"putzen":{"k":"goethe","lvl":"A2","h":"Sauber machen. Mit Wasser und mit der Hand."},"reich":{"k":"goethe","lvl":"A2"},"rein":{"k":"goethe","lvl":"A2"},"riechen":{"k":"goethe","lvl":"A1"},"rot":{"k":"goethe","lvl":"A1"},"rufen":{"k":"goethe","lvl":"A2"},"ruhig":{"k":"goethe","lvl":"A1"},"sagen":{"k":"goethe","lvl":"A1"},"sauber":{"k":"goethe","lvl":"A2"},"schicken":{"k":"goethe","lvl":"A1"},"schlafen":{"k":"goethe","lvl":"A1"},"schnell":{"k":"goethe","lvl":"A1"},"schon":{"k":"goethe","lvl":"A1"},"schwarz":{"k":"goethe","lvl":"A1"},"schwer":{"k":"goethe","lvl":"A1"},"sehen":{"k":"goethe","lvl":"A1"},"sehr":{"k":"goethe","lvl":"A1"},"sein":{"k":"goethe","lvl":"A1"},"setzen":{"k":"goethe","lvl":"A2"},"sich":{"k":"goethe","lvl":"A1"},"sie":{"k":"goethe","lvl":"A1"},"sitzen":{"k":"goethe","lvl":"A1"},"so":{"k":"goethe","lvl":"A1"},"sofort":{"k":"goethe","lvl":"A1"},"sprechen":{"k":"goethe","lvl":"A1"},"spät":{"k":"goethe","lvl":"A1"},"stehen":{"k":"goethe","lvl":"A1"},"stellen":{"k":"goethe","lvl":"A1"},"suchen":{"k":"goethe","lvl":"A1"},"süß":{"k":"goethe","lvl":"A2"},"teuer":{"k":"goethe","lvl":"A1"},"tragen":{"k":"goethe","lvl":"A2"},"träumen":{"k":"goethe","lvl":"A2"},"tun":{"k":"goethe","lvl":"A1"},"uff":{"k":"interjektion","h":"Etwas ist sehr schwer: „Uff!“"},"und":{"k":"goethe","lvl":"A1"},"vergessen":{"k":"goethe","lvl":"A2"},"verstehen":{"k":"goethe","lvl":"A1"},"viel":{"k":"goethe","lvl":"A1"},"vielleicht":{"k":"goethe","lvl":"A1"},"vier":{"k":"goethe","lvl":"A1"},"voll":{"k":"goethe","lvl":"A2"},"von":{"k":"goethe","lvl":"A1"},"vor":{"k":"goethe","lvl":"A1"},"vorbei":{"k":"goethe","lvl":"A2"},"warm":{"k":"goethe","lvl":"A2"},"was":{"k":"goethe","lvl":"A1"},"weh":{"k":"goethe","lvl":"A1"},"weil":{"k":"goethe","lvl":"A2"},"weit":{"k":"goethe","lvl":"A1"},"weiter":{"k":"goethe","lvl":"A1"},"weitertragen":{"teile":["weiter","tragen"]},"wenn":{"k":"goethe","lvl":"A2"},"wer":{"k":"goethe","lvl":"A1"},"wie":{"k":"goethe","lvl":"A1"},"wieder":{"k":"goethe","lvl":"A2"},"wir":{"k":"goethe","lvl":"A1"},"wirklich":{"k":"goethe","lvl":"A2"},"wissen":{"k":"goethe","lvl":"A1"},"wo":{"k":"goethe","lvl":"A1"},"woher":{"k":"goethe","lvl":"A1"},"wollen":{"k":"goethe","lvl":"A1"},"zeigen":{"k":"goethe","lvl":"A2"},"zu":{"k":"goethe","lvl":"A1"},"zurück":{"k":"goethe","lvl":"A1"},"zwei":{"k":"goethe","lvl":"A1"},"äh":{"k":"interjektion","h":"Man weiß nicht weiter: „Äh …“"},"öffnen":{"k":"goethe","lvl":"A1"},"über":{"k":"goethe","lvl":"A1"},"überall":{"k":"goethe","lvl":"A2"}},"known_levels":["A1"],"tier_days":{"1":1,"2":11,"3":21},"figuren":{"Hinnerk":"Hafenmeister in Hamburg, um 1370. Groß, laute Stimme, lange graue Haare. Gruff but kind underneath; dry humor; impatient with people standing in the way. Speaks short, direct sentences. Says \"Moin\", \"Junge, Junge\", \"Na also\".","Jonte":"Young dock worker, about 19, the player's first friend. Cheerful, curious, teases the player. Modern casual Hamburg youth slang in moderation: \"Digga\", \"krass\", \"voll\", \"läuft\". Fascinated by the player's strange watch and clothes.","Greta":"Baker at the market. Red hair, laughs a lot, warm, generous, a little nosy. Proud of her bread. Wants to try new ideas (the \"Franzbrötchen\" with cinnamon the player mentioned).","Alheit":"Old woman who rents rooms in her house by the Elbe; the patient mentor. Has an old dog. Speaks slowly and clearly; when the player doesn't understand, she rephrases more simply instead of correcting. Suspects the player really is from the future and doesn't laugh about it. Believes: \"Erst die Freunde, dann die Hilfe.\""}};
+</script>
+<script>
+// Moin, Zeitreisender – runner. All player-facing text is German.
+// Works in two places: as a claude.ai Artifact (AI corrections, free talk,
+// save in your account) and as a plain local file (choices only, browser save).
+(function () {
+  "use strict";
+  const G = window.GAME;
+  const KEY = "zeitreisender.v2";
+  const $ = (s) => document.querySelector(s);
+  const ART = { szene: "Hamburger Wort", slang: "Umgangssprache", name: "Name", interjektion: "Ausruf" };
+  const UNCOUNTED = new Set(["name", "interjektion"]);
+  const CEFR = ["A1", "A2.1", "A2.2", "B1-", "B1", "B1+", "B2"];
+  const STUFE_TEXT = {
+    1: "A2.1: Präsens, Perfekt, Modalverben, Imperativ; kurze Hauptsätze mit und/aber/weil; nur sehr häufige Wörter (Goethe A1/A2).",
+    2: "A2.2 bis B1-: zusätzlich Präteritum, Nebensätze mit dass/wenn/weil, reflexive Verben, Vergleiche; Wörter bis Goethe B1, häufige zuerst.",
+    3: "B1: zusätzlich Konjunktiv II (könnte, hätte, würde), Relativsätze, obwohl/damit/um … zu; längere zusammenhängende Sätze.",
+  };
+
+  let S = null;           // game state
+  let SAMPLE = null;      // claude "sample" capability, null when unavailable
+  let DOC = null;         // db document for this player's save, null when unavailable
+  let busy = null;        // AbortController of the running AI call
+  let vorschlaegeOffen = false;
+  let resetArmed = false;
+
+  // ------------------------------------------------------------- state
+  function neuesSpiel() {
+    return { v: 2, szene: G.order[0], knoten: "start", tag: G.scenes[G.order[0]].tag, geld: 0,
+             rel: {}, items: [], flags: [], notiz: [], seen: {}, log: [], warten: null,
+             profil: { niveau: [], strukturen: {}, eigene: {}, stufe: 1, runden: 0, korrekt: 0 },
+             einst: { tier: "quick" } };
+  }
+  function tagStufe() {
+    let st = 1;
+    for (const [t, d] of Object.entries(G.tier_days)) if (S.tag >= d) st = Math.max(st, Number(t));
+    return st;
+  }
+  function stufe() { return Math.max(tagStufe(), S.profil.stufe || 1); }
+
+  // ------------------------------------------------------------- save
+  let saveTimer = null, saveChain = Promise.resolve();
+  function speichern() {
+    try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+    if (!DOC) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      const snap = JSON.parse(JSON.stringify(S));
+      saveChain = saveChain.then(() => DOC.set({ stand: snap })).catch(() => {});
+    }, 800);
+  }
+  function lokalLaden() {
+    try { const raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
+  }
+  function gueltig(st) { return st && st.v === 2 && st.szene && G.scenes[st.szene]; }
+
+  // Download/upload of a save file: only offered outside the artifact.
+  function exportieren() {
+    const blob = new Blob([JSON.stringify(S, null, 1)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "zeitreisender-spielstand-tag" + S.tag + ".json";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+  function importieren(file) {
+    const r = new FileReader();
+    r.onload = () => {
+      try {
+        const st = JSON.parse(r.result);
+        if (!gueltig(st)) throw new Error();
+        S = st; speichern(); allesZeichnen(); schliessen();
+      } catch (e) { hinweis("Diese Datei ist kein Spielstand."); }
+    };
+    r.readAsText(file);
+  }
+
+  // ------------------------------------------------------------- rules
+  function wert(name) {
+    if (name === "geld") return S.geld;
+    if (name === "stufe") return stufe();
+    if (name in S.rel) return S.rel[name];
+    return S.flags.includes(name) || S.items.includes(name) ? 1 : 0;
+  }
+  function bedingung(c) {
+    if (!c) return true;
+    const m = c.match(/^(\w+)\s*(>=|<=|==|!=|>|<)\s*(-?\d+)$/);
+    if (m) {
+      const a = wert(m[1]), b = Number(m[3]);
+      return { ">=": a >= b, "<=": a <= b, "==": a === b, "!=": a !== b, ">": a > b, "<": a < b }[m[2]];
+    }
+    if (c.startsWith("!")) return !wert(c.slice(1));
+    return !!wert(c);
+  }
+  function effekte(fx) {
+    for (const [k, v] of fx || []) {
+      if (k === "item") { S.items.push(v); continue; }
+      if (k === "flag") { if (!S.flags.includes(v)) S.flags.push(v); continue; }
+      const n = Number(v) || 0;
+      if (k === "geld") S.geld += n; else S.rel[k] = (S.rel[k] || 0) + n;
+    }
+  }
+  const text = (seg) => (typeof seg === "string" ? seg : seg.map((s) => (typeof s === "string" ? s : s[0])).join(""));
+
+  function gesehen(seg) {
+    const neu = [];
+    if (typeof seg === "string") return neu;
+    for (const s of seg) {
+      if (typeof s === "string") continue;
+      if (!S.seen[s[1]]) neu.push(s[1]);
+      S.seen[s[1]] = (S.seen[s[1]] || 0) + 1;
+    }
+    return neu;
+  }
+
+  // ------------------------------------------------------------- engine
+  function ziel(to) {
+    if (to === "ENDE") return null;
+    if (G.scenes[S.szene].nodes[to]) return [S.szene, to];
+    const [sid, node] = to.split(".");
+    return [sid, node || "start"];
+  }
+  function gehe(to, tiefe = 0) {
+    const z = ziel(to);
+    if (!z) return tagEnde();
+    const [sid, node] = z;
+    if (sid !== S.szene || !S.log.length) {
+      S.szene = sid;
+      S.tag = G.scenes[sid].tag;
+      S.log.push({ typ: "titel", t: G.scenes[sid].titel });
+    }
+    S.knoten = node;
+    spiele(tiefe);
+  }
+  function spiele(tiefe) {
+    if (tiefe > 50) return;
+    const choices = [];
+    for (const ln of G.scenes[S.szene].nodes[S.knoten]) {
+      if (ln.k !== "choice" && !bedingung(ln.if)) continue;
+      if (ln.k === "narration" || ln.k === "dialogue") {
+        S.log.push({ typ: ln.k, s: ln.s, t: ln.t, neu: gesehen(ln.t), bonus: !!ln.if });
+      } else if (ln.k === "notiz") {
+        const t = text(ln.t);
+        if (!S.notiz.some((n) => n.t === t)) {
+          S.notiz.push({ t, tag: S.tag });
+          S.log.push({ typ: "notiz", t: "Neu im Notizbuch: „" + t + "“" });
+        }
+      } else if (ln.k === "choice") {
+        if (bedingung(ln.if)) choices.push(ln);
+      } else if (ln.k === "jump") {
+        effekte(ln.fx);
+        return gehe(ln.to, tiefe + 1);
+      } else if (ln.k === "frei") {
+        if (!SAMPLE) return gehe(ln.to, tiefe + 1);   // no AI: skip the free talk
+        S.warten = { typ: "frei", wer: ln.s, thema: ln.thema, max: ln.max, n: 0, to: ln.to };
+        speichern();
+        return allesZeichnen();
+      }
+    }
+    if (!choices.length) return tagEnde();
+    S.warten = { typ: "wahl", optionen: choices, fehlversuche: 0 };
+    vorschlaegeOffen = false;
+    speichern();
+    allesZeichnen();
+  }
+  function waehle(i, getippt) {
+    const c = S.warten.optionen[i];
+    S.warten = null;
+    if (!getippt) S.log.push({ typ: "du", t: c.t, neu: gesehen(c.t) });
+    effekte(c.fx);
+    gehe(c.to);
+  }
+  function tagEnde() {
+    const tag = S.tag;
+    const neu = G.order.filter((id) => G.scenes[id].tag === tag).flatMap((id) => G.scenes[id].neu);
+    S.log.push({ typ: "notiz", t: "Tag " + tag + " ist vorbei. Heute neu: " + neu.length + " Wörter. Du hast " + S.geld + " ₰." });
+    S.warten = { typ: "tagende", naechste: G.order.find((id) => G.scenes[id].tag > tag) || null };
+    speichern();
+    allesZeichnen();
+  }
+
+  // ------------------------------------------------------------- AI: shared
+  function sprecher() {
+    for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].typ === "dialogue") return S.log[i].s;
+    return null;
+  }
+  function verlauf(n) {
+    return S.log.filter((e) => ["dialogue", "narration", "du"].includes(e.typ)).slice(-n).map((e) =>
+      e.typ === "du" ? "SPIELER: " + (e.roh || text(e.t)) : e.typ === "dialogue" ? e.s + ": " + text(e.t) : "(" + text(e.t) + ")"
+    ).join("\n");
+  }
+  function niveauText() {
+    const n = S.profil.niveau;
+    return n.length ? n.slice(-5).join(", ") : "noch unbekannt (Start: A2.1)";
+  }
+  const KORREKTUR_REGELN = `Correction rules:
+- Judge only real mistakes: grammar, word order, verb forms, gender/case, wrong word, meaning. Ignore a lowercase first letter and missing final punctuation (chat style), but do flag lowercase nouns.
+- Never mark something wrong because it is advanced, modern, slang or anachronistic: the player may use any German they know.
+- If the player writes English or another language, set "korrekt": false and give a natural German version in "korrigiert".
+- "korrigiert": the player's sentence with the smallest edits that make it correct and natural; identical to the input when correct.
+- "fehler": at most 3 items {"falsch","richtig","warum"}; "warum" is simple German, max 12 words, no English. Allowed terms: Nomen, Verb, Artikel, Dativ, Akkusativ, Perfekt, Präteritum, Nebensatz, Verb am Ende, Plural.
+- "niveau": your CEFR estimate of THIS message, one of ${CEFR.join(", ")}.
+- "strukturen": structures used CORRECTLY, from: perfekt, praeteritum, modalverb, imperativ, nebensatz, reflexiv, vergleich, konjunktiv2, relativsatz, passiv, zu_infinitiv.
+- "grundformen": base forms of the content words the player used correctly (nouns with capital letter).`;
+  function figur(name) { return (G.figuren && G.figuren[name]) || ""; }
+  function zustand() {
+    return `Day ${S.tag}. Money: ${S.geld} Pfennig. Items: ${S.items.join(", ") || "none"}.`;
+  }
+
+  function profilUpdate(r) {
+    const p = S.profil;
+    p.runden++;
+    if (r.korrekt) p.korrekt++;
+    if (CEFR.includes(r.niveau)) { p.niveau.push(r.niveau); p.niveau = p.niveau.slice(-12); }
+    for (const st of r.strukturen || []) p.strukturen[st] = (p.strukturen[st] || 0) + 1;
+    for (const w of r.grundformen || []) if (typeof w === "string" && w) p.eigene[w] = (p.eigene[w] || 0) + 1;
+    // Unlock harder text early once the player shows the level (never lowers).
+    const last = p.niveau.slice(-6).map((n) => CEFR.indexOf(n));
+    const ab = (lvl) => last.filter((i) => i >= CEFR.indexOf(lvl)).length;
+    const s = p.strukturen;
+    let neu = p.stufe;
+    if (ab("A2.2") >= 3 || (s.praeteritum || 0) + (s.nebensatz || 0) >= 4) neu = Math.max(neu, 2);
+    if (ab("B1") >= 3 || (s.konjunktiv2 || 0) + (s.relativsatz || 0) >= 3) neu = Math.max(neu, 3);
+    if (neu > p.stufe) {
+      p.stufe = neu;
+      S.log.push({ typ: "notiz", t: "Dein Deutsch wird besser! Ab jetzt sprechen die Leute mit dir auf Stufe " + neu + "." });
+    }
+  }
+
+  function kiFehler(e, eingabe) {
+    const code = e && e.code;
+    if (["not_granted", "sampling_disabled", "not_declared", "capability_disabled", "capability_removed"].includes(code)) {
+      SAMPLE = null;
+      hinweis("Korrekturen sind aus. Du kannst mit den Vorschlägen weiterspielen.");
+    } else if (code === "rate_limited") {
+      hinweis("Zu viele Anfragen. Warte kurz und schick es dann noch einmal.");
+    } else if (code !== "cancelled") {
+      hinweis("Das hat nicht geklappt. Schick es noch einmal.");
+    }
+    const box = $("#eingabe-text");
+    if (box && eingabe) box.value = eingabe;
+  }
+
+  // ------------------------------------------------------------- AI: typed answer to a choice
+  async function antworteGetippt(eingabe) {
+    const w = S.warten;
+    const wer = sprecher() || "Erzähler";
+    const optionen = w.optionen.map((c, i) => `${i}: ${text(c.t)}`).join("\n");
+    const prompt = `You are the language engine of a German-learning text game (comprehensible input). The player is a time traveler in Hamburg around 1370; everyone speaks modern, casual Hochdeutsch. The player never sees English.
+
+Character speaking with the player: ${wer}. ${figur(wer)}
+${zustand()}
+Player's recent level estimates: ${niveauText()}. Text level for the game right now: ${STUFE_TEXT[stufe()]}
+
+Recent story:
+${verlauf(8)}
+
+The author's reply options (index: text):
+${optionen}
+
+The player typed: """${eingabe}"""
+
+Tasks:
+1. "wahl": the index of the option that best matches what the player MEANT (meaning, not wording), or -1 if none fits. A wrong-but-understandable sentence still selects its option.
+2. Evaluate the German. ${KORREKTUR_REGELN}
+3. "recast": only when "korrekt" is false and the meaning was clear: one short, natural line by ${wer}, in character, that repeats the corrected form without lecturing (e.g. "Ah, du hast den Sack schon getragen!"). Otherwise "".
+4. "antwort": only when "wahl" is -1: ${wer}'s short in-character reaction (1-2 sentences, at the game's text level, a little above the player's level at most), steering back to the situation so one of the options becomes natural. Otherwise "".
+
+Reply with only this JSON:
+{"wahl":0,"korrekt":true,"korrigiert":"","fehler":[],"recast":"","antwort":"","niveau":"A2.1","strukturen":[],"grundformen":[]}`;
+    busy = new AbortController();
+    const eintrag = { typ: "du", roh: eingabe, pruefen: true };
+    S.log.push(eintrag);
+    allesZeichnen();
+    try {
+      const r = await SAMPLE.json(prompt, { signal: busy.signal, modelTier: S.einst.tier, cache: false });
+      busy = null;
+      eintrag.pruefen = false;
+      eintrag.k = { korrekt: !!r.korrekt, korrigiert: String(r.korrigiert || ""), fehler: Array.isArray(r.fehler) ? r.fehler.slice(0, 3) : [] };
+      profilUpdate(r);
+      if (!r.korrekt && r.recast) S.log.push({ typ: "dialogue", s: wer, t: String(r.recast), ki: true });
+      const i = Number.isInteger(r.wahl) ? r.wahl : -1;
+      if (i >= 0 && i < w.optionen.length) return waehle(i, true);
+      if (r.antwort) S.log.push({ typ: "dialogue", s: wer, t: String(r.antwort), ki: true });
+      w.fehlversuche = (w.fehlversuche || 0) + 1;
+      if (w.fehlversuche >= 2) vorschlaegeOffen = true;
+      speichern();
+      allesZeichnen();
+    } catch (e) {
+      busy = null;
+      S.log.splice(S.log.indexOf(eintrag), 1);
+      allesZeichnen();
+      kiFehler(e, eingabe);
+    }
+  }
+
+  // ------------------------------------------------------------- AI: free conversation
+  async function freiSagen(eingabe) {
+    const w = S.warten;
+    const prompt = `You are ${w.wer}, a character in a German-learning text game. The player is a time traveler in Hamburg around 1370; everyone speaks modern, casual Hochdeutsch. Never use English.
+Your character: ${figur(w.wer)}
+Scene: ${w.thema}
+${zustand()}
+Language level: answer at "${STUFE_TEXT[stufe()]}" Aim one small step above the player's recent level (${niveauText()}), never above B1+. Keep replies to 1-3 short sentences and end with a question or a hook so the player can answer. Be warm and a bit funny.
+
+Conversation so far:
+${verlauf(10)}
+SPIELER: ${eingabe}
+
+Also evaluate the player's last message. ${KORREKTUR_REGELN}
+If the player made a mistake, let your reply naturally repeat the corrected form once (a recast), without lecturing.
+Set "ende": true if the player clearly wants to stop or say good night.
+
+Reply with only this JSON:
+{"antwort":"","ende":false,"korrekt":true,"korrigiert":"","fehler":[],"niveau":"A2.1","strukturen":[],"grundformen":[]}`;
+    busy = new AbortController();
+    const eintrag = { typ: "du", roh: eingabe, pruefen: true };
+    S.log.push(eintrag);
+    allesZeichnen();
+    try {
+      const r = await SAMPLE.json(prompt, { signal: busy.signal, modelTier: S.einst.tier, cache: false });
+      busy = null;
+      eintrag.pruefen = false;
+      eintrag.k = { korrekt: !!r.korrekt, korrigiert: String(r.korrigiert || ""), fehler: Array.isArray(r.fehler) ? r.fehler.slice(0, 3) : [] };
+      profilUpdate(r);
+      if (r.antwort) S.log.push({ typ: "dialogue", s: w.wer, t: String(r.antwort), ki: true });
+      w.n++;
+      if (r.ende || w.n >= w.max) return freiEnde();
+      speichern();
+      allesZeichnen();
+    } catch (e) {
+      busy = null;
+      S.log.splice(S.log.indexOf(eintrag), 1);
+      allesZeichnen();
+      kiFehler(e, eingabe);
+    }
+  }
+  function freiEnde() {
+    const to = S.warten.to;
+    S.warten = null;
+    gehe(to);
+  }
+
+  // ------------------------------------------------------------- AI: word help
+  async function kiErklaeren(wort, satz, box, knopf) {
+    knopf.disabled = true;
+    knopf.textContent = "Moment …";
+    try {
+      const { text: t } = await SAMPLE(
+        `Explain the German word "${wort}" as used in this sentence: "${satz}". Write ONE or TWO very simple German sentences for an A2 learner (a simpler synonym or a short example). No English. Reply with only the explanation.`,
+        { modelTier: "quick" });
+      const d = document.createElement("div");
+      d.textContent = t.trim();
+      box.insertBefore(d, knopf);
+      knopf.remove();
+    } catch (e) {
+      knopf.disabled = false;
+      knopf.textContent = "Noch einmal versuchen";
+      if (e && ["not_granted", "sampling_disabled"].includes(e.code)) { SAMPLE = null; knopf.remove(); }
+    }
+  }
+
+  // ------------------------------------------------------------- render
+  function zaehlbar(l) { const w = G.words[l] || {}; return !UNCOUNTED.has(w.k); }
+  function istBekannt(l) { const w = G.words[l] || {}; return G.known_levels.includes(w.lvl); }
+  function wortSpan(txt, lemma, neu) {
+    const span = document.createElement("span");
+    span.className = "w" + (lemma && neu && neu.includes(lemma) && zaehlbar(lemma) && !istBekannt(lemma) ? " neu" : "");
+    span.textContent = txt;
+    if (lemma) span.dataset.l = lemma; else span.dataset.ki = "1";
+    return span;
+  }
+  function segmentHTML(seg, neu) {
+    const frag = document.createDocumentFragment();
+    if (typeof seg === "string") {                    // AI text: every word tappable
+      for (const part of seg.split(/([A-Za-zÄÖÜäöüß]+)/)) {
+        if (/^[A-Za-zÄÖÜäöüß]+$/.test(part)) frag.append(wortSpan(part, null)); else frag.append(part);
+      }
+      return frag;
+    }
+    for (const s of seg) frag.append(typeof s === "string" ? s : wortSpan(s[0], s[1], neu));
+    return frag;
+  }
+  function el(tag, txt, cls) { const e = document.createElement(tag); if (txt != null) e.textContent = txt; if (cls) e.className = cls; return e; }
+
+  function korrekturHTML(k) {
+    const wrap = el("div", null, "korrektur");
+    if (k.korrekt) { wrap.append(el("span", "✓ richtig", "ok")); return wrap; }
+    const b = el("button", "✎ Korrektur", "chip");
+    const det = el("div", null, "korr-detail");
+    det.hidden = true;
+    det.append(el("div", "Besser: „" + k.korrigiert + "“", "besser"));
+    for (const f of k.fehler) {
+      const row = el("div", null, "fehler");
+      row.append(el("s", f.falsch || ""), " → ", el("strong", f.richtig || ""));
+      if (f.warum) row.append(el("div", f.warum, "klein"));
+      det.append(row);
+    }
+    b.onclick = () => { det.hidden = !det.hidden; };
+    wrap.append(b, det);
+    return wrap;
+  }
+
+  function allesZeichnen() {
+    const log = $("#log");
+    log.textContent = "";
+    for (const e of S.log) {
+      let p;
+      if (e.typ === "titel") { p = el("h2", e.t, "szene-titel"); }
+      else if (e.typ === "notiz") { p = el("p", e.t, "zeile notiz-hinweis"); }
+      else if (e.typ === "du") {
+        p = el("div", null, "zeile du");
+        const bubble = el("p", null, "du-text");
+        if (e.roh != null) bubble.textContent = e.roh; else bubble.append(segmentHTML(e.t, e.neu));
+        p.append(bubble);
+        if (e.pruefen) p.append(el("div", (sprecher() || "Jemand") + " hört zu …", "klein denkt"));
+        if (e.k) p.append(korrekturHTML(e.k));
+      } else {
+        p = el("p", null, "zeile" + (e.typ === "dialogue" ? " dialog" : "") + (e.ki ? " ki" : "") + (e.bonus ? " bonus" : ""));
+        if (e.s) p.append(el("span", e.s, "sprecher"), " ");
+        p.append(segmentHTML(e.t, e.neu));
+      }
+      log.append(p);
+    }
+    zeichneEingabe();
+    $("#tag").textContent = "TAG " + String(S.tag).padStart(2, "0");
+    $("#ort").textContent = G.scenes[S.szene].ort;
+    $("#geld").textContent = S.geld + " ₰";
+    $("#stufe").textContent = "STUFE " + stufe();
+    $("#wortzahl").textContent = Object.keys(S.seen).filter(zaehlbar).length;
+    requestAnimationFrame(() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }));
+  }
+
+  function zeichneEingabe() {
+    const box = $("#antworten");
+    box.textContent = "";
+    const w = S.warten;
+    if (!w) return;
+    if (w.typ === "tagende") {
+      const b = el("button", w.naechste ? "Weiter zu Tag " + G.scenes[w.naechste].tag : "Fortsetzung folgt …", "weiter");
+      if (w.naechste) b.onclick = () => { S.warten = null; S.log = []; gehe(w.naechste + ".start"); };
+      else b.disabled = true;
+      box.append(b);
+      return;
+    }
+    const tippen = !!SAMPLE;
+    if (tippen) {
+      const form = el("form", null, "tippen");
+      const input = el("textarea");
+      input.id = "eingabe-text";
+      input.rows = 1;
+      input.placeholder = w.typ === "frei" ? "Sag etwas zu " + w.wer + " …" : "Antworte auf Deutsch …";
+      input.setAttribute("aria-label", "Deine Antwort");
+      input.disabled = !!busy;
+      input.addEventListener("keydown", (ev) => { if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); form.requestSubmit(); } });
+      const send = el("button", busy ? "…" : "Senden", "senden");
+      send.type = "submit";
+      send.disabled = !!busy;
+      form.append(input, send);
+      form.onsubmit = (ev) => {
+        ev.preventDefault();
+        const t = input.value.trim();
+        if (!t || busy) return;
+        (w.typ === "frei" ? freiSagen : antworteGetippt)(t);
+      };
+      box.append(form);
+      if (!busy) setTimeout(() => input.focus({ preventScroll: true }), 0);
+    }
+    if (w.typ === "frei") {
+      const row = el("div", null, "leiste");
+      row.append(el("span", "Freies Gespräch · " + w.n + "/" + w.max, "klein"));
+      const end = el("button", "Gespräch beenden", "chip");
+      end.disabled = !!busy;
+      end.onclick = freiEnde;
+      row.append(end);
+      box.append(row);
+      return;
+    }
+    if (tippen) {
+      const row = el("div", null, "leiste");
+      const t = el("button", vorschlaegeOffen ? "Vorschläge ausblenden" : "Vorschläge zeigen", "chip");
+      t.disabled = !!busy;
+      t.onclick = () => { vorschlaegeOffen = !vorschlaegeOffen; zeichneEingabe(); };
+      row.append(t);
+      box.append(row);
+    }
+    if (!tippen || vorschlaegeOffen) {
+      const list = el("div", null, "vorschlaege");
+      w.optionen.forEach((c, i) => {
+        const b = el("button", text(c.t), "option");
+        b.disabled = !!busy;
+        b.onclick = () => waehle(i);
+        list.append(b);
+      });
+      box.append(list);
+    }
+  }
+
+  function hinweis(t) {
+    const h = $("#hinweis");
+    h.textContent = t;
+    h.hidden = false;
+    clearTimeout(hinweis.t);
+    hinweis.t = setTimeout(() => { h.hidden = true; }, 6000);
+  }
+
+  // --------------------------------------------------------- word help
+  function hilfe(span) {
+    const l = span.dataset.l;
+    const w = (l && G.words[l]) || {};
+    const pop = $("#hilfe");
+    $("#hilfe-wort").textContent = l || span.textContent;
+    const box = $("#hilfe-text");
+    box.textContent = "";
+    const add = (t, cls) => { const d = el("div", t, cls); box.append(d); return d; };
+    if (w.h) add(w.h);
+    if (w.teile) add("Teile: " + w.teile.join(" + "));
+    if (l && !w.h && !w.teile && span.textContent !== l) add("Grundform: " + l);
+    const info = [];
+    if (w.lvl) info.push("Wortliste " + w.lvl);
+    if (ART[w.k]) info.push(ART[w.k]);
+    const n = l ? S.seen[l] || 0 : 0;
+    if (n) info.push(n === 1 ? "zum ersten Mal gesehen" : n + "-mal gesehen");
+    if (info.length) add(info.join(" · "), "klein");
+    if (SAMPLE && !w.h) {
+      const k = el("button", "Erklären", "chip");
+      const satz = span.parentElement ? span.parentElement.textContent : span.textContent;
+      k.onclick = (ev) => { ev.stopPropagation(); kiErklaeren(span.textContent, satz, box, k); };
+      box.append(k);
+    }
+    document.querySelectorAll(".w.aktiv").forEach((x) => x.classList.remove("aktiv"));
+    span.classList.add("aktiv");
+    pop.hidden = false;
+    const r = span.getBoundingClientRect();
+    const top = r.bottom + 8 + pop.offsetHeight > innerHeight ? r.top - pop.offsetHeight - 8 : r.bottom + 8;
+    pop.style.top = Math.max(8, top) + "px";
+    pop.style.left = Math.max(16, Math.min(r.left, innerWidth - pop.offsetWidth - 16)) + "px";
+  }
+
+  // ------------------------------------------------------------- panels
+  function panel(name) {
+    const box = $("#panel-inhalt");
+    box.textContent = "";
+    if (name === "notizbuch") {
+      $("#panel-titel").textContent = "Notizbuch";
+      if (!S.notiz.length) box.append(el("p", "Noch leer.", "klein"));
+      for (const t of [...new Set(S.notiz.map((n) => n.tag))]) {
+        box.append(el("div", "Tag " + t, "label"));
+        const ul = el("ul");
+        S.notiz.filter((n) => n.tag === t).forEach((n) => ul.append(el("li", n.t)));
+        box.append(ul);
+      }
+    } else if (name === "woerter") {
+      const ls = Object.keys(S.seen).filter(zaehlbar).sort((a, b) => a.localeCompare(b, "de"));
+      const eigene = Object.keys(S.profil.eigene).sort((a, b) => a.localeCompare(b, "de"));
+      $("#panel-titel").textContent = "Wörter, die ich verstehe";
+      box.append(el("p", ls.length + " Wörter gelesen, " + eigene.length + " selbst benutzt. Tippe auf ein Wort für Hilfe.", "klein"));
+      if (eigene.length) {
+        box.append(el("div", "Selbst benutzt", "label"));
+        box.append(el("p", eigene.join(", "), "eigene"));
+      }
+      box.append(el("div", "Gelesen", "label"));
+      const ul = el("ul", null, "woerter");
+      for (const l of ls) {
+        const li = el("li");
+        const sp = el("span", l, "w"); sp.dataset.l = l;
+        li.append(sp, el("span", " " + S.seen[l] + "×", "klein"));
+        ul.append(li);
+      }
+      box.append(ul);
+    } else if (name === "menue") {
+      $("#panel-titel").textContent = "Menü";
+      const m = el("div", null, "menue");
+      const p = S.profil;
+      const st = Object.entries(p.strukturen).sort((a, b) => b[1] - a[1]).map(([k, v]) => k + " " + v + "×").join(", ");
+      const info = el("div", null, "profil");
+      info.append(el("div", "Dein Deutsch", "label"),
+        el("div", "Geschätzt: " + (p.niveau.length ? p.niveau[p.niveau.length - 1] : "noch unbekannt") + " · Stufe " + stufe() + " frei"),
+        el("div", p.runden ? p.korrekt + " von " + p.runden + " Antworten ganz richtig" : "Noch keine getippten Antworten.", "klein"));
+      if (st) info.append(el("div", "Richtig benutzt: " + st, "klein"));
+      m.append(info);
+      const rel = Object.entries(S.rel).map(([k, v]) => k[0].toUpperCase() + k.slice(1) + " " + "♥".repeat(Math.max(0, v))).join(" · ");
+      if (rel || S.items.length) m.append(el("div", (rel ? "Freunde: " + rel + ". " : "") + (S.items.length ? "Du hast: " + S.items.join(", ") + "." : ""), "klein"));
+      const b = (t, f, cls) => { const x = el("button", t, cls); x.onclick = f; m.append(x); return x; };
+      if (SAMPLE) {
+        m.append(el("div", "Korrekturen", "label"));
+        const tier = b(S.einst.tier === "quick" ? "Modus: schnell (zu gründlich wechseln)" : "Modus: gründlich (zu schnell wechseln)", () => {
+          S.einst.tier = S.einst.tier === "quick" ? "default" : "quick"; speichern(); panel("menue");
+        });
+        tier.title = "Gründlich ist genauer, aber langsamer.";
+      }
+      m.append(el("div", "Spielstand", "label"));
+      m.append(el("div", DOC ? "Wird in deinem Konto gespeichert." : "Wird in diesem Browser gespeichert.", "klein"));
+      if (!DOC && !window.claude) {     // save files only in the local version
+        b("Spielstand herunterladen", exportieren);
+        b("Spielstand laden …", () => $("#datei").click());
+      }
+      const reset = b(resetArmed ? "Wirklich? Noch einmal tippen" : "Neu anfangen", () => {
+        if (!resetArmed) { resetArmed = true; panel("menue"); return; }
+        resetArmed = false;
+        S = neuesSpiel(); gehe("start"); schliessen();
+      }, resetArmed ? "gefahr" : "");
+      reset.id = "neu-anfangen";
+      box.append(m);
+    }
+    const pn = $("#panel");
+    pn.style.top = $("header").getBoundingClientRect().bottom + 8 + "px";
+    pn.hidden = false;
+  }
+  function schliessen() {
+    $("#panel").hidden = true; $("#hilfe").hidden = true; resetArmed = false;
+    document.querySelectorAll(".w.aktiv").forEach((x) => x.classList.remove("aktiv"));
+  }
+
+  // --------------------------------------------------------------- init
+  document.addEventListener("click", (ev) => {
+    const w = ev.target.closest(".w");
+    if (w) { hilfe(w); ev.stopPropagation(); return; }
+    if (ev.target.closest(".zu")) { schliessen(); return; }
+    const nb = ev.target.closest("nav button");
+    if (nb) { panel(nb.dataset.panel); return; }
+    if (!ev.target.closest(".popup, #panel")) $("#hilfe").hidden = true;
+  });
+  document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") schliessen(); });
+  $("#datei").addEventListener("change", (ev) => { if (ev.target.files[0]) importieren(ev.target.files[0]); ev.target.value = ""; });
+
+  function start(st) {
+    S = gueltig(st) ? st : null;
+    if (S) { S.profil = S.profil || neuesSpiel().profil; S.einst = S.einst || { tier: "quick" }; allesZeichnen(); }
+    else { S = neuesSpiel(); gehe("start"); }
+  }
+
+  async function boot() {
+    const lokal = lokalLaden();
+    if (!window.claude || !window.claude.use) return start(lokal);
+    $("#log").append(el("p", "Lädt …", "zeile klein"));
+    const [sample, db, user] = await Promise.all(["sample", "db", "user"].map((n) => window.claude.use(n).catch(() => null)));
+    SAMPLE = sample;
+    let stand = null;
+    if (db && user) {
+      try {
+        const uid = await user.id();
+        if (uid) {
+          DOC = db.doc("data/users/" + uid + "/spielstand");
+          const snap = await DOC.get();
+          if (snap.exists) stand = (snap.data() || {}).stand;
+        }
+      } catch (e) { DOC = null; }
+    }
+    $("#log").textContent = "";
+    start(gueltig(stand) ? stand : lokal);
+  }
+  boot();
+})();
+</script>

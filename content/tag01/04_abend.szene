@@ -83,13 +83,18 @@ Sie lacht nicht.
 == rat
 Alheit: Hör mir gut zu. Hier in Hamburg bekommst du Hilfe nicht mit Geld. Du bekommst Hilfe mit Freunden. Erst die Freunde, dann die Hilfe. Verstehst du?
 notiz: Erst die Freunde, dann die Hilfe.
-* Ja. Ich verstehe. -> gute_nacht
+* Ja. Ich verstehe. -> plaudern
 * Nein. Kannst du das noch einmal sagen? -> nochmal
 
 == nochmal
 Alheit: Natürlich. Also: Du brauchst Hilfe für deine Uhr. Leute helfen dir, wenn sie dich kennen. Wenn sie dich mögen. Also: Lern die Leute kennen. Jonte, Greta, Hinnerk…
 notiz: Kannst du das noch einmal sagen?
--> gute_nacht
+-> plaudern
+
+== plaudern
+Das Feuer ist warm. Der Hund schläft schon.
+Alheit: Na, erzähl mal. Wie war dein erster Tag in Hamburg?
+frei: Alheit | Am Feuer. Alheit fragt nach deinem ersten Tag: der Hafen, Hinnerk, Jonte, die Säcke, Greta und das Brot. Sie fragt auch ein bisschen nach der Uhr, aber sie drängt nicht. | 5 -> gute_nacht
 
 == gute_nacht
 Alheit: Und jetzt: ab ins Bett. Gute Nacht!

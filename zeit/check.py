@@ -115,8 +115,15 @@ def run(scenes: list[Scene], lex: Lexicon, cfg: dict) -> dict:
     for sc in scenes:
         day = sc.day
         toks = []
-        for lineno, text in sc.texts():
-            toks += analyze_text(text, lex, day, lineno)
+        bonus_toks = []
+        for lineno, text, cond in sc.texts():
+            m = re.search(r"stufe\s*>=?\s*(\d)", cond or "")
+            if m:
+                # level-gated line: checked at that tier, not counted as new
+                tday = max(day, cfg["tier_days"].get(int(m.group(1)), day))
+                bonus_toks += analyze_text(text, lex, tday, lineno)
+            else:
+                toks += analyze_text(text, lex, day, lineno)
         rep = SceneReport(sc, toks)
         known = 0
         counted = 0
@@ -145,6 +152,9 @@ def run(scenes: list[Scene], lex: Lexicon, cfg: dict) -> dict:
                 rep.new.append(lemma)
             exposures[lemma][day] += 1
         rep.known_share = known / counted if counted else 1.0
+        for tk in bonus_toks:
+            if tk.res.status != "ok":
+                rep.errors.append(f"Z.{tk.lineno} (Bonus): {tk.text} → {tk.res.status}")
         for g in sorted({g for tk in toks for g in tk.grammar}):
             if day < cfg["grammar"][g]:
                 ex = next(tk.text for tk in toks if g in tk.grammar)

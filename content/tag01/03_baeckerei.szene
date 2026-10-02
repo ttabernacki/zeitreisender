@@ -62,6 +62,7 @@ notiz: Weil du neu bist.
 
 == brot
 Greta gibt dir ein großes Brot. Es ist noch warm.
+(stufe >= 2) Greta: Mein Vater war auch Bäcker. Er hat immer gesagt: Gutes Brot braucht Zeit, und gute Freunde auch.
 Greta: Guten Appetit!
 -> ende
 

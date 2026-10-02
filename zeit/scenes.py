@@ -22,8 +22,16 @@ Line types inside a node:
     * text -> node {fx}      reply choice; optional (condition) and {effects}
     -> node                  jump (also: -> ENDE ends the scene)
     notiz: text              add a phrase to the player's notebook
+    frei: Name | Thema | 6 -> node
+                             free conversation with a character (AI-driven in
+                             the artifact), up to 6 player turns, then -> node
     // comment               ignored
     anything else            narration
+
+Narration, dialogue and notiz lines may start with a condition, like
+choices: "(stufe >= 2) Hinnerk: ..." shows the line only when the player's
+demonstrated level has reached tier 2. Such lines are checked against that
+tier's vocabulary and are not counted as new words of the day.
 
 Effects: "geld +2", "bodo -1", "item Salz", "flag tuer_offen".
 Targets may name another scene: "-> markt" or "-> markt.start".
@@ -38,6 +46,8 @@ SPEAKER = re.compile(r"^([A-ZÄÖÜ][\wÄÖÜäöüß]*(?: [A-ZÄÖÜ][\wÄÖÜ�
 CHOICE = re.compile(r"^\*\s*(?:\((?P<cond>[^)]*)\)\s*)?(?P<text>.*?)\s*->\s*(?P<target>[\w.]+)\s*(?:\{(?P<fx>[^}]*)\})?\s*$")
 JUMP = re.compile(r"^->\s*(?P<target>[\w.]+)\s*(?:\{(?P<fx>[^}]*)\})?\s*$")
 NODE = re.compile(r"^==\s*(\w+)\s*$")
+COND = re.compile(r"^\((?P<cond>[^)]*)\)\s*(?P<rest>.*)$")
+FREI = re.compile(r"^frei:\s*(?P<who>[^|]+?)\s*\|\s*(?P<thema>[^|]+?)\s*\|\s*(?P<n>\d+)\s*->\s*(?P<target>[\w.]+)\s*$")
 
 
 @dataclass
@@ -70,11 +80,11 @@ class Scene:
         return [w.strip() for w in self.meta.get("neu", "").split(",") if w.strip()]
 
     def texts(self):
-        """Yield (lineno, text) for every piece of German the player reads."""
+        """Yield (lineno, text, cond) for every piece of German the player reads."""
         for lines in self.nodes.values():
             for ln in lines:
-                if ln.text:
-                    yield ln.lineno, ln.text
+                if ln.text and ln.kind != "frei":
+                    yield ln.lineno, ln.text, ln.cond
 
 
 def parse_effects(fx: str | None) -> list:
@@ -118,7 +128,13 @@ def parse_scene(path: Path) -> Scene:
             continue
         if cur is None:
             raise SceneError(f"{path}:{lineno}: Text vor dem ersten '== knoten'")
-        if m := CHOICE.match(s):
+        cond = ""
+        if not s.startswith("*") and (mc := COND.match(s)):
+            cond, s = mc["cond"].strip(), mc["rest"].strip()
+        if m := FREI.match(s):
+            ln = Line("frei", m["thema"], speaker=m["who"], target=m["target"],
+                      effects=[["max", m["n"]]])
+        elif m := CHOICE.match(s):
             ln = Line("choice", m["text"], target=m["target"], cond=(m["cond"] or "").strip(),
                       effects=parse_effects(m["fx"]))
         elif m := JUMP.match(s):
@@ -130,6 +146,8 @@ def parse_scene(path: Path) -> Scene:
         else:
             ln = Line("narration", s)
         ln.lineno = lineno
+        if cond:
+            ln.cond = cond
         nodes[cur].append(ln)
     if "start" not in nodes:
         raise SceneError(f"{path}: kein Knoten '== start'")
@@ -149,7 +167,7 @@ def validate_links(scenes: list[Scene]) -> list[str]:
     for s in scenes:
         for node, lines in s.nodes.items():
             for ln in lines:
-                if ln.kind not in ("choice", "jump") or ln.target == "ENDE":
+                if ln.kind not in ("choice", "jump", "frei") or ln.target == "ENDE":
                     continue
                 scene_id, _, tnode = ln.target.partition(".")
                 if ln.target in s.nodes:

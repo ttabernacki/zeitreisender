@@ -4,7 +4,16 @@ A text-only German learning game based on comprehensible input. A time traveler 
 
 ## Play
 
-Open `web/index.html` in a browser. It works from `file://` with no server. The game saves automatically in the browser, and *Menü → Spielstand herunterladen/laden* moves a save between devices.
+**Artifact (recommended):** https://claude.ai/artifact/9YyZSyrqPbdtb2VrRgdLzy. It's private, so only you can open it. This version has:
+
+- **Typed answers.** Claude works out which story branch you meant, so you can say it your own way, and *Vorschläge zeigen* reveals the hand-written options.
+- **Corrections.** The character repeats your sentence correctly in the scene (a recast), and *✎ Korrektur* shows the corrected sentence plus a short German explanation. Nothing you type is restricted by tier: advanced or modern German is never marked wrong for being advanced.
+- **Adaptive level.** Each answer gets a CEFR estimate and a list of structures you used correctly. Once you show the level, harder hand-written lines (`(stufe >= 2)`) unlock before their scheduled day, and AI-written lines follow your level.
+- **Free conversation.** Scenes can include free talk (`frei:` lines) with a character, at your level.
+- **AI word help.** Tap any word and choose *Erklären* for a simple German explanation.
+- **Account save.** Your game is saved to your account (private per-user `db` storage). Claude usage runs on your own Claude plan. *Menü* switches the corrections between fast and thorough.
+
+**Local:** open `web/index.html`. It's choices only (no AI) and saves in the browser, with save-file download and upload.
 
 ## Setup (for writing content)
 
@@ -19,7 +28,7 @@ python -m spacy download de_core_news_md
 python -m zeit.check            # check all scenes (exit code 1 on errors)
 python -m zeit.check -v         # also list accepted compounds/derivations
 python -m zeit.check --text "Gib mir das Salz!" --day 1   # check a free sentence
-python tools/build_game.py      # compile content/ -> web/game_data.js (refuses if errors)
+python tools/build_game.py      # compile content/ -> web/ (local) + dist/zeitreisender.html (artifact page); refuses if errors
 python -m pytest -q             # checker regression tests
 ```
 
@@ -39,9 +48,11 @@ python tools/build_lemmas.py      # entries -> vocab/lemmas.tsv
 | `vocab/exceptions.tsv` | declared scene nouns, slang, interjections and names, each with a first-allowed day and German word help |
 | `vocab/hilfe.tsv` | optional German word help for list words |
 | `vocab/config.toml` | tier unlock days, soft budgets, recurrence window, grammar schedule |
-| `content/tagNN/*.szene` | scenes (format documented in `zeit/scenes.py`) |
+| `content/tagNN/*.szene` | scenes (format documented in `zeit/scenes.py`, including `(stufe >= N)` lines and `frei:` free talk) |
+| `content/figuren.txt` | character notes the AI uses for in-character replies |
 | `zeit/` | scene parser, lexicon/lemmatizer, checker |
-| `web/` | runner (`index.html`, `game.js`, `style.css`, generated `game_data.js`) |
+| `web/` | runner (`game.js`, `style.css`, `body.html`; generated `index.html`, `game_data.js`) |
+| `dist/zeitreisender.html` | generated self-contained page published as the Artifact |
 
 ## Tiers
 
@@ -60,6 +71,10 @@ The tier count (3,285) is higher than the "about 2,000" in the brief. The list p
 - **Reports:** new words per scene and day, recurrence (new words not recycled within 3 days or seen fewer than 3 times), and the cumulative vocabulary curve.
 
 Known limitation: spaCy sometimes misses a separable particle after an imperative (*Leg es hin* → *legen*). Both words are allowed, so this only affects new-word counting.
+
+## Publishing changes
+
+After editing content, run `python -m zeit.check` and `python tools/build_game.py`, then republish `dist/zeitreisender.html` to the same artifact URL (capabilities `sample`, `db`, `user`).
 
 ## Native review needed
 
