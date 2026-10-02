@@ -373,6 +373,12 @@ class Lexicon:
         for c in stripped:
             if self.unlocked(c, day):
                 return Resolution("ok", c, "rule")
+        exact = self.lookup(word)
+        if exact:
+            # The word itself is a listed or declared word that is not available
+            # yet: no derivation guess may rescue it ("Fässer" is not "fassen" + -er).
+            e = self.entries[exact[0]]
+            return Resolution("ausnahme-spaet" if e.kind != "goethe" else "gesperrt", exact[0], "direct")
         r = self.derive(word, day) or self.compound(word, day)
         if r and (noun is None or r.lemma[:1].isupper() == noun or word[:1].isupper() == noun):
             return r

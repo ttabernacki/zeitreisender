@@ -57,13 +57,16 @@ python tools/build_lemmas.py      # entries -> vocab/lemmas.tsv
 | `web/` | runner (`game.js`, `style.css`, `body.html`; generated `index.html`, `game_data.js`) |
 | `dist/zeitreisender.html` | generated self-contained page published as the Artifact |
 
-## Tiers
+## Starting level and tiers
 
-- **Tier 1** (day 1): Goethe A1 + A2. A1 counts as already known, so it never counts toward "new words".
-- **Tier 2** (day 11): the more frequent half of the B1-only words (by `wordfreq`).
-- **Tier 3** (day 21): the rest of B1.
+The player starts at **A2**. Goethe A1 and A2 words count as known (never "new"); the B1 words are what there is to learn.
 
-The tier count (3,285) is higher than the "about 2,000" in the brief. The list prints feminine forms (*Absenderin*), Austrian/Swiss variants, and nouns and verbs as separate headwords, and each of those is its own lemma here.
+- **Vocabulary tier 1** (day 1): Goethe A1 + A2, assumed known.
+- **Vocabulary tier 2** (day 1): the more frequent half of the B1-only words (by `wordfreq`), so new vocabulary arrives from the start.
+- **Vocabulary tier 3** (day 11): the rest of the B1 words.
+- **Text level (Stufe)**, separate from the vocabulary: 1 = A2 (day 1), 2 = A2+/B1- (day 11), 3 = B1 (day 21). It decides the grammar the AI characters use and which `(stufe >= N)` lines show. The game moves up early once your answers show the level.
+
+All of this is in `vocab/config.toml`. The tier count (3,285 lemmas in total) is higher than the "about 2,000" in the brief. The list prints feminine forms (*Absenderin*), Austrian/Swiss variants, and nouns and verbs as separate headwords, and each of those is its own lemma here.
 
 ## What the checker does
 

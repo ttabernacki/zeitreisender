@@ -33,6 +33,7 @@ def load_config() -> dict:
     with (ROOT / "vocab" / "config.toml").open("rb") as f:
         cfg = tomllib.load(f)
     cfg["tier_days"] = {int(k): v for k, v in cfg["tiers"].items()}
+    cfg["stufen"] = {int(k): v for k, v in cfg["stufen"].items()}
     return cfg
 
 
@@ -120,7 +121,7 @@ def run(scenes: list[Scene], lex: Lexicon, cfg: dict) -> dict:
             m = re.search(r"stufe\s*>=?\s*(\d)", cond or "")
             if m:
                 # level-gated line: checked at that tier, not counted as new
-                tday = max(day, cfg["tier_days"].get(int(m.group(1)), day))
+                tday = max(day, cfg["stufen"].get(int(m.group(1)), day))
                 bonus_toks += analyze_text(text, lex, tday, lineno)
             else:
                 toks += analyze_text(text, lex, day, lineno)
@@ -134,7 +135,7 @@ def run(scenes: list[Scene], lex: Lexicon, cfg: dict) -> dict:
                 continue
             if r.status == "gesperrt":
                 e = lex.entries[r.lemma]
-                rep.errors.append(f"Z.{tk.lineno}: {tk.text} ({r.lemma}) ist Stufe {e.tier}, frei ab Tag {cfg['tier_days'][e.tier]}")
+                rep.errors.append(f"Z.{tk.lineno}: {tk.text} ({r.lemma}) gehört zur Wortschatzstufe {e.tier}, frei ab Tag {cfg['tier_days'][e.tier]}")
                 continue
             if r.status == "ausnahme-spaet":
                 rep.errors.append(f"Z.{tk.lineno}: {tk.text} ({r.lemma}) ist erst ab Tag {lex.entries[r.lemma].day} deklariert")

@@ -1,15 +1,26 @@
 # Checker settings. Edit freely.
 
+[player]
+# The player starts at A2. Goethe A1 and A2 words are assumed known: they are
+# allowed and never counted as "new". The B1 words are what there is to learn.
+start_level = "A2"
+assumed_known = ["A1", "A2"]
+
 [tiers]
-# Day on which each vocabulary tier unlocks.
+# Day on which each vocabulary tier unlocks. Tier 1 = Goethe A1+A2 (known).
+# Tier 2 = the more frequent half of the B1-only words, tier 3 = the rest.
+# With A2 as the start, the B1 vocabulary has to be available from day 1.
+1 = 1
+2 = 1
+3 = 11
+
+[stufen]
+# Day on which each text level ("Stufe") begins. Level 1 = A2, level 2 = A2+/B1-,
+# level 3 = B1. The game also unlocks a level early when the player shows it.
+# Lines marked "(stufe >= N)" are checked against the vocabulary of that day.
 1 = 1
 2 = 11
 3 = 21
-
-[player]
-# CEFR levels the player is assumed to know already (player starts at A2.1).
-# These words are allowed and never counted as "new".
-assumed_known = ["A1"]
 
 [budget]
 # Soft limits: exceeding them is a warning, never an error.

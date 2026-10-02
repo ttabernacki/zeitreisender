@@ -8,11 +8,13 @@
   const $ = (s) => document.querySelector(s);
   const ART = { szene: "Hamburger Wort", slang: "Umgangssprache", name: "Name", interjektion: "Ausruf" };
   const UNCOUNTED = new Set(["name", "interjektion"]);
-  const CEFR = ["A1", "A2.1", "A2.2", "B1-", "B1", "B1+", "B2"];
+  const CEFR = ["A1", "A2", "A2+", "B1-", "B1", "B1+", "B2"];
+  const START = G.start_level || "A2";
+  // The player starts at A2: Goethe A1 and A2 vocabulary is known; the new words are B1 words.
   const STUFE_TEXT = {
-    1: "A2.1: Präsens, Perfekt, Modalverben, Imperativ; kurze Hauptsätze mit und/aber/weil; nur sehr häufige Wörter (Goethe A1/A2).",
-    2: "A2.2 bis B1-: zusätzlich Präteritum, Nebensätze mit dass/wenn/weil, reflexive Verben, Vergleiche; Wörter bis Goethe B1, häufige zuerst.",
-    3: "B1: zusätzlich Konjunktiv II (könnte, hätte, würde), Relativsätze, obwohl/damit/um … zu; längere zusammenhängende Sätze.",
+    1: "A2: Präsens, Perfekt (haben/sein), Modalverben, Imperativ, Komparativ, reflexive Verben, Nebensätze mit weil/dass, einfache Präpositionen mit Dativ/Akkusativ; ganze Sätze von normaler Länge; Wortschatz Goethe A1/A2 und einzelne häufige B1-Wörter, die man aus dem Zusammenhang versteht.",
+    2: "A2+ bis B1-: zusätzlich Präteritum in Erzählungen, Nebensätze mit wenn/als/obwohl, einfache Relativsätze, Passiv in einfachen Sätzen; längere Sätze; Wörter bis Goethe B1, häufige zuerst.",
+    3: "B1: zusätzlich Konjunktiv II für höfliche Bitten und Wünsche (könnte, hätte, würde), Relativsätze, damit/um … zu; längere zusammenhängende Dialoge.",
   };
   // Grammar constructions a task or the diary can require: [label, example frame].
   const FORM = {
@@ -68,7 +70,7 @@
   }
   function tagStufe() {
     let st = 1;
-    for (const [t, d] of Object.entries(G.tier_days)) if (S.tag >= d) st = Math.max(st, Number(t));
+    for (const [t, d] of Object.entries(G.stufe_days || G.tier_days)) if (S.tag >= d) st = Math.max(st, Number(t));
     return st;
   }
   function stufe() { return Math.max(tagStufe(), S.profil.stufe || 1); }
@@ -282,7 +284,7 @@
   const figur = (name) => (G.figuren && G.figuren[name]) || "";
   function niveauText() {
     const n = S.profil.niveau;
-    return n.length ? n.slice(-5).join(", ") : "unknown so far (start: A2.1)";
+    return n.length ? n.slice(-5).join(", ") : "unknown so far (start: " + START + ")";
   }
   function schwaechen() {
     const out = [];
@@ -315,7 +317,7 @@ Player's recent level estimates: ${niveauText()}. Text level for the game right 
 - "niveau": CEFR estimate of THIS message, one of ${CEFR.join(", ")}.
 - "strukturen": constructions used CORRECTLY, from: ${Object.keys(FORM).join(", ")} (a weil/dass/wenn clause also counts as nebensatz).
 - "grundformen": base forms of the content words used correctly (nouns capitalised).`;
-  const EVAL_JSON = `"korrekt":true,"verstanden":true,"korrigiert":"","markiert":"","hinweis":"","fehler":[],"richtig_kat":[],"aufwand":2,"niveau":"A2.1","strukturen":[],"grundformen":[]`;
+  const EVAL_JSON = `"korrekt":true,"verstanden":true,"korrigiert":"","markiert":"","hinweis":"","fehler":[],"richtig_kat":[],"aufwand":2,"niveau":"${START}","strukturen":[],"grundformen":[]`;
 
   function normalisiere(r) {
     r = r && typeof r === "object" ? r : {};
@@ -368,7 +370,7 @@ Player's recent level estimates: ${niveauText()}. Text level for the game right 
     const ab = (lvl) => last.filter((i) => i >= CEFR.indexOf(lvl)).length;
     const s = p.strukturen;
     let neu = p.stufe;
-    if (ab("A2.2") >= 3 || (s.praeteritum || 0) + (s.nebensatz || 0) >= 4) neu = Math.max(neu, 2);
+    if (ab("A2+") >= 3 || (s.praeteritum || 0) + (s.relativsatz || 0) + (s.passiv || 0) >= 4) neu = Math.max(neu, 2);
     if (ab("B1") >= 3 || (s.konjunktiv2 || 0) + (s.relativsatz || 0) >= 3) neu = Math.max(neu, 3);
     if (neu > p.stufe) {
       p.stufe = neu;
@@ -1068,6 +1070,8 @@ Reply with only this JSON:
     S = gueltig(st) ? st : null;
     if (S) {
       S.profil = Object.assign(neuesProfil(), S.profil || {});
+      const alt = { "A2.1": "A2", "A2.2": "A2+" };           // older saves used a finer scale
+      S.profil.niveau = S.profil.niveau.map((n) => alt[n] || n);
       S.tagebuch = S.tagebuch || {};
       S.einst = S.einst || { tier: "quick" };
       allesZeichnen();

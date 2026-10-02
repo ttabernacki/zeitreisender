@@ -155,6 +155,8 @@ def main() -> int:
     data["words"] = {l: word_info(l, r, lex) for l, r in sorted(used.items())}
     data["known_levels"] = sorted(lex.assumed_known)
     data["tier_days"] = {str(k): v for k, v in cfg["tier_days"].items()}
+    data["stufe_days"] = {str(k): v for k, v in cfg["stufen"].items()}
+    data["start_level"] = cfg["player"]["start_level"]
     data["figuren"] = figuren()
     data["tage"] = {}
     for sc in scenes:

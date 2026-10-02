@@ -48,7 +48,7 @@ def test_word_formation(lex, sentence, word, parts):
 
 
 @pytest.mark.parametrize("sentence,word,status", [
-    ("Der König lacht.", "König", "gesperrt"),          # B1 tier 2, locked on day 1
+    ("Die Kerze brennt.", "Kerze", "gesperrt"),         # B1 tier 3, locked on day 1
     ("Der Hund schläft am Kai.", "Kai", "unbekannt"),
     ("Die Fässer sind schwer.", "Fässer", "ausnahme-spaet"),  # declared from day 2
 ])
@@ -63,7 +63,9 @@ def test_no_false_pass_on_wrong_pos(lex):
 
 
 def test_tiers_unlock(lex):
-    assert res(lex, "Der König lacht.", day=11)["König"].status == "ok"
+    assert res(lex, "Der König lacht.", day=1)["König"].status == "ok"      # tier 2: from day 1
+    assert res(lex, "Die Kerze brennt.", day=1)["Kerze"].status == "gesperrt"
+    assert res(lex, "Die Kerze brennt.", day=11)["Kerze"].status == "ok"   # tier 3: from day 11
 
 
 def test_grammar_flags(lex):
