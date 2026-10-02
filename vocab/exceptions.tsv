@@ -1,0 +1,38 @@
+wort	art	ab_tag	formen	hilfe
+# Declared exceptions (not on the unlocked Goethe tiers).
+# art: szene (Hanse scene noun, or a list word unlocked early on purpose)
+#      slang (counts against the daily slang budget; needs native review)
+#      name  (characters and places; never counted as vocabulary)
+# formen: inflected forms the checker should accept (comma-separated).
+# hilfe: German-only word help shown when the player taps the word.
+#
+# --- Szene
+Moin	szene	1	moin	So sagt man in Hamburg „Hallo“. Den ganzen Tag, nicht nur am Morgen.
+Hafen	szene	1	Häfen,Hafens	Hier kommen die Schiffe an. Hier holt man Waren vom Schiff.
+Sack	szene	1	Säcke,Säcken,Sacks	Eine sehr große Tasche. Im Sack ist zum Beispiel Salz.
+Pfennig	szene	1	Pfennige,Pfennigen	Kleines Geld. Ein Brot kostet zwei Pfennig.
+Kogge	szene	2	Koggen	Ein großes, schweres Schiff. Es fährt über das Meer und bringt Waren.
+Fass	szene	2	Fässer,Fässern,Fasses	Es ist rund und sehr schwer. Im Fass sind Bier, Wein oder Fisch.
+Hering	szene	2	Heringe,Heringen	Ein kleiner Fisch aus dem Meer. Man isst ihn mit Salz.
+Eimer	szene	1	Eimern	Man trägt Wasser im Eimer. Er ist rund und oben offen.
+Hafenmeister	szene	1	Hafenmeisters	Der Chef am Hafen. Er sagt, welches Schiff wo liegt.
+Zukunft	szene	1		Die Zeit nach heute. Morgen, nächstes Jahr, in 600 Jahren …
+# --- Slang
+Digga	slang	1	Diggas	So sagen junge Leute in Hamburg zu einem Freund. Wie „mein Freund“, aber lustiger.
+krass	slang	1	krasse,krassen,krasser,krasses	Sehr stark, sehr besonders. „Das ist krass!“ = Das ist ja wirklich stark!
+# --- Interjektionen (not counted as vocabulary, but declared)
+na	interjektion	1	Na	„Na also!“ = Siehst du, es geht doch!
+aha	interjektion	1	Aha	„Aha!“ = Jetzt verstehe ich (oder: Ich glaube dir nicht).
+hm	interjektion	1	Hm	Man denkt nach: „Hm …“
+äh	interjektion	1	Äh	Man weiß nicht weiter: „Äh …“
+piep	interjektion	1	Piep	So macht ein kleiner Vogel. Oder deine Uhr.
+oh	interjektion	1	Oh	„Oh!“ = Das habe ich nicht gedacht!
+# --- Namen
+Hinnerk	name	1		Der Hafenmeister. Laut, aber nicht böse.
+Jonte	name	1		Ein junger Mann. Er arbeitet am Hafen.
+Greta	name	1		Sie hat die Bäckerei am Markt.
+Alheit	name	1		Eine alte Frau. Sie hat ein Haus mit Zimmern für Gäste.
+Hamburg	name	1	Hamburger	Die Stadt an der Elbe.
+Dänemark	name	1		Ein Land im Norden.
+Elbe	name	1		Der große Fluss in Hamburg.
+Wulf	name	2		Er kauft und verkauft Waren. Er hat viel Geld und wenig Zeit.

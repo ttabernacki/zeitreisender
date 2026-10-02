@@ -1,0 +1,3286 @@
+lemma	level	tier	pos	zipf	forms
+ab	A1	1	OTHER	5.98	
+abbiegen	B1	3	VERB	3.61	abgebogen,biegt,bog
+Abbildung	B1	3	NOUN	3.96	Abbildungen
+Abend	A1	1	NOUN	5.32	Abende
+abends	A1	1	OTHER	4.69	
+Abenteuer	B1	2	NOUN	4.42	
+aber	A1	1	OTHER	6.63	
+abfahren	A1	1	VERB	3.28	abgefahren,fuhr,fährt
+Abfahrt	A1	1	NOUN	4.07	Abfahrten
+Abfall	B1	3	NOUN	3.90	Abfälle
+Abfalleimer	B1	3	NOUN	2.56	
+abfliegen	A1	1	OTHER	2.30	
+Abflug	A1	1	NOUN	3.50	
+Abgase	B1	3	NOUN	3.20	
+abgeben	A1	1	VERB	4.35	abgegeben,gab,gibt
+abgeschlossen	A2	1	OTHER	4.69	
+abheben	B1	3	VERB	3.67	abgehoben,hebt,hob
+abholen	A1	1	VERB	4.10	abgeholt,holt,holte
+abhängen	B1	3	VERB	3.81	abgehangen,hing,hängt
+abhängig	B1	2	OTHER	4.51	
+Abitur	B1	2	NOUN	4.22	
+ablehnen	B1	3	VERB	3.94	abgelehnt,lehnt,lehnte
+abmachen	B1	3	VERB	2.73	abgemacht,macht,machte
+abnehmen	B1	2	VERB	4.20	abgenommen,nahm,nimmt
+Abonnement	B1	3	NOUN	3.25	Abonnemente,Abonnements
+abonnieren	B1	3	VERB	3.51	abonniert,abonnierte
+absagen	B1	3	VERB	3.77	abgesagt,sagt,sagte
+Abschied	B1	2	NOUN	4.29	Abschiede
+abschließen	A2	1	OTHER	3.95	
+Abschluss	B1	2	NOUN	4.80	Abschlüsse
+Abschnitt	B1	2	NOUN	4.50	Abschnitte
+abschreiben	B1	3	VERB	3.32	abgeschrieben,schreibt,schrieb
+Absender	A1	1	NOUN	3.55	
+Absenderin	B1	3	NOUN	1.60	Absenderinnen
+Absicht	B1	2	NOUN	4.46	Absichten
+absolut	B1	2	OTHER	4.87	
+abstimmen	B1	3	VERB	3.94	abgestimmt,stimmt,stimmte
+Abteilung	B1	2	NOUN	4.56	Abteilungen
+Abwart	B1	3	NOUN	1.08	Abwarte
+Abwartin	B1	3	NOUN	0.00	Abwartinnen
+abwaschen	B1	3	VERB	3.11	abgewaschen,wusch,wäscht
+abwesend	B1	3	OTHER	3.22	
+abwärts	B1	3	OTHER	3.56	
+acht	A1	1	OTHER	4.98	
+achten	B1	2	VERB	4.54	achtet,achtete,geachtet
+Achtung	A1	1	NOUN	4.52	
+achtzehn	A1	1	OTHER	3.27	
+achtzig	A1	1	OTHER	3.08	
+Adresse	A1	1	NOUN	4.56	Adresseen,Adressen
+Affe	B1	3	NOUN	3.71	Affen
+Ahnung	A2	1	NOUN	4.97	Ahnungen
+Aktion	B1	2	NOUN	4.79	Aktionen
+aktiv	A2	1	OTHER	4.89	
+Aktivität	B1	3	NOUN	4.03	Aktivitäten
+aktuell	A2	1	OTHER	4.90	
+akzeptieren	B1	2	VERB	4.38	akzeptiert,akzeptierte
+Alarm	B1	3	NOUN	4.10	Alarme
+Alkohol	B1	2	NOUN	4.65	
+all	A1	1	OTHER	5.20	
+allein	A1	1	OTHER	5.34	
+allem	B1	2	OTHER	5.58	
+aller	B1	2	OTHER	5.30	
+allerdings	B1	2	OTHER	5.51	
+allgemein	B1	2	OTHER	4.75	
+Alltag	B1	2	NOUN	4.50	
+alltäglich	B1	3	OTHER	3.26	
+Alphabet	B1	3	NOUN	3.56	Alphabete
+als	A2	1	OTHER	6.71	
+also	A1	1	OTHER	6.00	
+alt	A1	1	OTHER	5.16	
+Altenheim	B1	3	NOUN	3.34	Altenheime
+Alter	A1	1	NOUN	5.27	
+alternativ	B1	3	OTHER	4.07	
+Alternative	B1	2	NOUN	4.68	Alternativen
+Altersheim	B1	3	NOUN	3.30	Altersheime
+am	A2	1	OTHER	6.46	
+Ampel	A2	1	NOUN	3.97	Ampeln
+Amt	B1	2	NOUN	4.82	Ämter
+amüsieren	B1	3	VERB	3.28	amüsiert,amüsierte
+an	A1	1	OTHER	6.69	
+analysieren	B1	3	VERB	3.89	analysiert,analysierte
+anbieten	A1	1	VERB	4.44	angeboten,bietet,bot
+Anbieter	B1	2	NOUN	4.43	
+ander	A1	1	OTHER	3.23	
+andererseits	B1	2	OTHER	4.61	
+anders	A2	1	OTHER	5.33	
+anerkennen	B1	3	VERB	3.79	anerkannt,erkannte,erkennt
+Anfang	A1	1	NOUN	5.27	Anfänge
+anfangen	A1	1	VERB	4.66	angefangen,fing,fängt
+anfangs	B1	2	OTHER	4.50	
+Angabe	B1	2	NOUN	4.23	Angaben
+angeben	B1	3	VERB	4.07	angegeben,gab,gibt
+Angebot	A1	1	NOUN	4.94	Angebote
+Angehörige	B1	2	NOUN	4.12	Angehörigen
+angenehm	B1	2	OTHER	4.28	
+Angestellte	B1	3	NOUN	4.04	Angestellten
+Angst	A2	1	NOUN	5.17	Ängste
+anhaben	B1	3	VERB	3.29	angehabt,hatte
+anklicken	A1	1	VERB	3.31	angeklickt,klickt,klickte
+ankommen	A1	1	VERB	4.09	angekommen,kam,kommt
+ankreuzen	A1	1	OTHER	3.05	
+Ankunft	A1	1	NOUN	4.23	Ankünfte
+ankündigen	B1	3	VERB	3.34	angekündigt,kündigt,kündigte
+Anlage	B1	2	NOUN	4.71	Anlagen
+Anleitung	B1	3	NOUN	4.11	Anleitungen
+anmachen	A1	1	VERB	3.36	angemacht,macht
+anmelden	A1	1	VERB	4.23	angemeldet,meldet,meldete
+Anmeldung	A1	1	NOUN	4.19	Anmeldungen
+annehmen	B1	2	VERB	4.39	angenommen,nahm,nimmt
+Annonce	B1	3	NOUN	2.69	Annoncen
+Anrede	A1	1	NOUN	3.34	Anreden
+Anruf	A1	1	NOUN	4.27	Anrufe
+Anrufbeantworter	A2	1	NOUN	3.04	
+anrufen	A1	1	VERB	4.29	angerufen,rief,ruft
+Ansage	A1	1	NOUN	3.69	Ansagen
+anschaffen	B1	3	VERB	3.40	angeschafft,schafft,schaffte
+anschließen	B1	3	VERB	4.07	angeschlossen,schließt,schloss
+Anschluss	A1	1	NOUN	4.74	Anschlüsse
+anschnallen	B1	3	VERB	2.77	angeschnallt,schnallt,schnallte
+ansehen	A2	1	VERB	4.68	angesehen,sah,sieht
+ansprechen	B1	3	VERB	4.01	angesprochen,sprach,spricht
+Anspruch	B1	2	NOUN	4.74	Ansprüche
+anstellen	B1	3	VERB	3.95	angestellt,stellt,stellte
+anstrengen	B1	3	VERB	3.42	angestrengt,strengt,strengte
+anstrengend	B1	3	OTHER	4.08	
+Antrag	B1	2	NOUN	4.62	Anträge
+Antwort	A1	1	NOUN	5.04	Antworten
+antworten	A1	1	VERB	4.81	antwortet,antwortete,geantwortet
+Anwalt	B1	2	NOUN	4.51	Anwälte
+anwenden	B1	3	VERB	4.00	wandte,wendet
+anwesend	B1	3	OTHER	4.07	
+Anwältin	B1	3	NOUN	3.49	Anwältinnen
+Anzahl	B1	2	NOUN	4.85	Anzahlen
+Anzeige	A1	1	NOUN	4.56	Anzeigen
+anzeigen	B1	2	VERB	4.32	angezeigt,zeigt,zeigte
+anziehen	A1	1	VERB	4.16	angezogen,zieht,zog
+Anzug	A2	1	NOUN	4.00	Anzüge
+Apartment	A1	1	NOUN	3.68	Apartments
+Apfel	A1	1	NOUN	4.03	Äpfel
+Apotheke	A2	1	NOUN	4.05	Apotheken
+Apparat	A2	1	NOUN	3.73	Apparate
+Appetit	A1	1	NOUN	3.85	
+Aprikose	B1	3	NOUN	2.48	Aprikosen
+April	A1	1	NOUN	5.11	
+Arbeit	A1	1	NOUN	5.57	Arbeiten
+arbeiten	A1	1	VERB	5.40	arbeitet,arbeitete,gearbeitet
+Arbeiter	B1	2	NOUN	4.48	
+Arbeiterin	B1	3	NOUN	2.65	Arbeiterinnen
+Arbeitserlaubnis	B1	3	NOUN	2.85	
+arbeitslos	A1	1	OTHER	3.85	
+Arbeitslosigkeit	B1	3	NOUN	4.06	
+Arbeitsplatz	A1	1	NOUN	4.14	Arbeitsplätze
+Arbeitsstelle	B1	3	NOUN	3.46	Arbeitsstellen
+Architekt	B1	3	NOUN	4.03	Architekten
+Architektin	B1	3	NOUN	3.06	Architektinnen
+Arm	A1	1	NOUN	4.74	Arme
+arm	A2	1	OTHER	4.74	
+Art	B1	2	NOUN	5.51	Arten
+Artikel	A2	1	NOUN	5.24	
+Arzt	A1	1	NOUN	4.86	Ärzte
+Asyl	B1	2	NOUN	4.15	
+Atem	B1	3	NOUN	4.07	
+atmen	B1	3	VERB	4.03	atmet,atmete,geatmet
+auch	A1	1	OTHER	6.78	
+auf	A1	1	OTHER	6.89	
+Aufenthalt	B1	2	NOUN	4.24	Aufenthalte
+auffallen	B1	3	VERB	3.68	aufgefallen,fiel,fällt
+auffordern	B1	3	VERB	3.38	aufgefordert,fordert,forderte
+Aufforderung	B1	3	NOUN	3.94	Aufforderungen
+aufführen	B1	3	VERB	3.44	aufgeführt,führt,führte
+Aufgabe	A1	1	NOUN	4.92	Aufgaben
+aufgeben	B1	2	VERB	4.26	aufgegeben,gab,gibt
+aufhalten	B1	3	VERB	4.11	aufgehalten,hielt,hält
+aufheben	B1	3	VERB	3.76	aufgehoben,hebt,hob
+aufhören	A1	1	VERB	4.52	aufgehört,hört,hörte
+aufladen	B1	3	VERB	3.48	aufgeladen,lud,lädt
+auflösen	B1	3	VERB	3.82	aufgelöst,löst,löste
+aufmachen	A2	1	VERB	3.89	aufgemacht,macht
+aufmerksam	B1	2	OTHER	4.52	
+Aufnahme	B1	2	NOUN	4.61	Aufnahmen
+aufnehmen	B1	2	VERB	4.51	aufgenommen,nahm,nimmt
+aufpassen	A2	1	VERB	4.15	aufgepasst,passt,passte
+aufregen	B1	3	VERB	3.90	aufgeregt,regt,regte
+aufregend	A2	1	OTHER	3.63	
+aufräumen	A2	1	VERB	3.75	aufgeräumt,räumt,räumte
+aufschreiben	B1	3	OTHER	3.38	
+aufstehen	A1	1	VERB	4.23	aufgestanden,stand,steht
+Auftrag	B1	2	NOUN	4.74	Aufträge
+auftreten	B1	2	VERB	4.52	aufgetreten,trat,tritt
+Auftritt	B1	2	NOUN	4.61	Auftritte
+aufwachen	B1	3	VERB	3.92	aufgewacht,wacht,wachte
+aufwärts	B1	3	OTHER	3.73	
+Aufzug	A1	1	NOUN	3.85	Aufzüge
+Auge	A1	1	NOUN	4.82	Augen
+Augenblick	B1	2	NOUN	4.47	Augenblicke
+August	A1	1	NOUN	5.12	
+aus	A1	1	OTHER	6.60	
+Ausbildung	A2	1	NOUN	4.99	Ausbildungen
+Ausdruck	B1	2	NOUN	4.53	Ausdrucke,Ausdrücke
+ausdrucken	B1	3	VERB	3.78	ausgedruckt,druckt,druckte
+auseinander	B1	2	OTHER	4.38	
+Ausfahrt	B1	3	NOUN	3.67	Ausfahrten
+ausfallen	B1	3	VERB	4.00	ausgefallen,fiel,fällt
+Ausflug	A1	1	NOUN	4.07	Ausflüge
+ausfüllen	A1	1	VERB	3.77	ausgefüllt,füllt,füllte
+Ausgabe	B1	2	NOUN	4.71	Ausgaben
+Ausgang	A1	1	NOUN	4.20	Ausgänge
+ausgeben	A2	1	VERB	4.07	ausgegeben,gab,gibt
+ausgebildet	B1	2	OTHER	4.21	
+ausgehen	A2	1	VERB	4.39	ausgegangen,geht,ging
+ausgezeichnet	B1	2	OTHER	4.54	
+Aushilfe	B1	3	NOUN	3.29	Aushilfen
+Auskunft	A1	1	NOUN	4.21	Auskünfte
+Ausland	A1	1	NOUN	4.74	
+Ausländer	A1	1	NOUN	4.32	
+Ausländerin	B1	3	NOUN	2.73	Ausländerinnenauslndisch
+ausländisch	A1	1	OTHER	2.43	
+ausmachen	A1	1	VERB	4.05	ausgemacht,macht,machte
+Ausnahme	B1	2	NOUN	4.56	Ausnahmen
+auspacken	A2	1	VERB	3.52	ausgepackt,packt
+ausreichen	B1	3	VERB	3.80	ausgereicht,reicht,reichte
+ausreichend	B1	2	OTHER	4.50	
+ausrichten	B1	3	VERB	3.86	ausgerichtet,richtet,richtete
+ausruhen	A2	1	VERB	3.63	ausgeruht,ruht,ruhte
+Aussage	A1	1	NOUN	4.68	Aussagen
+ausschließen	B1	3	VERB	3.93	ausgeschlossen,schließt,schloss
+ausschließlich	B1	2	OTHER	4.79	
+aussehen	A1	1	VERB	4.78	ausgesehen,sah,sieht
+Aussicht	B1	2	NOUN	4.37	Aussichten
+Aussprache	B1	3	NOUN	3.88	
+aussprechen	A2	1	VERB	3.98	ausgesprochen,sprach,spricht
+aussteigen	A1	1	VERB	3.89	ausgestiegen,steigt
+ausstellen	B1	3	VERB	3.53	ausgestellt,stellt,stellte
+Ausstellung	A2	1	NOUN	4.69	Ausstellungen
+aussuchen	B1	3	VERB	3.97	ausgesucht,sucht,suchte
+austragen	A2	1	VERB	3.38	ausgetragen,trägt
+Auswahl	B1	2	NOUN	4.87	Auswahlen
+Ausweis	A1	1	NOUN	3.96	Ausweise
+auswählen	B1	3	VERB	3.78	ausgewählt,wählt,wählte
+ausziehen	A1	1	VERB	3.85	ausgezogen,zieht,zog
+Auto	A1	1	NOUN	5.30	Autos
+Autobahn	A1	1	NOUN	4.43	Autobahnen
+Automat	A1	1	NOUN	3.32	Automaten
+automatisch	A1	1	OTHER	4.58	
+Autor	B1	2	NOUN	4.76	Autoren
+Autorin	B1	2	NOUN	4.22	Autorinnen
+außen	B1	2	OTHER	4.73	
+außer	A2	1	OTHER	5.15	
+außerdem	A2	1	OTHER	5.38	
+außerhalb	A2	1	OTHER	4.84	
+Baby	A1	1	NOUN	4.71	Babys
+Babysitter	A2	1	NOUN	3.17	
+backen	A2	1	VERB	4.06	backte,gebacken
+Backofen	B1	3	NOUN	3.42	Back-Öfen
+Backrohr	B1	3	NOUN	2.09	Back-Rohre
+Bad	A1	1	NOUN	5.06	Bäder
+baden	A1	1	VERB	4.85	badet,badete,gebadet
+Badewanne	B1	3	NOUN	3.83	Badewannen
+Bahn	A1	1	NOUN	5.04	Bahnen
+Bahnhof	A1	1	NOUN	4.67	Bahnhöfe
+Bahnsteig	A1	1	NOUN	3.64	Bahnsteige
+bald	A1	1	OTHER	5.31	
+Balkon	A1	1	NOUN	4.19	Balkone
+Ball	A2	1	NOUN	4.64	Bälle
+Ballett	B1	3	NOUN	3.67	Ballette
+Banane	A1	1	NOUN	3.66	Bananen
+Bancomat	B1	3	NOUN	1.16	Bancomaten
+Band	A2	1	NOUN	5.06	Bands
+Bank	A1	1	NOUN	4.91	Banken,Bänke
+Bankleitzahl	B1	3	NOUN	2.37	Bankleitzahlen
+Bankomat	B1	3	NOUN	2.35	Bankomaten
+Bankomatkarte	B1	3	NOUN	2.20	Bankomat-Karten
+Bar	B1	2	NOUN	4.55	Bars
+bar	A1	1	OTHER	4.55	
+Bargeld	B1	3	NOUN	4.11	
+Bart	B1	2	NOUN	4.17	Bärte
+Basketball	A2	1	NOUN	4.15	Basketbälle
+basteln	A2	1	VERB	3.87	bastelt,bastelte,gebastelt
+Batterie	B1	3	NOUN	3.94	Batterien
+Bau	B1	2	NOUN	4.85	Bauauten
+Bauch	A1	1	NOUN	4.37	Bäuche
+bauen	A2	1	VERB	4.81	baut,baute,gebaut
+Bauer	B1	2	NOUN	4.43	Bauern
+Bauernhof	B1	3	NOUN	3.77	Bauernhöfe
+Baum	A1	1	NOUN	4.62	Bäume
+Baustelle	A2	1	NOUN	4.04	Baustellen
+beachten	B1	2	VERB	4.28	beachtet,beachtete
+Beamte	A1	1	NOUN	4.21	Beamten
+Beamtin	B1	3	NOUN	3.01	Beamtinnen
+beantragen	B1	3	VERB	3.98	beantragt,beantragte
+beantworten	A2	1	VERB	4.44	beantwortet,beantwortete
+beantworter	A1	1	OTHER	1.50	
+bedanken	A2	1	VERB	4.06	bedankt,bedankte
+Bedarf	B1	2	NOUN	4.67	
+bedeuten	A1	1	VERB	4.52	bedeutet,bedeutete
+Bedeutung	B1	2	NOUN	4.98	Bedeutungen
+bedienen	B1	2	VERB	4.21	bedient,bediente
+Bedienungsanleitung	B1	3	NOUN	2.80	Bedienungsanleitungen
+Bedingung	B1	3	NOUN	4.01	Bedingungen
+beeilen	A2	1	VERB	3.27	beeilt,beeilte
+beeinflussen	B1	2	VERB	4.25	beeinflusst,beeinflusste
+beenden	A2	1	VERB	4.38	beendet,beendete
+befinden	B1	2	VERB	4.72	befand,befindet,befunden
+befreit	B1	2	OTHER	4.28	
+befriedigend	B1	3	OTHER	3.35	
+begegnen	B1	2	VERB	4.16	begegnet,begegnete
+begeistert	B1	2	OTHER	4.52	
+Beginn	B1	2	NOUN	4.99	
+beginnen	A1	1	VERB	4.69	begann,beginnt,begonnen
+begleiten	B1	2	VERB	4.29	begleitet,begleitete
+begrenzt	B1	2	OTHER	4.31	
+begründen	A2	1	VERB	3.94	begründet,begründete
+Begründung	B1	2	NOUN	4.46	Begründungen
+begrüßen	B1	2	VERB	4.24	begrüßt,begrüßte
+behalten	B1	2	VERB	4.62	behielt,behält
+behandeln	B1	2	VERB	4.43	behandelt,behandelte
+behaupten	B1	2	VERB	4.46	behauptet,behauptete
+behindern	B1	3	VERB	3.62	behindert,behinderte
+Behörde	B1	2	NOUN	4.32	Behörden
+bei	A1	1	OTHER	6.66	
+beid	B1	3	OTHER	2.09	
+beide	A1	1	OTHER	5.38	
+Bein	A1	1	NOUN	4.32	Beine
+beinahe	B1	2	OTHER	4.42	
+Beispiel	A1	1	NOUN	5.35	Beispiele
+Beitrag	B1	2	NOUN	4.91	Beiträge
+beißen	B1	3	VERB	3.73	beißt,biss,gebissen
+bekannt	A1	1	OTHER	5.26	
+Bekannte	A1	1	NOUN	4.66	Bekannten
+bekommen	A1	1	VERB	5.42	bekam,bekommt
+Beleg	B1	3	NOUN	3.87	Belege
+beleidigen	B1	3	VERB	3.90	beleidigt,beleidigte
+beliebt	A2	1	OTHER	4.36	
+bemerken	B1	3	VERB	3.88	bemerkt,bemerkte
+bemühen	B1	3	VERB	4.08	bemüht,bemühte
+benutzen	A1	1	VERB	4.67	benutzt,benutzte
+Benzin	B1	2	NOUN	4.13	
+benötigen	B1	2	VERB	4.16	benötigt,benötigte
+beobachten	B1	2	VERB	4.50	beobachtet,beobachtete
+bequem	A2	1	OTHER	4.22	
+beraten	A2	1	VERB	4.29	beriet,berät
+Beratung	B1	2	NOUN	4.36	
+berechnen	B1	3	VERB	3.94	berechnet,berechnete
+Bereich	B1	2	NOUN	5.21	Bereiche
+bereit	B1	2	OTHER	5.02	
+bereits	B1	2	OTHER	5.67	
+Berg	A2	1	NOUN	4.62	Berge
+Bericht	B1	2	NOUN	4.88	Berichte
+berichten	A2	1	VERB	4.61	berichtet,berichtete
+Beruf	A1	1	NOUN	4.66	Berufe
+beruflich	B1	3	OTHER	4.07	
+berufstätig	B1	3	OTHER	3.10	
+beruhigen	B1	3	VERB	3.94	beruhigt,beruhigte
+berühmt	A2	1	OTHER	4.04	
+Bescheid	A2	1	NOUN	4.45	Bescheide
+beschließen	B1	3	VERB	3.79	beschließt,beschloss,beschlossen
+beschreiben	A2	1	VERB	4.33	beschreibt,beschrieb,beschrieben
+Beschreibung	B1	2	NOUN	4.60	Beschreibungen
+beschränken	B1	3	OTHER	3.90	
+beschweren	A2	1	VERB	4.02	beschwert,beschwerte
+beschädigen	B1	3	VERB	3.34	beschädigt,beschädigte
+beschäftigen	B1	2	VERB	4.40	beschäftigt,beschäftigte
+Beschäftigung	B1	2	NOUN	4.18	
+besetzen	B1	3	VERB	3.95	besetzt,besetzte
+besetzt	A1	1	OTHER	4.45	
+besichtigen	A1	1	VERB	3.66	besichtigt,besichtigte
+besitzen	B1	2	VERB	4.53	besaß,besessen,besitzt
+besonder	B1	3	OTHER	2.56	
+besonders	A2	1	OTHER	5.45	
+besorgen	B1	3	VERB	4.08	besorgt,besorgte
+besprechen	B1	3	VERB	4.02	besprach,bespricht,besprochen
+Besprechung	B1	3	NOUN	3.75	Besprechungen
+besser	A1	1	OTHER	5.66	
+Besserung	B1	3	NOUN	4.08	
+best	A1	1	OTHER	4.46	
+bestehen	A2	1	VERB	4.84	bestand,bestanden,besteht
+bestellen	A1	1	VERB	4.43	bestellt,bestellte
+besten	A2	1	OTHER	5.37	
+bestimmt	B1	2	OTHER	5.24	
+bestrafen	B1	3	VERB	3.82	bestraft,bestrafte
+bestätigen	A2	1	VERB	4.45	bestätigt,bestätigte
+Bestätigung	B1	2	NOUN	4.16	Bestätigungen
+Besuch	A2	1	NOUN	4.89	Besuche
+besuchen	A1	1	VERB	4.67	besucht,besuchte
+beteiligen	B1	3	VERB	4.04	beteiligt,beteiligte
+Betrag	B1	2	NOUN	4.32	Beträge
+betreuen	B1	3	VERB	3.68	betreut,betreute
+Betreuer	B1	3	NOUN	3.76	
+Betreuerin	B1	3	NOUN	2.95	Betreuerinnen
+Betreuung	B1	2	NOUN	4.24	
+Betrieb	B1	2	NOUN	4.82	Betriebe
+Betriebsrat	B1	3	NOUN	3.64	Betriebsräte
+Betriebsrätin	B1	3	NOUN	1.80	Betriebsrätinnen
+betrunken	B1	3	OTHER	4.10	
+betrügen	B1	3	VERB	3.48	betrog,betrogen,betrügt
+Bett	A1	1	NOUN	4.94	Betten
+bevor	B1	2	OTHER	5.19	
+Bevölkerung	B1	2	NOUN	5.00	
+bewegen	B1	2	VERB	4.63	bewegt,bewegte
+Bewegung	B1	2	NOUN	4.90	Bewegungen
+Beweis	B1	2	NOUN	4.55	Beweise
+beweisen	B1	2	VERB	4.53	beweist,bewies,bewiesen
+bewerben	A2	1	VERB	4.18	bewarb,bewirbt,beworben
+Bewerbung	A2	1	NOUN	4.12	Bewerbungen
+Bewohner	B1	2	NOUN	4.53	
+Bewohnerin	B1	3	NOUN	2.81	Bewohnerinnen
+bewölkt	A2	1	OTHER	3.41	
+bezahlen	A1	1	VERB	4.76	bezahlt,bezahlte
+Beziehung	B1	2	NOUN	4.79	Beziehungen
+Bibliothek	A2	1	NOUN	4.40	Bibliotheken
+Biene	B1	3	NOUN	3.53	Bienen
+Bier	A1	1	NOUN	4.82	Biere
+bieten	B1	2	VERB	4.81	bietet,bot,geboten
+Bild	A1	1	NOUN	5.40	Bilder
+Bildschirm	B1	3	NOUN	4.08	Bildschirme
+Billett	B1	3	NOUN	2.07	Billette,Billetts
+billig	A1	1	OTHER	4.26	
+Bio	B1	2	NOUN	4.38	
+bio	B1	2	OTHER	4.38	
+Biologie	B1	3	NOUN	3.97	
+Birne	A1	1	NOUN	3.60	Birnen
+bis	A1	1	OTHER	6.23	
+bisher	B1	2	OTHER	5.26	
+bisschen	A1	1	OTHER	5.23	
+Bitte	A1	1	NOUN	5.70	Bitten
+bitte	A1	1	OTHER	5.70	
+bitten	A1	1	VERB	4.51	bat,bittet,gebeten
+bitter	A1	1	OTHER	4.06	
+blass	B1	3	OTHER	3.65	
+Blatt	A2	1	NOUN	4.38	Blätter
+blau	A1	1	OTHER	4.65	
+bleiben	A1	1	VERB	5.37	bleibt,blieb,geblieben
+Bleistift	A1	1	NOUN	3.52	Bleistifte
+Blick	A1	1	NOUN	5.14	Blicke
+blind	B1	2	OTHER	4.26	
+Blitz	B1	3	NOUN	3.98	Blitze
+blitzen	B1	3	VERB	3.25	blitzt,blitzte,geblitzt
+Blog	A2	1	NOUN	4.49	Blogs
+blond	A2	1	OTHER	3.66	
+bloß	B1	2	OTHER	4.85	
+Blume	A1	1	NOUN	3.94	Blumen
+Bluse	A2	1	NOUN	3.53	Blusen
+Blut	B1	2	NOUN	4.73	
+bluten	B1	3	VERB	3.37	blutet,blutete,geblutet
+blöd	A2	1	OTHER	4.46	
+blühen	B1	3	VERB	3.59	blüht,blühte,geblüht
+Boden	B1	2	NOUN	5.01	Böden
+Bogen	A1	1	NOUN	4.19	Bögen
+Bohne	A2	1	NOUN	3.21	Bohnen
+Boot	B1	2	NOUN	4.52	Boote
+Botschaft	B1	2	NOUN	4.48	Botschaften
+Braten	B1	3	NOUN	3.72	
+braten	A2	1	VERB	3.72	briet,brät,gebraten
+brauchen	A1	1	VERB	5.16	braucht,brauchte,gebraucht
+braun	A1	1	OTHER	4.51	
+brechen	B1	2	VERB	4.31	brach,bricht,gebrochen
+breit	A1	1	OTHER	4.55	
+Breite	B1	2	NOUN	4.64	Breiten
+Bremse	B1	3	NOUN	3.69	Bremsen
+bremsen	B1	3	VERB	4.04	bremst,bremste,gebremst
+brennen	B1	3	VERB	4.09	brannte,brennt,gebrannt
+Brief	A1	1	NOUN	4.71	Briefe
+Briefkasten	B1	3	NOUN	3.76	Briefkästen
+Briefmarke	A1	1	NOUN	3.17	Briefmarken
+Brieftasche	B1	3	NOUN	3.23	Brieftaschen
+Briefträger	B1	3	NOUN	2.94	
+Briefumschlag	B1	3	NOUN	2.82	Briefumschläge
+Brille	A2	1	NOUN	4.23	Brillen
+bringen	A1	1	VERB	5.30	brachte,bringt,gebracht
+Broschüre	B1	3	NOUN	3.74	Broschüren
+Brot	A1	1	NOUN	4.50	Brote
+Bruder	A1	1	NOUN	5.01	Brüder
+Brust	B1	2	NOUN	4.40	
+Brötchen	A1	1	NOUN	4.01	
+Brötli	B1	3	NOUN	1.24	
+Brücke	A2	1	NOUN	4.61	Brücken
+Bsp	A2	1	NOUN	3.49	
+Bub	B1	3	NOUN	3.61	Buben
+Buch	A1	1	NOUN	5.22	Bücher
+buchen	A2	1	VERB	4.07	bucht,buchte,gebucht
+Buchhandlung	B1	3	NOUN	3.82	Buchhandlungen
+Buchstabe	A1	1	NOUN	3.67	Buchstaben
+buchstabieren	A1	1	VERB	2.78	buchstabiert,buchstabierte
+Buffet	B1	3	NOUN	3.59	Buffets
+bunt	A2	1	OTHER	4.06	
+Burg	B1	2	NOUN	4.38	Burgen
+Bus	A1	1	NOUN	4.72	Busse
+Butter	A1	1	NOUN	4.18	
+Bäckerei	A1	1	NOUN	3.79	Bäckereien
+Bär	B1	3	NOUN	4.00	Bären
+böse	A1	1	OTHER	4.74	
+Büchse	B1	3	NOUN	3.21	Büchsen
+Bühne	B1	2	NOUN	4.62	Bühnen
+Bürger	B1	2	NOUN	4.97	
+Bürgerin	B1	3	NOUN	2.92	Bürgerinnen
+Büro	A2	1	NOUN	4.73	Büros
+Bürste	B1	3	NOUN	3.20	Bürsten
+Cafeteria	A2	1	NOUN	3.33	Cafeterias
+CD	A1	1	NOUN	4.48	CDs
+Celsius	A1	1	NOUN	3.78	
+Cent	A1	1	NOUN	4.37	Cents
+Chance	B1	2	NOUN	5.06	Chancen
+chatten	A2	1	VERB	3.38	chattet,gechattet
+Chef	A1	1	NOUN	4.92	Chefdiehefin,Chefs
+Chefin	B1	3	NOUN	3.97	Chefinnen
+chic	B1	3	OTHER	3.28	
+Chipkarte	B1	3	NOUN	2.47	Chipkarten
+circa	A1	1	OTHER	4.09	
+Club	A2	1	NOUN	4.82	Clublub,Clubs
+Coiffeur	B1	3	NOUN	2.33	Coiffeure
+Coiffeuse	B1	3	NOUN	1.23	Coiffeusen
+Comic	A2	1	NOUN	4.11	Comics
+Computer	A1	1	NOUN	4.66	
+Couch	B1	3	NOUN	4.04	Couchs
+Cousin	B1	3	NOUN	3.85	Cousins
+Cousine	B1	3	NOUN	3.75	Cousinen
+Couvert	B1	3	NOUN	2.12	Couverts
+Creme	A2	1	NOUN	3.71	Cremen,Cremes
+da	A1	1	OTHER	6.37	
+dabei	A2	1	OTHER	5.80	
+Dach	B1	2	NOUN	4.57	Dächer
+dafür	A2	1	OTHER	5.68	
+dagegen	A2	1	OTHER	5.14	
+daher	B1	2	OTHER	5.37	
+dahin	B1	2	OTHER	4.80	
+damals	A2	1	OTHER	5.29	
+Dame	A1	1	NOUN	4.58	Damen
+damit	B1	2	OTHER	5.96	
+danach	B1	2	OTHER	5.30	
+daneben	A1	1	OTHER	4.60	
+Dank	A1	1	NOUN	5.32	
+dankbar	B1	2	OTHER	4.44	
+danke	A1	1	OTHER	5.64	
+danken	A1	1	VERB	4.20	dankt,dankte,gedankt
+dann	A1	1	OTHER	6.35	
+darauf	A2	1	OTHER	5.52	
+darstellen	B1	2	VERB	4.40	dargestellt,stellt,stellte
+Darstellung	B1	2	NOUN	4.63	Darstellungen
+darüber	A2	1	OTHER	5.44	
+das	A1	1	OTHER	7.16	
+dass	A2	1	OTHER	6.69	
+dasselbe	B1	2	OTHER	4.54	
+Datei	A2	1	NOUN	4.10	Dateien
+Daten	B1	2	NOUN	5.02	
+Datum	A1	1	NOUN	4.39	Datumdieaten,Datumen
+Dauer	B1	2	NOUN	4.57	
+dauern	A1	1	VERB	4.45	dauert,dauerte,gedauert
+dauernd	B1	2	OTHER	4.20	
+Decke	B1	2	NOUN	4.36	Decken
+dein	A1	1	OTHER	5.46	
+dekorieren	B1	3	VERB	3.02	dekoriert,dekorierte
+denken	A2	1	VERB	5.23	dachte,denkt,gedacht
+Denkmal	B1	3	NOUN	4.05	Denkmäler
+denn	A1	1	OTHER	5.97	
+der	A1	1	OTHER	7.46	
+derselbe	B1	3	OTHER	3.86	
+deshalb	A2	1	OTHER	5.39	
+Dessert	B1	3	NOUN	3.49	Desserts
+desto	B1	2	OTHER	4.60	
+deswegen	B1	2	OTHER	4.99	
+Detail	B1	2	NOUN	4.23	Details
+deutlich	A2	1	OTHER	5.30	
+Dezember	A1	1	NOUN	5.04	
+Dialekt	B1	3	NOUN	3.89	Dialekte
+Dialog	B1	2	NOUN	4.30	Dialoge
+dich	A1	1	OTHER	5.89	
+dicht	B1	2	OTHER	4.44	
+dick	A2	1	OTHER	4.41	
+die	A1	1	OTHER	7.48	
+Dieb	B1	3	NOUN	3.83	Diebe
+dienen	B1	2	VERB	4.63	dient,diente,gedient
+Dienst	B1	2	NOUN	4.76	
+Dienstag	A1	1	NOUN	4.64	Dienstage
+dienstags	A2	1	OTHER	3.41	
+dies	A1	1	OTHER	5.62	
+dieselbe	B1	2	OTHER	4.26	
+diesmal	B1	2	OTHER	4.74	
+digital	B1	2	OTHER	4.28	
+Ding	A2	1	NOUN	4.80	Dinge
+Diplom	B1	3	NOUN	3.95	Diplome
+dir	A1	1	OTHER	5.96	
+direkt	A2	1	OTHER	5.34	
+Direktor	B1	2	NOUN	4.46	Direktoren
+Direktorin	B1	3	NOUN	3.55	Direktorinnen
+Disco	A1	1	NOUN	3.79	Discodieisko,Discos
+Diskothek	B1	3	NOUN	3.07	Diskotheken,Diskothekisko
+Diskussion	B1	2	NOUN	4.78	Diskussionen
+diskutieren	A2	1	VERB	4.40	diskutiert,diskutierte
+Distanz	B1	2	NOUN	4.20	Distanzen
+Diät	B1	3	NOUN	3.91	
+doch	A2	1	OTHER	6.22	
+Doktor	A1	1	NOUN	4.21	Doktoren
+Doktorin	B1	3	NOUN	2.28	Doktorinnen
+Dokument	B1	2	NOUN	4.16	Dokumente
+Donner	B1	3	NOUN	3.57	
+donnern	B1	3	VERB	2.94	donnert,donnerte,gedonnert
+Donnerstag	A1	1	NOUN	4.65	Donnerstage
+donnerstags	A2	1	OTHER	3.42	
+Doppel	B1	2	NOUN	4.17	
+doppelt	B1	2	OTHER	4.44	
+Doppelzimmer	A1	1	NOUN	3.02	
+Dorf	A1	1	NOUN	4.74	Dörfer
+dort	A1	1	OTHER	5.78	
+dorthin	B1	2	OTHER	4.27	
+Dose	B1	3	NOUN	3.91	Dosen
+draußen	A1	1	OTHER	4.82	
+Dreck	B1	2	NOUN	4.28	
+drehen	B1	2	VERB	4.53	dreht,drehte,gedreht
+drei	A1	1	OTHER	5.72	
+dreimal	A2	1	OTHER	4.29	
+dreizehn	A1	1	OTHER	3.56	
+dreißig	A1	1	OTHER	3.85	
+drin	B1	2	OTHER	4.88	
+dringend	A2	1	OTHER	4.60	
+drinnen	A2	1	OTHER	4.13	
+dritt	A1	1	OTHER	3.67	
+Drittel	B1	2	NOUN	4.44	
+drittens	A2	1	OTHER	3.59	
+Droge	B1	3	NOUN	3.75	Drogen
+Drogerie	B1	3	NOUN	3.26	Drogerien
+Druck	B1	2	NOUN	4.96	
+drucken	A1	1	VERB	3.96	druckt,druckte,gedruckt
+Drucker	A1	1	NOUN	3.96	
+drüben	A2	1	OTHER	3.94	
+drücken	A1	1	VERB	4.45	drückt,drückte,gedrückt
+du	A1	1	OTHER	6.53	
+dumm	A2	1	OTHER	4.76	
+dunkel	A2	1	OTHER	4.43	
+durch	A1	1	OTHER	6.26	
+durcheinander	B1	3	OTHER	4.03	
+Durchsage	A1	1	NOUN	3.34	Durchsagen
+Durchschnitt	B1	2	NOUN	4.32	Durchschnitte
+durchschnittlich	B1	2	OTHER	4.26	
+Durst	A1	1	NOUN	3.75	
+durstig	B1	3	OTHER	3.06	
+Dusche	A1	1	NOUN	4.22	Duschen
+duschen	A1	1	VERB	4.04	duscht,duschte,geduscht
+duzen	B1	3	VERB	3.06	duzt,duzte
+dünn	A2	1	OTHER	4.09	
+dürfen	A1	1	VERB	5.22	darf,durfte,gedurft
+E-Book	A2	1	NOUN	4.11	E-Books
+E-Mail	A1	1	NOUN	4.61	E-Mails
+eben	B1	2	OTHER	5.39	
+ebenfalls	B1	2	OTHER	5.32	
+ebenso	B1	2	OTHER	5.14	
+EC-Karte	B1	3	NOUN	3.84	
+echt	A2	1	OTHER	5.34	
+Eck	B1	3	NOUN	3.83	Ecken
+Ecke	A1	1	NOUN	4.67	Ecken
+eckig	B1	3	OTHER	3.03	
+egal	A2	1	OTHER	5.28	
+Ehe	B1	2	NOUN	4.90	Ehen
+Ehefrau	A1	1	NOUN	4.32	Ehefrauderhemann,Ehefrauen
+Ehemann	A1	1	NOUN	4.26	Ehemänn
+Ehepaar	B1	3	NOUN	3.87	Ehepaare
+eher	B1	2	OTHER	5.32	
+ehrlich	B1	2	OTHER	4.90	
+Ei	A1	1	NOUN	4.42	Eier
+eigen	A2	1	OTHER	3.88	
+eigentlich	A2	1	OTHER	5.58	
+eignen	B1	3	VERB	4.00	eignet,eignete,geeignet
+Eile	B1	3	NOUN	3.70	
+eilen	B1	3	VERB	3.27	eilt,eilte,geeilt
+eilig	A1	1	OTHER	3.69	
+ein	A1	1	OTHER	6.91	
+Einbahnstraße	B1	3	NOUN	3.23	Einbahnstraßen
+einbrechen	B1	3	VERB	3.25	brach,bricht,eingebrochen
+Einbrecher	B1	3	NOUN	3.82	
+Einbrecherin	B1	3	NOUN	1.91	Einbrecherinnen
+Einbruch	B1	3	NOUN	4.04	Einbrüche
+eindeutig	B1	2	OTHER	4.59	
+Eindruck	B1	2	NOUN	4.76	Eindrücke
+einerseits	B1	2	OTHER	4.48	
+einfach	A1	1	OTHER	5.95	
+Einfahrt	B1	3	NOUN	3.65	Einfahrten
+Einfall	B1	3	NOUN	3.30	Einfälle
+einfallen	B1	3	VERB	4.06	eingefallen,fiel,fällt
+Einfluss	B1	2	NOUN	4.82	Einflüsse
+einfügen	B1	3	VERB	3.71	eingefügt,fügt,fügte
+einführen	B1	3	VERB	3.89	eingeführt,führt,führte
+Einführung	B1	2	NOUN	4.67	Einführungen
+Eingang	A1	1	NOUN	4.40	Eingänge
+einheitlich	B1	3	OTHER	3.72	
+einig	A2	1	OTHER	4.28	
+einigen	B1	2	VERB	5.11	einigt,einigte,geeinigt
+Einkauf	B1	3	NOUN	4.00	Einkäufe
+einkaufen	A1	1	VERB	4.33	eingekauft,kauft,kaufte
+Einkaufszentrum	A2	1	NOUN	3.76	Einkaufszentrumen
+Einkommen	B1	2	NOUN	4.36	
+einladen	A1	1	VERB	3.99	eingeladen,lud,lädt
+Einladung	A1	1	NOUN	4.39	Einladungen
+einmal	A1	1	OTHER	5.66	
+Einnahme	B1	3	NOUN	3.85	Einnahmen
+einnehmen	B1	3	VERB	4.01	eingenommen,nahm,nimmt
+einpacken	A2	1	VERB	3.52	eingepackt,packt,packte
+einrichten	B1	3	VERB	3.94	eingerichtet,richtet,richtete
+Einrichtung	B1	2	NOUN	4.59	Einrichtungen
+eins	A1	1	OTHER	4.97	
+einsam	B1	3	OTHER	3.97	
+einschalten	B1	3	VERB	3.83	eingeschaltet,schaltet,schaltete
+einschließlich	B1	2	OTHER	4.41	
+Einschreiben	B1	3	NOUN	3.23	
+einsetzen	B1	2	VERB	4.38	eingesetzt,setzt,setzte
+einsteigen	A1	1	VERB	4.00	eingestiegen,steigt,stieg
+einstellen	B1	2	VERB	4.33	eingestellt,stellt,stellte
+eintragen	A2	1	VERB	3.75	eingetragen,trug,trägt
+eintreten	B1	3	VERB	3.97	eingetreten,trat,tritt
+Eintritt	A1	1	NOUN	4.46	Eintritte
+Einwohner	B1	2	NOUN	4.50	
+Einwohnerin	B1	3	NOUN	1.92	Einwohnerinnen
+einzahlen	B1	3	VERB	3.26	eingezahlt,zahlt,zahlte
+Einzahlung	B1	3	NOUN	3.15	Einzahlungen
+Einzel	B1	3	NOUN	3.99	
+einzel	A2	1	OTHER	3.99	
+Einzelheit	B1	3	NOUN	2.42	Einzelheiten
+einzeln	B1	2	OTHER	4.19	
+Einzelzimmer	A1	1	NOUN	3.03	
+einziehen	A2	1	VERB	3.85	eingezogen,zieht,zog
+einzig	B1	2	OTHER	4.44	
+Eis	A2	1	NOUN	4.59	
+Eisenbahn	B1	3	NOUN	4.03	Eisenbahnen
+Elefant	B1	3	NOUN	3.53	Elefanten
+elegant	B1	3	OTHER	3.78	
+elektrisch	B1	3	OTHER	3.73	
+Elektro	B1	3	NOUN	3.93	
+elektronisch	B1	3	OTHER	3.47	
+elf	A1	1	OTHER	4.50	
+Eltern	A1	1	NOUN	5.26	
+Empfang	B1	2	NOUN	4.26	Empfänge
+empfangen	B1	2	VERB	4.31	empfing,empfängt
+empfehlen	A1	1	VERB	4.67	empfahl,empfiehlt,empfohlen
+Empfehlung	B1	2	NOUN	4.24	Empfehlungen
+Empfänger	A1	1	NOUN	4.13	
+Ende	A1	1	NOUN	5.67	Enden
+enden	A1	1	VERB	4.40	endet,endete,geendet
+endgültig	B1	2	OTHER	4.39	
+endlich	A2	1	OTHER	5.29	
+Energie	B1	2	NOUN	4.81	Energien
+eng	A2	1	OTHER	4.57	
+Enkel	B1	3	NOUN	4.06	
+Enkelin	B1	3	NOUN	3.55	Enkelinnen
+entdecken	B1	2	VERB	4.32	entdeckt,entdeckte
+Ente	B1	3	NOUN	3.78	Enten
+entfernen	B1	2	VERB	4.36	entfernt,entfernte
+Entfernung	B1	2	NOUN	4.37	Entfernungen
+entgegenkommen	B1	3	OTHER	3.40	
+enthalten	B1	2	VERB	4.71	enthielt,enthält
+entlang	B1	2	OTHER	4.64	
+entlassen	B1	2	VERB	4.37	entließ,entlässt
+Entlassung	B1	3	NOUN	3.94	Entlassungen
+entscheiden	B1	2	VERB	4.91	entscheidet,entschied,entschieden
+Entscheidung	B1	2	NOUN	5.03	Entscheidungen
+entschließen	B1	3	VERB	3.12	entschließt,entschloss,entschlossen
+entschuldigen	A1	1	VERB	4.15	entschuldigt,entschuldigte
+Entschuldigung	A1	1	NOUN	4.28	Entschuldigungen
+entsorgen	B1	3	VERB	3.64	entsorgt,entsorgte
+entspannend	B1	3	OTHER	3.24	
+entstehen	B1	2	VERB	4.76	entstand,entstanden,entsteht
+enttäuschen	B1	3	VERB	3.53	enttäuscht,enttäuschte
+Enttäuschung	B1	3	NOUN	3.96	Enttäuschungen
+entweder	B1	2	OTHER	4.92	
+entwickeln	B1	2	VERB	4.63	entwickelt,entwickelte
+Entwicklung	B1	2	NOUN	5.18	Entwicklungen
+er	A1	1	OTHER	6.71	
+Erdapfel	B1	3	NOUN	1.80	Erdäpfel
+Erde	B1	2	NOUN	4.90	
+Erdgeschoss	A2	1	NOUN	3.95	Erdgeschosse
+ereignen	B1	3	VERB	2.97	ereignet,ereignete
+Ereignis	B1	2	NOUN	4.24	Ereignisse
+erfahren	B1	2	VERB	4.90	erfuhr,erfährt
+Erfahrung	A2	1	NOUN	4.97	Erfahrungen
+erfinden	B1	3	VERB	3.84	erfand,erfindet,erfunden
+Erfindung	B1	3	NOUN	4.05	Erfindungen
+Erfolg	B1	2	NOUN	5.17	Erfolge
+erfolgreich	B1	2	OTHER	4.87	
+erforderlich	B1	2	OTHER	4.52	
+erfordern	B1	3	VERB	3.81	erfordert,erforderte
+erfüllen	B1	2	VERB	4.48	erfüllt,erfüllte
+Ergebnis	A1	1	NOUN	4.99	Ergebnisse
+ergänzen	B1	3	VERB	3.98	ergänzt,ergänzte
+erhalten	B1	2	VERB	5.31	erhielt,erhält
+erholen	B1	3	VERB	3.79	erholt,erholte
+Erholung	B1	3	NOUN	3.97	Erholungen
+erhöhen	B1	2	VERB	4.44	erhöht,erhöhte
+Erhöhung	B1	2	NOUN	4.25	Erhöhungen
+erinnern	A2	1	VERB	4.75	erinnert,erinnerte
+Erinnerung	B1	2	NOUN	4.65	Erinnerungen
+erkennen	B1	2	VERB	4.91	erkannt,erkannte,erkennt
+erklären	A1	1	VERB	4.97	erklärt,erklärte
+Erklärung	B1	2	NOUN	4.69	Erklärungen
+erkundigen	B1	3	VERB	3.40	erkundigt,erkundigte
+erkälten	B1	3	VERB	2.22	erkältet,erkältete
+erkältet	A2	1	OTHER	3.20	
+Erkältung	B1	3	NOUN	3.68	Erkältungen
+erlauben	A1	1	VERB	4.35	erlaubt,erlaubte
+Erlaubnis	A2	1	NOUN	4.12	
+erleben	B1	2	VERB	4.65	erlebt,erlebte
+Erlebnis	B1	2	NOUN	4.20	Erlebnisse
+erledigen	B1	2	VERB	4.17	erledigt,erledigte
+erleichtern	B1	3	VERB	3.97	erleichtert,erleichterte
+Ermäßigung	A2	1	NOUN	3.00	Ermäßigungen,Ermäßigüngenr
+ernst	B1	2	OTHER	5.21	
+ernsthaft	B1	2	OTHER	4.50	
+Ernte	B1	3	NOUN	3.98	Ernten
+ernähren	B1	3	VERB	3.94	ernährt,ernährte
+Ernährung	B1	2	NOUN	4.40	
+erreichen	A2	1	VERB	5.01	erreicht,erreichte
+Ersatz	B1	2	NOUN	4.35	
+erschrecken	B1	3	VERB	3.57	erschrak,erschreckt,erschreckte,erschrickt
+erschöpft	B1	3	OTHER	3.92	
+ersetzen	B1	2	VERB	4.37	ersetzt,ersetzte
+erst	A1	1	OTHER	5.76	
+erstellen	B1	2	VERB	4.26	erstellt,erstellte
+erstens	A2	1	OTHER	4.20	
+erwachsen	B1	3	OTHER	4.11	
+Erwachsene	A1	1	NOUN	4.41	Erwachsenen
+erwarten	B1	2	VERB	4.88	erwartet,erwartete
+erziehen	B1	3	VERB	3.67	erzieht,erzog,erzogen
+Erziehung	B1	2	NOUN	4.25	
+erzählen	A1	1	VERB	4.71	erzählt,erzählte
+Erzählung	B1	3	NOUN	4.07	Erzählungen
+eröffnen	B1	2	VERB	4.12	eröffnet,eröffnete
+Eröffnung	B1	2	NOUN	4.37	Eröffnungen
+es	A1	1	OTHER	6.94	
+Essen	A1	1	NOUN	5.33	
+essen	A1	1	VERB	5.33	aß,gegessen,isst
+Essig	B1	3	NOUN	3.56	
+Etage	B1	3	NOUN	3.81	Etagen
+etwa	B1	2	OTHER	5.62	
+etwas	A2	1	OTHER	5.94	
+euch	A1	1	OTHER	5.71	
+euer	A1	1	OTHER	4.65	
+Euro	A1	1	NOUN	5.42	Euros
+eventuell	B1	2	OTHER	4.48	
+ewig	B1	2	OTHER	4.52	
+Experte	B1	2	NOUN	4.26	Experten
+Export	B1	3	NOUN	3.92	Exporte
+extra	B1	2	OTHER	4.68	
+extrem	B1	2	OTHER	4.75	
+Fabrik	B1	2	NOUN	4.18	Fabriken
+Fach	A2	1	NOUN	4.37	Fächer
+Fachfrau	B1	3	NOUN	2.65	Fachfrauen
+Fachleute	B1	3	NOUN	3.75	
+Fachmann	B1	3	NOUN	3.68	
+Fahrbahn	B1	3	NOUN	3.84	Fahrbahnen
+Fahren	A2	1	NOUN	5.20	
+fahren	A1	1	VERB	5.20	fuhr,fährt,gefahren
+Fahrer	A1	1	NOUN	4.68	
+Fahrkarte	A1	1	NOUN	3.38	Fahrkarten
+Fahrplan	A2	1	NOUN	3.61	Fahrpläne
+FahrRad	A2	1	NOUN	4.48	FahrRäder
+Fahrrad	A1	1	NOUN	4.48	Fahrräder
+Fahrzeug	B1	2	NOUN	4.52	Fahrzeuge
+fair	B1	2	OTHER	4.39	
+Faktor	B1	2	NOUN	4.25	Faktoren
+Fall	A2	1	NOUN	5.54	Fälle
+fallen	A2	1	VERB	4.95	fiel,fällt
+falls	B1	2	OTHER	5.09	
+falsch	A1	1	OTHER	5.02	
+Familie	A1	1	NOUN	5.41	Familien
+Familienname	A1	1	NOUN	2.96	Familiennamen
+Familienstand	A1	1	NOUN	2.77	
+Fan	A2	1	NOUN	4.59	Fans
+fangen	B1	2	VERB	4.26	fing,fängt,gefangen
+Fantasie	B1	3	NOUN	4.06	Fantasien
+fantastisch	A2	1	OTHER	3.93	
+Farbe	A1	1	NOUN	4.73	Farben
+farbig	B1	3	OTHER	3.41	
+Faschierte	B1	3	NOUN	1.25	
+Fasching	B1	3	NOUN	3.47	
+Fasnacht	B1	3	NOUN	3.07	
+fassen	B1	2	VERB	4.42	fasst,fasste,gefasst
+fast	A2	1	OTHER	5.58	
+faul	A2	1	OTHER	4.10	
+faulenzen	B1	3	VERB	2.75	faulenzt,faulenzte,gefaulenzt
+Fauteuil	B1	3	NOUN	2.12	Fauteuils
+Fax	A1	1	NOUN	3.68	Faxe
+Februar	A1	1	NOUN	5.01	
+fehlen	A1	1	VERB	4.78	fehlt,fehlte,gefehlt
+Fehler	A1	1	NOUN	5.06	
+Feier	A1	1	NOUN	4.37	Feiern,Feiernzeierabend
+Feierabend	B1	3	NOUN	3.91	
+feiern	A1	1	VERB	4.76	feiert,feierte,gefeiert
+Feiertag	B1	3	NOUN	3.87	Feiertage
+Feld	B1	2	NOUN	4.63	Felder
+Fenster	A2	1	NOUN	4.88	
+Ferien	A2	1	NOUN	4.18	
+Fernbedienung	B1	3	NOUN	3.55	Fernbedienungen
+Fernsehen	B1	2	NOUN	4.72	
+fernsehen	A1	1	VERB	4.72	ferngesehen,sah,sieht
+Fernseher	A2	1	NOUN	4.34	
+fertig	A1	1	OTHER	5.02	
+Fest	A2	1	NOUN	5.20	Feste
+fest	B1	2	OTHER	5.20	
+festhalten	B1	2	VERB	4.14	festgehalten,hielt,hält
+Festival	A2	1	NOUN	4.48	Festivals
+festlegen	B1	3	VERB	3.83	festgelegt,legt,legte
+festnehmen	B1	3	VERB	3.42	nahm
+Festplatte	B1	3	NOUN	3.79	Festplatten
+festsetzen	B1	3	VERB	3.13	festgesetzt,setzt,setzte
+feststehen	B1	3	VERB	2.86	festgestanden,stand,steht
+feststellen	B1	2	VERB	4.33	festgestellt,stellt,stellte
+Fett	B1	2	NOUN	4.43	
+fett	A2	1	OTHER	4.43	
+feucht	B1	3	OTHER	3.97	
+Feuer	A1	1	NOUN	4.76	
+Feuerwehr	B1	2	NOUN	4.49	Feuerwehren
+Feuerzeug	B1	3	NOUN	3.31	Feuerzeuge
+Fieber	A1	1	NOUN	4.10	
+Figur	B1	2	NOUN	4.54	Figuren
+Film	A1	1	NOUN	5.23	Filme
+finanziell	B1	2	OTHER	4.22	
+finanzieren	B1	3	VERB	4.10	finanziert,finanzierte
+finden	A1	1	VERB	5.60	fand,findet,gefunden
+Finger	B1	2	NOUN	4.66	
+Firma	A1	1	NOUN	5.00	Firmaen,Firmairmen
+Fisch	A1	1	NOUN	4.34	Fische
+fit	A2	1	OTHER	4.34	
+flach	B1	3	OTHER	4.10	
+Flasche	A1	1	NOUN	4.41	Flaschen
+Fleck	B1	3	NOUN	3.94	Flecken
+Fleisch	A1	1	NOUN	4.66	
+Fleischhauer	B1	3	NOUN	3.00	
+Fleischhauerin	B1	3	NOUN	0.00	Fleischhauerinnen
+fleißig	A2	1	OTHER	4.13	
+flexibel	B1	3	OTHER	3.78	
+Fliege	B1	3	NOUN	3.81	Fliegen
+fliegen	A1	1	VERB	4.66	fliegt,flog,geflogen
+fliehen	B1	3	VERB	4.08	flieht,floh,geflohen
+fließen	B1	3	VERB	4.04	fließt,floss
+fließend	B1	3	OTHER	3.63	
+Flohmarkt	A2	1	NOUN	3.62	Flohmärkte
+Flucht	B1	2	NOUN	4.54	
+Flug	A2	1	NOUN	4.49	Flüge
+Flughafen	A1	1	NOUN	4.75	Flughäfen
+Flugzeug	A1	1	NOUN	4.46	Flugzeuge
+Flur	B1	3	NOUN	4.04	Flure
+Fluss	A2	1	NOUN	4.44	Flüsse
+Fläche	B1	2	NOUN	4.56	Flächen
+Flöte	B1	3	NOUN	3.54	Flöten
+Flüssigkeit	B1	3	NOUN	3.96	Flüssigkeiten
+Folge	B1	2	NOUN	5.24	Folgen
+folgen	B1	2	VERB	5.18	folgt,folgte,gefolgt
+folgend	B1	3	OTHER	3.70	
+fordern	B1	2	VERB	4.56	fordert,forderte,gefordert
+Forderung	B1	2	NOUN	4.43	Forderungen
+Form	B1	2	NOUN	5.20	Formen
+Formular	A1	1	NOUN	3.74	Formulare
+Forschung	B1	2	NOUN	4.70	Forschungen
+Fortbildung	B1	3	NOUN	3.72	Fortbildungen
+Fortschritt	B1	2	NOUN	4.21	Fortschritte
+fortsetzen	B1	3	VERB	3.84	fortgesetzt,setzt,setzte
+Fortsetzung	B1	2	NOUN	4.23	Fortsetzungen
+Forum	B1	2	NOUN	4.53	Forumorennternetforum
+Foto	A1	1	NOUN	5.02	Fotos
+Fotoapparat	A2	1	NOUN	2.87	Fotoapparate,Fotoapparatech
+Fotograf	B1	3	NOUN	3.97	Fotografen
+Fotografie	B1	2	NOUN	4.12	Fotografien
+fotografieren	A2	1	VERB	3.94	fotografiert,fotografierte
+Frage	A1	1	NOUN	5.57	Fragen
+fragen	A1	1	VERB	5.47	fragt,fragte,gefragt
+Frau	A1	1	NOUN	5.66	Frauen
+frech	B1	3	OTHER	3.84	
+frei	A1	1	OTHER	5.20	
+Freien	B1	2	NOUN	4.88	
+Freiheit	B1	2	NOUN	4.88	
+Freitag	A1	1	NOUN	4.91	Freitage
+freitags	A2	1	OTHER	3.83	
+freiwillig	A2	1	OTHER	4.40	
+Freizeit	A1	1	NOUN	4.38	
+fremd	A1	1	OTHER	4.01	
+Fremdsprache	B1	3	NOUN	3.61	Fremdsprachen
+fressen	B1	2	VERB	4.13	fraß,frisst,gefressen
+Freude	B1	2	NOUN	4.87	
+freuen	A1	1	VERB	4.92	freut,freute,gefreut
+Freund	A1	1	NOUN	5.11	Freunde
+freundlich	A2	1	OTHER	4.44	
+Freundschaft	B1	2	NOUN	4.44	Freundschaften
+Friede	B1	3	NOUN	3.66	Friederieden
+frieren	B1	3	VERB	3.32	friert,fror,gefroren
+frisch	A2	1	OTHER	4.58	
+Friseur	B1	3	NOUN	3.78	Friseure
+Friseurin	B1	3	NOUN	2.91	Friseurinnen
+Frist	B1	3	NOUN	4.10	Fristen
+Frisur	B1	3	NOUN	3.84	Frisuren
+froh	A2	1	OTHER	4.79	
+Frucht	B1	3	NOUN	3.84	
+fröhlich	B1	3	OTHER	4.09	
+Früchte	B1	2	NOUN	4.16	
+früh	A2	1	OTHER	4.91	
+früher	A1	1	OTHER	5.22	
+Frühjahr	B1	2	NOUN	4.47	Frühjahre
+Frühling	A2	1	NOUN	4.25	Frühlinge
+Frühstück	A1	1	NOUN	4.50	
+frühstücken	A1	1	VERB	3.57	frühstückt,frühstückte,gefrühstückt
+Fundbüro	B1	3	NOUN	2.77	Fundbüros
+Fundsachen	A2	1	NOUN	2.52	
+funktionieren	B1	2	VERB	4.51	funktioniert,funktionierte
+furchtbar	A2	1	OTHER	4.13	
+Fuß	A1	1	NOUN	4.81	Füße
+Fußball	A1	1	NOUN	5.01	Fußbälle
+Fußgänger	B1	3	NOUN	3.93	
+Fußgängerin	B1	3	NOUN	2.61	Fußgängerinnen
+Fußgängerzone	B1	3	NOUN	3.62	Fußgängerzonen
+Fähigkeit	B1	2	NOUN	4.26	Fähigkeiten
+Fähre	B1	3	NOUN	3.78	Fähren
+fällig	B1	3	OTHER	3.93	
+fördern	B1	2	VERB	4.40	fördert,förderte,gefördert
+Förderung	B1	2	NOUN	4.61	Förderungen
+fühlen	A2	1	VERB	4.82	fühlt,fühlte,gefühlt
+führen	B1	2	VERB	5.14	führt,führte,geführt
+Führerausweis	B1	3	NOUN	1.84	Führerausweise
+Führerschein	A2	1	NOUN	4.19	Führerscheine
+Führung	A1	1	NOUN	4.73	Führungen
+fünf	A1	1	OTHER	5.29	
+fünfzehn	A1	1	OTHER	3.72	
+fünfzig	A1	1	OTHER	3.70	
+für	A1	1	OTHER	6.88	
+fürchten	B1	2	VERB	4.16	fürchtet,fürchtete,gefürchtet
+füttern	B1	3	VERB	3.75	füttert,fütterte,gefüttert
+Gabel	A2	1	NOUN	3.64	Gabeln
+Galerie	B1	2	NOUN	4.34	Galerien
+Gang	B1	2	NOUN	4.60	Gänge
+ganz	A2	1	OTHER	5.98	
+gar	B1	2	OTHER	5.64	
+Garage	A2	1	NOUN	4.05	Garagen
+Garantie	B1	3	NOUN	4.04	
+garantieren	B1	3	VERB	3.88	garantiert,garantierte
+Garderobe	B1	3	NOUN	3.53	Garderoben
+Garten	A1	1	NOUN	4.73	Gärten
+Gas	B1	2	NOUN	4.53	
+Gast	A1	1	NOUN	4.59	Gäste
+Gasthaus	B1	3	NOUN	3.72	Gasthäuser
+Gaststätte	B1	3	NOUN	3.63	Gaststätten
+geben	A1	1	VERB	5.60	gab,gegeben,gibt
+Gebiet	B1	2	NOUN	4.82	Gebiete
+Gebirge	B1	3	NOUN	3.94	
+geboren	A1	1	VERB	4.81	worden,wurde
+gebrauchen	B1	2	VERB	4.18	gebraucht,gebrauchte
+Gebrauchsanweisung	B1	3	NOUN	2.81	Gebrauchsanweisungen
+Geburt	B1	2	NOUN	4.50	Geburten
+Geburts	A2	1	NOUN	2.93	
+Geburtsjahr	A1	1	NOUN	3.09	
+Geburtsort	A1	1	NOUN	3.35	
+Geburtstag	A1	1	NOUN	4.77	Geburtstage
+Gebäck	B1	3	NOUN	3.40	
+Gebäude	B1	2	NOUN	4.91	
+Gebühr	B1	3	NOUN	3.89	Gebühren
+Gedanke	B1	2	NOUN	4.41	Gedanken
+Gedicht	B1	3	NOUN	4.11	Gedichte
+Geduld	B1	2	NOUN	4.25	
+geduzt	B1	3	OTHER	2.48	
+geehrt	A2	1	OTHER	3.97	
+Gefahr	B1	2	NOUN	4.94	Gefahren
+gefallen	A1	1	VERB	4.98	gefiel,gefällt
+geflossen	B1	3	OTHER	3.32	
+gefährlich	A2	1	OTHER	4.60	
+Gefängnis	B1	2	NOUN	4.46	Gefängnisse
+Gefühl	B1	2	NOUN	5.05	Gefühle
+gegen	A1	1	OTHER	6.03	
+Gegend	B1	2	NOUN	4.64	Gegenden
+Gegensatz	B1	2	NOUN	4.77	Gegensätze
+Gegenstand	B1	2	NOUN	4.18	Gegenstände
+Gegenteil	A2	1	NOUN	4.59	Gegenteile
+gegenüber	A2	1	OTHER	5.27	
+Gegner	B1	2	NOUN	4.73	
+Gehalt	A2	1	NOUN	4.38	Gehälter
+geheim	B1	3	OTHER	3.91	
+Geheimnis	B1	2	NOUN	4.37	Geheimnisse
+gehen	A1	1	VERB	5.65	gegangen,geht,ging
+Gehsteig	B1	3	NOUN	2.87	
+gehören	A1	1	VERB	5.03	gehört,gehörte
+gelandet	B1	2	OTHER	4.19	
+gelb	A1	1	OTHER	4.46	
+Geld	A1	1	NOUN	5.59	
+Geldautomat	B1	3	NOUN	2.77	Geldautomaten
+Geldbörse	A2	1	NOUN	3.44	Geldbörsen
+Gelegenheit	B1	2	NOUN	4.69	Gelegenheiten
+gelingen	B1	3	VERB	4.10	gelang,gelingt,gelungen
+gelten	B1	2	VERB	4.80	galt,gegolten,gilt
+gemeinsam	B1	2	OTHER	5.10	
+Gemeinschaft	B1	2	NOUN	4.52	Gemeinschaften
+Gemüse	A1	1	NOUN	4.33	
+gemütlich	B1	2	OTHER	4.12	
+genau	A2	1	OTHER	5.65	
+genauso	B1	2	OTHER	4.96	
+genehmigen	B1	3	VERB	3.44	genehmigt,genehmigte
+Generation	B1	2	NOUN	4.67	Generationen
+genießen	B1	2	VERB	4.61	genießt,genoss,genossen
+genug	A2	1	OTHER	5.35	
+genäht	B1	3	OTHER	3.49	
+genügen	B1	3	VERB	3.79	genügt,genügte
+Gepäck	A1	1	NOUN	4.07	
+gerade	A1	1	OTHER	5.77	
+geradeaus	A1	1	OTHER	3.57	
+gerecht	B1	2	OTHER	4.37	
+Gericht	A2	1	NOUN	4.82	Gerichte
+gering	B1	2	OTHER	4.39	
+gern	A1	1	OTHER	5.15	
+gerne	B1	2	OTHER	5.49	
+Gerät	A2	1	NOUN	4.60	Geräte
+Gesamt	B1	3	NOUN	3.89	
+gesamt	B1	3	OTHER	3.89	
+gesandt	B1	3	OTHER	3.38	
+geschehen	B1	2	VERB	4.76	geschah,geschieht
+Geschenk	A1	1	NOUN	4.55	Geschenke
+Geschichte	A2	1	NOUN	5.45	Geschichten
+geschieden	B1	3	OTHER	3.74	
+Geschirr	A2	1	NOUN	3.67	
+Geschlecht	B1	2	NOUN	4.41	Geschlechter
+Geschmack	B1	2	NOUN	4.53	
+Geschwindigkeit	B1	2	NOUN	4.48	Geschwindigkeiten
+Geschwindigkeitsbeschränkung	B1	3	NOUN	2.20	Geschwindigkeitsbeschränkungen
+Geschwister	A1	1	NOUN	4.07	
+Geschäft	A1	1	NOUN	4.69	Geschäfte
+Gesellschaft	B1	2	NOUN	5.28	Gesellschaften
+gesendet	B1	3	OTHER	3.97	
+Gesetz	B1	2	NOUN	4.91	Gesetze
+Gesicht	A2	1	NOUN	5.04	Gesichter
+gespannt	B1	2	OTHER	4.50	
+Gespräch	A1	1	NOUN	4.80	Gespräche
+gestern	A1	1	OTHER	5.15	
+gestorben	A1	1	OTHER	4.78	
+gesund	A2	1	OTHER	4.56	
+Gesundheit	A2	1	NOUN	4.68	
+getippt	B1	3	OTHER	3.31	
+getrieben	B1	3	OTHER	4.12	
+Getränk	A1	1	NOUN	3.83	Getränke
+Gewalt	B1	2	NOUN	4.90	Gewalten
+Gewerkschaft	B1	3	NOUN	4.00	Gewerkschaften
+Gewicht	A1	1	NOUN	4.57	Gewichte
+Gewinn	B1	2	NOUN	4.63	Gewinne
+gewinnen	A1	1	VERB	5.00	gewann,gewinnt,gewonnen
+Gewissen	B1	2	NOUN	4.71	
+Gewitter	A2	1	NOUN	3.85	
+Gewohnheit	B1	3	NOUN	3.65	Gewohnheiten
+gewöhnen	B1	3	VERB	3.93	gewöhnt,gewöhnte
+gewöhnlich	B1	2	OTHER	4.13	
+Gewürz	B1	3	NOUN	3.01	Gewürze
+gießen	B1	2	VERB	4.16	gegossen,gießt,goss
+Gift	B1	3	NOUN	4.02	Gifte
+giftig	B1	3	OTHER	3.49	
+Giraffe	B1	3	NOUN	3.19	Giraffen
+Girokonto	B1	3	NOUN	3.36	Girokontoen
+Gitarre	A2	1	NOUN	4.21	Gitarren
+Glace	B1	3	NOUN	2.28	
+Glas	A1	1	NOUN	4.61	Gläser
+glatt	B1	2	OTHER	4.24	
+glauben	A1	1	VERB	5.12	geglaubt,glaubt,glaubte
+gleich	A1	1	OTHER	5.59	
+gleichberechtigt	B1	3	OTHER	3.35	
+gleichfalls	B1	3	OTHER	3.85	
+gleichzeitig	B1	2	OTHER	5.09	
+Gleis	A1	1	NOUN	3.85	Gleise
+Glück	A1	1	NOUN	5.24	
+glücklich	A1	1	OTHER	4.89	
+Glückwunsch	A1	1	NOUN	4.36	Glückwünsche
+Gold	B1	2	NOUN	4.90	
+Golf	B1	2	NOUN	4.33	
+Golfspiel	B1	3	NOUN	2.16	
+Gott	B1	2	NOUN	5.26	Götter
+Grad	A1	1	NOUN	4.97	Grade
+Grafik	B1	2	NOUN	4.21	Grafiken
+Gramm	A1	1	NOUN	4.12	
+Gras	B1	2	NOUN	4.26	
+gratis	B1	2	OTHER	4.53	
+Gratulation	B1	3	NOUN	3.50	Gratulationen
+gratulieren	A1	1	VERB	3.75	gratuliert,gratulierte
+grau	A1	1	OTHER	4.23	
+greifen	B1	2	VERB	4.45	gegriffen,greift,griff
+Grenze	B1	2	NOUN	4.84	Grenzen
+Grill	B1	3	NOUN	3.93	
+grillen	A1	1	VERB	3.86	gegrillt,grillt,grillte
+grillieren	B1	3	VERB	1.99	grilliert,grillierte
+Grippe	A2	1	NOUN	3.73	
+Groß	B1	2	NOUN	5.21	
+groß	A1	1	OTHER	5.21	
+Großeltern	A1	1	NOUN	3.93	
+Großmutter	A1	1	NOUN	3.98	
+Großvater	A1	1	NOUN	4.07	
+Grund	B1	2	NOUN	5.37	Gründe
+Grundstück	B1	2	NOUN	4.28	Grundstücke
+Gruppe	A1	1	NOUN	5.25	Gruppen
+Gruß	A1	1	NOUN	4.03	Grüße
+Größe	A1	1	NOUN	4.85	Größen
+grün	A1	1	OTHER	4.75	
+gründen	B1	2	VERB	4.90	gegründet,gründet,gründete
+gründlich	B1	3	OTHER	4.01	
+grüßen	B1	3	VERB	4.05	gegrüßt,grüßt,grüßte
+gucken	B1	2	VERB	4.48	geguckt,guckt,guckte
+gut	A1	1	OTHER	6.09	
+Gymnastik	B1	3	NOUN	3.38	
+gültig	A1	1	OTHER	4.05	
+günstig	A1	1	OTHER	4.44	
+Haar	A1	1	NOUN	4.40	Haare
+haben	A1	1	VERB	6.45	gehabt,hatte
+Hackfleisch	B1	3	NOUN	3.33	
+Hafen	B1	2	NOUN	4.36	Häfen
+hageln	B1	3	VERB	2.32	gehagelt,hagelt,hagelte
+halb	A2	1	OTHER	4.66	
+Halbpension	A1	1	NOUN	2.97	
+halbtags	B1	3	OTHER	2.78	
+Halle	A1	1	NOUN	4.76	Hallen
+Hallenbad	B1	3	NOUN	3.34	Hallenbäder
+hallo	A1	1	OTHER	5.06	
+Hals	A2	1	NOUN	4.46	Hälse
+Halt	B1	2	NOUN	5.36	
+halt	B1	2	OTHER	5.36	
+haltbar	B1	3	OTHER	3.61	
+halten	A1	1	VERB	5.34	gehalten,hielt,hält
+Haltestelle	A1	1	NOUN	3.99	Haltestellen
+Hamburger	A2	1	NOUN	4.60	
+Hammer	B1	2	NOUN	4.40	Hämmer
+Hand	A1	1	NOUN	5.30	Hände
+Handel	B1	2	NOUN	4.65	
+handeln	B1	2	VERB	4.74	gehandelt,handelt,handelte
+Handtuch	A2	1	NOUN	3.75	Handtücher
+Handwerker	B1	2	NOUN	4.12	
+Handwerkerin	B1	3	NOUN	1.64	Handwerkerinnen
+Handy	A1	1	NOUN	4.84	Handys
+hart	A2	1	OTHER	4.89	
+Hase	B1	3	NOUN	3.80	Hasen
+hassen	B1	2	VERB	4.22	gehasst,hasst,hasste
+hat	A2	1	OTHER	6.60	
+Haupt	B1	2	NOUN	4.18	
+Hauptbahnhof	B1	2	NOUN	4.20	Hauptbahnhöfe
+Hauptstadt	A2	1	NOUN	4.56	Hauptstädte
+Haus	A1	1	NOUN	5.41	Häuser
+Hausaufgabe	A1	1	NOUN	3.04	Hausaufgaben
+Hausfrau	A1	1	NOUN	3.74	Hausfrauen
+Haushalt	A2	1	NOUN	4.35	Haushalte
+Hausmann	A1	1	NOUN	3.25	
+Hausmeister	B1	3	NOUN	3.67	
+Hausmeisterin	B1	3	NOUN	2.29	Hausmeisterinnen
+Haustier	B1	3	NOUN	3.60	Haustiere
+Haut	B1	2	NOUN	4.79	
+heben	B1	2	VERB	4.12	gehoben,hebt,hob
+Heft	A2	1	NOUN	4.33	Hefte
+Heim	B1	2	NOUN	4.44	Heime
+heim	B1	2	OTHER	4.44	
+Heimat	A1	1	NOUN	4.73	
+heimlich	B1	2	OTHER	4.14	
+Heimweh	B1	3	NOUN	3.32	
+heiraten	A1	1	VERB	4.26	geheiratet,heiratet,heiratete
+heizen	B1	3	VERB	3.55	geheizt,heizt,heizte
+Heizung	A2	1	NOUN	4.01	Heizungen
+heiß	A2	1	OTHER	4.61	
+heißen	A1	1	VERB	4.83	geheißen,heißt,hieß
+Held	B1	2	NOUN	4.22	Helden
+Heldin	B1	3	NOUN	3.39	Heldinnen
+helfen	A1	1	VERB	5.18	geholfen,half,hilft
+hell	A1	1	OTHER	4.30	
+Hemd	A2	1	NOUN	4.03	Hemden
+Hend	B1	3	NOUN	2.67	
+her	A1	1	OTHER	5.25	
+heraus	A2	1	OTHER	5.01	
+Herausforderung	B1	2	NOUN	4.34	Herausforderungen
+herausgefunden	B1	3	OTHER	3.85	
+Herbst	A2	1	NOUN	4.74	Herbste
+Herd	A1	1	NOUN	3.87	Herde
+herein	A2	1	OTHER	3.94	
+Herkunft	B1	2	NOUN	4.48	
+Herr	A1	1	NOUN	5.24	Herren
+herstellen	A2	1	VERB	4.07	hergestellt,stellt,stellte
+Hersteller	B1	2	NOUN	4.57	
+herunterfahren	B1	3	OTHER	2.68	
+heruntergefahren	B1	3	OTHER	2.66	
+herunterladen	A2	1	VERB	3.55	herunter,heruntergeladen,lädt
+Herz	B1	2	NOUN	5.03	Herzen
+herzlich	A1	1	OTHER	4.43	
+heute	A1	1	OTHER	5.88	
+heutig	B1	3	OTHER	1.90	
+hier	A1	1	OTHER	6.26	
+hierher	B1	2	OTHER	4.15	
+Hilfe	A1	1	NOUN	5.24	
+Himmel	A2	1	NOUN	4.82	
+hin	A1	1	OTHER	5.44	
+hinten	A1	1	OTHER	4.79	
+hinter	A2	1	OTHER	5.32	
+hinterher	B1	2	OTHER	4.41	
+hinterlassen	B1	2	VERB	4.28	hinterließ,hinterlässt
+Hinweise	B1	2	NOUN	4.53	Hinweisee
+hinweisen	B1	2	VERB	4.18	hingewiesen,weist,wies
+historisch	B1	2	OTHER	4.26	
+Hitze	B1	2	NOUN	4.33	
+Hobby	A1	1	NOUN	4.25	Hobbys
+hoch	A1	1	OTHER	5.28	
+hochladen	B1	3	VERB	3.72	hochgeladen,lud,lädt
+Hochzeit	A1	1	NOUN	4.48	Hochzeiten
+Hof	B1	2	NOUN	4.68	Höfe
+hoffen	A2	1	VERB	4.67	gehofft,hofft,hoffte
+hoffentlich	A2	1	OTHER	4.74	
+Hoffnung	B1	2	NOUN	4.81	Hoffnungen
+holen	A1	1	VERB	4.81	geholt,holt,holte
+Holz	B1	2	NOUN	4.64	
+Homepage	A2	1	NOUN	4.59	Homepages
+Honig	B1	3	NOUN	4.05	
+Hose	A2	1	NOUN	4.44	Hosen
+Hotel	A1	1	NOUN	4.91	Hotels
+Humor	B1	2	NOUN	4.48	
+Hund	A1	1	NOUN	4.86	Hunde
+hundert	A1	1	OTHER	4.53	
+Hunger	A1	1	NOUN	4.46	
+hungrig	B1	3	OTHER	3.77	
+hupen	B1	3	VERB	3.29	gehupt,hupt,hupte
+Husten	B1	3	NOUN	3.81	
+husten	A2	1	VERB	3.81	gehustet,hustet,hustete
+Hut	B1	2	NOUN	4.39	Hüte
+Hähnchen	A1	1	NOUN	3.42	
+Hälfte	B1	2	NOUN	4.98	Hälften
+Händler	B1	2	NOUN	4.33	
+Händlerin	B1	3	NOUN	2.06	Händlerinnen
+hängen	A2	1	VERB	4.60	gehängt,hängt
+hässlich	A2	1	OTHER	4.02	
+häufig	B1	2	OTHER	5.02	
+höchstens	B1	2	OTHER	4.37	
+höflich	B1	3	OTHER	3.89	
+Höhe	B1	2	NOUN	5.08	
+hören	A1	1	VERB	5.09	gehört,hört,hörte
+Hörer	B1	3	NOUN	3.75	
+Hörerin	B1	3	NOUN	1.84	Hörerinnen
+hübsch	B1	2	OTHER	4.30	
+Hügel	B1	3	NOUN	4.07	
+Hühnchen	B1	3	NOUN	3.26	
+Hütte	B1	2	NOUN	4.22	Hütten
+ich	A1	1	OTHER	7.08	
+ideal	B1	2	OTHER	4.21	
+Idee	A2	1	NOUN	5.20	Ideen
+ihm	A1	1	OTHER	5.84	
+ihn	A1	1	OTHER	5.83	
+ihnen	A1	1	OTHER	5.74	
+ihr	A1	1	OTHER	6.22	
+illegal	B1	2	OTHER	4.13	
+im	B1	2	OTHER	6.86	
+Imbiss	B1	3	NOUN	3.52	Imbisse
+immer	A1	1	OTHER	6.21	
+Import	B1	3	NOUN	3.70	Importe
+in	A1	1	OTHER	7.24	
+indem	B1	2	OTHER	4.97	
+individuell	B1	3	OTHER	4.05	
+Industrie	B1	2	NOUN	4.73	Industrien
+Infektion	B1	3	NOUN	3.96	Infektionen
+Information	A1	1	NOUN	4.63	Informationen
+informieren	A2	1	VERB	4.48	informiert,informierte
+Ingenieur	B1	3	NOUN	4.07	Ingenieure
+Inhalt	B1	2	NOUN	4.79	Inhalte
+inklusive	B1	2	OTHER	4.44	
+innen	B1	2	OTHER	4.73	
+inner	B1	3	OTHER	3.50	
+innerhalb	B1	2	OTHER	5.16	
+Insekt	B1	3	NOUN	3.13	Insekten
+Insel	A2	1	NOUN	4.77	Inseln
+Inserat	B1	3	NOUN	3.06	Inserate
+insgesamt	B1	2	OTHER	5.16	
+installieren	B1	3	VERB	3.93	installiert,installierte
+Institut	B1	2	NOUN	4.65	Institute
+Instrument	A2	1	NOUN	4.25	Instrumente
+Integration	B1	2	NOUN	4.54	Integrationen
+integrieren	B1	3	VERB	4.02	integriert,integrierte
+intelligent	A2	1	OTHER	3.91	
+Intelligenz	B1	2	NOUN	4.23	
+intensiv	B1	2	OTHER	4.32	
+Intensivkurs	B1	3	NOUN	2.30	Intensivkurse
+interessant	A2	1	OTHER	4.80	
+Interesse	A2	1	NOUN	5.02	Interessen
+interessieren	A2	1	VERB	4.45	interessiert,interessierte
+interkulturell	B1	3	OTHER	2.39	
+international	A1	1	OTHER	4.68	
+Internet	A1	1	NOUN	5.23	
+Interview	A2	1	NOUN	4.76	Interviews
+inzwischen	B1	2	OTHER	4.95	
+irgend	B1	2	OTHER	4.30	
+irgendein	B1	2	OTHER	4.17	
+irgendwann	B1	2	OTHER	4.89	
+irren	B1	3	VERB	3.96	geirrt,irrt,irrte
+ist	A2	1	OTHER	7.08	
+ja	A1	1	OTHER	6.33	
+Jacke	A1	1	NOUN	4.24	Jacken
+Jahr	A1	1	NOUN	5.84	Jahre
+jahr	A2	1	OTHER	5.84	
+Jahrhundert	B1	2	NOUN	4.82	Jahrhunderte
+Jahrtausend	B1	3	NOUN	3.32	Jahrtausende
+Jahrzehnt	B1	3	NOUN	3.88	Jahrzehnte
+Januar	A1	1	NOUN	5.03	
+Jause	B1	3	NOUN	2.49	Jausen
+je	B1	2	OTHER	5.40	
+Jeans	A2	1	NOUN	4.10	
+jed	A1	1	OTHER	2.92	
+jede	B1	2	OTHER	5.30	
+jeden	A2	1	OTHER	5.50	
+jeder	A2	1	OTHER	5.62	
+jederzeit	B1	2	OTHER	4.42	
+jedes	B1	2	OTHER	5.20	
+jedoch	B1	2	OTHER	5.56	
+jemals	B1	2	OTHER	4.57	
+jemand	A2	1	OTHER	5.50	
+jetzt	A1	1	OTHER	6.21	
+jeweils	B1	2	OTHER	5.03	
+Job	A1	1	NOUN	5.08	Jobs
+joggen	A2	1	VERB	3.62	gejoggt,joggt
+Journalist	B1	2	NOUN	4.23	Journalisten
+Journalistin	B1	3	NOUN	3.81	Journalistinnen
+Jugend	B1	2	NOUN	4.82	
+Jugendherberge	A2	1	NOUN	3.21	Jugendherbergen
+Jugendliche	A1	1	NOUN	4.59	Jugendlichen,Jugendlichenen
+Juli	A1	1	NOUN	5.10	
+jung	A1	1	OTHER	4.70	
+Junge	A1	1	NOUN	5.31	Jungen
+Juni	A1	1	NOUN	5.10	
+jährlich	B1	2	OTHER	4.59	
+Kabel	B1	2	NOUN	4.30	
+Kabine	B1	3	NOUN	3.85	Kabinen
+Kaffee	A1	1	NOUN	4.84	Kaffees
+Kaffeehaus	B1	3	NOUN	3.04	Kaffeehäuser
+Kakao	B1	3	NOUN	3.66	Kakaos
+Kalender	A2	1	NOUN	4.16	
+kalt	A2	1	OTHER	4.56	
+Kamera	A2	1	NOUN	4.76	Kameras
+Kampf	B1	2	NOUN	4.97	Kämpfe
+Kanal	B1	2	NOUN	4.48	Kanäle
+Kandidat	B1	2	NOUN	4.14	Kandidaten
+Kanne	B1	3	NOUN	3.36	Kannen
+Kantine	B1	3	NOUN	3.49	Kantinen
+Kapitel	B1	2	NOUN	4.44	
+kaputt	A1	1	OTHER	4.57	
+kaputtgehen	B1	3	OTHER	2.60	
+kaputtmachen	B1	3	OTHER	2.88	
+Karneval	B1	3	NOUN	3.94	Karnevale,Karnevals
+Karotte	B1	3	NOUN	3.01	Karotten
+Karriere	B1	2	NOUN	4.70	Karrieren
+Karte	A1	1	NOUN	4.85	Karten
+Kartoffel	A1	1	NOUN	3.74	Kartoffeln
+Kasse	A1	1	NOUN	4.28	Kassen
+Kassette	B1	3	NOUN	3.29	Kassetten
+Kasten	B1	3	NOUN	4.05	Kästen
+Katalog	B1	2	NOUN	4.12	Kataloge
+Katastrophe	B1	2	NOUN	4.26	Katastrophen
+Katze	A1	1	NOUN	4.49	Katzen
+Kauf	B1	2	NOUN	4.71	
+kaufen	A1	1	VERB	5.14	gekauft,kauft,kaufte
+Kaufhaus	A2	1	NOUN	3.50	Kaufhäuser
+kaum	B1	2	OTHER	5.37	
+kein	A1	1	OTHER	5.91	
+keinen	A2	1	OTHER	5.59	
+Keller	A2	1	NOUN	4.58	
+Kellner	B1	3	NOUN	3.84	Kellnerdieellnerin
+kennen	A1	1	VERB	5.07	gekannt,kannte,kennt
+kennenlernen	A1	1	VERB	4.23	kennengelernt,lernt,lernte
+Kenntnisse	A2	1	NOUN	4.12	
+Kennzeichen	B1	2	NOUN	4.14	
+Kerze	B1	3	NOUN	3.69	Kerzen
+Kette	A2	1	NOUN	4.26	Ketten
+Kilo	A1	1	NOUN	4.21	Kilos
+Kilometer	A1	1	NOUN	4.81	
+Kind	A1	1	NOUN	5.27	Kinder
+Kindergarten	A1	1	NOUN	4.28	Kindergärten,Kindergärtenie
+Kindheit	B1	2	NOUN	4.35	
+Kino	A1	1	NOUN	4.63	Kinos
+Kiosk	A1	1	NOUN	3.66	Kioske
+Kirche	A2	1	NOUN	5.15	Kirchen
+Kissen	B1	3	NOUN	3.95	
+Kiste	B1	3	NOUN	3.98	Kisten
+klagen	B1	2	VERB	4.27	geklagt,klagt,klagte
+klappen	A2	1	VERB	4.00	geklappt,klappt,klappte
+klar	A1	1	OTHER	5.56	
+Klasse	A1	1	NOUN	5.16	Klassen
+klasse	B1	2	OTHER	5.16	
+Klassenarbeit	B1	3	NOUN	2.64	Klassenarbeiten
+Klavier	A2	1	NOUN	4.20	Klaviere
+kleben	B1	3	VERB	3.80	geklebt,klebt,klebte
+Kleid	A2	1	NOUN	4.30	Kleider
+Kleidung	A1	1	NOUN	4.46	
+klein	A1	1	OTHER	4.94	
+klettern	B1	3	VERB	3.87	geklettert,klettert,kletterte
+Klick	B1	3	NOUN	4.11	Klicks
+klicken	B1	2	VERB	4.39	geklickt,klickt,klickte
+Klima	B1	2	NOUN	4.44	
+Klimaanlage	B1	3	NOUN	3.77	Klimaanlagen
+Klingel	B1	3	NOUN	3.39	Klingeln
+klingeln	B1	3	VERB	3.69	geklingelt,klingelt,klingelte
+klingen	B1	2	VERB	4.21	geklungen,klang,klingt
+Klinik	B1	2	NOUN	4.44	Kliniken
+klopfen	B1	3	VERB	3.68	geklopft,klopft,klopfte
+Kloß	B1	3	NOUN	3.01	Klöße
+klug	A2	1	OTHER	4.11	
+klären	B1	2	VERB	4.31	geklärt,klärt,klärte
+knapp	B1	2	OTHER	4.93	
+Kneipe	B1	3	NOUN	3.83	Kneipen
+Knie	B1	2	NOUN	4.35	
+Knochen	B1	2	NOUN	4.28	
+Knopf	B1	3	NOUN	4.00	Knöpfe
+Knödel	B1	3	NOUN	3.00	
+Koch	B1	2	NOUN	4.45	Köche
+kochen	A1	1	VERB	4.52	gekocht,kocht,kochte
+Koffer	A1	1	NOUN	4.19	
+Kollege	A1	1	NOUN	4.31	Kollegedieollegin,Kollegen
+Kollegin	B1	3	NOUN	3.98	Kolleginnen
+komisch	A2	1	OTHER	4.62	
+kommen	A1	1	VERB	5.71	gekommen,kam,kommt
+Kommunikation	B1	2	NOUN	4.55	
+komplett	B1	2	OTHER	4.95	
+kompliziert	B1	2	OTHER	4.21	
+Kompromiss	B1	3	NOUN	3.94	Kompromisse
+Konferenz	B1	2	NOUN	4.31	Konferenzen
+Konfitüre	B1	3	NOUN	2.52	Konfitüren
+Konflikt	B1	2	NOUN	4.40	Konflikte
+Konkurrenz	B1	2	NOUN	4.43	
+Konsulat	B1	3	NOUN	3.35	Konsulate
+Konsum	B1	3	NOUN	4.01	
+konsumieren	B1	3	VERB	3.44	konsumiert,konsumierte
+Kontakt	A2	1	NOUN	4.84	Kontakte
+Konto	A1	1	NOUN	4.44	Kontoen,Kontoonten
+Kontrolle	B1	2	NOUN	4.79	Kontrollen
+kontrollieren	A2	1	VERB	4.28	kontrolliert,kontrollierte
+konzentrieren	B1	2	VERB	4.31	konzentriert,konzentrierte
+Konzert	A2	1	NOUN	4.61	Konzerte
+Kopf	A1	1	NOUN	5.30	Köpfe
+Kopie	B1	3	NOUN	4.06	Kopien
+kopieren	B1	3	OTHER	3.77	
+Kopierer	B1	3	NOUN	2.89	
+korrekt	B1	2	OTHER	4.34	
+Korridor	B1	3	NOUN	3.39	Korridore
+korrigieren	B1	3	VERB	3.93	korrigiert,korrigierte
+Kosmetik	A2	1	NOUN	3.56	
+Kosten	B1	2	NOUN	5.18	
+kosten	A1	1	VERB	5.18	gekostet,kostet,kostete
+kostenlos	A2	1	OTHER	4.75	
+Kostüm	B1	3	NOUN	3.89	Kostüme
+Kraft	B1	2	NOUN	4.97	Kräfte
+Kraftfahrzeug	B1	3	NOUN	2.96	Kraftfahrzeuge
+Kraftwerk	B1	3	NOUN	3.79	Kraftwerke
+krank	A1	1	OTHER	4.69	
+Kranke	B1	2	NOUN	4.13	Kranken
+Krankenhaus	A2	1	NOUN	4.75	Krankenhäuser
+Krankenkasse	A2	1	NOUN	3.87	Krankenkassen
+Krankenpfleger	B1	3	NOUN	3.32	
+Krankenschwester	B1	3	NOUN	3.81	Krankenschwestern
+Krankenwagen	B1	3	NOUN	3.50	
+Krankheit	A2	1	NOUN	4.59	Krankheiten
+kreativ	B1	3	OTHER	4.03	
+Kredit	A2	1	NOUN	4.21	Kredite
+Kreditkarte	A1	1	NOUN	3.90	Kreditkarten
+Kreis	B1	2	NOUN	5.00	Kreise
+Kreuz	B1	2	NOUN	4.50	Kreuze
+Kreuzung	A2	1	NOUN	4.00	Kreuzungen
+Krieg	B1	2	NOUN	5.17	Kriege
+kriegen	A1	1	VERB	4.64	gekriegt,kriegt,kriegte
+Krimi	A2	1	NOUN	3.96	Krimis
+Kriminal	B1	3	NOUN	2.67	
+Kriminalpolizei	B1	3	NOUN	3.30	
+Krise	B1	2	NOUN	4.51	Krisen
+Kritik	B1	2	NOUN	5.01	Kritiken
+kritisch	B1	2	OTHER	4.37	
+kritisieren	B1	3	VERB	4.03	kritisiert,kritisierte
+Krokodil	B1	3	NOUN	3.33	Krokodile
+kräftig	B1	2	OTHER	4.20	
+Kuchen	A1	1	NOUN	4.48	
+Kugelschreiber	A1	1	NOUN	3.41	
+Kuh	A2	1	NOUN	4.04	Kühe
+Kuli	B1	3	NOUN	2.84	Kulis
+Kultur	A2	1	NOUN	5.02	Kulturen
+kulturell	A1	1	OTHER	3.66	
+Kunde	A1	1	NOUN	4.44	Kundedieundin,Kunden
+Kundin	B1	3	NOUN	3.48	Kundinnen
+Kunst	A2	1	NOUN	5.07	Künste
+Kunststoff	B1	3	NOUN	3.79	Kunststoffe
+Kurs	A1	1	NOUN	4.65	Kurse
+Kursleiter	B1	3	NOUN	2.53	Kursleiternen
+Kurve	B1	3	NOUN	4.08	Kurven
+kurz	A1	1	OTHER	5.43	
+Kuss	B1	3	NOUN	4.10	Küsse
+Kuvert	B1	3	NOUN	2.87	Kuverts
+Kälte	B1	3	NOUN	4.09	
+kämpfen	B1	2	VERB	4.74	gekämpft,kämpft,kämpfte
+Käse	A2	1	NOUN	4.33	
+Käufer	B1	2	NOUN	4.16	
+Käuferin	B1	3	NOUN	2.21	Käuferinnen
+Köchin	B1	3	NOUN	3.36	Köchinnen
+König	B1	2	NOUN	5.02	Könige
+können	A1	1	VERB	6.12	gekonnt,kann,konnte
+Körper	A2	1	NOUN	5.00	
+körperlich	B1	3	OTHER	4.03	
+Küche	A1	1	NOUN	4.67	Küchen
+kühl	A2	1	OTHER	3.93	
+Kühlschrank	A1	1	NOUN	4.21	Kühlschränke
+kümmern	A1	1	VERB	4.54	gekümmert,kümmert,kümmerte
+kündigen	A2	1	VERB	3.96	gekündigt,kündigt,kündigte
+Kündigung	B1	3	NOUN	4.09	Kündigungen
+Künstler	B1	2	NOUN	4.78	
+Künstlerin	B1	3	NOUN	4.06	Künstlerinnen
+künstlich	B1	3	OTHER	3.92	
+kürzlich	B1	2	OTHER	4.31	
+küssen	B1	3	VERB	4.05	geküsst,küsst,küsste
+Küste	B1	2	NOUN	4.30	Küsten
+lachen	A1	1	VERB	4.76	gelacht,lacht,lachte
+Laden	A1	1	NOUN	4.84	Läden
+Lage	B1	2	NOUN	5.17	
+Lager	B1	2	NOUN	4.65	
+Lampe	A2	1	NOUN	3.99	Lampen
+Land	A1	1	NOUN	5.47	Länder
+landen	B1	2	VERB	4.33	landet,landete
+Landschaft	A2	1	NOUN	4.46	Landschaften
+Landung	B1	3	NOUN	3.85	Landungen
+Landwirtschaft	B1	2	NOUN	4.45	
+lang	A1	1	OTHER	5.33	
+lange	A1	1	OTHER	5.59	
+Langeweile	B1	3	NOUN	3.85	
+langsam	A1	1	OTHER	5.06	
+langweilen	B1	3	VERB	3.34	gelangweilt,langweilt,langweilte
+langweilig	A2	1	OTHER	4.42	
+Laptop	A2	1	NOUN	4.17	Laptops
+lassen	A2	1	VERB	5.76	gelassen,ließ,lässt
+Laster	B1	3	NOUN	3.73	
+laufen	A1	1	VERB	5.05	gelaufen,lief,läuft
+Laufwerk	B1	3	NOUN	3.13	Laufwerke
+Laune	B1	2	NOUN	4.28	Launen
+laut	A1	1	OTHER	5.23	
+Lautsprecher	B1	3	NOUN	3.91	
+Leben	A1	1	NOUN	5.86	
+leben	A1	1	VERB	5.86	gelebt,lebt,lebte
+Lebens	A1	1	NOUN	4.88	
+Lebenslauf	B1	3	NOUN	4.00	Lebensläufe
+Lebensmittel	A2	1	NOUN	4.34	
+lecker	B1	2	OTHER	4.32	
+Leder	B1	3	NOUN	4.10	
+ledig	A1	1	OTHER	3.23	
+leer	A2	1	OTHER	4.60	
+legen	A1	1	VERB	4.83	gelegt,legt,legte
+Lehre	B1	2	NOUN	4.46	
+Lehrer	A1	1	NOUN	4.92	
+Lehrerin	B1	2	NOUN	4.24	Lehrerinnen
+Lehrling	B1	3	NOUN	3.39	Lehrlinge
+Lehrstelle	B1	3	NOUN	2.96	Lehrstellen
+leicht	A1	1	OTHER	5.24	
+leid	A2	1	OTHER	4.83	
+leiden	B1	2	VERB	4.68	gelitten,leidet,litt
+leider	A1	1	OTHER	5.38	
+leidgetan	A2	1	OTHER	1.68	
+leidtun	A2	1	OTHER	2.25	
+leihen	A2	1	VERB	3.75	geliehen,leiht,lieh
+leise	A1	1	OTHER	4.45	
+leisten	B1	2	VERB	4.79	geleistet,leistet,leistete
+Leistung	B1	2	NOUN	4.87	Leistungen
+leiten	B1	2	VERB	4.17	geleitet,leitet,leitete
+Leiter	B1	2	NOUN	4.72	Leitern
+Leiterin	B1	3	NOUN	3.79	Leiterinnen
+Leitung	B1	2	NOUN	4.73	Leitungen
+lernen	A1	1	VERB	5.14	gelernt,lernt,lernte
+Lerner	B1	3	NOUN	3.02	
+Lernerin	B1	3	NOUN	0.00	Lernerinnen
+lesen	A1	1	VERB	5.23	gelesen,las,liest
+Leser	B1	2	NOUN	4.55	
+Leserin	B1	3	NOUN	3.00	Leserinnen
+letzt	A1	1	OTHER	3.58	
+Leute	A1	1	NOUN	5.63	
+Lexikon	B1	3	NOUN	3.79	Lexikonexika
+Licht	A1	1	NOUN	4.99	Lichter
+lieb	A1	1	OTHER	4.47	
+Liebe	B1	2	NOUN	5.48	
+lieben	A1	1	VERB	4.87	geliebt,liebt,liebte
+lieber	A1	1	OTHER	5.31	
+Lieblings	A1	1	NOUN	3.73	
+liebsten	A2	1	OTHER	4.46	
+Lied	A1	1	NOUN	4.73	Lieder
+liefern	A2	1	VERB	4.53	geliefert,liefert,lieferte
+Lieferung	B1	2	NOUN	4.13	Lieferungen
+liegen	A1	1	VERB	5.20	gelegen,lag,liegt
+Lift	B1	3	NOUN	3.46	Lifte
+lila	A1	1	OTHER	3.90	
+Limonade	B1	3	NOUN	3.10	Limonaden
+Linie	B1	2	NOUN	4.94	Linien
+Link	A2	1	NOUN	4.75	Links
+link	B1	2	OTHER	4.75	
+links	A1	1	OTHER	5.10	
+Lippe	B1	3	NOUN	3.91	Lippen
+Liste	B1	2	NOUN	4.96	Listen
+Liter	A1	1	NOUN	4.42	
+Literatur	B1	2	NOUN	4.78	
+Lkw	A1	1	NOUN	4.46	Lkws
+loben	B1	3	VERB	3.78	gelobt,lobt,lobte
+Loch	B1	2	NOUN	4.43	Löcher
+locker	B1	2	OTHER	4.45	
+Lohn	B1	2	NOUN	4.25	Löhne
+lohnen	B1	3	VERB	3.79	gelohnt,lohnt,lohnte
+Lokal	A1	1	NOUN	4.20	Lokale
+los	B1	2	OTHER	5.26	
+losfahren	B1	3	VERB	3.23	fuhr,fährt,losgefahren
+Luft	B1	2	NOUN	5.02	
+Lust	A2	1	NOUN	4.85	
+lustig	A1	1	OTHER	4.84	
+lächeln	B1	2	VERB	4.48	gelächelt,lächelt,lächelte
+Länge	B1	2	NOUN	4.64	
+längst	B1	2	OTHER	4.75	
+Lärm	B1	2	NOUN	4.12	
+Löffel	A2	1	NOUN	3.80	
+löschen	B1	2	VERB	4.38	gelöscht,löscht,löschte
+lösen	B1	2	VERB	4.63	gelöst,löst,löste
+Lösung	A1	1	NOUN	5.02	Lösungen
+Löwe	B1	3	NOUN	3.89	Löwen
+Lüge	A2	1	NOUN	4.25	Lügen
+lügen	A2	1	VERB	4.45	gelogen,log,lügt
+machen	A1	1	VERB	5.98	gemacht,macht,machte
+Magazin	B1	2	NOUN	4.42	Magazine
+Magen	A2	1	NOUN	4.23	Mägen
+mager	B1	3	OTHER	3.38	
+Mahlzeit	B1	3	NOUN	3.92	Mahlzeiten
+Mahnung	B1	3	NOUN	3.43	Mahnungen
+Mai	A1	1	NOUN	5.17	
+Mailbox	A2	1	NOUN	3.04	Mailboxen
+Mal	A2	1	NOUN	6.28	Male
+mal	A2	1	OTHER	6.28	
+malen	A2	1	VERB	4.11	gemalt,malt,malte
+Maler	B1	2	NOUN	4.20	
+Malerin	B1	3	NOUN	3.23	Malerinnen
+man	A1	1	OTHER	6.46	
+manch	A2	1	OTHER	3.93	
+manchmal	A2	1	OTHER	5.19	
+Mangel	B1	2	NOUN	4.26	Mängel
+Mann	A1	1	NOUN	5.73	Männer
+Mannschaft	A2	1	NOUN	4.93	Mannschaften,Mannschafteneine
+Mantel	A2	1	NOUN	4.04	Mäntel
+Mappe	B1	3	NOUN	3.25	Mappen
+Margarine	B1	3	NOUN	3.11	
+Marille	B1	3	NOUN	2.01	Marillen
+Marke	B1	2	NOUN	4.52	Marken
+markieren	B1	3	VERB	3.76	markiert,markierte
+Markt	A2	1	NOUN	4.99	Märkte
+Marmelade	B1	3	NOUN	3.57	Marmeladen
+Maschine	A1	1	NOUN	4.54	Maschinen
+Material	B1	2	NOUN	4.70	
+Matura	B1	3	NOUN	3.46	
+Mauer	B1	2	NOUN	4.43	Mauern
+Maus	B1	2	NOUN	4.22	Mäuse
+maximal	B1	2	OTHER	4.47	
+Mechaniker	B1	3	NOUN	3.51	
+Mechanikerin	B1	3	NOUN	1.76	Mechanikerinnen
+Medien	B1	2	NOUN	5.05	
+Medikament	A2	1	NOUN	3.77	Medikamente
+Medizin	B1	2	NOUN	4.56	
+Meer	A1	1	NOUN	4.72	Meere
+Mehl	B1	3	NOUN	3.83	
+mehr	A1	1	OTHER	6.33	
+mehrere	B1	2	OTHER	5.24	
+Mehrheit	B1	2	NOUN	4.73	Mehrheiten
+Mehrwertsteuer	B1	3	NOUN	3.51	
+mein	A1	1	OTHER	5.92	
+meinen	A2	1	VERB	5.52	gemeint,meint,meinte
+meinetwegen	B1	3	OTHER	3.73	
+Meinung	A2	1	NOUN	5.14	Meinungen
+meist	A1	1	OTHER	5.15	
+meisten	B1	2	OTHER	5.25	
+meistens	A2	1	OTHER	4.64	
+Meister	B1	2	NOUN	4.85	
+melden	B1	2	VERB	4.67	gemeldet,meldet,meldete
+Meldung	B1	2	NOUN	4.27	Meldungen
+Menge	A2	1	NOUN	5.06	Mengen
+Mensa	B1	3	NOUN	3.58	Mensaen,Mensas
+Mensch	A1	1	NOUN	5.21	Menschen
+menschlich	B1	3	OTHER	3.94	
+Menü	B1	3	NOUN	3.86	Menüs
+merken	A2	1	VERB	4.42	gemerkt,merkt,merkte
+merkwürdig	B1	3	OTHER	4.08	
+Messe	A2	1	NOUN	4.42	Messen
+messen	B1	2	VERB	4.30	gemessen,maß,misst
+Messer	A2	1	NOUN	4.49	
+Metall	B1	2	NOUN	4.24	Metalle
+Meter	A1	1	NOUN	5.06	
+Methode	B1	2	NOUN	4.51	Methoden
+Metropole	B1	3	NOUN	3.67	Metropolen
+Metzger	B1	3	NOUN	3.73	
+mich	A1	1	OTHER	6.26	
+Miete	A1	1	NOUN	4.35	Mieten
+mieten	A1	1	VERB	4.25	gemietet,mietet,mietete
+Mieter	B1	2	NOUN	4.17	
+Mieterin	B1	3	NOUN	2.68	Mieterinnen
+Migrant	B1	3	NOUN	3.14	Migranten
+Migrantin	B1	3	NOUN	2.17	Migrantinnen
+Migration	B1	3	NOUN	4.09	
+Milch	A1	1	NOUN	4.51	
+mild	B1	3	OTHER	3.47	
+Milliarde	B1	3	NOUN	3.78	Milliarden
+Million	A1	1	NOUN	4.43	Millionen
+Minderheit	B1	3	NOUN	4.06	Minderheiten
+mindestens	A2	1	OTHER	5.06	
+Mineralwasser	A2	1	NOUN	3.49	
+minimal	B1	3	OTHER	3.79	
+minus	A2	1	OTHER	4.08	
+Minute	A1	1	NOUN	4.79	Minuten
+mir	A1	1	OTHER	6.32	
+mischen	B1	3	VERB	3.90	gemischt,mischt,mischte
+miss	B1	2	OTHER	4.17	
+mit	A1	1	OTHER	6.98	
+Mitarbeiter	A2	1	NOUN	5.07	
+Mitarbeiterin	B1	3	NOUN	3.85	Mitarbeiterinnen
+mitbringen	A1	1	OTHER	4.04	
+miteinander	B1	2	OTHER	4.78	
+Mitglied	B1	2	NOUN	4.83	Mitglieder
+mitkommen	A1	1	OTHER	3.31	
+mitmachen	A1	1	OTHER	4.26	
+mitnehmen	A1	1	OTHER	4.32	
+Mittag	A1	1	NOUN	4.29	Mittage
+Mittagessen	A2	1	NOUN	4.14	
+mittags	A1	1	OTHER	3.89	
+Mitte	A1	1	NOUN	5.12	Mitten
+mitteilen	B1	3	VERB	4.06	mitgeteilt,teilt,teilte
+Mittel	A2	1	NOUN	4.84	
+mittel	A1	1	OTHER	4.84	
+mitten	B1	2	OTHER	4.67	
+Mitternacht	B1	3	NOUN	4.09	
+mittler	B1	3	OTHER	3.22	
+mittlerweile	B1	2	OTHER	4.99	
+Mittwoch	A1	1	NOUN	4.69	Mittwoche
+mittwochs	A2	1	OTHER	3.49	
+mobil	B1	3	OTHER	4.05	
+Mobilbox	B1	3	NOUN	1.24	Mobilboxen
+Mobilität	B1	3	NOUN	3.98	Mobilitäten
+Mobiltelefon	A2	1	NOUN	3.43	Mobiltelefone
+Mode	A2	1	NOUN	4.39	Moden
+Modell	B1	2	NOUN	4.71	Modelle
+modern	A2	1	OTHER	4.24	
+Moment	A1	1	NOUN	5.13	Momente
+Monat	A1	1	NOUN	4.99	Monate
+monatlich	B1	2	OTHER	4.15	
+Mond	B1	2	NOUN	4.35	Monde
+Monitor	B1	3	NOUN	3.91	Monitore
+Montag	A1	1	NOUN	4.87	Montage
+montags	A2	1	OTHER	3.78	
+Morgen	A1	1	NOUN	5.43	
+morgen	A1	1	OTHER	5.43	
+morgens	A1	1	OTHER	4.59	
+Motor	A2	1	NOUN	4.47	Motoren
+Motorrad	B1	2	NOUN	4.20	Motorräder
+Motorroller	A2	1	NOUN	2.94	
+Mund	A1	1	NOUN	4.75	Münder
+Museum	A2	1	NOUN	4.71	Museumeen,Museumuseen
+Musik	A2	1	NOUN	5.32	
+musikalisch	B1	3	OTHER	3.88	
+Musiker	B1	2	NOUN	4.52	
+Musikerin	B1	3	NOUN	3.20	Musikerinnen
+Muskel	B1	3	NOUN	3.66	Muskeln
+Mut	B1	2	NOUN	4.54	
+mutig	B1	3	OTHER	3.99	
+Mutter	A1	1	NOUN	5.26	Mütter
+Muttersprache	B1	3	NOUN	3.76	Muttersprachen
+Mädchen	A1	1	NOUN	5.21	
+männlich	A1	1	OTHER	4.01	
+Märchen	B1	2	NOUN	4.24	
+März	A1	1	NOUN	5.15	
+Möbel	A1	1	NOUN	4.07	
+möbliert	B1	3	OTHER	2.60	
+möchten	A1	1	VERB	4.79	gemocht,mochte,möchte
+mögen	A1	1	VERB	4.70	gemocht,mag,mochte
+möglich	A1	1	OTHER	5.40	
+Möglichkeit	B1	2	NOUN	5.09	Möglichkeiten
+möglichst	B1	2	OTHER	4.82	
+Möhre	B1	3	NOUN	2.87	Möhren
+Mücke	B1	3	NOUN	3.36	Mücken
+müde	A1	1	OTHER	4.50	
+Müesli	B1	3	NOUN	1.04	
+Mühe	B1	2	NOUN	4.55	
+Müll	A2	1	NOUN	4.41	
+Müllabfuhr	B1	3	NOUN	3.19	
+Mülltonne	B1	3	NOUN	3.32	Mülltonnen
+mündlich	B1	3	OTHER	3.47	
+Münze	B1	3	NOUN	3.88	Münzen
+Müsli	B1	3	NOUN	3.52	
+müssen	A1	1	VERB	5.78	gemusst,muss,musste
+Mütze	A2	1	NOUN	3.86	Mützen
+nach	A1	1	OTHER	6.56	
+Nachbar	A2	1	NOUN	4.13	Nachbarn
+Nachbarin	B1	3	NOUN	3.82	Nachbarinnen
+nachdem	B1	2	OTHER	5.31	
+nachdenken	B1	2	VERB	4.43	dachte,denkt,nachgedacht
+Nachfrage	B1	2	NOUN	4.44	Nachfragen
+nachher	B1	2	OTHER	4.40	
+Nachhilfe	B1	3	NOUN	3.65	Nachhilfen
+Nachmittag	A1	1	NOUN	4.56	Nachmittage
+nachmittags	A1	1	OTHER	3.97	
+Nachricht	A2	1	NOUN	4.80	Nachrichten
+nachschlagen	B1	3	VERB	3.13	nachgeschlagen,schlug,schlägt
+Nachspeise	B1	3	NOUN	2.77	Nachspeisen
+Nacht	A1	1	NOUN	5.36	Nächte
+Nachteil	B1	3	NOUN	4.08	Nachteile
+nachts	A1	1	OTHER	4.59	
+Nachwuchs	B1	3	NOUN	4.11	
+Nadel	B1	3	NOUN	3.77	Nadeln
+Nagel	B1	3	NOUN	3.97	Nägel
+nah	B1	2	OTHER	4.55	
+Nahrungsmittel	B1	3	NOUN	3.79	
+Name	A1	1	NOUN	5.14	Namen
+Nase	B1	2	NOUN	4.63	Nasen
+nass	A2	1	OTHER	4.13	
+national	B1	2	OTHER	4.29	
+Natur	A2	1	NOUN	4.94	
+natürlich	A2	1	OTHER	5.62	
+Nebel	B1	2	NOUN	4.12	
+neben	A2	1	OTHER	5.47	
+nebenan	A2	1	OTHER	3.99	
+nebenbei	B1	2	OTHER	4.27	
+neblig	A2	1	OTHER	2.66	
+Neffe	B1	3	NOUN	3.73	Neffen
+negativ	B1	2	OTHER	4.40	
+nehmen	A1	1	VERB	5.45	genommen,nahm,nimmt
+nein	A1	1	OTHER	5.52	
+nen	B1	2	OTHER	5.02	
+nennen	A2	1	VERB	4.91	genannt,nannte,nennt
+Nerv	B1	3	NOUN	3.71	Nerven
+nervös	A2	1	OTHER	4.06	
+nett	A2	1	OTHER	4.70	
+Netz	B1	2	NOUN	4.77	Netze
+Netzwerk	B1	2	NOUN	4.42	Netzwerke
+neu	A1	1	OTHER	5.36	
+neugierig	B1	2	OTHER	4.15	
+Neuigkeit	B1	3	NOUN	3.37	Neuigkeiten
+Neujahr	A2	1	NOUN	3.45	
+neulich	B1	2	OTHER	4.21	
+neun	A1	1	OTHER	4.72	
+neunzehn	A1	1	OTHER	2.95	
+neunzig	A1	1	OTHER	2.96	
+nicht	A1	1	OTHER	7.01	
+Nichte	B1	3	NOUN	3.70	Nichten
+Nichtraucher	B1	3	NOUN	3.42	
+Nichtraucherin	B1	3	NOUN	1.89	Nichtraucherinnen
+nichts	A1	1	OTHER	5.88	
+nie	A1	1	OTHER	5.67	
+niedrig	B1	2	OTHER	4.15	
+niemand	A2	1	OTHER	5.24	
+nirgends	A2	1	OTHER	4.13	
+nirgendwo	B1	2	OTHER	4.12	
+noch	A1	1	OTHER	6.55	
+nochmals	B1	2	OTHER	4.43	
+Nord	B1	2	NOUN	4.55	
+Norden	A2	1	NOUN	4.65	
+normal	A1	1	OTHER	4.77	
+normalerweise	B1	2	OTHER	4.51	
+Not	B1	2	NOUN	4.68	
+Notaufnahme	B1	3	NOUN	3.54	Notaufnahmen
+Notausgang	B1	3	NOUN	2.62	Notausgänge
+Note	A2	1	NOUN	4.30	Noten
+Notfall	B1	3	NOUN	4.08	Notfälle
+notieren	A2	1	VERB	3.46	notiert
+Notiz	A2	1	NOUN	3.65	Notizen
+Notruf	B1	3	NOUN	3.76	
+notwendig	A2	1	OTHER	4.74	
+November	A1	1	NOUN	5.12	
+Nudel	A2	1	NOUN	3.25	Nudeln
+null	A1	1	OTHER	4.56	
+Nummer	A1	1	NOUN	4.90	Nummern
+nun	B1	2	OTHER	5.88	
+nur	A1	1	OTHER	6.52	
+nutzen	B1	2	VERB	5.03	genutzt,nutzt,nutzte
+nächst	A1	1	OTHER	3.20	
+nächste	A2	1	OTHER	5.08	
+Nähe	A2	1	NOUN	5.03	
+nähen	B1	3	VERB	3.65	näht,nähte
+nähern	B1	3	VERB	3.81	genähert,nähert,näherte
+nämlich	B1	2	OTHER	5.10	
+nördlich	B1	3	OTHER	4.12	
+nötig	B1	2	OTHER	4.80	
+nützen	B1	3	VERB	3.67	genützt,nützt,nützte
+nützlich	A2	1	OTHER	4.12	
+ob	B1	2	OTHER	5.84	
+oben	A1	1	OTHER	5.27	
+Ober	B1	3	NOUN	4.11	
+ober	B1	3	OTHER	4.11	
+Obst	A1	1	NOUN	4.23	
+obwohl	B1	2	OTHER	5.18	
+oder	A1	1	OTHER	6.50	
+offen	A2	1	OTHER	4.99	
+offenbar	B1	2	OTHER	4.89	
+offiziell	B1	2	OTHER	4.66	
+oft	A1	1	OTHER	5.48	
+ohne	A1	1	OTHER	5.95	
+Ohr	A2	1	NOUN	4.35	Ohren
+Oktober	A1	1	NOUN	5.10	
+Oma	A1	1	NOUN	4.49	Omas
+Onkel	B1	2	NOUN	4.28	
+online	A2	1	OTHER	5.38	
+Opa	A1	1	NOUN	4.21	Opas
+Oper	B1	2	NOUN	4.24	Opern
+Operation	B1	2	NOUN	4.49	Operationen
+operieren	B1	3	VERB	3.54	operiert,operierte
+Opfer	B1	2	NOUN	5.01	
+optimistisch	B1	3	OTHER	3.79	
+Orange	A2	1	NOUN	4.15	Orangen
+orange	A1	1	OTHER	4.15	
+Orchester	B1	2	NOUN	4.15	
+ordentlich	B1	2	OTHER	4.46	
+Ordination	B1	3	NOUN	2.95	Ordinationen
+ordnen	B1	3	VERB	3.53	geordnet,ordnet,ordnete
+Ordner	B1	3	NOUN	3.83	
+Ordnung	A1	1	NOUN	4.93	Ordnungen
+Organisation	B1	2	NOUN	4.78	Organisationen
+organisieren	A2	1	VERB	4.18	organisiert,organisierte
+Original	B1	2	NOUN	4.63	Originale
+original	B1	2	OTHER	4.63	
+Ort	A1	1	NOUN	5.31	Orte
+ort	A2	1	OTHER	5.31	
+Osten	A2	1	NOUN	4.75	
+Ostern	A2	1	NOUN	4.07	
+Ostsee	B1	3	NOUN	4.09	
+Ozean	B1	3	NOUN	3.91	Ozeane
+Paar	A2	1	NOUN	5.56	Paare
+paar	A2	1	OTHER	5.56	
+packen	A2	1	VERB	4.23	gepackt,packt,packte
+Paket	A2	1	NOUN	4.39	Pakete
+Panne	B1	3	NOUN	3.56	Pannen
+Papier	A1	1	NOUN	4.59	
+Papiere	A1	1	NOUN	4.08	
+Paradeiser	B1	3	NOUN	2.23	
+parallel	B1	2	OTHER	4.43	
+Parfüm	A2	1	NOUN	3.42	Parfüms
+Park	A2	1	NOUN	4.72	Parks
+parken	A2	1	VERB	3.97	geparkt,parkt,parkte
+parkieren	B1	3	VERB	1.78	parkiert,parkierte
+Partner	A1	1	NOUN	4.80	
+Partnerin	A1	1	NOUN	3.84	Partnerinnen
+Party	A1	1	NOUN	4.80	Partys
+Pass	A1	1	NOUN	4.56	Pässe
+Passagier	B1	3	NOUN	3.47	Passagiere
+Passagierin	B1	3	NOUN	2.13	Passagierinnen
+passen	A2	1	VERB	4.64	gepasst,passt,passte
+passieren	A2	1	VERB	4.78	passiert,passierte
+passiv	B1	3	OTHER	3.76	
+Passwort	A2	1	NOUN	4.04	Passwörter
+Patient	B1	2	NOUN	4.21	Patienten
+Patientin	B1	3	NOUN	3.79	Patientinnen
+pauschal	B1	3	OTHER	3.70	
+Pause	A1	1	NOUN	4.63	Pausen
+Pech	B1	2	NOUN	4.23	
+peinlich	B1	2	OTHER	4.35	
+Pension	B1	3	NOUN	3.95	Pensionen
+pensioniert	B1	3	OTHER	2.86	
+Pensionist	B1	3	NOUN	2.09	Pensionistdie,Pensionisten
+Pensionistin	B1	3	NOUN	1.84	
+per	B1	2	OTHER	5.11	
+perfekt	B1	2	OTHER	4.84	
+Perron	B1	3	NOUN	2.33	Perrons
+Person	A2	1	NOUN	5.29	Personen
+Personal	B1	2	NOUN	4.53	
+Personalien	B1	3	NOUN	3.34	
+Personenstand	B1	3	NOUN	2.00	
+persönlich	B1	2	OTHER	4.82	
+Pfanne	B1	3	NOUN	3.79	Pfannen
+Pfeffer	B1	3	NOUN	3.81	
+Pferd	A2	1	NOUN	4.43	Pferde
+Pfingsten	A2	1	NOUN	3.46	
+Pflanze	A2	1	NOUN	4.13	Pflanzen
+pflanzen	B1	2	VERB	4.59	gepflanzt,pflanzt,pflanzte
+Pflaster	B1	3	NOUN	3.74	
+Pflaume	B1	3	NOUN	3.09	Pflaumen
+pflegen	B1	3	VERB	4.10	gepflegt,pflegt,pflegte
+Pfleger	B1	3	NOUN	3.67	
+Pflegerin	B1	3	NOUN	2.95	Pflegerinnen
+Pflicht	B1	2	NOUN	4.56	Pflichten
+Pfund	A1	1	NOUN	4.18	Pfunde
+Phantasie	B1	3	NOUN	3.77	Phantasien
+Picknick	B1	3	NOUN	3.48	Picknicks
+Pille	B1	3	NOUN	3.84	Pillen
+Pilz	B1	3	NOUN	3.82	Pilze
+Pinguin	B1	3	NOUN	3.32	Pinguine
+Pizza	A2	1	NOUN	4.30	Pizzaen,Pizzaizzen,Pizzas
+Plakat	A2	1	NOUN	3.92	Plakate
+Plan	A1	1	NOUN	4.87	Pläne
+planen	A2	1	VERB	4.35	geplant,plant,plante
+Planung	B1	2	NOUN	4.50	Planungen
+Plastik	B1	3	NOUN	4.05	
+Platz	A1	1	NOUN	5.46	Plätze
+plus	A2	1	OTHER	4.74	
+plötzlich	A2	1	OTHER	5.01	
+Politik	B1	2	NOUN	5.24	
+Politiker	B1	2	NOUN	4.99	
+Politikerin	B1	3	NOUN	3.80	Politikerinnen
+politisch	B1	2	OTHER	4.61	
+Polizei	A1	1	NOUN	5.39	
+Polizist	B1	2	NOUN	4.31	Polizisten
+Polizistin	B1	3	NOUN	3.53	Polizistinnen
+Pommes	A1	1	NOUN	3.88	
+populär	B1	3	OTHER	3.75	
+Portemonnaie	B1	3	NOUN	3.51	Portemonnaies
+Portion	A2	1	NOUN	3.88	Portionen
+Portmonee	B1	3	NOUN	2.65	Portmonees
+positiv	B1	2	OTHER	4.75	
+Post	A1	1	NOUN	4.89	
+Poster	A2	1	NOUN	3.89	
+Postkarte	A2	1	NOUN	3.46	Postkarten
+Postleitzahl	A1	1	NOUN	3.14	Postleitzahlen
+Poulet	B1	3	NOUN	2.24	Poulets
+Praktikant	B1	3	NOUN	3.44	Praktikanten
+Praktikantin	B1	3	NOUN	3.07	Praktikantinnen
+Praktikum	A1	1	NOUN	4.03	Praktikuma,Praktikumraktika
+praktisch	A2	1	OTHER	4.62	
+Praxis	A1	1	NOUN	4.76	Praxisen,Praxisraxen
+Preis	A1	1	NOUN	5.16	Preise
+preiswert	A2	1	OTHER	3.42	
+Presse	B1	2	NOUN	4.68	
+prima	B1	2	OTHER	4.20	
+privat	A2	1	OTHER	4.55	
+pro	A2	1	OTHER	5.32	
+probieren	A2	1	VERB	4.32	probiert,probierte
+Problem	A1	1	NOUN	5.37	Probleme
+Produkt	A2	1	NOUN	4.54	Produkte
+Produktion	B1	2	NOUN	4.68	
+produzieren	B1	2	VERB	4.22	produziert,produzierte
+Professor	B1	2	NOUN	4.74	Professoren
+Professorin	B1	3	NOUN	3.44	Professorinnen
+Profi	B1	2	NOUN	4.32	Profis
+Profisportler	B1	3	NOUN	2.41	
+Profisportlerin	B1	3	NOUN	1.25	Profisportlerinnen
+Programm	A2	1	NOUN	4.98	Programme
+Projekt	A2	1	NOUN	4.97	Projekte
+Prospekt	A1	1	NOUN	3.36	Prospekte
+Prost	B1	3	NOUN	3.79	
+Protest	B1	2	NOUN	4.29	Proteste
+protestieren	B1	3	VERB	3.78	protestiert,protestierte
+Prozent	B1	2	NOUN	5.22	Prozente
+Prozess	B1	2	NOUN	4.77	Prozesse
+Präsentation	B1	2	NOUN	4.14	Präsentationen
+präsentieren	B1	2	OTHER	4.34	
+prüfen	A2	1	VERB	4.47	geprüft,prüft,prüfte
+Prüfung	A1	1	NOUN	4.63	Prüfungen
+Publikum	B1	2	NOUN	4.61	
+Pullover	A2	1	NOUN	3.73	
+Punkt	B1	2	NOUN	5.00	Punkte
+Puppe	B1	3	NOUN	3.78	Puppen
+putzen	A2	1	VERB	3.99	geputzt,putzt,putzte
+Pöstler	B1	3	NOUN	1.17	Pöstlerdiestlerin
+pünktlich	A1	1	OTHER	4.24	
+Qualifikation	B1	2	NOUN	4.28	Qualifikationen
+Qualität	A2	1	NOUN	4.80	Qualitäten
+Quartier	B1	3	NOUN	3.86	Quartiere
+quer	B1	2	OTHER	4.28	
+Quittung	B1	3	NOUN	3.43	Quittungen
+Quiz	A2	1	NOUN	3.63	
+Rabatt	B1	3	NOUN	4.06	Rabatte
+Rad	A1	1	NOUN	4.42	Räder
+Radfahrer	B1	2	NOUN	4.19	
+Radfahrerin	B1	3	NOUN	2.93	Radfahrerinnen
+Radio	A2	1	NOUN	4.68	Radios
+Rand	B1	2	NOUN	4.47	Ränder
+Rasen	B1	3	NOUN	4.12	
+rasieren	B1	3	VERB	3.56	rasiert,rasierte
+Rat	B1	2	NOUN	4.74	
+raten	A2	1	VERB	4.29	geraten,riet,rät
+Rathaus	A2	1	NOUN	4.35	Rathäuser
+Ratschlag	B1	3	NOUN	3.40	
+rauchen	A1	1	VERB	4.39	geraucht,raucht,rauchte
+Raucher	B1	3	NOUN	3.63	
+Raucherin	B1	3	NOUN	1.97	Raucherinnen
+rauf	B1	3	OTHER	3.81	
+Raum	A1	1	NOUN	5.11	Räume
+raus	A2	1	OTHER	5.19	
+reagieren	B1	2	VERB	4.42	reagiert,reagierte
+Reaktion	B1	2	NOUN	4.65	Reaktionen
+realisieren	B1	3	VERB	3.94	realisiert,realisierte
+realistisch	B1	3	OTHER	3.96	
+Realität	B1	2	NOUN	4.60	Realitäten
+Reception	B1	3	NOUN	2.44	
+Recherche	B1	3	NOUN	4.00	Recherchen
+rechnen	A2	1	VERB	4.57	gerechnet,rechnet,rechnete
+Rechner	B1	2	NOUN	4.14	
+Rechnung	A1	1	NOUN	4.61	Rechnungen
+Recht	B1	2	NOUN	5.61	Rechte
+recht	A2	1	OTHER	5.61	
+rechtlich	B1	3	OTHER	4.12	
+rechts	A1	1	OTHER	5.09	
+rechtzeitig	B1	2	OTHER	4.37	
+Rede	B1	2	NOUN	5.00	Reden
+reden	A2	1	VERB	5.14	geredet,redet,redete
+reduzieren	B1	2	VERB	4.22	reduziert,reduzierte
+Referat	B1	3	NOUN	3.74	Referate
+Reform	B1	2	NOUN	4.27	Reformen
+Regal	B1	3	NOUN	3.88	Regale
+Regel	B1	2	NOUN	4.99	Regeln
+regelmäßig	B1	2	OTHER	4.87	
+regeln	B1	2	VERB	4.85	geregelt,regelt,regelte
+Regen	A1	1	NOUN	4.63	
+Region	B1	2	NOUN	5.01	Regionen
+regional	B1	2	OTHER	4.16	
+regnen	A1	1	VERB	3.59	geregnet,regnet,regnete
+reich	A2	1	OTHER	4.93	
+reichen	B1	2	VERB	4.74	gereicht,reicht,reichte
+reif	B1	3	OTHER	3.94	
+Reifen	A2	1	NOUN	4.33	
+Reihe	A2	1	NOUN	5.02	Reihen
+Reihenfolge	B1	2	NOUN	4.14	Reihenfolgen
+rein	A2	1	OTHER	5.16	
+reinigen	B1	3	VERB	3.83	gereinigt,reinigt,reinigte
+Reinigung	A2	1	NOUN	3.96	Reinigungen
+Reis	A1	1	NOUN	4.14	
+Reise	A1	1	NOUN	4.90	Reisen
+Reisebüro	A1	1	NOUN	3.29	Reisebüros
+Reiseführer	A1	1	NOUN	3.47	
+reisen	A1	1	VERB	4.68	gereist,reist,reiste
+reiten	A2	1	VERB	4.11	geritten,reitet,ritt
+Reklame	B1	3	NOUN	3.24	Reklamen
+Rekord	B1	2	NOUN	4.14	Rekorde
+relativ	B1	2	OTHER	4.81	
+Religion	B1	2	NOUN	4.71	Religionen
+rennen	B1	2	VERB	4.78	gerannt,rannte,rennt
+renovieren	A2	1	VERB	3.40	renoviert
+Rente	B1	2	NOUN	4.38	Renten
+Rentner	A2	1	NOUN	4.11	Rentnerdieentnerin
+Rentnerin	B1	3	NOUN	3.24	Rentnerinnen
+Reparatur	A1	1	NOUN	3.85	Reparaturen
+reparieren	A1	1	VERB	3.87	repariert,reparierte
+Reportage	B1	3	NOUN	3.71	Reportagen
+Reporter	B1	2	NOUN	4.13	
+Reporterin	B1	3	NOUN	3.40	Reporterinnen
+reservieren	A2	1	VERB	3.44	reserviert,reservierte
+Reservierung	B1	3	NOUN	3.36	Reservierungen
+Respekt	B1	2	NOUN	4.62	
+Rest	A2	1	NOUN	4.89	Reste
+Restaurant	A1	1	NOUN	4.53	Restaurants
+retten	B1	2	VERB	4.60	gerettet,rettet,rettete
+Rezept	A2	1	NOUN	4.36	Rezepte
+Rezeption	A1	1	NOUN	3.90	Rezeptionen
+Richter	B1	2	NOUN	4.80	
+Richterin	B1	3	NOUN	3.64	Richterinnen
+richtig	A1	1	OTHER	5.58	
+Richtung	B1	2	NOUN	5.23	Richtungen
+riechen	A1	1	VERB	3.86	gerochen,riecht,roch
+riesig	B1	3	OTHER	4.04	
+Rind	A2	1	NOUN	3.54	Rinder
+Ring	A2	1	NOUN	4.54	Ringe
+Risiko	B1	2	NOUN	4.64	Risikoisiken
+Rock	A2	1	NOUN	4.58	Röcke
+roh	B1	3	OTHER	3.51	
+Rolle	B1	2	NOUN	5.16	Rollen
+Roman	B1	2	NOUN	4.66	Romane
+romantisch	A2	1	OTHER	3.79	
+rosa	A1	1	OTHER	4.37	
+Rose	A2	1	NOUN	4.35	Rosen
+rot	A1	1	OTHER	4.93	
+Rucksack	A2	1	NOUN	4.03	Rucksäcke
+rufen	A2	1	VERB	4.52	gerufen,rief,ruft
+Rufnummer	B1	3	NOUN	3.43	Rufnummern
+Ruhe	A2	1	NOUN	4.89	
+ruhig	A1	1	OTHER	4.76	
+rund	A2	1	OTHER	5.27	
+Runde	B1	2	NOUN	4.92	Runden
+Rundfahrt	B1	3	NOUN	3.41	Rundfahrten
+Rundgang	A2	1	NOUN	3.57	Rundgänge
+runter	B1	2	OTHER	4.64	
+runterwerfen	B1	3	VERB	1.20	runtergeworfen,warf,wirft
+Rätsel	A2	1	NOUN	4.17	
+rück	B1	3	OTHER	3.39	
+Rücken	A2	1	NOUN	4.79	
+Rückfahrt	B1	3	NOUN	3.49	Rückfahrten
+Rückkehr	B1	2	NOUN	4.49	
+Rücksicht	B1	3	NOUN	4.07	Rücksichten
+rückwärts	B1	3	OTHER	3.95	
+Rüebli	B1	3	NOUN	1.20	
+S-Bahn	A1	1	NOUN	4.96	
+Saal	B1	2	NOUN	4.16	Saälle
+Sache	A2	1	NOUN	5.24	Sachen
+Sack	B1	2	NOUN	4.26	Säcke
+Saft	A1	1	NOUN	4.02	Säfte
+sagen	A1	1	VERB	5.68	gesagt,sagt,sagte
+Saison	B1	2	NOUN	5.05	Saisons
+Salat	A1	1	NOUN	4.10	Salate
+Salbe	B1	3	NOUN	3.35	Salben
+Salon	B1	3	NOUN	3.88	Salons
+Salz	A1	1	NOUN	4.33	Salze
+salzig	B1	3	OTHER	3.11	
+sammeln	A2	1	VERB	4.47	gesammelt,sammelt,sammelte
+Samstag	A1	1	NOUN	4.93	Samstage
+samstags	A2	1	OTHER	3.78	
+Sand	B1	2	NOUN	4.37	
+satt	B1	3	OTHER	4.06	
+Satz	A1	1	NOUN	4.93	Sätze
+sauber	A2	1	OTHER	4.46	
+Sauce	B1	3	NOUN	3.72	Saucen
+sauer	A2	1	OTHER	4.33	
+Schachtel	B1	3	NOUN	3.51	Schachteln
+schade	A2	1	OTHER	4.78	
+Schaden	B1	2	NOUN	4.80	Schäden
+schaden	B1	2	VERB	4.80	geschadet,schadet,schadete
+Schaf	B1	3	NOUN	3.73	Schafe
+schaffen	A2	1	VERB	5.10	geschafft,schafft,schaffte
+schalten	B1	3	VERB	4.02	geschaltet,schaltet,schaltete
+Schalter	A1	1	NOUN	3.84	
+scharf	A2	1	OTHER	4.43	
+Schatten	B1	2	NOUN	4.50	
+schauen	B1	2	VERB	4.96	geschaut,schaut,schaute
+Schaufenster	B1	3	NOUN	3.41	
+Schauspieler	B1	2	NOUN	4.55	
+Schauspielerin	B1	2	NOUN	4.22	Schauspielerinnen
+Scheibe	B1	2	NOUN	4.16	Scheiben
+scheiden	B1	3	VERB	3.89	ließ
+Scheidung	B1	3	NOUN	4.02	Scheidungen
+Schein	B1	3	NOUN	4.06	Scheine
+scheinen	A1	1	VERB	4.55	geschienen,scheint,schien
+schenken	A2	1	VERB	4.25	geschenkt,schenkt,schenkte
+Schere	A2	1	NOUN	3.78	Scheren
+Schi	B1	3	NOUN	2.70	Schier
+schick	B1	2	OTHER	4.22	
+schicken	A1	1	VERB	4.70	geschickt,schickt,schickte
+schieben	B1	2	VERB	4.13	geschoben,schiebt,schob
+schief	B1	2	OTHER	4.26	
+schießen	B1	2	VERB	4.36	geschossen,schießt,schoss
+Schiff	A2	1	NOUN	4.67	Schiffe
+Schild	A1	1	NOUN	4.26	Schilder
+Schildkröte	B1	3	NOUN	3.42	Schildkröten
+schimpfen	A2	1	VERB	3.47	geschimpft,schimpft,schimpfte
+Schinken	A1	1	NOUN	3.73	
+Schirm	A2	1	NOUN	3.85	Schirme
+Schlaf	B1	2	NOUN	4.52	
+schlafen	A1	1	VERB	4.82	geschlafen,schlief,schläft
+Schlafzimmer	A2	1	NOUN	4.19	Schlafzimmerier
+schlagen	B1	2	VERB	4.65	geschlagen,schlug,schlägt
+Schlagobers	B1	3	NOUN	2.26	
+Schlagrahm	B1	3	NOUN	1.25	
+Schlagsahne	B1	3	NOUN	2.89	
+Schlange	B1	3	NOUN	4.11	Schlangen
+schlank	B1	3	OTHER	3.84	
+schlecht	A1	1	OTHER	5.13	
+schließen	A1	1	VERB	4.73	geschlossen,schließt,schloss
+schließlich	B1	2	OTHER	5.23	
+schlimm	A2	1	OTHER	4.78	
+Schloss	A2	1	NOUN	4.84	Schlösser
+Schluss	A1	1	NOUN	4.92	Schlüsse
+Schlüssel	A1	1	NOUN	4.42	
+schmal	B1	3	OTHER	3.70	
+schmecken	A1	1	VERB	4.17	geschmeckt,schmeckt,schmeckte
+Schmerz	A2	1	NOUN	4.37	Schmerzen
+Schmerzmittel	B1	3	NOUN	3.44	
+schminken	B1	3	VERB	3.26	geschminkt,schminkt,schminkte
+Schmuck	B1	2	NOUN	4.21	
+Schmutz	B1	3	NOUN	3.71	
+schmutzig	A2	1	OTHER	3.70	
+Schnee	A2	1	NOUN	4.45	
+schneiden	A2	1	VERB	4.30	geschnitten,schneidet,schnitt
+schneien	A2	1	VERB	2.96	geschneit,schneit,schneite
+schnell	A1	1	OTHER	5.51	
+Schnitzel	B1	3	NOUN	3.86	
+Schnupfen	B1	3	NOUN	3.38	
+Schokolade	A2	1	NOUN	4.20	
+schon	A1	1	OTHER	6.34	
+Schrank	A1	1	NOUN	4.14	Schränke
+Schreck	B1	3	NOUN	3.68	
+schrecklich	A2	1	OTHER	4.22	
+Schreiben	B1	2	NOUN	5.25	
+schreiben	A1	1	VERB	5.25	geschrieben,schreibt,schrieb
+schreien	B1	2	VERB	4.20	geschrien,schreit,schrie
+Schrift	B1	2	NOUN	4.32	Schriften
+schriftlich	A2	1	OTHER	4.08	
+Schriftsteller	B1	2	NOUN	4.35	
+Schriftstellerin	B1	3	NOUN	3.58	Schriftstellerinnen
+Schritt	B1	2	NOUN	4.95	Schritte
+Schuh	A1	1	NOUN	4.06	Schuhe
+Schularbeit	B1	3	NOUN	2.52	Schularbeiten
+Schuld	B1	2	NOUN	4.94	
+schuld	B1	2	OTHER	4.94	
+Schulden	B1	2	NOUN	4.42	
+schuldig	B1	2	OTHER	4.23	
+Schule	A1	1	NOUN	5.34	Schulen
+Schulter	B1	2	NOUN	4.28	Schultern
+Schutz	B1	2	NOUN	4.84	
+schwach	A2	1	OTHER	4.43	
+Schwammerl	B1	3	NOUN	2.27	Schwammerln
+schwanger	A2	1	OTHER	4.15	
+Schwangerschaft	B1	3	NOUN	4.07	Schwangerschaften
+schwarz	A1	1	OTHER	5.01	
+schweigen	B1	2	VERB	4.43	geschwiegen,schweigt,schwieg
+Schwein	A2	1	NOUN	4.11	Schweine
+schwer	A1	1	OTHER	5.29	
+Schwester	A1	1	NOUN	4.77	Schwestern
+Schwieger	B1	3	NOUN	2.36	
+schwierig	A2	1	OTHER	4.69	
+Schwierigkeit	B1	3	NOUN	3.65	Schwierigkeiten
+Schwimmbad	A1	1	NOUN	3.83	Schwimmbäder
+schwimmen	A1	1	VERB	4.38	geschwommen,schwamm,schwimmt
+schwitzen	B1	3	VERB	3.77	geschwitzt,schwitzt,schwitzte
+schädlich	A2	1	OTHER	3.71	
+schätzen	B1	2	VERB	4.37	geschätzt,schätzt,schätzte
+schön	A1	1	OTHER	5.52	
+Schüler	A1	1	NOUN	4.98	Schülerdiechlerin
+Schülerin	B1	3	NOUN	3.82	Schülerinnen
+Schüssel	B1	3	NOUN	3.81	Schüsseln
+schütteln	B1	3	VERB	3.81	geschüttelt,schüttelt,schüttelte
+schützen	B1	2	VERB	4.75	geschützt,schützt,schützte
+sechs	A1	1	OTHER	5.13	
+sechzehn	A1	1	OTHER	3.37	
+sechzig	A1	1	OTHER	3.35	
+See	A1	1	NOUN	4.80	Seen
+sehen	A1	1	VERB	5.69	gesehen,sah,sieht
+Sehenswürdigkeit	A1	1	NOUN	3.16	Sehenswürdigkeiten
+sehr	A1	1	OTHER	6.14	
+Seife	A2	1	NOUN	3.67	Seifen
+sein	A1	1	VERB	6.32	einverstanden,gewesen,war
+seit	A1	1	OTHER	5.91	
+seitdem	B1	2	OTHER	4.67	
+Seite	A2	1	NOUN	5.49	Seiten
+Sekretär	B1	3	NOUN	3.68	Sekretäre
+Sekretärin	B1	3	NOUN	3.61	Sekretärinnen
+Sekunde	A1	1	NOUN	4.30	Sekunden
+selb	B1	3	OTHER	3.22	
+selber	B1	2	OTHER	5.06	
+selbst	A2	1	OTHER	5.90	
+selbstständig	A1	1	OTHER	4.00	
+selbstverständlich	B1	2	OTHER	4.68	
+selten	B1	2	OTHER	4.98	
+seltsam	B1	2	OTHER	4.30	
+Semester	B1	3	NOUN	4.03	
+Seminar	B1	3	NOUN	4.12	Seminare
+Semmel	B1	3	NOUN	2.81	Semmeln
+senden	B1	2	VERB	4.28	sendet
+Sender	B1	2	NOUN	4.49	
+Sendung	A2	1	NOUN	4.68	Sendungen
+Senioren	B1	3	NOUN	4.12	
+senkrecht	B1	3	OTHER	3.59	
+September	A1	1	NOUN	5.17	
+Serie	B1	2	NOUN	4.92	Serien
+Service	A2	1	NOUN	4.61	
+Serviceangestellte	B1	3	NOUN	0.00	Serviceangestellten
+Sessel	B1	3	NOUN	3.76	
+setzen	A2	1	VERB	5.10	gesetzt,setzt,setzte
+sich	A1	1	OTHER	6.79	
+sicher	A2	1	OTHER	5.54	
+Sicherheit	B1	2	NOUN	5.06	Sicherheiten
+sichern	B1	2	VERB	4.46	gesichert,sichert,sicherte
+sichtbar	B1	2	OTHER	4.45	
+Sie	A1	1	NOUN	6.82	
+sie	A1	1	OTHER	6.82	
+sieben	A1	1	OTHER	4.98	
+siebzehn	A1	1	OTHER	3.26	
+siebzig	A1	1	OTHER	3.13	
+Sieg	B1	2	NOUN	4.90	Siege
+siegen	B1	2	VERB	4.34	gesiegt,siegt,siegte
+Sieger	B1	2	NOUN	4.49	
+Siegerin	B1	3	NOUN	3.35	Siegerinnen
+siezen	B1	3	VERB	2.81	gesiezt,siezt,siezte
+Silvester	A2	1	NOUN	3.92	
+singen	A2	1	VERB	4.56	gesungen,sang,singt
+sinken	B1	3	VERB	4.11	gesunken,sank,sinkt
+Sinn	B1	2	NOUN	5.03	
+sinnlos	B1	3	OTHER	4.04	
+sinnvoll	B1	2	OTHER	4.49	
+Situation	A2	1	NOUN	5.01	Situationen
+Sitz	B1	2	NOUN	4.59	Sitze
+sitzen	A1	1	VERB	4.90	gesessen,saß,sitzt
+Ski	A2	1	NOUN	4.10	Skier
+so	A1	1	OTHER	6.69	
+sobald	B1	2	OTHER	4.85	
+Socke	B1	3	NOUN	3.38	Socken
+sodass	B1	2	OTHER	4.64	
+Sofa	A1	1	NOUN	4.15	Sofas
+sofort	A1	1	OTHER	5.31	
+sogar	A2	1	OTHER	5.52	
+sogenannt	B1	3	OTHER	2.00	
+Sohn	A1	1	NOUN	5.22	Söhne
+solange	B1	2	OTHER	4.85	
+solch	B1	2	OTHER	4.44	
+sollen	A1	1	VERB	5.51	gesollt,soll,sollte
+Sommer	A2	1	NOUN	5.08	
+Sonder	B1	3	NOUN	3.73	
+Sonderangebot	B1	3	NOUN	2.99	Sonderangebote
+sondern	B1	2	OTHER	5.77	
+Sonne	A1	1	NOUN	4.85	Sonnen
+sonnig	A2	1	OTHER	3.35	
+Sonntag	A1	1	NOUN	5.01	Sonntage
+sonntags	A2	1	OTHER	3.99	
+sonst	A2	1	OTHER	5.43	
+Sorge	B1	2	NOUN	4.64	Sorgen
+sorgen	B1	2	VERB	5.07	gesorgt,sorgt,sorgte
+Souvenir	B1	3	NOUN	3.09	Souvenirs
+soviel	B1	2	OTHER	4.49	
+sowieso	B1	2	OTHER	4.67	
+sowohl	B1	2	OTHER	5.12	
+sozial	B1	2	OTHER	4.34	
+Sozialarbeiter	B1	3	NOUN	3.38	
+Sozialarbeiterin	B1	3	NOUN	2.98	Sozialarbeiterinnen
+Soße	B1	3	NOUN	3.74	Soßen
+spannend	A2	1	OTHER	4.43	
+sparen	A2	1	VERB	4.65	gespart,spart,sparte
+sparsam	B1	3	OTHER	3.54	
+spazieren	A2	1	VERB	3.99	gegangen,geht,ging
+Spaziergang	A2	1	NOUN	3.98	Spaziergänge
+Spaß	A2	1	NOUN	5.22	
+speichern	A2	1	VERB	3.89	gespeichert,speichert,speicherte
+Speise	B1	3	NOUN	3.29	
+speise	B1	3	OTHER	3.29	
+Speisekarte	A1	1	NOUN	3.38	Speisekarten
+Speisewagen	B1	3	NOUN	2.77	
+Spezial	B1	3	NOUN	3.75	
+Spezialist	B1	3	NOUN	3.73	Spezialisten
+Spezialistin	B1	3	NOUN	2.76	Spezialistinnen
+speziell	B1	2	OTHER	4.51	
+Spiegel	B1	2	NOUN	4.74	
+Spiel	A2	1	NOUN	5.49	Spiele
+spielen	A1	1	VERB	5.42	gespielt,spielt,spielte
+Spieler	B1	2	NOUN	5.06	
+Spielerin	B1	3	NOUN	3.33	Spielerinnen
+Spielplatz	B1	3	NOUN	3.86	Spielplätze
+Spielzeug	B1	2	NOUN	4.13	Spielzeuge
+spitz	B1	3	OTHER	3.64	
+Sport	A1	1	NOUN	4.97	
+Sportart	B1	3	NOUN	3.67	Sportarten
+Sportler	B1	2	NOUN	4.18	
+Sportlerin	B1	3	NOUN	2.98	Sportlerinnen
+sportlich	A2	1	OTHER	4.02	
+Sportplatz	A2	1	NOUN	3.51	Sportplätze
+Sprache	A1	1	NOUN	5.07	Sprachen
+sprechen	A1	1	VERB	5.13	gesprochen,sprach,spricht
+Sprechstunde	A2	1	NOUN	3.33	Sprechstunden
+springen	B1	2	VERB	4.26	gesprungen,sprang,springt
+Spritze	B1	3	NOUN	3.58	Spritzen
+Spur	B1	2	NOUN	4.53	Spuren
+spät	A1	1	OTHER	4.81	
+später	A1	1	OTHER	5.50	
+spätestens	B1	2	OTHER	4.55	
+spülen	B1	3	VERB	3.48	gespült,spült,spülte
+spüren	B1	2	VERB	4.38	gespürt,spürt,spürte
+Stadion	B1	2	NOUN	4.47	Stadiontadien
+Stadt	A1	1	NOUN	5.66	Städte
+Stadtplan	A2	1	NOUN	3.20	Stadtpläne
+stammen	B1	2	VERB	4.44	gestammt,stammt,stammte
+Standpunkt	B1	3	NOUN	4.01	Standpunkte
+Star	A2	1	NOUN	4.74	Stars
+stark	A2	1	OTHER	5.28	
+Start	B1	2	NOUN	4.90	Starts
+starten	B1	2	VERB	4.63	gestartet,startet,startete
+Station	B1	2	NOUN	4.47	Stationen
+Statistik	B1	2	NOUN	4.49	Statistiken
+statistisch	B1	3	OTHER	3.86	
+statt	B1	2	OTHER	5.47	
+stattfinden	A2	1	VERB	4.37	fand,findet,stattgefunden
+Stau	B1	3	NOUN	3.95	Staus
+Staub	B1	3	NOUN	4.11	
+staubsaugen	B1	3	VERB	2.68	gestaubsaugt,staubsaugt,staubsaugte
+stechen	B1	3	VERB	3.82	gestochen,stach,sticht
+Steckdose	B1	3	NOUN	3.48	Steckdosen
+stecken	B1	2	VERB	4.55	gesteckt,steckt,steckte
+Stecker	B1	3	NOUN	3.61	
+stehen	A1	1	VERB	5.50	gestanden,stand,steht
+stehlen	B1	3	VERB	3.83	gestohlen,stahl,stiehlt
+steigen	B1	2	VERB	4.60	gestiegen,steigt,stieg
+steil	B1	3	OTHER	3.84	
+Stein	B1	2	NOUN	4.66	Steine
+Stelle	A1	1	NOUN	5.22	Stellen
+stellen	A1	1	VERB	5.38	gestellt,stellt,stellte
+Stempel	B1	3	NOUN	3.79	
+sterben	A2	1	VERB	4.81	gestorben,starb,stirbt
+Stern	B1	2	NOUN	4.50	Sterne
+Steuer	B1	2	NOUN	4.42	Steuern
+Steward	B1	3	NOUN	2.87	Stewards
+Stewardess	B1	3	NOUN	2.86	Stewardessen
+Stiefel	A2	1	NOUN	3.94	
+Stiege	B1	3	NOUN	2.93	Stiegen
+Stiegenhaus	B1	3	NOUN	2.57	Stiegenhäuser
+Stift	A2	1	NOUN	4.08	Stifte
+Stil	B1	2	NOUN	4.64	Stile
+stilistisch	B1	3	OTHER	3.28	
+still	B1	2	OTHER	4.44	
+Stimme	B1	2	NOUN	5.02	Stimmen
+stimmen	B1	2	VERB	4.96	gestimmt,stimmt,stimmte
+Stimmung	B1	2	NOUN	4.64	Stimmungen
+stinken	B1	3	VERB	3.35	gestunken,stank,stinkt
+Stipendium	A2	1	NOUN	3.61	Stipendiumen
+Stock	A1	1	NOUN	4.34	Stöcke
+Stockwerk	A2	1	NOUN	3.62	Stockwerke
+Stoff	B1	2	NOUN	4.45	Stoffe
+stolz	B1	2	OTHER	4.88	
+stoppen	B1	2	VERB	4.30	gestoppt,stoppt,stoppte
+stoßen	B1	3	VERB	4.11	gestoßen,stieß,stößt
+strafbar	B1	3	OTHER	3.75	
+Strafe	B1	2	NOUN	4.51	Strafen
+Strafzettel	B1	3	NOUN	3.15	
+Strand	A2	1	NOUN	4.44	Strände
+Straße	A1	1	NOUN	5.27	Straßen
+Straßenbahn	A1	1	NOUN	3.92	Straßenbahnen
+Strecke	B1	2	NOUN	4.69	Strecken
+Streichholz	B1	3	NOUN	2.83	Streichhölzer
+Streik	B1	3	NOUN	3.89	Streiks
+streiken	B1	3	VERB	3.49	gestreikt,streikt,streikte
+Streit	B1	2	NOUN	4.61	
+streiten	A2	1	VERB	4.23	gestritten,streitet,stritt
+streng	A2	1	OTHER	4.33	
+Stress	A2	1	NOUN	4.49	
+stressig	A2	1	OTHER	3.47	
+Strom	B1	2	NOUN	4.70	
+Strumpf	B1	3	NOUN	2.93	Strümpfe
+Student	A1	1	NOUN	4.13	Studenten
+Studentin	B1	3	NOUN	3.80	Studentinnen
+Studie	B1	2	NOUN	4.83	Studien
+studieren	A1	1	VERB	4.24	studiert,studierte
+Studierende	B1	3	NOUN	3.86	Studierenden
+Studio	B1	2	NOUN	4.45	Studios
+Studium	A1	1	NOUN	4.84	Studiumtudien
+Stufe	B1	2	NOUN	4.44	Stufen
+Stuhl	A2	1	NOUN	4.28	Stühle
+stumm	B1	3	OTHER	3.69	
+Stunde	A1	1	NOUN	5.08	Stunden
+Sturm	B1	2	NOUN	4.51	Stürme
+städtisch	B1	3	OTHER	2.63	
+ständig	B1	2	OTHER	4.84	
+stören	A2	1	VERB	4.25	gestört,stört,störte
+Störung	B1	2	NOUN	4.22	Störungen
+Stück	A2	1	NOUN	5.09	Stücke
+stündlich	B1	3	OTHER	3.40	
+stürzen	B1	3	VERB	4.06	gestürzt,stürzt,stürzte
+suchen	A1	1	VERB	5.18	gesucht,sucht,suchte
+Sucht	B1	2	NOUN	5.03	Süchte
+Suchtmittel	B1	3	NOUN	2.48	
+Summe	B1	2	NOUN	4.45	Summen
+super	A2	1	OTHER	5.19	
+Supermarkt	A2	1	NOUN	4.17	Supermärkte,Supermärktech
+Suppe	A2	1	NOUN	3.99	Suppen
+surfen	A2	1	VERB	3.73	gesurft,surft
+Symbol	B1	2	NOUN	4.30	Symbole
+sympathisch	A2	1	OTHER	3.93	
+System	B1	2	NOUN	5.11	Systeme
+Szene	B1	2	NOUN	4.76	Szenen
+sämtliche	B1	2	OTHER	4.50	
+Sänger	B1	2	NOUN	4.40	
+Sängerin	B1	3	NOUN	4.12	Sängerinnen
+süchtig	B1	3	OTHER	3.63	
+Süden	A2	1	NOUN	4.57	
+südlich	B1	2	OTHER	4.13	
+süß	A2	1	OTHER	4.48	
+Süßigkeiten	A2	1	NOUN	3.87	
+T-Shirt	A2	1	NOUN	4.27	T-Shirts
+Tabelle	B1	2	NOUN	4.41	Tabellen
+Tablet	A2	1	NOUN	4.07	Tablets
+Tablette	A2	1	NOUN	3.26	Tabletten
+Tafel	A2	1	NOUN	4.17	Tafeln,Tafelnznfotafel
+Tag	A1	1	NOUN	5.69	Tage
+tag	A2	1	OTHER	5.69	
+Tagesablauf	B1	3	NOUN	3.25	Tagesabläufe
+tagsüber	B1	3	OTHER	3.99	
+Tal	B1	2	NOUN	4.23	Täler
+Talent	B1	2	NOUN	4.28	Talente
+tanken	B1	3	VERB	3.69	getankt,tankt,tankte
+Tankstelle	B1	3	NOUN	3.87	Tankstellen
+Tante	B1	2	NOUN	4.18	Tanten
+Tanz	B1	2	NOUN	4.37	Tänze
+tanzen	A1	1	VERB	4.40	getanzt,tanzt,tanzte
+Tasche	A1	1	NOUN	4.52	Taschen
+Taschengeld	A2	1	NOUN	3.64	Taschengelder
+Taschentuch	B1	3	NOUN	3.30	Taschentücher
+Tasse	A2	1	NOUN	4.06	Tassen
+Tastatur	B1	3	NOUN	3.95	Tastaturen
+Taste	B1	3	NOUN	3.70	Tasten
+Tat	B1	2	NOUN	4.97	Taten
+Tatsache	B1	2	NOUN	4.64	Tatsachen
+tatsächlich	B1	2	OTHER	5.11	
+taub	B1	3	OTHER	3.43	
+tauchen	B1	3	VERB	3.98	getaucht,taucht,tauchte
+tauschen	A2	1	VERB	4.08	getauscht,tauscht,tauschte
+tausend	A1	1	OTHER	4.49	
+Taxi	A1	1	NOUN	4.15	Taxis
+Team	A2	1	NOUN	5.23	Teams
+Technik	B1	2	NOUN	4.83	Techniken
+technisch	B1	2	OTHER	4.34	
+Technologie	B1	2	NOUN	4.32	Technologien
+Tee	A1	1	NOUN	4.45	Tees
+Teil	A1	1	NOUN	5.59	Teile
+teilen	A2	1	VERB	4.93	geteilt,teilt,teilte
+Teilnahme	B1	2	NOUN	4.54	Teilnahmen
+teilnehmen	A2	1	VERB	4.32	nahm,nimmt,teilgenommen
+Teilnehmer	B1	2	NOUN	4.82	
+Teilnehmerin	B1	3	NOUN	3.12	Teilnehmerinnen
+Teilzeit	B1	3	NOUN	3.81	
+Telefon	A1	1	NOUN	4.76	Telefone
+telefonieren	A1	1	VERB	3.98	telefoniert,telefonierte
+Teller	A2	1	NOUN	4.09	
+Temperatur	B1	2	NOUN	4.55	Temperaturen
+Tempo	B1	2	NOUN	4.24	
+Tennis	A2	1	NOUN	4.17	
+Teppich	B1	3	NOUN	4.11	Teppiche
+Termin	A1	1	NOUN	4.60	Termine
+Terminkalender	B1	3	NOUN	3.34	
+Terrasse	B1	3	NOUN	3.91	Terrassen
+Test	A1	1	NOUN	4.74	Tests
+testen	B1	2	VERB	4.37	getestet,testet,testete
+teuer	A1	1	OTHER	4.57	
+Text	A1	1	NOUN	4.98	Texte
+Theater	A2	1	NOUN	4.72	
+Thema	A1	1	NOUN	5.36	Themaen,Themahemen
+theoretisch	B1	2	OTHER	4.18	
+Theorie	B1	2	NOUN	4.61	Theorien
+Therapie	B1	2	NOUN	4.45	Therapien
+Ticket	A1	1	NOUN	4.27	Tickets
+tief	A2	1	OTHER	4.82	
+Tier	A2	1	NOUN	4.61	Tiere
+Tierpark	B1	3	NOUN	3.38	Tierparks
+Tipp	A2	1	NOUN	4.51	Tipps
+tippen	B1	3	VERB	3.76	tippt,tippte
+Tisch	A1	1	NOUN	4.83	Tische
+Titel	A2	1	NOUN	5.08	
+Tochter	A1	1	NOUN	5.08	Töchter
+Tod	B1	2	NOUN	5.16	
+Toilette	A1	1	NOUN	4.13	Toiletteen,Toiletten
+tolerant	B1	3	OTHER	3.36	
+toll	A2	1	OTHER	5.04	
+Tomate	A1	1	NOUN	3.36	Tomaten
+Topf	A2	1	NOUN	4.06	Töpfe
+Tor	B1	2	NOUN	4.80	Tore
+Torte	A2	1	NOUN	3.72	Torten
+tot	A1	1	OTHER	4.75	
+total	A2	1	OTHER	4.92	
+Tote	B1	2	NOUN	4.49	Toten
+Tour	A2	1	NOUN	4.74	Touren
+Tourismus	B1	2	NOUN	4.29	
+Tourist	A2	1	NOUN	3.59	Touristen
+Touristin	B1	3	NOUN	2.74	Touristinnen
+Tradition	B1	2	NOUN	4.63	Traditionen
+traditionell	B1	2	OTHER	4.15	
+tragen	A2	1	VERB	5.04	getragen,trug,trägt
+Trainer	B1	2	NOUN	4.81	
+Trainerin	B1	3	NOUN	3.38	Trainerinnen
+trainieren	A2	1	VERB	4.15	trainiert,trainierte
+Training	A2	1	NOUN	4.63	Trainings
+Tram	B1	3	NOUN	3.46	Trams
+Transport	B1	2	NOUN	4.29	Transporte
+transportieren	B1	3	VERB	3.84	transportiert,transportierte
+Traum	A2	1	NOUN	4.72	Träume
+traurig	A2	1	OTHER	4.64	
+treffen	A1	1	VERB	5.25	getroffen,traf,trifft
+Treffpunkt	B1	3	NOUN	3.93	Treffpunkte
+treiben	B1	2	VERB	4.43	treibt,trieb
+trennen	B1	2	VERB	4.33	getrennt,trennt,trennte
+Trennung	B1	2	NOUN	4.36	Trennungen
+Treppe	A1	1	NOUN	4.19	Treppen
+Treppenhaus	B1	3	NOUN	3.69	Treppenhäuser
+treten	B1	2	VERB	4.70	getreten,trat,tritt
+treu	B1	2	OTHER	4.15	
+trinken	A1	1	VERB	4.76	getrunken,trank,trinkt
+Trinkgeld	B1	3	NOUN	3.61	Trinkgelder
+trocken	A2	1	OTHER	4.30	
+trocknen	B1	3	VERB	3.76	getrocknet,trocknet,trocknete
+Tropfen	B1	2	NOUN	4.15	
+Trottoir	B1	3	NOUN	2.51	Trottoirs
+trotz	B1	2	OTHER	5.15	
+trotzdem	B1	2	OTHER	5.25	
+Träne	B1	3	NOUN	3.37	Tränen
+träumen	A2	1	VERB	4.27	geträumt,träumt,träumte
+tschüs	A2	1	OTHER	2.26	
+tschüss	A1	1	OTHER	3.96	
+Tuch	B1	3	NOUN	3.81	Tücher
+tun	A1	1	VERB	5.58	getan,tat,tut
+Turm	B1	2	NOUN	4.19	Türme
+Typ	B1	2	NOUN	5.00	Typen
+typisch	A2	1	OTHER	4.36	
+täglich	A2	1	OTHER	4.80	
+Täter	B1	2	NOUN	4.64	
+Täterin	B1	3	NOUN	2.81	Täterinnen
+Tätigkeit	B1	2	NOUN	4.63	Tätigkeiten
+tödlich	B1	3	OTHER	4.02	
+Tür	A2	1	NOUN	4.90	Türen
+Tüte	B1	3	NOUN	3.85	Tüten
+U-Bahn	B1	2	NOUN	4.91	U-Bahnen
+Ufer	B1	2	NOUN	4.22	
+Uhr	A1	1	NOUN	5.67	Uhren
+um	A1	1	OTHER	6.46	
+umarmen	B1	3	VERB	3.59	umarmt,umarmte
+umdrehen	B1	3	OTHER	3.62	
+Umfrage	B1	2	NOUN	4.40	Umfragen
+Umgebung	B1	2	NOUN	4.78	Umgebungen
+umgedreht	B1	3	OTHER	3.45	
+umgehen	B1	2	VERB	4.39	geht,ging,umgegangen
+umgekehrt	B1	2	OTHER	4.37	
+Umleitung	B1	3	NOUN	3.44	Umleitungen
+umso	B1	2	OTHER	4.45	
+umsonst	B1	2	OTHER	4.33	
+umsteigen	A2	1	VERB	3.60	steigt,stieg,umgestiegen
+Umtausch	B1	3	NOUN	2.93	Umtäusche
+umtauschen	B1	3	VERB	3.09	tauscht,tauschte,umgetauscht
+Umwelt	B1	2	NOUN	4.63	
+Umweltschutz	B1	3	NOUN	3.93	
+Umweltverschmutzung	B1	3	NOUN	3.11	Umweltverschmutzungen
+umziehen	A1	1	VERB	3.83	umgezogen,zieht,zog
+Umzug	A2	1	NOUN	4.21	Umzüge
+unbedingt	A2	1	OTHER	4.98	
+und	A1	1	OTHER	7.42	
+unentschieden	B1	3	OTHER	4.01	
+Unfall	A2	1	NOUN	4.70	Unfälle
+ungefähr	B1	2	OTHER	4.70	
+ungewöhnlich	B1	2	OTHER	4.21	
+unglaublich	B1	2	OTHER	4.73	
+Unglück	B1	2	NOUN	4.17	Unglücke
+unheimlich	B1	3	OTHER	4.02	
+Uniform	B1	3	NOUN	3.93	Uniformen
+Universität	A2	1	NOUN	4.90	Universitäten
+uns	A1	1	OTHER	6.11	
+unser	A1	1	OTHER	5.43	
+unten	A1	1	OTHER	5.01	
+unter	A1	1	OTHER	6.10	
+unterbrechen	B1	3	VERB	3.64	unterbrach,unterbricht,unterbrochen
+unterhalten	A2	1	VERB	4.41	unterhielt,unterhält
+Unterhaltung	B1	2	NOUN	4.42	Unterhaltungen
+Unterkunft	A2	1	NOUN	4.05	Unterkünfte
+Unterlagen	B1	2	NOUN	4.32	
+unterlassen	B1	3	VERB	3.65	unterließ,unterlässt
+unternehmen	A2	1	VERB	5.38	unternahm,unternimmt,unternommen
+Unternehmer	B1	2	NOUN	4.50	
+Unternehmerin	B1	3	NOUN	3.07	Unternehmerinnen
+Unterricht	A1	1	NOUN	4.57	
+unterrichten	B1	3	VERB	3.91	unterrichtet,unterrichtete
+untersagt	B1	3	OTHER	3.89	
+unterscheiden	B1	2	VERB	4.52	unterscheidet,unterschied,unterschieden
+Unterschied	A2	1	NOUN	4.84	Unterschiede
+unterschiedlich	B1	2	OTHER	4.43	
+unterschreiben	A1	1	VERB	4.17	unterschreibt,unterschrieb,unterschrieben
+Unterschrift	A1	1	NOUN	4.00	Unterschriften
+unterstreichen	B1	3	VERB	3.51	unterstreicht,unterstrich,unterstrichen
+unterstützen	B1	2	VERB	4.76	unterstützt,unterstützte
+Unterstützung	B1	2	NOUN	4.95	Unterstützungen
+untersuchen	A2	1	VERB	4.25	untersucht,untersuchte
+Untersuchung	B1	2	NOUN	4.58	Untersuchungen
+unterwegs	A2	1	OTHER	4.98	
+Urkunde	B1	3	NOUN	4.08	Urkunden
+Urlaub	A1	1	NOUN	4.83	Urlaube
+Ursache	B1	2	NOUN	4.50	Ursachen
+ursprünglich	B1	2	OTHER	4.63	
+Urteil	B1	2	NOUN	4.71	Urteile
+Vase	B1	3	NOUN	3.41	Vasen
+Vater	A1	1	NOUN	5.21	Väter
+vegetarisch	B1	3	OTHER	3.44	
+Velo	B1	3	NOUN	2.85	Velos
+verabreden	B1	3	VERB	3.23	verabredet,verabredete
+verabredet	A2	1	OTHER	3.51	
+Verabredung	B1	3	NOUN	3.23	Verabredungen
+verabschieden	B1	3	VERB	3.98	verabschiedet,verabschiedete
+Veranstaltung	A2	1	NOUN	4.65	Veranstaltungen
+verantwortlich	B1	2	OTHER	4.78	
+Verantwortung	B1	2	NOUN	4.74	
+verbessern	B1	2	VERB	4.48	verbessert,verbesserte
+verbieten	A2	1	VERB	4.16	verbietet,verbot,verboten
+verbinden	B1	2	VERB	4.32	verband,verbindet,verbunden
+Verbindung	B1	2	NOUN	4.98	Verbindungen
+Verbot	B1	2	NOUN	4.47	Verbote
+verboten	A1	1	OTHER	4.60	
+verbrauchen	B1	3	VERB	3.53	verbraucht,verbrauchte
+Verbrecher	B1	3	NOUN	4.05	
+Verbrecherin	B1	3	NOUN	2.17	Verbrecherinnen
+verbrennen	B1	3	VERB	3.98	verbrannt,verbrannte,verbrennt
+verbringen	B1	2	VERB	4.42	verbracht,verbrachte,verbringt
+Verdacht	B1	2	NOUN	4.37	
+verdienen	A1	1	VERB	4.69	verdient,verdiente
+verdächtig	B1	3	OTHER	3.80	
+Verein	A1	1	NOUN	5.00	Vereine
+vereinbaren	A2	1	VERB	3.80	vereinbart,vereinbarte
+Vergangenheit	B1	2	NOUN	4.79	
+vergeblich	B1	3	OTHER	3.96	
+vergessen	A2	1	VERB	5.15	vergaß,vergisst
+Vergleich	B1	2	NOUN	5.04	Vergleiche
+vergleichen	A2	1	VERB	4.44	vergleicht,verglich,verglichen
+Vergnügen	B1	2	NOUN	4.21	
+vergnügen	B1	2	VERB	4.21	vergnügt,vergnügte
+vergrößern	B1	3	VERB	3.81	vergrößert,vergrößerte
+verhaften	B1	3	VERB	3.43	verhaftet,verhaftete
+Verhalten	B1	2	NOUN	4.90	
+verhalten	B1	2	VERB	4.90	verhielt,verhält
+verheiratet	A1	1	OTHER	4.51	
+verhindern	B1	2	VERB	4.76	verhindert,verhinderte
+Verhältnis	B1	2	NOUN	4.66	Verhältnisse
+verkaufen	A1	1	VERB	4.84	verkauft,verkaufte
+Verkehr	A2	1	NOUN	4.75	
+Verkehrsmittel	A2	1	NOUN	3.66	
+Verkehrszeichen	B1	3	NOUN	3.01	
+Verkäufer	A1	1	NOUN	4.14	
+Verkäuferin	B1	3	NOUN	3.48	Verkäuferinnen
+Verlag	B1	2	NOUN	4.75	Verlage
+verlangen	B1	2	VERB	4.57	verlangt,verlangte
+verlassen	B1	2	VERB	4.95	verließ,verlässt
+verlaufen	B1	2	VERB	4.17	verlief,verläuft
+verletzen	A2	1	VERB	4.03	verletzt,verletzte
+Verletzung	B1	2	NOUN	4.32	Verletzungen
+verlieben	A2	1	VERB	3.72	verliebt,verliebte
+verlieren	A2	1	VERB	4.80	verliert,verlor,verloren
+Verlierer	B1	3	NOUN	3.98	
+Verliererin	B1	3	NOUN	2.19	Verliererinnen
+Verlust	B1	2	NOUN	4.51	Verluste
+verlängern	B1	3	VERB	3.86	verlängert,verlängerte
+vermeiden	B1	2	VERB	4.55	vermeidet,vermied,vermieden
+vermieten	A1	1	VERB	3.73	vermietet,vermietete
+Vermieter	A1	1	NOUN	4.07	Vermieterdieermieterin
+Vermieterin	B1	3	NOUN	3.10	Vermieterinnen
+Vermietung	B1	3	NOUN	3.42	Vermietungen
+vermissen	B1	3	VERB	4.11	vermisst,vermisste
+Vermittlung	B1	3	NOUN	4.07	Vermittlungen
+vermuten	B1	2	VERB	4.15	vermutet,vermutete
+vermutlich	B1	2	OTHER	4.93	
+vernünftig	B1	3	OTHER	4.12	
+verpacken	B1	3	VERB	3.31	verpackt,verpackte
+verpassen	A2	1	VERB	4.17	verpasst,verpasste
+verpflegen	B1	3	VERB	2.52	verpflegt,verpflegte
+verpflichtet	B1	2	OTHER	4.59	
+verraten	B1	2	VERB	4.31	verriet,verrät
+verreisen	A2	1	VERB	3.28	verreist,verreiste
+verrückt	B1	2	OTHER	4.37	
+Versammlung	B1	2	NOUN	4.26	Versammlungen
+verschieben	A2	1	VERB	4.05	verschiebt,verschob,verschoben
+verschieden	A2	1	OTHER	4.03	
+verschmutzen	B1	3	VERB	2.69	verschmutzt,verschmutzte
+verschreiben	B1	3	VERB	3.20	verschreibt,verschrieb,verschrieben
+verschwinden	B1	2	VERB	4.46	verschwand,verschwindet,verschwunden
+versichern	B1	3	VERB	3.87	versichert,versicherte
+Versichertenkarte	B1	3	NOUN	1.89	Versichertenkarten
+Versicherung	B1	2	NOUN	4.38	Versicherungen
+versprechen	B1	2	VERB	4.40	versprach,verspricht,versprochen
+Verspätung	A2	1	NOUN	3.98	Verspätungen
+verstecken	B1	2	VERB	4.23	versteckt,versteckte
+verstehen	A1	1	VERB	5.17	verstand,verstanden,versteht
+verständlich	B1	2	OTHER	4.31	
+Verständnis	B1	2	NOUN	4.61	
+Versuch	B1	2	NOUN	4.87	Versuche
+versuchen	A2	1	VERB	5.04	versucht,versuchte
+versäumen	B1	3	VERB	3.11	versäumt,versäumte
+verteilen	B1	2	VERB	4.23	verteilt,verteilte
+Vertrag	A2	1	NOUN	4.87	Verträge
+Vertrauen	B1	2	NOUN	4.79	
+vertrauen	B1	2	VERB	4.79	vertraut,vertraute
+vertreten	B1	2	VERB	4.77	vertrat,vertritt
+Vertreter	B1	2	NOUN	4.71	
+Vertreterin	B1	3	NOUN	3.27	Vertreterinnen
+Vertretung	B1	3	NOUN	3.99	Vertretungen
+verursachen	B1	3	VERB	4.07	verursacht,verursachte
+verurteilen	B1	3	VERB	3.75	verurteilt,verurteilte
+Verwaltung	B1	2	NOUN	4.71	Verwaltungen
+verwandt	B1	3	OTHER	3.98	
+Verwandte	A1	1	NOUN	4.06	Verwandten
+verwechseln	B1	3	VERB	3.88	verwechselt,verwechselte
+verwenden	B1	2	VERB	4.63	verwendet,verwendete
+verzeihen	B1	3	VERB	3.71	verzeiht,verzieh,verziehen
+Verzeihung	B1	3	NOUN	3.50	
+verzichten	B1	2	VERB	4.51	verzichtet,verzichtete
+verändern	B1	2	VERB	4.47	verändert,veränderte
+veröffentlichen	B1	2	VERB	4.17	veröffentlicht,veröffentlichte
+Video	B1	2	NOUN	5.13	Videos
+viel	A1	1	OTHER	6.00	
+viele	B1	2	OTHER	5.83	
+vielleicht	A1	1	OTHER	5.72	
+vier	A1	1	OTHER	5.44	
+Viertel	A2	1	NOUN	4.46	
+vierzehn	A1	1	OTHER	3.73	
+vierzig	A1	1	OTHER	3.66	
+violett	A1	1	OTHER	3.47	
+virtuell	B1	3	OTHER	3.27	
+Virus	B1	2	NOUN	4.29	Virusiren
+Visitenkarte	B1	3	NOUN	3.38	Visitenkarten
+Visum	B1	3	NOUN	3.55	Visumisa
+Vitamin	B1	3	NOUN	3.87	Vitamine
+Vogel	A2	1	NOUN	4.45	Vögel
+voll	A2	1	OTHER	5.17	
+Volleyball	A2	1	NOUN	3.83	Volleybälle
+Vollzeit	B1	3	NOUN	3.91	
+von	A1	1	OTHER	6.99	
+voneinander	B1	2	OTHER	4.20	
+vor	A1	1	OTHER	6.31	
+voraus	B1	2	OTHER	4.55	
+Voraussetzung	B1	2	NOUN	4.29	Voraussetzungen
+voraussichtlich	B1	3	OTHER	4.00	
+vorbei	A2	1	OTHER	5.15	
+vorbereiten	A2	1	VERB	4.13	bereitet,bereitete,vorbereitet
+Vorbereitung	B1	2	NOUN	4.46	Vorbereitungen
+vorder	B1	3	OTHER	3.32	
+Vorfahrt	B1	3	NOUN	3.44	
+vorgestern	A2	1	OTHER	3.64	
+vorhaben	B1	2	VERB	4.23	hatte,vorgehabt
+vorher	A2	1	OTHER	5.03	
+vorhin	B1	2	OTHER	4.23	
+vorkommen	B1	2	VERB	4.35	kam,kommt,vorgekommen
+vorlesen	B1	3	VERB	3.70	las,liest,vorgelesen
+vorläufig	B1	3	OTHER	3.88	
+Vormittag	A1	1	NOUN	4.03	Vormittage
+vormittags	A1	1	OTHER	3.58	
+vorn	A2	1	OTHER	4.44	
+Vorname	A1	1	NOUN	3.75	Vornamen
+vorne	B1	2	OTHER	4.73	
+Vorort	B1	3	NOUN	3.55	Vororte
+Vorschlag	A2	1	NOUN	4.57	Vorschläge
+vorschlagen	B1	3	VERB	3.86	schlug,schlägt,vorgeschlagen
+Vorschrift	B1	3	NOUN	3.75	Vorschriften
+Vorsicht	A1	1	NOUN	4.39	
+vorsichtig	A2	1	OTHER	4.44	
+vorstellen	A1	1	VERB	4.88	stellt,stellte,vorgestellt
+Vorstellung	B1	2	NOUN	4.63	Vorstellungen
+Vorstellungsgespräch	B1	3	NOUN	3.53	Vorstellungsgespräche
+Vorteil	B1	2	NOUN	4.63	Vorteile
+Vortrag	B1	2	NOUN	4.47	Vorträge
+Vorwahl	A1	1	NOUN	3.12	Vorwahlen
+Vorwurf	B1	2	NOUN	4.28	Vorwürfe
+vorwärts	A2	1	OTHER	4.11	
+völlig	B1	2	OTHER	5.16	
+waagerecht	B1	3	OTHER	2.98	
+wach	A2	1	OTHER	4.46	
+wachsen	B1	2	VERB	4.46	gewachsen,wuchs,wächst
+Wagen	A2	1	NOUN	4.84	
+Wahl	B1	2	NOUN	5.19	Wahlen
+wahnsinnig	B1	2	OTHER	4.18	
+wahr	A2	1	OTHER	4.80	
+Wahrheit	B1	2	NOUN	4.94	Wahrheiten
+wahrscheinlich	A2	1	OTHER	5.12	
+Wald	A2	1	NOUN	4.81	Wälder
+Wand	B1	2	NOUN	4.68	Wände
+wandern	A1	1	VERB	4.20	gewandert,wandert,wanderte
+Wanderung	B1	3	NOUN	3.89	Wanderungen
+wann	A1	1	OTHER	5.17	
+Ware	B1	2	NOUN	4.28	Waren
+warm	A2	1	OTHER	4.51	
+warnen	B1	3	VERB	4.08	gewarnt,warnt,warnte
+warten	A1	1	VERB	5.01	gewartet,wartet,wartete
+warum	A1	1	OTHER	5.75	
+was	A1	1	OTHER	6.49	
+waschen	A1	1	VERB	4.20	gewaschen,wusch,wäscht
+Waschmittel	B1	3	NOUN	3.14	
+Wasser	A1	1	NOUN	5.32	
+Webseite	A2	1	NOUN	4.51	Webseiten
+wechseln	A2	1	VERB	4.52	gewechselt,wechselt,wechselte
+wecken	A2	1	VERB	3.98	geweckt,weckt,weckte
+Wecker	B1	3	NOUN	3.75	
+weder	B1	2	OTHER	4.99	
+Weg	A2	1	NOUN	5.67	Wege
+weg	A1	1	OTHER	5.67	
+wegbringen	A2	1	OTHER	2.60	
+wegen	A2	1	OTHER	5.67	
+weh	A1	1	OTHER	4.53	
+wehgetan	A2	1	OTHER	2.90	
+wehtun	A2	1	OTHER	3.22	
+weiblich	A1	1	OTHER	3.96	
+weich	A2	1	OTHER	4.05	
+weigern	B1	3	VERB	3.46	geweigert,weigert,weigerte
+Weihnachten	A2	1	NOUN	4.63	
+weil	A2	1	OTHER	5.95	
+Wein	A1	1	NOUN	4.64	Weine
+weinen	A2	1	VERB	4.32	geweint,weint,weinte
+weise	B1	2	OTHER	5.07	
+weit	A1	1	OTHER	5.40	
+weiter	A1	1	OTHER	5.75	
+Weiterbildung	B1	2	NOUN	4.18	Weiterbildungen
+weitermachen	A2	1	OTHER	3.96	
+welch	A1	1	OTHER	4.20	
+welche	B1	2	OTHER	5.55	
+welcher	A2	1	OTHER	5.03	
+welches	B1	2	OTHER	5.09	
+Welt	A1	1	NOUN	5.66	Welten
+weltweit	B1	2	OTHER	4.78	
+wem	A2	1	OTHER	4.63	
+wen	A2	1	OTHER	4.75	
+wenden	B1	2	VERB	4.36	gewendet,wendet,wendete
+wenig	A1	1	OTHER	5.49	
+wenige	B1	2	OTHER	4.95	
+wenigstens	A2	1	OTHER	4.98	
+wenn	A2	1	OTHER	6.51	
+wer	A1	1	OTHER	5.86	
+Werbung	B1	2	NOUN	4.83	Werbungen
+werden	A1	1	VERB	6.49	geworden,wird,wurde
+werfen	A2	1	VERB	4.61	geworfen,warf,wirft
+Werk	B1	2	NOUN	4.89	Werke
+Werkstatt	A2	1	NOUN	4.25	Werkstätten
+werktags	B1	3	OTHER	3.06	
+Werkzeug	B1	3	NOUN	4.07	Werkzeuge
+Wert	B1	2	NOUN	5.19	Werte
+wert	B1	2	OTHER	5.19	
+wertlos	B1	3	OTHER	3.57	
+wertvoll	B1	3	OTHER	3.96	
+weshalb	B1	2	OTHER	4.61	
+Westen	A2	1	NOUN	4.73	
+westlich	B1	3	OTHER	3.96	
+Wettbewerb	A2	1	NOUN	4.55	Wettbewerbe,Wettbewerbeein
+wetten	B1	2	VERB	4.28	gewettet,wettet,wettete
+Wetter	A1	1	NOUN	4.76	
+Wetterbericht	B1	3	NOUN	3.22	Wetterberichte
+Wettervorhersage	B1	3	NOUN	3.18	Wettervorhersagen
+wichtig	A1	1	OTHER	5.29	
+widersprechen	B1	3	VERB	4.01	widersprach,widerspricht,widersprochen
+wie	A1	1	OTHER	6.65	
+wieder	A2	1	OTHER	6.18	
+wiederholen	A1	1	VERB	4.25	wiederholt,wiederholte
+Wiederholung	B1	3	NOUN	3.99	Wiederholungen
+Wiederhören	A1	1	NOUN	2.28	
+Wiedersehen	A1	1	NOUN	4.11	
+wiegen	B1	3	VERB	3.71	gewogen,wiegt,wog
+Wiese	B1	3	NOUN	4.08	Wiesen
+wieso	B1	2	OTHER	5.17	
+wild	B1	2	OTHER	4.50	
+willkommen	A1	1	OTHER	4.82	
+Wind	A1	1	NOUN	4.69	Winde
+windig	A2	1	OTHER	3.12	
+winken	B1	3	VERB	3.52	gewinkt,winkt,winkte
+Winter	A2	1	NOUN	4.84	
+wir	A1	1	OTHER	6.54	
+wirken	B1	2	VERB	4.75	gewirkt,wirkt,wirkte
+wirklich	A2	1	OTHER	5.75	
+Wirklichkeit	B1	2	NOUN	4.40	
+Wirkung	B1	2	NOUN	4.72	Wirkungen
+Wirt	B1	3	NOUN	3.86	Wirte
+Wirtin	B1	3	NOUN	3.23	Wirtinnen
+Wirtschaft	B1	2	NOUN	5.01	
+Wissen	B1	2	NOUN	5.55	
+wissen	A1	1	VERB	5.55	gewusst,weiß,wusste
+Wissenschaft	B1	2	NOUN	4.68	Wissenschaften
+Wissenschaftler	B1	2	NOUN	4.43	
+Wissenschaftlerin	B1	3	NOUN	3.08	Wissenschaftlerinnen
+Witz	A2	1	NOUN	4.60	Witze
+witzig	A2	1	OTHER	4.53	
+wo	A1	1	OTHER	5.90	
+Woche	A1	1	NOUN	5.38	Wochen
+Wochenende	A1	1	NOUN	4.96	Wochenenden
+Wochentag	A1	1	NOUN	3.14	Wochentage
+wochentags	B1	3	OTHER	2.80	
+woher	A1	1	OTHER	4.64	
+wohin	A1	1	OTHER	4.50	
+wohl	B1	2	OTHER	5.73	
+wohnen	A1	1	VERB	4.73	gewohnt,wohnt,wohnte
+Wohnort	B1	3	NOUN	3.83	Wohnorte
+Wohnsitz	B1	3	NOUN	3.86	Wohnsitze
+Wohnung	A1	1	NOUN	5.08	Wohnungen
+Wohnzimmer	A2	1	NOUN	4.20	
+Wolke	A2	1	NOUN	3.79	Wolken
+Wolle	B1	2	NOUN	4.50	
+wollen	A1	1	VERB	5.71	gewollt,will,wollte
+Workshop	A2	1	NOUN	3.96	Workshops
+Wort	A1	1	NOUN	5.22	Worte,Wörter
+worum	B1	3	OTHER	4.02	
+worüber	B1	3	OTHER	3.99	
+Wunde	B1	3	NOUN	3.95	Wunden
+Wunder	B1	2	NOUN	4.68	
+wunderbar	A1	1	OTHER	4.46	
+wundern	B1	2	VERB	4.13	gewundert,wundert,wunderte
+wunderschön	B1	2	OTHER	4.27	
+Wunsch	A2	1	NOUN	4.74	Wünsche
+Wurst	A2	1	NOUN	4.10	Würste
+wählen	A2	1	VERB	4.95	gewählt,wählt,wählte
+während	B1	2	OTHER	5.68	
+Wärme	B1	2	NOUN	4.26	
+Wäsche	A2	1	NOUN	4.04	Wäschen
+wöchentlich	A2	1	OTHER	3.98	
+Wörterbuch	B1	3	NOUN	3.90	Wörterbücher
+wünschen	A2	1	VERB	4.77	gewünscht,wünscht,wünschte
+wütend	B1	2	OTHER	4.17	
+Zahl	A2	1	NOUN	5.08	Zahlen
+zahlen	A1	1	VERB	5.15	gezahlt,zahlt,zahlte
+zahlreich	B1	3	OTHER	3.68	
+Zahlung	B1	3	NOUN	4.10	Zahlungen
+Zahn	A2	1	NOUN	3.98	Zähne
+Zahnbürste	B1	3	NOUN	3.43	Zahnbürsten
+Zahncreme	B1	3	NOUN	2.40	
+Zange	B1	3	NOUN	3.29	Zangen
+zehn	A1	1	OTHER	5.08	
+Zeichen	B1	2	NOUN	4.88	
+zeichnen	A2	1	VERB	4.26	gezeichnet,zeichnet,zeichnete
+Zeichnung	B1	3	NOUN	3.99	Zeichnungen
+zeigen	A2	1	VERB	5.29	gezeigt,zeigt,zeigte
+Zeile	B1	3	NOUN	3.97	Zeilen
+Zeit	A1	1	NOUN	5.99	Zeiten
+Zeitpunkt	B1	2	NOUN	4.86	Zeitpunkte
+Zeitschrift	A2	1	NOUN	4.48	Zeitschriften
+Zeitung	A1	1	NOUN	4.98	Zeitungen
+Zelt	A2	1	NOUN	4.04	Zelte
+zelten	B1	3	VERB	3.48	gezeltet,zeltet,zeltete
+Zentimeter	A1	1	NOUN	4.22	
+zentral	B1	3	OTHER	4.09	
+Zentrum	A2	1	NOUN	4.69	Zentrumen,Zentrumentren
+zerstören	B1	2	VERB	4.29	zerstört,zerstörte
+Zertifikat	B1	3	NOUN	3.59	Zertifikate
+Zettel	A2	1	NOUN	4.06	
+Zeug	B1	2	NOUN	4.56	
+Zeuge	B1	2	NOUN	4.15	Zeugen
+Zeugin	B1	3	NOUN	3.64	Zeuginnen
+Zeugnis	A2	1	NOUN	3.92	Zeugnisse
+ziehen	A2	1	VERB	5.05	gezogen,zieht,zog
+Ziel	A2	1	NOUN	5.18	Ziele
+ziemlich	B1	2	OTHER	5.18	
+Zigarette	A1	1	NOUN	3.94	Zigaretten
+Zimmer	A1	1	NOUN	4.97	
+Zinsen	B1	2	NOUN	4.28	
+Zirkus	A2	1	NOUN	3.86	Zirkusse
+Zitrone	A2	1	NOUN	3.56	Zitronen
+Zivilstand	B1	3	NOUN	1.64	
+Znüni	B1	3	NOUN	1.74	Znünis
+Zoll	A1	1	NOUN	4.35	Zölle
+Zone	B1	2	NOUN	4.31	Zonen
+Zoo	A2	1	NOUN	4.15	Zoos
+zu	A1	1	OTHER	7.01	
+zubereiten	B1	3	VERB	3.35	bereitet,bereitete,zubereitet
+Zucker	A2	1	NOUN	4.43	
+zuerst	A2	1	OTHER	4.97	
+Zufall	B1	2	NOUN	4.46	Zufälle
+zufrieden	A1	1	OTHER	4.78	
+zufällig	B1	2	OTHER	4.52	
+Zug	A1	1	NOUN	4.91	Züge
+Zugang	B1	2	NOUN	4.60	Zugänge
+zugehen	B1	3	VERB	3.54	geht,ging,zugegangen
+zugänglich	B1	2	OTHER	4.29	
+Zuhause	B1	2	NOUN	4.77	
+zuhören	A2	1	VERB	4.02	hört,hörte,zugehört
+Zuhörer	B1	3	NOUN	3.79	
+Zuhörerin	B1	3	NOUN	2.27	Zuhörerinnen
+Zukunft	B1	2	NOUN	5.21	
+zukünftig	B1	3	OTHER	4.00	
+zuletzt	A2	1	OTHER	4.88	
+zum	A1	1	OTHER	6.41	
+zumachen	A2	1	VERB	3.39	macht,machte,zugemacht
+zumindest	B1	2	OTHER	5.07	
+zunehmen	B1	3	VERB	3.66	nahm,nimmt,zugenommen
+zunächst	B1	2	OTHER	5.24	
+zurechtkommen	B1	3	VERB	3.09	kam,kommt,zurecht,zurechtgekommen
+zurzeit	A1	1	OTHER	4.25	
+zurück	A1	1	OTHER	5.57	
+zusagen	B1	3	VERB	3.62	sagt,sagte,zugesagt
+zusammen	A1	1	OTHER	5.55	
+Zusammenarbeit	B1	2	NOUN	4.78	
+zusammenfassen	B1	3	VERB	3.55	fasst,fasste,zusammengefasst
+Zusammenhang	B1	2	NOUN	4.87	Zusammenhänge
+zuschauen	B1	3	VERB	3.79	schaut,schaute,zugeschaut
+Zuschauer	B1	2	NOUN	4.64	
+Zuschauerin	B1	3	NOUN	2.67	Zuschauerinnen
+Zuschlag	B1	3	NOUN	3.61	Zuschläge
+Zustand	B1	2	NOUN	4.79	Zustände
+zustimmen	B1	3	VERB	4.10	stimmt,stimmte,zugestimmt
+Zustimmung	B1	2	NOUN	4.51	Zustimmungen
+zuständig	B1	2	OTHER	4.44	
+zusätzlich	B1	2	OTHER	4.84	
+Zutaten	B1	3	NOUN	3.90	
+zuverlässig	B1	3	OTHER	3.92	
+Zvieri	B1	3	NOUN	1.13	Zvieris
+zwanzig	A1	1	OTHER	4.17	
+zwar	B1	2	OTHER	5.52	
+Zweck	B1	2	NOUN	4.64	Zwecke
+zwei	A1	1	OTHER	5.94	
+zweifach	B1	3	OTHER	3.13	
+Zweifel	B1	2	NOUN	4.66	
+zweifeln	B1	3	VERB	3.86	gezweifelt,zweifelt,zweifelte
+zweimal	A2	1	OTHER	4.60	
+zweit	A1	1	OTHER	3.98	
+zweitens	A2	1	OTHER	4.19	
+Zweitsprache	B1	3	NOUN	2.74	Zweitsprachen
+Zwiebel	B1	3	NOUN	3.53	Zwiebeln
+zwingen	B1	2	VERB	4.18	gezwungen,zwang,zwingt
+zwischen	A1	1	OTHER	5.83	
+zwölf	A1	1	OTHER	4.62	
+zählen	B1	2	VERB	4.63	gezählt,zählt,zählte
+Zünder	B1	3	NOUN	2.96	
+Zündholz	B1	3	NOUN	2.07	Zündhölzer
+ähnlich	B1	2	OTHER	4.92	
+ändern	A2	1	VERB	4.93	geändert,ändert,änderte
+Änderung	B1	2	NOUN	4.50	Änderungen
+ängstlich	B1	3	OTHER	3.59	
+Ärger	B1	2	NOUN	4.37	
+ärgerlich	B1	3	OTHER	3.85	
+ärgern	A2	1	VERB	3.92	geärgert,ärgert,ärgerte
+Ärztin	B1	3	NOUN	3.88	Ärztinnen
+äußerlich	B1	3	OTHER	3.67	
+öffentlich	B1	2	OTHER	4.72	
+Öffentlichkeit	B1	2	NOUN	4.69	
+öffnen	A1	1	VERB	4.63	geöffnet,öffnet,öffnete
+öfter	B1	2	OTHER	4.51	
+Öko	B1	3	NOUN	3.77	
+Öl	A1	1	NOUN	4.45	Öle
+östlich	B1	3	OTHER	3.91	
+üben	A2	1	VERB	4.34	geübt,übt
+über	A1	1	OTHER	6.39	
+überall	A2	1	OTHER	5.05	
+überfahren	B1	3	VERB	3.71	überfuhr,überfährt
+überhaupt	B1	2	OTHER	5.34	
+überholen	B1	3	VERB	3.69	überholt,überholte
+überlegen	B1	2	VERB	4.54	überlegt,überlegte
+übermorgen	A2	1	OTHER	3.61	
+übernachten	A1	1	VERB	3.74	übernachtet,übernachtete
+Übernachtung	B1	3	NOUN	3.33	Übernachtungen
+übernehmen	B1	2	VERB	4.71	übernahm,übernimmt
+überprüfen	B1	2	VERB	4.35	überprüft,überprüfte
+überqueren	B1	3	VERB	3.70	überquert,überquerte
+überraschen	B1	3	VERB	4.06	überrascht,überraschte
+Überraschung	B1	2	NOUN	4.44	Überraschungen
+überreden	B1	3	VERB	3.61	überredet,überredete
+Überschrift	B1	3	NOUN	3.90	Überschriften
+übersetzen	A2	1	VERB	3.90	übersetzt,übersetzte
+Übersetzer	B1	3	NOUN	4.02	
+Übersetzerin	B1	3	NOUN	2.94	Übersetzerinnen
+Übersetzung	A2	1	NOUN	4.54	Übersetzungen
+Überstunde	B1	3	NOUN	1.76	Überstunden
+übertreiben	B1	3	VERB	3.66	übertreibt,übertrieb,übertrieben
+überweisen	A1	1	VERB	3.65	überweist,überwies,überwiesen
+Überweisung	B1	3	NOUN	3.58	Überweisungen
+überzeugen	B1	2	VERB	4.54	überzeugt,überzeugte
+Überzeugung	B1	2	NOUN	4.18	Überzeugungen
+üblich	B1	2	OTHER	4.38	
+übrig	B1	2	OTHER	4.60	
+übrigens	B1	2	OTHER	5.07	
+Übung	B1	2	NOUN	4.23	Übungen

@@ -1,0 +1,33 @@
+# Checker settings. Edit freely.
+
+[tiers]
+# Day on which each vocabulary tier unlocks.
+1 = 1
+2 = 11
+3 = 21
+
+[player]
+# CEFR levels the player is assumed to know already (player starts at A2.1).
+# These words are allowed and never counted as "new".
+assumed_known = ["A1"]
+
+[budget]
+# Soft limits: exceeding them is a warning, never an error.
+new_words_per_day = 25
+slang_per_day = 3
+
+[recurrence]
+# A new word should come back within this many days...
+window_days = 3
+# ...and reach this many total exposures by the end of the window.
+min_exposures = 3
+
+[comprehension]
+# Target share of running words the player already knows (i+1: 90-95%).
+target_known_share = 0.90
+
+[grammar]
+# Day from which each structure is expected. Earlier use is a warning.
+praeteritum = 11        # Präteritum of verbs other than sein/haben/modals
+konjunktiv2 = 21        # würde/könnte/hätte... ("möchte" is always fine)
+relativsatz = 21

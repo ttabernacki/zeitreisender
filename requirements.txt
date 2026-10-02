@@ -1,0 +1,6 @@
+pdfplumber>=0.11
+spacy>=3.7,<4
+wordfreq>=3.0
+pytest>=8
+# German model (install separately):
+#   python -m spacy download de_core_news_md

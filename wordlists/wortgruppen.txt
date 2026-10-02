@@ -1,0 +1,210 @@
+# Hand-transcribed from the "Wortgruppen" section of the Goethe B1 Wortliste
+# (pp. 8-15). These thematic groups are not in the alphabetical list.
+# Format: LEVEL<TAB>entry  (entry syntax is the same as the alphabetical list)
+# Numbers, colors, days, months, times of day are A1 in practice -> tier 1.
+
+# Zahlen
+A1	null
+A1	eins
+A1	zwei
+A1	drei
+A1	vier
+A1	fünf
+A1	sechs
+A1	sieben
+A1	acht
+A1	neun
+A1	zehn
+A1	elf
+A1	zwölf
+A1	dreizehn
+A1	vierzehn
+A1	fünfzehn
+A1	sechzehn
+A1	siebzehn
+A1	achtzehn
+A1	neunzehn
+A1	zwanzig
+A1	dreißig
+A1	vierzig
+A1	fünfzig
+A1	sechzig
+A1	siebzig
+A1	achtzig
+A1	neunzig
+A1	hundert
+A1	tausend
+A1	die Million, -en
+B1	die Milliarde, -n
+A1	erst-
+A1	zweit-
+A1	dritt-
+A2	erstens
+A2	zweitens
+A2	drittens
+A2	einmal
+A2	zweimal
+A2	dreimal
+B1	zweifach
+B1	doppelt
+A2	plus
+A2	minus
+A2	halb
+B1	das Drittel, -
+A2	das Viertel, -
+# Farben
+A1	blau
+A1	braun
+A1	gelb
+A1	grau
+A1	grün
+A1	orange
+A1	rosa
+A1	rot
+A1	schwarz
+A1	violett
+A1	weiß
+A1	lila
+A2	hell
+A2	dunkel
+# Himmelsrichtungen
+A2	der Norden
+A2	der Osten
+A2	der Süden
+A2	der Westen
+B1	nördlich
+B1	östlich
+B1	südlich
+B1	westlich
+# Tiere
+B1	der Affe, -n
+B1	der Bär, -en
+B1	die Biene, -n
+B1	der Elefant, -en
+B1	die Ente, -n
+A1	der Fisch, -e
+B1	die Fliege, -n
+B1	die Giraffe, -n
+B1	der Hase, -n
+A1	der Hund, -e
+B1	das Insekt, -en
+A1	die Katze, -n
+B1	das Krokodil, -e
+A2	die Kuh, ¨-e
+B1	der Löwe, -n
+B1	die Maus, ¨-e
+B1	die Mücke, -n
+A2	das Pferd, -e
+B1	der Pinguin, -e
+B1	das Schaf, -e
+B1	die Schildkröte, -n
+B1	die Schlange, -n
+A2	das Schwein, -e
+A2	der Vogel, ¨-
+# Maße und Gewichte
+A1	der Euro, -s
+A1	der Cent, -s
+A1	der Meter, -
+A1	der Zentimeter, -
+A1	der Kilometer, -
+A1	das Kilo, -s
+A1	das Gramm
+A1	das Pfund, -e
+A1	der Liter, -
+B1	das Grad, -e
+B1	das Prozent, -e
+# Zeit
+A2	der Frühling, -e
+B1	das Frühjahr, -e
+A2	der Sommer, -
+A2	der Herbst, -e
+A2	der Winter, -
+A1	der Januar
+A1	der Februar
+A1	der März
+A1	der April
+A1	der Mai
+A1	der Juni
+A1	der Juli
+A1	der August
+A1	der September
+A1	der Oktober
+A1	der November
+A1	der Dezember
+A2	Neujahr
+A2	Ostern
+A2	Pfingsten
+A2	Weihnachten
+A2	Silvester
+A1	der Tag, -e
+A2	täglich
+B1	tagsüber
+A1	der Morgen, -
+A1	morgens
+A1	der Vormittag, -e
+A1	vormittags
+A1	der Mittag, -e
+A1	mittags
+A1	der Nachmittag, -e
+A1	nachmittags
+A1	der Abend, -e
+A1	abends
+A1	die Nacht, ¨-e
+A1	nachts
+B1	die Mitternacht
+A1	die Uhr, -en
+A1	die Woche, -n
+A2	wöchentlich
+A1	der Wochentag, -e
+B1	wochentags
+B1	werktags
+A1	das Wochenende, -n
+A1	der Montag, -e
+A1	der Dienstag, -e
+A1	der Mittwoch, -e
+A1	der Donnerstag, -e
+A1	der Freitag, -e
+A1	der Samstag, -e
+A1	der Sonntag, -e
+A2	montags
+A2	dienstags
+A2	mittwochs
+A2	donnerstags
+A2	freitags
+A2	samstags
+A2	sonntags
+A1	die Sekunde, -n
+A1	die Minute, -n
+A1	die Stunde, -n
+B1	stündlich
+A1	der Monat, -e
+B1	monatlich
+A1	das Jahr, -e
+B1	jährlich
+B1	das Jahrzehnt, -e
+B1	das Jahrhundert, -e
+B1	das Jahrtausend, -e
+# Ergänzung: closed-class words the Goethe lists treat as grammar rather than
+# vocabulary (personal/possessive pronouns, missing from the alphabetical list).
+A1	ich
+A1	du
+A1	er
+A1	sie
+A1	es
+A1	wir
+A1	ihr
+A1	mich
+A1	mir
+A1	dich
+A1	dir
+A1	ihn
+A1	ihm
+A1	uns
+A1	euch
+A1	ihnen
+A1	sich
+A1	mein
+A1	dein
+A1	sein
+A1	unser
+A1	euer
