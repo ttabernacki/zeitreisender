@@ -294,6 +294,7 @@ window.GAME = {"order":["ankunft","am_schiff","baeckerei","abend"],"scenes":{"an
   // ------------------------------------------------------------- state
   function neuesProfil() {
     return { niveau: [], strukturen: {}, eigene: {}, stufe: 1, runden: 0, korrekt: 0, selbst: 0,
+             schreibHinweise: 0, umlautTipp: false,
              fehler: {}, nachgeschlagen: [] };
   }
   function neuesSpiel() {
@@ -539,6 +540,7 @@ Player's recent level estimates: ${niveauText()}. Text level for the game right 
   const KORREKTUR = `Evaluate the player's German message:
 - "korrekt": true when there is no real mistake. Ignore a lowercase first letter and missing final punctuation (chat style) but do flag lowercase nouns.
 - Never mark something wrong because it is advanced, modern, slang or anachronistic: the player may use any German they know.
+- The player may not have a German keyboard. Treat these as fully CORRECT, never as mistakes: ae/oe/ue (or plain a/o/u) for ä/ö/ü, ss (or plain s/sz) for ß, and any other near-miss spelling caused by missing special characters, as long as the intended word is clear from context ("fuer", "uber", "Strasse", "gross", "Baeckerei", "schon" meaning "schön"). They never make "korrekt" false, never go into "fehler", "markiert" or "hinweis", never lower "aufwand", and "korrigiert" keeps the player's own spelling of them. Judge only grammar and word choice. If in doubt whether dropped dots changed the word, accept it. Ordinary typos and real misspellings (e.g. "Brod") are still mistakes.
 - "verstanden": false only when you cannot tell what the player means.
 - If the player writes English or another language: "korrekt": false, "korrigiert" = a natural German version, one fehler with "kat": "sprache".
 - "korrigiert": the message with the smallest edits that make it correct and natural; identical to the input when correct.
@@ -549,10 +551,34 @@ Player's recent level estimates: ${niveauText()}. Text level for the game right 
 - "aufwand": how much the player said, for their level: 1 = a single word, fragment or fixed phrase; 2 = one complete sentence; 3 = more than one clause, or a sentence with extra detail, a reason or a question back.
 - "niveau": CEFR estimate of THIS message, one of ${CEFR.join(", ")}.
 - "strukturen": constructions used CORRECTLY, from: ${Object.keys(FORM).join(", ")} (a weil/dass/wenn clause also counts as nebensatz).
-- "grundformen": base forms of the content words used correctly (nouns capitalised).`;
-  const EVAL_JSON = `"korrekt":true,"verstanden":true,"korrigiert":"","markiert":"","hinweis":"","fehler":[],"richtig_kat":[],"aufwand":2,"niveau":"${START}","strukturen":[],"grundformen":[]`;
+- "grundformen": base forms of the content words used correctly, in standard spelling with ä/ö/ü/ß (nouns capitalised).
+- "schreibweise": only if the player used such substitutes (ae/oe/ue/ss/plain vowels): the whole message rewritten with proper ä/ö/ü/ß, otherwise "". It is a friendly spelling tip, never an error.`;
+  const EVAL_JSON = `"korrekt":true,"verstanden":true,"korrigiert":"","markiert":"","hinweis":"","fehler":[],"richtig_kat":[],"aufwand":2,"niveau":"${START}","strukturen":[],"grundformen":[],"schreibweise":""`;
 
-  function normalisiere(r) {
+  // The player may not have a German keyboard: ae/oe/ue/plain vowels and ss never count as mistakes.
+  const fold = (t) => String(t || "")
+    .replace(/ß/g, "ss")
+    .replace(/Ä|Ae|AE/g, "A").replace(/ä|ae/g, "a")
+    .replace(/Ö|Oe|OE/g, "O").replace(/ö|oe/g, "o")
+    .replace(/Ü|Ue|UE/g, "U").replace(/ü|ue/g, "u")
+    .replace(/\s+/g, " ").trim();
+
+  // Safety net on top of the prompt: remove "mistakes" that are only a missing umlaut or ß.
+  function bereinige(r, eingabe) {
+    const echt = r.fehler.filter((f) => fold(f.falsch) !== fold(f.richtig));
+    const entfernt = r.fehler.filter((f) => !echt.includes(f));
+    let bereinigt = entfernt.length > 0;
+    r.fehler = echt;
+    for (const f of entfernt) if (f.falsch) r.markiert = r.markiert.split("[[" + f.falsch + "]]").join(f.falsch);
+    if (r.korrigiert && fold(r.korrigiert) === fold(eingabe)) {
+      bereinigt = true; r.fehler = []; r.markiert = "";
+    }
+    if (bereinigt && !r.fehler.length) { r.korrekt = true; r.korrigiert = ""; r.markiert = ""; r.hinweis = ""; }
+    if (r.schreibweise && (r.schreibweise === eingabe || fold(r.schreibweise) !== fold(eingabe))) r.schreibweise = "";
+    return r;
+  }
+
+  function normalisiere(r, eingabe) {
     r = r && typeof r === "object" ? r : {};
     const arr = (x) => (Array.isArray(x) ? x : []);
     r.fehler = arr(r.fehler).filter((f) => f && typeof f === "object").slice(0, 3);
@@ -565,7 +591,8 @@ Player's recent level estimates: ${niveauText()}. Text level for the game right 
     r.korrigiert = String(r.korrigiert || "");
     r.markiert = String(r.markiert || "");
     r.hinweis = String(r.hinweis || "");
-    return r;
+    r.schreibweise = String(r.schreibweise || "");
+    return bereinige(r, eingabe || "");
   }
 
   // Mistake log: per category the last outcomes (f = mistake, o = correct) and examples.
@@ -692,7 +719,7 @@ Reply with only this JSON:
     allesZeichnen();
     let r;
     try {
-      r = normalisiere(await SAMPLE.json(prompt, { signal: busy.signal, modelTier: S.einst.tier, cache: false }));
+      r = normalisiere(await SAMPLE.json(prompt, { signal: busy.signal, modelTier: S.einst.tier, cache: false }), eingabe);
     } catch (e) {
       busy = null;
       S.log.splice(S.log.indexOf(eintrag), 1);
@@ -701,6 +728,7 @@ Reply with only this JSON:
     }
     busy = null;
     eintrag.pruefen = false;
+    if (r.schreibweise && S.profil.schreibHinweise < 6) { eintrag.schreib = r.schreibweise; S.profil.schreibHinweise++; }
 
     // 1. A real mistake the character understood: let the player repair it first.
     if (!retry && !r.korrekt && r.fehler.length && r.verstanden !== false) {
@@ -803,7 +831,7 @@ Reply with only this JSON:
     allesZeichnen();
     let r;
     try {
-      r = normalisiere(await SAMPLE.json(prompt, { signal: busy.signal, modelTier: "default", cache: false }));
+      r = normalisiere(await SAMPLE.json(prompt, { signal: busy.signal, modelTier: "default", cache: false }), eingabe);
     } catch (e) {
       busy = null;
       S.log.splice(S.log.indexOf(eintrag), 1);
@@ -952,6 +980,7 @@ Reply with only this JSON:
         if (e.rep) bubble.append(markiertHTML(e.rep.markiert));
         else if (e.roh != null) bubble.textContent = e.roh; else bubble.append(segmentHTML(e.t, e.neu));
         p.append(bubble);
+        if (e.schreib) p.append(el("div", "Mit Umlaut: " + e.schreib, "klein"));
         if (e.rep && e.rep.hinweis) p.append(el("div", "Hinweis: " + e.rep.hinweis, "klein hinweis-zeile"));
         if (e.pruefen) p.append(el("div", (sprecher() || "Jemand") + " hört zu …", "klein denkt"));
         if (e.k) p.append(korrekturHTML(e.k));
@@ -1057,6 +1086,10 @@ Reply with only this JSON:
     E.input.readOnly = !!busy;                      // not disabled: that would drop focus and the keyboard
     E.send.textContent = busy ? "…" : "Senden";
     E.send.disabled = !!busy;
+    if (war && !S.profil.umlautTipp) {
+      S.profil.umlautTipp = true;
+      hinweis("Du brauchst keine Umlaute: ae, oe, ue und ss sind in Ordnung.");
+    }
     if (!entwurf && war && w.versuch === 1 && w.pending) entwurf = w.pending.eingabe;   // after a reload
     if (entwurf) { E.input.value = entwurf; entwurf = ""; E.grow(); fokus(E.input); }
     else if (war && FEIN) fokus(E.input);
