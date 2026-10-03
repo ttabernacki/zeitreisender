@@ -66,17 +66,28 @@ Jonte: Weißt du, was in den Säcken ist? Salz, nur Salz. Es kommt aus Lüneburg
 Jonte sieht auf deine Uhr.
 Jonte: Was hast du da am Arm?
 * Das ist eine Uhr. Sie ist leider kaputt. -> uhr {jonte +1}
-* Das ist nichts. Komm, wir machen weiter. -> weiter
+* Das ist nichts. Komm, wir machen weiter. -> pause
 
 == uhr
 Jonte: Eine Uhr? So klein? Krass! Wer hat die denn gemacht?
-* Ich weiß es nicht mehr. -> weiter
+* Ich weiß es nicht mehr. -> pause
 * Ein Mann aus der Zukunft hat sie gebaut. -> zukunft
 
 == zukunft
 Jonte sieht dich lange an. Dann fängt er an zu lachen.
 Jonte: Du bist wirklich lustig. Ich mag dich schon jetzt.
--> weiter {jonte +1}
+-> pause {jonte +1}
+
+== pause
+Ihr tragt eine Stunde lang Säcke. Dann setzt ihr euch kurz auf einen Sack und trinkt Wasser.
+Jonte: Sag mal, wie ist es eigentlich bei dir zu Hause? Was machst du da den ganzen Tag?
+(ki) frei: Jonte | Jonte is curious about the player's home (they come from the future, but the player may say anything or play along). He asks follow-up questions about daily life and free time and finds modern things hilarious and "krass". He asks "Was machst du, wenn du frei hast?" to elicit wenn-clauses. | 3 -> pause_ende | ziel: Jonte will wissen, wie es bei dir zu Hause ist. Erzähl ihm von deinem Leben. | braucht: wo du wohnst; was du in deiner Freizeit machst | form: wenn | lohn: jonte +1
+(!ki) Du erzählst Jonte ein bisschen von zu Hause. Er hört gut zu und lacht oft.
+(!ki) -> pause_ende {jonte +1}
+
+== pause_ende
+Jonte: Krass! Das ist ganz anders als hier. Aber jetzt müssen wir wieder arbeiten, sonst wird Hinnerk wütend.
+-> weiter
 
 == weiter
 Ihr arbeitet und arbeitet. Am Mittag sind alle Säcke im Lager. Deine Arme tun weh, dein Rücken tut weh, und eigentlich tut alles weh.
@@ -89,9 +100,14 @@ notiz: Das ist nicht viel, aber es ist genug.
 
 == ende
 Jonte: Hast du Hunger? Dann geh zu Greta in die Bäckerei am Markt. Sie macht das beste Brot in ganz Hamburg.
-Jonte: Du gehst hier geradeaus und dann nach links. Du kannst es schon von weitem riechen!
+Jonte: Du gehst hier geradeaus und dann nach links. Du kannst es schon riechen!
 notiz: Geh geradeaus und dann nach links.
--> weg
+-> fragen
+
+== fragen
+Jonte: Hast du noch Fragen, bevor du gehst?
+(ki) frei: Jonte | The player may ask Jonte two questions about Hamburg, the market, Greta or the harbor. Jonte answers briefly and cheerfully (invent plausible details: the market opens early, Greta's bread is the best in town, the harbor is busy because of the Hanse, Hinnerk is loud but kind) and gives each answer a funny little twist. If the player does not ask real questions he encourages them: "Frag mich was!" | 3 -> weg | ziel: Du kannst Jonte zwei Fragen stellen. Frag ihn etwas über Hamburg oder über Greta. | braucht: eine Frage über Hamburg; eine Frage über Greta | form: frage | lohn: jonte +1
+(!ki) -> weg
 
 == weg
 Du stehst am Hafen, und vor dir liegt die Straße zum Markt. Wohin gehst du?
@@ -101,11 +117,11 @@ Du stehst am Hafen, und vor dir liegt die Straße zum Markt. Wohin gehst du?
 
 == falsch1
 Du gehst nach links und dann geradeaus. Es riecht immer stärker nach Fisch, und plötzlich stehst du vor einem Mann mit einem sehr großen Fisch. Der Fisch sieht dich an, und du siehst den Fisch an.
-Von weitem ruft Jonte: „Nein! Zuerst geradeaus, dann links!“
+Jonte ruft laut: „Nein! Zuerst geradeaus, dann links!“
 notiz: Zuerst geradeaus, dann links.
 -> weg
 
 == falsch2
 Du gehst geradeaus und dann nach rechts. Dort ist eine kleine Tür. Du machst sie auf, und drinnen sitzt ein Hund mit sehr großen Zähnen. Er sieht dich an, und du gehst lieber schnell weg.
-Von weitem ruft Jonte: „Nicht rechts! Links, Digga, links!“
+Jonte ruft laut: „Nicht rechts! Links, Digga, links!“
 -> weg

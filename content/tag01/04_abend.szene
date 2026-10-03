@@ -50,7 +50,12 @@ Alheit: Danke. Das Zimmer ist oben, das Bett ist klein, aber sauber.
 -> uhr
 
 == helfen
-Alheit: Gut. Dann sehen wir uns morgen früh, aber komm nicht zu spät! Das Zimmer ist oben, das Bett ist klein, aber sauber.
+Alheit: Gut. Dann sehen wir uns morgen früh. Was kannst du für mich machen, und wann kommst du?
+(ki) frei: Alheit | Alheit asks what practical things the player can do around the house tomorrow (fetch water, clean the kitchen, carry wood, feed the dog) and at what time they will come. Elicit sentences with "Ich kann …", "Ich muss …" or "Ich will …". She is kind but firm about punctuality ("Nicht zu spät!"). | 3 -> helfen_ende | ziel: Sag Alheit, was du morgen für sie machen kannst und wann du kommst. | braucht: was du machen kannst; wann du kommst | form: modalverb | lohn: alheit +1
+(!ki) -> helfen_ende
+
+== helfen_ende
+Alheit: Gut. Das Zimmer ist oben, das Bett ist klein, aber sauber. Aber komm nicht zu spät!
 -> uhr
 
 == uhr
@@ -72,12 +77,17 @@ Alheit: So eine Uhr habe ich noch nie gesehen. Woher kommst du wirklich?
 == zukunft
 Alheit lacht nicht.
 Alheit: Aus der Zukunft. Gut. Dann willst du sicher wieder zurück, oder?
--> rat
+-> uhr_erklaeren
 
 == weit
 Alheit: Von weit weg. Ja, das sehe ich.
 Sie lacht nicht.
--> rat
+-> uhr_erklaeren
+
+== uhr_erklaeren
+Alheit: Erzähl mir von deiner Uhr. Was kann sie, wenn sie nicht kaputt ist? Und warum ist sie jetzt kaputt?
+(ki) frei: Alheit | Alheit is quietly curious about the watch and takes the player's story seriously, never laughing. She asks what the watch normally does (tells the time, wakes you up, counts steps, takes calls ...) and why it is broken (water, the journey, a fall). Elicit "Ich glaube, dass …" and "weil …" sentences. She listens carefully and says that such a thing must be repaired by someone clever. | 3 -> rat | ziel: Erkläre Alheit deine Uhr: Was kann sie? Und warum ist sie kaputt? | braucht: was die Uhr kann; warum sie kaputt ist | form: dass | lohn: alheit +1, flag uhr_erklaert
+(!ki) -> rat
 
 == rat
 Alheit: Hör gut zu. In Hamburg bekommst du Hilfe nicht mit Geld, sondern mit Freunden. Erst die Freunde, dann die Hilfe. Verstehst du das?

@@ -94,6 +94,11 @@ Greta: Guten Appetit!
 
 == ende
 Du isst und genießt jedes Stück. Es ist das beste Essen deines Lebens, oder du hast einfach nur sehr großen Hunger.
+Greta: Na, wie schmeckt es? Ist mein Brot besser als das Brot bei dir zu Hause?
+(ki) frei: Greta | Greta is proud of her bread and waits for the verdict. The player compares her bread with bread "at home" (the future: factory bread, supermarket toast). She is flattered, laughs at strange things ("Brot aus der Fabrik?") and asks what makes theirs different. She is curious but does not understand modern words and asks about them. | 3 -> ende2 | ziel: Sag Greta, wie dir das Brot schmeckt. Ist es besser oder schlechter als das Brot bei dir zu Hause? | braucht: wie das Brot schmeckt; wie das Brot bei dir zu Hause ist | form: vergleich | lohn: greta +1
+(!ki) -> ende2
+
+== ende2
 Greta: Und wo schläfst du heute Nacht?
 * Ich habe noch kein Zimmer gefunden. -> zimmer
 * Ich schlafe am Hafen. -> hafen
@@ -105,4 +110,15 @@ Greta: Am Hafen? Bei diesem Wetter? Auf keinen Fall!
 == zimmer
 Greta: Dann geh zu Alheit. Sie hat ein Haus an der Elbe und vermietet oft Zimmer. Sag ihr, dass Greta dich schickt.
 notiz: Hast du ein Zimmer frei?
+-> kind
+
+== kind
+Als du aus der Bäckerei kommst, läuft ein kleines Mädchen zu dir.
+Lina: Entschuldigung! Ich suche den Hafen, aber ich habe mich verlaufen. Kannst du mir helfen?
+Greta ruft aus der Tür: „Du bist doch gerade vom Hafen gekommen! Hilf ihr!“
+(ki) frei: Lina | A small girl (about 8) who got lost at the market and wants to go back to the harbor, where her father works on a ship. She is polite and a little shy but asks clear follow-up questions ("Und dann?", "Links oder rechts?"). The correct way from the market to the harbor is the reverse of what the player walked: first right, then straight on. She repeats the directions back to check. She is grateful at the end. | 3 -> kind_ende | ziel: Ein Kind sucht den Hafen. Erkläre ihm den Weg: Du bist gerade von dort gekommen. | braucht: wohin das Kind zuerst gehen soll; wohin es dann gehen soll | form: imperativ | lohn: greta +1
+(!ki) -> kind_ende
+
+== kind_ende
+„Danke!“, ruft das Mädchen und läuft zum Hafen.
 -> abend

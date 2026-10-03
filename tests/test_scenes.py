@@ -67,3 +67,13 @@ def test_conditional_lines_and_choices(tmp_path):
     frei, line, choice = s.nodes["start"]
     assert frei.cond == "ki" and line.cond == "!ki"
     assert choice.cond == "!rabatt && geld >= 2"
+
+
+def test_new_constructions_parse(tmp_path):
+    s = scene(tmp_path, """
+        == start
+        frei: Jonte | note | 3 -> ende | ziel: Frag Jonte. | form: frage, imperativ, dativ
+        == ende
+        -> ENDE
+    """)
+    assert s.nodes["start"][0].meta["form"] == ["frage", "imperativ", "dativ"]

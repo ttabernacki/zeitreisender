@@ -69,7 +69,7 @@ FREI = re.compile(r"^frei:\s*(?P<who>[^|]+?)\s*\|\s*(?P<thema>[^|]+?)\s*\|\s*(?P
 # same keys when it lists what the player used correctly.
 FORMEN = ("perfekt", "praeteritum", "modalverb", "imperativ", "nebensatz", "weil", "dass", "wenn",
           "reflexiv", "vergleich", "konjunktiv2", "relativsatz", "passiv", "zu_infinitiv",
-          "negation", "dativ", "akkusativ", "praeposition")
+          "negation", "dativ", "akkusativ", "praeposition", "frage")
 
 
 @dataclass

@@ -36,6 +36,7 @@
     dativ: ["Dativ", "mit dem …, bei der …, ich gebe dir …"],
     akkusativ: ["Akkusativ", "Ich sehe den …, ich habe einen …"],
     praeposition: ["Präposition", "in, auf, mit, zu … + richtiger Fall"],
+    frage: ["Frage", "Wo ist …? Wann kommt …? Hast du …?"],
   };
   // Mistake categories the AI sorts errors into (label shown on the Fehler page).
   const KAT = {
@@ -259,8 +260,41 @@
     return f === "nebensatz" && ["weil", "dass", "wenn"].some((x) => s.includes(x));
   }
   function aufgabeFertig(w) { return w.erfuellt.length >= w.braucht.length && w.form.every((f) => w.formOk.includes(f)); }
+  // Free side chat with whoever is speaking, from any reply screen. It leaves the story
+  // exactly where it was and brings the player back to the same choices.
+  function plauschWer() {
+    const wer = sprecher();
+    return wer && G.figuren && G.figuren[wer] ? wer : null;
+  }
+  function starteGespraech(wer) {
+    if (busy || !S.warten || S.warten.typ !== "wahl") return;
+    S.rueck = S.warten;
+    S.warten = { typ: "frei", wer, max: 4, n: 0, to: null, ziel: null, braucht: [], form: [], lohn: [],
+                 erfuellt: [], formOk: [], versuch: 0, pending: null, plausch: true,
+                 thema: "A relaxed side conversation during this scene. Stay in the current situation and in character. React warmly to what the player says and ask open follow-up questions about their life, what they think, what they did or what they plan. Keep it light and a bit funny. When the player wants to stop, wrap up warmly." };
+    S.log.push({ typ: "notiz", t: "Du plauderst mit " + wer + "." });
+    speichern();
+    allesZeichnen();
+  }
+
   function freiEnde(geschafft) {
     const w = S.warten;
+    if (w.plausch) {
+      const rueck = S.rueck;
+      S.rueck = null;
+      const key = "plausch:" + S.szene + ":" + w.wer;
+      const name = w.wer.toLowerCase();
+      if (w.n >= 3 && !S.flags.includes(key)) {         // a real chat earns a heart, once per scene
+        S.flags.push(key);
+        S.rel[name] = (S.rel[name] || 0) + 1;
+        herzen([name]);
+      }
+      S.log.push({ typ: "notiz", t: "Zurück zur Geschichte." });
+      if (!rueck) { S.warten = null; return tagEnde(); }
+      S.warten = rueck;
+      speichern();
+      return allesZeichnen();
+    }
     if (geschafft) {
       S.log.push({ typ: "notiz", t: "✓ Aufgabe geschafft." });
       const gewinn = effekte(w.lohn, 3);
@@ -912,6 +946,13 @@ Reply with only this JSON:
             g.disabled = !!busy;
             g.onclick = () => { vollOffen = !vollOffen; zeichneEingabe(); };
             row.append(g);
+          }
+          const pw = plauschWer();
+          if (pw) {
+            const c = el("button", "Plaudern mit " + pw, "chip");
+            c.disabled = !!busy;
+            c.onclick = () => starteGespraech(pw);
+            row.append(c);
           }
           nach.push(row);
         }

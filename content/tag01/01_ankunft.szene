@@ -42,8 +42,9 @@ Er sieht dich lange an.
 Hinnerk: Ich bin Hinnerk, der Hafenmeister. Das heißt, dass hier am Hafen niemand etwas ohne mich macht.
 (stufe >= 2) Hinnerk: Früher war es hier viel ruhiger, aber seit einem Jahr kommen jeden Tag mehr Schiffe, und alle wollen die Ersten sein.
 Hinnerk: Und wer bist du? Woher kommst du?
-* Ich weiß es nicht genau. Ich glaube, dass ich lange geschlafen habe. -> weiss_nicht {hinnerk +1}
-* Ich bin ein Reisender. Ich komme aus der Zukunft. -> zukunft
+(ki) frei: Hinnerk | The player introduces themselves to Hinnerk, who is gruff but curious. If they say they come from the future he laughs it off ("Du hast zu viel Wasser im Kopf") but stays friendly; if they don't know who they are he says that happens often to people coming off ships. He asks one or two short follow-up questions (where from? what do you want here?). He does not believe in time travel. | 3 -> arbeit | ziel: Stell dich Hinnerk vor. | braucht: wer du bist; woher du kommst | lohn: hinnerk +1
+* (!ki) Ich weiß es nicht genau. Ich glaube, dass ich lange geschlafen habe. -> weiss_nicht {hinnerk +1}
+* (!ki) Ich bin ein Reisender. Ich komme aus der Zukunft. -> zukunft
 
 == zukunft
 Hinnerk: Aus der … was? Junge, du hast zu viel Wasser im Kopf. Oder zu viel Bier getrunken.
